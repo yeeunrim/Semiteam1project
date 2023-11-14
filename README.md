@@ -1,2 +1,8 @@
-# Semiteam1project
-Team1's project data in here !
+# 👥 TEAM1 - SEMI PROJECT
+
+💡 주제 및 기획의도 
+
+📅 개발 일정
+2023년 12월 1일 ~ 2023년 12월 15일 (2weeks)
+
+💻 개발 환경

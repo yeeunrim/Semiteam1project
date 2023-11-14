@@ -1,7 +1,9 @@
 # 👥 TEAM1 - SEMI PROJECT
 
 #### :information_desk_person: Member
-박채희, 서지훈, 이가은, 이나경, 이상현, 임예은
+* Team Reader : 임예은
+* Front-End : 이가은, 이나은, 임예은
+* Back-End : 박채희, 서지훈, 이상현
 
 #### :bulb: Topic & Background
 

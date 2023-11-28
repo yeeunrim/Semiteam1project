@@ -17,19 +17,16 @@
 #### :computer: Environment 
 
 
-<!--
-:clap: Use Case Diagram 및 ERD / DB Table
----------------
-### :speech_balloon: ERD
-![image07](https://user-images.githubusercontent.com/99001224/215045884-ab428915-97f4-4645-adc7-2e86ffe3ca5d.png)
-![image08](https://user-images.githubusercontent.com/99001224/215045893-7ebd5631-d60d-4f6f-88e4-e22737fe21b4.png)
 
+# :clap: Use Case Diagram 및 ERD / DB Table
+
+### :speech_balloon: ERD
+![xerd](https://github.com/yeeunrim/Semiteam1project/assets/144193323/04a888f4-b6fe-44df-9437-2c3d9dff5497)
 
 ### :speech_balloon:  Use Case Diagram
-![unnamed (6)](https://user-images.githubusercontent.com/99001224/215046614-3785bf75-6e11-4fcf-a07a-b5730f9470f2.png)
-![unnamed (5)](https://user-images.githubusercontent.com/99001224/215046624-86d0f5bc-c8ac-409c-a4f7-2effc2fb05f3.png)
+![usecase](https://github.com/yeeunrim/Semiteam1project/assets/144193323/3289462b-823f-4392-a95a-825949e7179f)
 
-
+<!--
 ### :speech_balloon: Flow Chart & IA
 ![unnamed (2)](https://user-images.githubusercontent.com/99001224/215046000-69e2487a-51fd-458c-8a8b-aa7414d80947.png)
 ![unnamed (3)](https://user-images.githubusercontent.com/99001224/215046247-a07c7725-610e-4c01-be8f-bf6e3de22e9a.png)

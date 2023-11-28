@@ -17,15 +17,15 @@
 
 1. main → view all branches : 클릭
 
-![Untitled](Github%2013184b59daf14b61b488cac500ffa20c/Untitled.png)
+![Untitled](images/git1.png)
 
 1. New branch : 클릭
 
-![Untitled](Github%2013184b59daf14b61b488cac500ffa20c/Untitled%201.png)
+![Untitled](images/git2.png)
 
 1. New branch name  : 각자 사용한 이름 작성 → Create new branch
 
-![Untitled](Github%2013184b59daf14b61b488cac500ffa20c/Untitled%202.png)
+![Untitled](images/git3.png)
 
 ### Terminal & 명령 프롬포트 사용
 
@@ -33,7 +33,7 @@
 
 [https://skmouse.tistory.com/entry/Github-branch생성-후-push하기](https://skmouse.tistory.com/entry/Github-branch%EC%83%9D%EC%84%B1-%ED%9B%84-push%ED%95%98%EA%B8%B0)
 
-![Untitled](Github%2013184b59daf14b61b488cac500ffa20c/Untitled%203.png)
+![Untitled](images/git4.png)
 
 1. 각자의 파일(폴더) 생성
 2. git init

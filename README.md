@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 👥 TEAM1 : 여정담 - SEMI PROJECT
 
 #### :information_desk_person: Member
@@ -38,3 +39,7 @@
 ![unnamed (7)](https://user-images.githubusercontent.com/99001224/215046866-d3e9a30e-f690-4e07-96f6-026a27572d50.png)
 ![123PNG](https://user-images.githubusercontent.com/99001224/215047019-663d470a-0163-48c1-addd-cabab88cf58c.PNG) 
 -->
+=======
+# NAGYUNG BRANCH
+nagyung's project data in here !
+>>>>>>> 0bde85c831767d7ae88245ed88b0934e7a342066

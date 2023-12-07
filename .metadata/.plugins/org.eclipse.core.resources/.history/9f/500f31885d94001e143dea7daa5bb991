@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* 공통 스타일 */
+*{margin: 0; padding: 0;}
+#container{width: 1024px; margin: 30px auto 100px;}
+ul li{list-style: none;}
+a{text-decoration: none; color: black;}
+
+/* header 스타일 */
+header{
+	/*width : 1024px;*/
+	width: 100%;
+	margin : 0 auto;
+}
+header #welcome{
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+header #welcome p{
+	padding: 10px 0;
+	font-size: 13px;
+}
+header #menu{
+	width: 100%;
+}
+header nav div{	/*각 mainMenu, sideMenu div에 float를 주어 가로정렬*/ /*nav에 float 주면 가로정렬 되지 않음*/
+	float: left;
+}
+header #mainMenu{
+	/*width: 700px;*/
+	width: 70%;
+	line-height: 80px;
+}
+header #mainMenu ul{
+	display: flex;
+	justify-content: space-around;
+}
+header #mainMenu li{
+	font-size: 20px;
+	color: black;
+}
+header #sideMenu{
+	/*width: 324px;*/
+	width: 20%;
+}
+header #sideMenu_1 li a{
+	padding-top: 10px;
+}
+header #sideMenu ul{
+	line-height: 30px;
+	display: flex;
+}
+header #sideMenu li{
+	font-size: 12px;
+	width: 33%;
+}
+header #sideMenu li a{
+	display:flex;
+	justify-content: center;
+}
+header #sideMenu #sideMenu_1 a{
+	padding-top: 10px;
+}
+header #sideMenu #sideMenu_2 a{
+	padding-bottom: 10px;
+}
+
+/* mainMenu의 경우, li 사이에 동일한 간격을 주기위해 padding 사용 */
+/* sideMenu의 경우, padding으로 간격을 줄 시 아래위 li의 위치가 달라짐. 이에 li에 width와 flex요소를 주어 가운데 정렬 시킴 */
+
+/* 구현 1 */
+/* 헤더의 width 1024px에서 줄어들 경우, 각 li 사이의 거리 가까워짐*/
+
+/* 구현 2 */
+/* mainMenu의 각 li에 마우스 올릴 시, 전체 하위 카테고리 나옴 + 헤더부분의 배경색 변경됨 */
+/* mainMenu의 각 li에 마우스 올릴 시, li에 italic, 밑줄표시 */
+/* 하단 카테고리 선택 시, 연한 색상 -> 진한 색상으로 변경, italic, 밑줄표시*/

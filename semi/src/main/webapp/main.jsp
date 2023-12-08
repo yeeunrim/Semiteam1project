@@ -6,15 +6,13 @@
 <meta charset="UTF-8">
 <title>메인 페이지</title>
 <link rel="stylesheet" href="resources/css/style.css">
-<style>
-/* *{
-	color: blue;
-} */
-</style>
+<!-- 제이쿼리 라이브러리 링크로 추가 -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="resources/js/main.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 	
-	<%-- <jsp:include page="footer.jsp" /> --%>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

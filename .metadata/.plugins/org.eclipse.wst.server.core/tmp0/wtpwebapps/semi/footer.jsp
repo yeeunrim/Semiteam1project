@@ -13,6 +13,6 @@
 	
 	<ul id= footerMenu_right>
 		<li><a href="">인스타그램</a></li>
-		<li><a href="">여정담 2023.website by 여정담</a></li>
+		<li><a href="">© 여정담 2023.website by여정담</a></li>
 	</ul>
 </footer>

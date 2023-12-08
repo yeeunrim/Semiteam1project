@@ -1,4 +1,6 @@
 INDEX VERSION 1.134
+C:\semi\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1465314050.index
+\semi\src\main\java
 C:\semi\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\66881391.index
 \semi\src\main\java
 C:\semi\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2533613086.index

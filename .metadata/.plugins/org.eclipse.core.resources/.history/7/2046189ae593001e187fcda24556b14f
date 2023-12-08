@@ -1,0 +1,349 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html, body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="w-[1440px] h-[3230px] relative overflow-hidden"
+      style="filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));"
+    >
+      <div class="w-[358px] h-[418px] absolute left-[99px] top-[1694px]">
+        <div class="w-[1247.77px] h-[460.08px] absolute left-0 top-[-42px]">
+          <div class="w-[578px] h-[731px]">
+            <img
+              src="—pngtree—polaroid-photo-frame-transparent_8433985-1.png"
+              class="w-[578px] h-[731px] absolute left-[803.5px] top-[-37.5px] object-cover"
+            /><img
+              class="w-[398px] h-[394px] absolute left-[894.5px] top-[92.5px]"
+              src="rectangle-22.png"
+            />
+            <p
+              class="absolute left-[937px] top-[531px] text-2xl font-bold text-left text-[#676262]"
+            >
+              제주에서
+            </p>
+            <img
+              src="location-1.png"
+              class="w-8 h-8 absolute left-[894.5px] top-[528.5px] object-cover"
+            />
+          </div>
+          <div class="w-[578px] h-[731px]">
+            <img
+              src="—pngtree—polaroid-photo-frame-transparent_8433985-1.png"
+              class="w-[578px] h-[731px] absolute left-[334.5px] top-[-37.5px] object-cover"
+            /><img
+              class="w-[396px] h-[391px] absolute left-[425.5px] top-[92.5px]"
+              src="rectangle-22-2.png"
+            />
+            <p
+              class="absolute left-[468px] top-[531px] text-2xl font-bold text-left text-[#676262]"
+            >
+              서울에서
+            </p>
+            <img
+              src="location-1.png"
+              class="w-8 h-8 absolute left-[425.5px] top-[528.5px] object-cover"
+            />
+          </div>
+          <div class="w-[578px] h-[731px]">
+            <img
+              src="—pngtree—polaroid-photo-frame-transparent_8433985-1.png"
+              class="w-[578px] h-[731px] absolute left-[-143.5px] top-[-37.5px] object-cover"
+            /><img
+              class="w-[396px] h-[394px] absolute left-[-52.5px] top-[92.5px]"
+              src="rectangle-22-3.png"
+            />
+            <p
+              class="absolute left-[-10px] top-[531px] text-2xl font-bold text-left text-[#676262]"
+            >
+              부산에서
+            </p>
+            <img
+              src="location-1.png"
+              class="w-8 h-8 absolute left-[-52.5px] top-[528.5px] object-cover"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="w-[1200px] h-[250px] absolute left-[115px] top-[1111px]">
+        <p
+          class="absolute left-[25px] top-[142px] text-[80px] font-medium text-left text-[#338ba7]"
+        >
+          Nice place, With people you like.
+        </p>
+        <p class="absolute left-[25px] top-0 text-[80px] font-medium text-left text-[#338ba7]">
+          Life is part of a journey.
+        </p>
+      </div>
+      <div class="w-[920px] h-[19px] absolute left-[478px] top-[820px]">
+        <div class="w-40 h-[18px]">
+          <p class="absolute left-[904px] top-[3px] text-[11px] text-left text-[#df0505]">0.43</p>
+          <svg
+            width="10"
+            height="8"
+            viewBox="0 0 10 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-[888.5px] top-[3.5px]"
+            preserveAspectRatio="none"
+          >
+            <path d="M5 0L9.33013 7.5H0.669873L5 0Z" fill="#DF0505"></path>
+          </svg>
+          <p class="absolute left-[838px] top-px text-sm text-left text-black">182.24</p>
+          <p class="absolute left-[767px] top-[-1px] text-base text-left text-black">중국 CNY</p>
+        </div>
+        <div class="w-[156px] h-[18px]">
+          <p class="absolute left-[728px] top-[3px] text-[11px] text-left text-[#df0505]">8.01</p>
+          <svg
+            width="10"
+            height="8"
+            viewBox="0 0 10 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-[712.5px] top-[3.5px]"
+            preserveAspectRatio="none"
+          >
+            <path d="M5 0L9.33013 7.5H0.669873L5 0Z" fill="#DF0505"></path>
+          </svg>
+          <p class="absolute left-[662px] top-px text-sm text-left text-black">884.47</p>
+          <p class="absolute left-[595px] top-0 text-base text-left text-black">일본 JPY</p>
+        </div>
+        <div class="w-[175px] h-[18px]">
+          <p class="absolute left-[550px] top-[3px] text-[11px] text-left text-[#df0505]">10.21</p>
+          <svg
+            width="10"
+            height="8"
+            viewBox="0 0 10 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-[534.5px] top-[4.5px]"
+            preserveAspectRatio="none"
+          >
+            <path d="M5 0L9.33013 7.5H0.669873L5 0Z" fill="#DF0505"></path>
+          </svg>
+          <p class="absolute left-[473px] top-0.5 text-sm text-left text-black">1,650.38</p>
+          <p class="absolute left-[404px] top-0 text-base text-left text-black">영국 GBP</p>
+        </div>
+        <div class="w-[199px] h-[18px]">
+          <p class="absolute left-[365px] top-[5px] text-[11px] text-left text-[#0a05df]">4.71</p>
+          <svg
+            width="10"
+            height="8"
+            viewBox="0 0 10 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-[359.5px] top-[13.5px]"
+            preserveAspectRatio="none"
+          >
+            <path d="M5 8L0.669872 0.5L9.33013 0.5L5 8Z" fill="#0A05DF"></path>
+          </svg>
+          <p class="absolute left-72 top-0.5 text-sm text-left text-black">1,412.86</p>
+          <p class="absolute left-[189px] top-0 text-base text-left text-black">유럽연합 EUR</p>
+        </div>
+        <div class="w-[169px] h-[18px]">
+          <p class="absolute left-[146px] top-[3px] text-[11px] text-left text-[#0a05df]">2.00</p>
+          <svg
+            width="9"
+            height="8"
+            viewBox="0 0 9 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute left-[141.16px] top-3"
+            preserveAspectRatio="none"
+          >
+            <path d="M4.33005 7.5L-7.43866e-05 0L8.66018 0L4.33005 7.5Z" fill="#0A05DF"></path>
+          </svg>
+          <p class="absolute left-[71px] top-px text-sm text-left text-black">1,299.00</p>
+          <p class="absolute left-0 top-0 text-base text-left text-black">미국 USD</p>
+        </div>
+      </div>
+      <div class="w-[400px] h-[41px] absolute left-[41px] top-[803px] rounded-[20px]">
+        <svg
+          width="408"
+          height="49"
+          viewBox="0 0 408 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[-1px] top-[-1px]"
+          preserveAspectRatio="none"
+        >
+          <g filter="url(#filter0_d_246_774)">
+            <path
+              d="M4 20C4 8.95431 12.9543 0 24 0H204H304H384C395.046 0 404 8.95431 404 20V21C404 32.0457 395.046 41 384 41H24C12.9543 41 4 32.0457 4 21V20Z"
+              fill="url(#paint0_linear_246_774)"
+              fill-opacity="0.56"
+              shape-rendering="crispEdges"
+            ></path>
+          </g>
+          <defs>
+            <filter
+              id="filter0_d_246_774"
+              x="0"
+              y="0"
+              width="408"
+              height="49"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              ></feColorMatrix>
+              <feOffset dy="4"></feOffset>
+              <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+              <feComposite in2="hardAlpha" operator="out"></feComposite>
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              ></feColorMatrix>
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_246_774"
+              ></feBlend>
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_246_774"
+                result="shape"
+              ></feBlend>
+            </filter>
+            <linearGradient
+              id="paint0_linear_246_774"
+              x1="426.449"
+              y1="3.90476"
+              x2="426.449"
+              y2="44.9048"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.0001" stop-color="#AFAFAF"></stop>
+              <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+        <p class="w-[163px] h-[18px] absolute left-4 top-3.5 text-sm text-left text-[#676565]">
+          검색어를 입력하세요.
+        </p>
+        <img
+          src="free-icon-magnifier-2866321-2.png"
+          class="w-[25px] h-6 absolute left-[360px] top-[7px] object-cover"
+        />
+      </div>
+      <div class="w-[1440px] h-[609px] absolute left-0 top-[2358px]">
+        <div class="flex justify-start items-start absolute left-0 top-[109px]">
+          <div class="flex-grow-0 flex-shrink-0 w-[480px] h-[500px]">
+            <div
+              class="w-[480px] h-[500px] absolute left-[-0.5px] top-[-0.5px] bg-[#cac8c8]"
+              style="box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.25);"
+            ></div>
+            <p
+              class="w-[295.15px] h-[28.33px] absolute left-[22px] top-[200.66px] text-[15px] text-left text-black"
+            >
+              축구 좋아하시는 분, 같이 축구 보러 갑시다 !!
+            </p>
+            <p
+              class="w-[211.4px] h-[28.33px] absolute left-[22px] top-[157.33px] text-[15px] text-left text-black"
+            >
+              12/5 ~ 12/12 부분 동행 구해요.
+            </p>
+            <p
+              class="w-[300.26px] h-[28.33px] absolute left-[22px] top-[114px] text-[15px] text-left text-black"
+            >
+              스페인 - 바르셀로나 여행자 1명 (여) 구해요 !
+            </p>
+            <p class="absolute left-[182px] top-[47px] text-xl font-bold text-left text-[#646161]">
+              동행자 찾기
+            </p>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 w-[480px] h-[500px]">
+            <div
+              class="w-[480px] h-[500px] absolute left-[479.5px] top-[-0.5px] bg-[#cac8c8]"
+              style="box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.25);"
+            ></div>
+            <p
+              class="w-[166.65px] h-[28.33px] absolute left-[511px] top-[200.67px] text-[15px] text-left text-black"
+            >
+              제주도 한달 살이 후기
+            </p>
+            <p
+              class="w-[367.33px] h-[28.33px] absolute left-[511px] top-[157.33px] text-[15px] text-left text-black"
+            >
+              즐겁게 다녀온 이탈리아 렌트카 후기 (16박 17일)
+            </p>
+            <p
+              class="w-[421.32px] h-[28.33px] absolute left-[511px] top-[114px] text-[15px] text-left text-black"
+            >
+              일본 오사카 3박 4일 총 경비 150만원 (2인) 계획 공유 :)
+            </p>
+            <p class="absolute left-[680px] top-[47px] text-xl font-bold text-left text-[#646161]">
+              여행 후기
+            </p>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 w-[480px] h-[500px]">
+            <div
+              class="w-[480px] h-[500px] absolute left-[959.5px] top-[-0.5px] bg-[#cac8c8]"
+              style="box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.25);"
+            ></div>
+            <p
+              class="w-[165.48px] h-[28.33px] absolute left-[990px] top-[200.67px] text-[15px] text-left text-black"
+            >
+              국내 배낭 여행 (20일)
+            </p>
+            <p
+              class="w-[222.98px] h-[28.33px] absolute left-[990px] top-[157.33px] text-[15px] text-left text-black"
+            >
+              북유럽 여행 일정 (30박 32일)
+            </p>
+            <p
+              class="w-[204.21px] h-[28.33px] absolute left-[990px] top-[114px] text-[15px] text-left text-black"
+            >
+              요르단 여행 일정 (4박 5일)
+            </p>
+            <p class="absolute left-[1152px] top-[47px] text-xl font-bold text-left text-[#646161]">
+              나의 계획
+            </p>
+          </div>
+        </div>
+        <p class="absolute left-[61px] top-[49px] text-4xl font-bold text-left text-black">
+          인기글
+        </p>
+        <img src="hot-icon.png" class="w-8 h-8 absolute left-[21px] top-[52px] object-cover" />
+      </div>
+      <div class="w-[1440px] h-[790px] absolute left-0 top-0">
+        <img
+          src="train-62849_1920-1.jpeg"
+          class="w-[1440px] h-[790px] absolute left-[-1px] top-[-1px] object-cover"
+        />
+        <div
+          class="w-[72px] h-[25px] absolute left-[642px] top-[744px] rounded-[40px] bg-neutral-100"
+        ></div>
+        <div
+          class="w-[23px] h-[21px] absolute left-[732px] top-[746px] rounded-[90px] bg-[#878585]"
+        ></div>
+        <div
+          class="w-[22px] h-[21px] absolute left-[773px] top-[746px] rounded-[90px] bg-[#878585]"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>

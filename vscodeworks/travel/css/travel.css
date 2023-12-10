@@ -1,0 +1,177 @@
+/* travel.html과 연결 */
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*======================== 공통스타일 =========================== */
+*{margin: 0 auto; padding: 0;
+    width: 1440px; height: auto;
+     font-family: 'NanumSquareRound';} 
+
+/*=================== desktop 기준 - 781px부터 ====================*/
+/* header */
+.Yheader p{text-align: center; font-size: 30px;}
+
+/* section */
+/*
+    1. area img 슬라이드 형식으로 만들어야함!
+    2. curation부분도 내용5 추가해서 셀프 슬라이드형식으로.. or 슬라이드로
+ */
+/*===== section - main ============ */ 
+.main{width:1440px; height: 663px; position: relative; overflow: hidden; } /* width 1440px에 img가 넘어가면 잘림 */
+.main .area_img{height: 663px; overflow: hidden; } /* width 1440px에 img가 넘어가면 잘림 */
+
+.main .area_text{position: absolute; width: 460px; left: 490px; top: 250px; text-align: center;}
+.main .area_en{width: 460px; font-size: 100px; text-align: center; letter-spacing: 30px; color: white; }
+.main .area_ko{width: 460px; font-size: 50px; text-align: center; letter-spacing: 15px; color: white;}
+
+/*======= section - infoToMap ============= */
+.infoToMap{position: relative; width: 1440px; height: 663px;}
+.infoToMap .infobox{width: 1356px; height: 246px; position: absolute; left: 41.2px; top: 25px;
+     background-color: #F7F7F7; border-radius: 20px; border: 1px solid #000;}
+
+.infoToMap .infotext{width: 1356px; height: 150px; padding-top: 30px; position: absolute; left: 42px; top: 20px;
+    text-align: center; font-size: 27px;}
+
+.infoToMap .tipbox{width: 300px; display: flex; justify-content: center; align-items: center; position: absolute; left: 534.2px; top: 187px;
+ background-color: white; border: 1px solid #1d1d1f; border-radius: 16px; padding: 10px 20px 10px 50px; box-shadow: 0 4px 0 0 #000;}
+.infoToMap .tipbox p{text-align: left; font-size: 23px; font-weight: 800; }
+.infoToMap .tipbox p a{text-decoration: none; color: #000;}
+.infoToMap .tipbox p a:hover{color: gray;}
+.infoToMap .tipbox .arrow{width: 50px; font-size: large; }
+
+.left_box{width: 678.8px; height: 377px; position: absolute; left: 40px; top: 277px; 
+    border: 0.5px solid #1d1d1f; border-radius: 20px; }
+.left_box .T_weather{position: absolute; left: 85px; top: 25px;}
+.left_box .T_weather p{width: 322px; position: absolute; left:80px; top:8px;
+    font-size: 30px; font-weight: 600; text-align: center;}
+
+.left_box .box_weather{width: 462px; height: 250px; margin-top: 5px;
+    position: relative; left: 10px; top: 90px; /*border: 1px solid darkblue;*/ }
+.left_box .box_weather .topM{width: 300px; height: 40px; background-color: white; position:absolute; left: 30px; top: 10px;
+    text-align: left; border: 2px solid #1d1d1f; border-radius: 16px; padding: 8px 50px;}
+.left_box .box_weather .topM p{width: 100px; color: #7A7D84; font-size: 30px; display: flex; position: absolute;}
+.left_box .box_weather .arrow2{width:30px; position: absolute; left: 260px; top:5px; color: #464649;}
+
+.left_box .box_weather .bottom_weather{width: 400px; height: 150px; background-color: #e8e8e8;
+    border: 1px solid #1d1d1f; border-radius: 16px; position: absolute; left: 30px; top: 68px;}
+.left_box .box_weather .bottom_weather p{width: 400px; font-size: 27px; line-height: 1.5; padding: 23px 0 0 30px}
+.left_box .box_weather .bottom_weather p #a{color: #f54444;}
+.left_box .box_weather .bottom_weather p #b{color: #2c82e3;}
+
+.rightbox{width: 668.8px; height: 377px; position: absolute; left: 730px; top: 277px; 
+    border: 0.5px solid #1d1d1f; border-radius: 20px; }
+.rightbox .T_location{position: absolute; left: 91px; top: 25px;}
+.rightbox .T_location p{width: 322px; position: absolute; left:80px; top:8px; margin-top: 3px;
+    font-size: 30px; font-weight: 600; text-align: center;}
+.rightbox .imgLocation img{width: 430px; height: 250px;}
+.rightbox .imgLocation{position: absolute; left:120px; top: 90px;}
+.rightbox .iconarrow{position: absolute; left: 200px; top: 290px; width: 400px; font-size: 40px;}
+
+/*====== section - attraction ============*/
+.attraction{width: 1440px; height: 385px; position: relative;}
+.attraction h2{position: absolute; left: 58px; top: 15px; font-size: 43px;}
+
+.attraction .first_attr{position: absolute; left: 40px; top: 100px; width: 375px; height: 300px; 
+    border: 1px solid #1d1d1f;  border-top-left-radius: 40px; border-top-right-radius: 40px; 
+    box-shadow: 0 -5px 0 0 #000;}
+
+.attraction .first_attr .attr1T p{width: 375px; font-size: 30px; padding-left: 30px; position: absolute; top: 40px;}
+.attraction .first_attr .attr1T .iconX{width: 40px;  position: absolute; left: 300px; top: 5px;} 
+.attraction .first_attr .attr1 img{width: 375px; height: 211px; position: absolute; top: 87px; object-fit: cover; 
+    border-top: 3px solid #000;}
+
+.attraction .second_attr{position: absolute; left: 540px; top: 100px; width: 375px; height: 300px; 
+    border: 1px solid #1d1d1f;  border-top-left-radius: 40px; border-top-right-radius: 40px;
+    box-shadow: 0 -5px 0 0 #000;}
+
+.attraction .second_attr .attr2T p{width: 375px; font-size: 30px; padding-left: 30px; position: absolute; top: 40px;}
+.attraction .second_attr .attr2T .iconX{width: 40px;  position: absolute; left: 300px; top: 5px;} 
+.attraction .second_attr .attr2 img{width: 375px; height: 211px; position: absolute; top: 87px; object-fit: cover; 
+    border-top: 3px solid #000;}
+
+.attraction .third_attr{position: absolute; left: 1030px; top: 100px; width: 375px; height: 300px; 
+    border: 1px solid #1d1d1f;  border-top-left-radius: 40px; border-top-right-radius: 40px;
+    box-shadow: 0 -5px 0 0 #000;}
+.attraction .third_attr .attr3T p{width: 375px; font-size: 30px; padding-left: 30px; position: absolute; top: 40px;}
+.attraction .third_attr .attr3T .iconX{width: 40px;  position: absolute; left: 300px; top: 5px;} 
+.attraction .third_attr .attr3 img{width: 375px; height: 211px; position: absolute; top: 87px; object-fit: cover; 
+    border-top: 3px solid #000;}
+
+/*===== section - curation ===============*/
+.todayCuration{width: 1440px; height: 600px; position: relative;}
+.todayCuration h2{position: absolute; left: 58px; top: 40px; font-size: 43px;}
+
+/* curationBox1 */
+.todayCuration .curationBox1 .imgBox1
+{position: absolute; left: 40px; top: 120px; width: 325px; height: 465px; border: 1px solid #000; border-radius: 40px;
+    display: flex; justify-content: center; align-items: center;}
+
+.todayCuration .curationBox1 .imgBox1 img
+{position: absolute; width: 279px; height: 430px; object-fit: cover;  }
+
+.todayCuration .curationBox1 .textBox1{position: absolute; left: 64px; top: 140px; width: 280px; height: 430px;
+    border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);}
+    /* linear-gradient() 그라데이션함수 : to bottom 위에서 아래로, 하얀색 시작점0%, 검정색 끝지점100% */
+
+.todayCuration .curationBox1 .textBox1 .Ctext1
+{text-align: left; position: absolute; left: 10px; top: 345px; color: #F7F7F7; font-size: 25px;}
+
+/* curationBox2 */
+.todayCuration .curationBox2 .imgBox2
+{position: absolute; left: 400px; top: 120px; width: 325px; height: 465px; border: 1px solid #000; border-radius: 40px;
+    display: flex; justify-content: center; align-items: center;}
+
+.todayCuration .curationBox2 .imgBox2 img
+{position: absolute; width: 279px; height: 430px; object-fit: cover; }
+    
+.todayCuration .curationBox2 .textBox2{position: absolute; left: 424px; top: 140px; width: 280px; height: 430px;
+    border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);}
+    
+.todayCuration .curationBox2 .textBox2 .Ctext2
+{text-align: left; position: absolute; left: 10px; top: 345px; color: #F7F7F7; font-size: 25px;}
+
+/* curationBox3 */  
+.todayCuration .curationBox3 .imgBox3
+{position: absolute; left: 760px; top: 120px; width: 325px; height: 465px; border: 1px solid #000; border-radius: 40px;
+    display: flex; justify-content: center; align-items: center;}
+
+.todayCuration .curationBox3 .imgBox3 img
+{position: absolute; width: 279px; height: 430px; object-fit: cover; }
+    
+.todayCuration .curationBox3 .textBox3{position: absolute; left: 784px; top: 140px; width: 280px; height: 430px;
+    border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);}
+    
+.todayCuration .curationBox3 .textBox3 .Ctext3
+{text-align: left; position: absolute; left: 8px; top: 365px; color: #F7F7F7; font-size: 25px;}
+
+/* curationBox4 */
+.todayCuration .curationBox4 .imgBox4
+{position: absolute; left: 1120px; top: 120px; width: 325px; height: 465px; border: 1px solid #000; border-radius: 40px;
+    display: flex; justify-content: center; align-items: center;}
+
+.todayCuration .curationBox4 .imgBox4 img
+{position: absolute; width: 279px; height: 430px; object-fit: cover; }
+    
+.todayCuration .curationBox4 .textBox4{position: absolute; left: 1142px; top: 140px; width: 280px; height: 430px;
+    border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);}
+    
+.todayCuration .curationBox4 .textBox4 .Ctext4
+{text-align: left; position: absolute; left: 10px; top: 345px; color: #F7F7F7; font-size: 25px;}
+
+/*====== footer ===== */
+.Yfooter{text-align: center; font-size: 50px; margin-top: 20px;}
+
+
+/*================= mobile 기준 - 781px 미만 ======================= */
+    
+    
+    
+
+

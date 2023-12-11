@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>국내여행 상세 페이지</title>
+        <script src="../js/trave.js"></script>
+        <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../css/travel.css">
  
 </head>
@@ -16,7 +18,7 @@
     <section>
         <section class="main">
             <div class="area_img">
-                <img src="../images/namsantower.jpg" alt="namsantower">
+                <img src="../images/namsantower.jpg" alt="namsantower" id="pic">
             </div>
 
             <div class="area_text">
@@ -37,7 +39,7 @@
 
                 <div class="tipbox">
                     <p><a href="https://www.visitseoul.net/index" target="_blank"> Tip! 관광 안내 홈페이지 
-                        <ion-icon name="chevron-forward-outline" class="arrow"></ion-icon></a>
+                        <i class="fa-solid fa-angle-right" id="angleright"></i></a>
                     </p>
                 </div>
             </div> <!-- info -->
@@ -50,7 +52,7 @@
                 <div class="box_weather">
                     <div class="topM">
                         <p>December
-                            <ion-icon name="caret-down-outline" class="arrow2"></ion-icon>
+                            <i class="fa-solid fa-angle-down" id="angledown"></i>
                         </p>
                     </div>
                     <div class="bottom_weather">
@@ -68,16 +70,24 @@
                     <img src="../images/seoul.png" alt="seoul location">
                 </div>
                 
-                <ion-icon name="chevron-forward-circle-outline" class="iconarrow"></ion-icon>
+                <i class="fa-solid fa-circle-info" style="color: #7d7d7d;" id="circleinfo"></i>
             </div><!-- rightbox -->
         </section><!-- infoToMap -->
         
         <section class="attraction">
             <h2>서울의 주요 관광지</h2>
+            <div class="searchWord">
+                <label>
+                  <input type="text" placeholder="Search...">
+                    <button type="button">
+                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #606060;" id="glass"></i>
+                    </button>
+                </label>
+              </div>
             <div class="first_attr">
                 <div class="attr1T">
                     <p>경복궁
-                        <ion-icon name="close-outline" class="iconX"></ion-icon>
+                        <i class="fa-solid fa-xmark" style="color: #404040;" id="xmark1"></i>
                     </p>
                 </div>
                 <div class="attr1">
@@ -88,7 +98,7 @@
             <div class="second_attr">
                 <div class="attr2T">
                     <p>여의도 한강 공원
-                        <ion-icon name="close-outline" class="iconX"></ion-icon>
+                        <i class="fa-solid fa-xmark" style="color: #404040;" id="xmark2"></i>
                     </p>
                 </div>
                 <div class="attr2">
@@ -99,7 +109,7 @@
             <div class="third_attr">
                 <div class="attr3T">
                     <p>롯데월드
-                        <ion-icon name="close-outline" class="iconX"></ion-icon>
+                        <i class="fa-solid fa-xmark" style="color: #404040;" id="xmark3"></i>
                     </p>
                 </div>
                 <div class="attr3">
@@ -110,6 +120,7 @@
 
         <section class="todayCuration">
             <h2>오늘의 큐레이션</h2>
+            
             <div class="curationBox1"> <!--큰 박스 -->
                 <div class="imgBox1">
                     <img src="../images/library.png" alt="recommend library">
@@ -160,7 +171,6 @@
         <p>여정담 푸터 :D</p> 
     </footer>
     
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   
 </body>
 </html>

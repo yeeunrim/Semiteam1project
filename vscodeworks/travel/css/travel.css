@@ -6,33 +6,34 @@
     font-style: normal;
 }
 /*======================== 공통스타일 =========================== */
-*{margin: 0 auto; padding: 0;
-    width: 1440px; height: auto;
+*{margin: 0; padding: 0;
      font-family: 'NanumSquareRound';} 
+
+body section{height: 2350px;} 
 
 /*=================== desktop 기준 - 781px부터 ====================*/
 /* header */
-.Yheader p{text-align: center; font-size: 30px;}
+.Yheader p{width: 1440px; text-align: center; font-size: 30px;}
 
 /* section */
 /*
-    1. area img 슬라이드 형식으로 만들어야함!
-    2. curation부분도 내용5 추가해서 셀프 슬라이드형식으로.. or 슬라이드로
+    curation부분!!!! 내용5 추가해서 셀프 슬라이드형식으로.. or 슬라이드로
+    기준 너비 : 1440 / 높이 : 기준너비에 해당하는 높이확인(f12로)
  */
 /*===== section - main ============ */ 
 .main{width:1440px; height: 663px; position: relative; overflow: hidden; } /* width 1440px에 img가 넘어가면 잘림 */
-.main .area_img{height: 663px; overflow: hidden; } /* width 1440px에 img가 넘어가면 잘림 */
+.main .area_img #pic{width: 100%; height: 100%; overflow: hidden; } /* width 1440px에 img가 넘어가면 잘림 */
 
-.main .area_text{position: absolute; width: 460px; left: 490px; top: 250px; text-align: center;}
-.main .area_en{width: 460px; font-size: 100px; text-align: center; letter-spacing: 30px; color: white; }
-.main .area_ko{width: 460px; font-size: 50px; text-align: center; letter-spacing: 15px; color: white;}
+.main .area_text{width: 100%; top: 35%; margin: 0 auto; text-align: center; position: absolute; }
+.main .area_en{width: 460px; font-size: 7vw; margin: 0 auto; text-align: center; letter-spacing: 2vw; color: white; }
+.main .area_ko{width: 480px; font-size: 3.5vw; margin: 0 auto; text-align: center; letter-spacing: 1vw; color: white;}
 
-/*======= section - infoToMap ============= */
-.infoToMap{position: relative; width: 1440px; height: 663px;}
-.infoToMap .infobox{width: 1356px; height: 246px; position: absolute; left: 41.2px; top: 25px;
+/*======= section - infoToMap =================== */
+.infoToMap{width: 1440px; height: 663px; position: relative; margin-top: 20px;}
+.infoToMap .infobox{width: 97%; height: 246px; margin: 0 0 10px 23px; 
      background-color: #F7F7F7; border-radius: 20px; border: 1px solid #000;}
 
-.infoToMap .infotext{width: 1356px; height: 150px; padding-top: 30px; position: absolute; left: 42px; top: 20px;
+.infoToMap .infotext{width: 97%; height: 150px; padding-top: 30px; position: absolute; left: 42px; top: 20px;
     text-align: center; font-size: 27px;}
 
 .infoToMap .tipbox{width: 300px; display: flex; justify-content: center; align-items: center; position: absolute; left: 534.2px; top: 187px;
@@ -40,7 +41,7 @@
 .infoToMap .tipbox p{text-align: left; font-size: 23px; font-weight: 800; }
 .infoToMap .tipbox p a{text-decoration: none; color: #000;}
 .infoToMap .tipbox p a:hover{color: gray;}
-.infoToMap .tipbox .arrow{width: 50px; font-size: large; }
+.infoToMap .tipbox #angleright{width: 50px; font-size: 20px; position: absolute; left: 320px; top: 18px;}
 
 .left_box{width: 678.8px; height: 377px; position: absolute; left: 40px; top: 277px; 
     border: 0.5px solid #1d1d1f; border-radius: 20px; }
@@ -53,7 +54,7 @@
 .left_box .box_weather .topM{width: 300px; height: 40px; background-color: white; position:absolute; left: 30px; top: 10px;
     text-align: left; border: 2px solid #1d1d1f; border-radius: 16px; padding: 8px 50px;}
 .left_box .box_weather .topM p{width: 100px; color: #7A7D84; font-size: 30px; display: flex; position: absolute;}
-.left_box .box_weather .arrow2{width:30px; position: absolute; left: 260px; top:5px; color: #464649;}
+.left_box .box_weather #angledown{width:30px; position: absolute; left: 300px; top:10px; color: #464649;}
 
 .left_box .box_weather .bottom_weather{width: 400px; height: 150px; background-color: #e8e8e8;
     border: 1px solid #1d1d1f; border-radius: 16px; position: absolute; left: 30px; top: 68px;}
@@ -68,18 +69,24 @@
     font-size: 30px; font-weight: 600; text-align: center;}
 .rightbox .imgLocation img{width: 430px; height: 250px;}
 .rightbox .imgLocation{position: absolute; left:120px; top: 90px;}
-.rightbox .iconarrow{position: absolute; left: 200px; top: 290px; width: 400px; font-size: 40px;}
+.rightbox #circleinfo{position: absolute; left: 490px; top: 285px; width: 400px; font-size: 40px;}
 
 /*====== section - attraction ============*/
 .attraction{width: 1440px; height: 385px; position: relative;}
 .attraction h2{position: absolute; left: 58px; top: 15px; font-size: 43px;}
+
+.attraction .searchWord{width: 300px; height: 200px; text-align: center;  position: absolute; left: 1080px; top: 30px; }
+.searchWord label{position: relative;}
+.searchWord input[type="text"]{background-color: #dddddd; padding: 10px; 
+    font-size: 20px; filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25)); border: none; border-radius: 20px;}
+.searchWord button{background: none; border: none; position: absolute; left: 130px; top: 2px;}
 
 .attraction .first_attr{position: absolute; left: 40px; top: 100px; width: 375px; height: 300px; 
     border: 1px solid #1d1d1f;  border-top-left-radius: 40px; border-top-right-radius: 40px; 
     box-shadow: 0 -5px 0 0 #000;}
 
 .attraction .first_attr .attr1T p{width: 375px; font-size: 30px; padding-left: 30px; position: absolute; top: 40px;}
-.attraction .first_attr .attr1T .iconX{width: 40px;  position: absolute; left: 300px; top: 5px;} 
+.attraction .first_attr .attr1T #xmark1{width: 40px;  position: absolute; left: 320px; top: 5px;} 
 .attraction .first_attr .attr1 img{width: 375px; height: 211px; position: absolute; top: 87px; object-fit: cover; 
     border-top: 3px solid #000;}
 
@@ -87,8 +94,8 @@
     border: 1px solid #1d1d1f;  border-top-left-radius: 40px; border-top-right-radius: 40px;
     box-shadow: 0 -5px 0 0 #000;}
 
-.attraction .second_attr .attr2T p{width: 375px; font-size: 30px; padding-left: 30px; position: absolute; top: 40px;}
-.attraction .second_attr .attr2T .iconX{width: 40px;  position: absolute; left: 300px; top: 5px;} 
+.attraction .second_attr .attr2T p{width: 375px; font-size: 30px; padding-left: 30px; position: absolute; top: 35px;}
+.attraction .second_attr .attr2T #xmark2{width: 40px;  position: absolute; left: 320px; top: 10px;} 
 .attraction .second_attr .attr2 img{width: 375px; height: 211px; position: absolute; top: 87px; object-fit: cover; 
     border-top: 3px solid #000;}
 
@@ -96,7 +103,7 @@
     border: 1px solid #1d1d1f;  border-top-left-radius: 40px; border-top-right-radius: 40px;
     box-shadow: 0 -5px 0 0 #000;}
 .attraction .third_attr .attr3T p{width: 375px; font-size: 30px; padding-left: 30px; position: absolute; top: 40px;}
-.attraction .third_attr .attr3T .iconX{width: 40px;  position: absolute; left: 300px; top: 5px;} 
+.attraction .third_attr .attr3T #xmark3{width: 40px;  position: absolute; left: 320px; top: 5px;} 
 .attraction .third_attr .attr3 img{width: 375px; height: 211px; position: absolute; top: 87px; object-fit: cover; 
     border-top: 3px solid #000;}
 

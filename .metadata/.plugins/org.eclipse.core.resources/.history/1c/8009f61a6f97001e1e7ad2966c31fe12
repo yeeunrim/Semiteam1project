@@ -1,0 +1,42 @@
+/* header의 메뉴 클릭 시, bottomMenu(회색배경, 하위카테고리) 나옴 */
+$(document).ready(function() {
+    // 메인 메뉴 항목에 마우스 오버 이벤트 추가
+    $('#mainMenu ul li').mouseenter(function() {
+        // 하위 메뉴 및 bottomMenu 보이기
+        $(this).find('.test').css('display', 'block');
+        $('#bottomMenu').css('display', 'block');
+    }).mouseleave(function() {
+        // 마우스가 벗어나면 하위 메뉴 및 bottomMenu 숨기기
+        $(this).find('.test').css('display', 'none');
+        $('#bottomMenu').css('display', 'none');
+    });
+});
+
+/* 스크롤 40px기준으로, 상단문구 숨김 및 상단 메뉴 위치 조정 */
+let lastScrollTop = 0;
+    const scrollThreshold = 40;
+
+    $(window).on('scroll', function() {
+        let currentScroll = $(this).scrollTop();
+        let welcomeHeight = $('#welcome').outerHeight();
+
+        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+            // 아래로 40px 이상 스크롤
+            $('#welcome').css('transform', 'translateY(-' + welcomeHeight + 'px)');
+            $('#topMenu').css('top', '0');
+            $('#bottomMenu').css('top', '0');
+        } else if (currentScroll < lastScrollTop && currentScroll < scrollThreshold) {
+            // 위로 40px 이상 스크롤
+            $('#welcome').css('transform', '');
+            $('#topMenu').css('top', welcomeHeight + 'px');
+            $('#bottomMenu').css('top', welcomeHeight + 'px');
+        }
+        lastScrollTop = currentScroll;
+    });
+
+/* ==================================================================================================== */
+/*                          여기까지 header, footer 스타일                                                   */
+/* ==================================================================================================== */
+
+
+

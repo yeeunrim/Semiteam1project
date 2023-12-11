@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<link rel="stylesheet" href="../resources/css/style.css">
+</head>
+<body>
+	<jsp:include page="../header.jsp" />
+	<section id="loginform">
+		
+		<div id="loginform_box">
+			<h2>로그인</h2>
+			<input type="email" id="email" name="email"
+					placeholder="이메일">
+			<input type="password" id="passwd" name="passwd"
+					placeholder="비밀번호">
+			
+			<div class="loginform_checkbox">
+				<input type="checkbox"/>
+				<p>로그인상태유지</p>
+			</div>
+			
+			<div class="button">
+		    	<button type="button" onclick="">로그인</button>
+			</div>
+			
+			<div>
+				<a href="">회원가입</a>
+				<a href="">아이디 · 비밀번호 찾기</a>
+			</div>
+		</div>
+	
+	</section>
+	<jsp:include page="../footer.jsp" />
+</body>
+</html>

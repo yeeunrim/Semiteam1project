@@ -1,0 +1,48 @@
+/* header의 메뉴 클릭 시, bottomMenu(회색배경, 하위카테로기 나오도록 구현) */
+$(document).ready(function() {
+    // 메인 메뉴 항목에 마우스 오버 이벤트 추가
+    $('#mainMenu ul li').mouseenter(function() {
+        // 하위 메뉴 및 bottomMenu 보이기
+        $(this).find('.test').css('display', 'block');
+        $('#bottomMenu').css('display', 'block');
+    }).mouseleave(function() {
+        // 마우스가 벗어나면 하위 메뉴 및 bottomMenu 숨기기
+        $(this).find('.test').css('display', 'none');
+        $('#bottomMenu').css('display', 'none');
+    });
+});
+
+let lastScrollTop = 0;
+
+$(window).on('scroll', function() {
+    let currentScroll = $(this).scrollTop();
+    let welcomeHeight = $('#welcome').outerHeight();
+
+    if (currentScroll > lastScrollTop) {
+        // 아래로 스크롤
+        $('#welcome').css('transform', 'translateY(-' + welcomeHeight + 'px)');
+        $('#topMenu').css('top', '0');
+        $('#bottomMenu').css('top', '0'); // topMenu 아래에 bottomMenu 위치
+    } else {
+        // 위로 스크롤
+        $('#welcome').css('transform', '');
+        $('#topMenu').css('top', welcomeHeight + 'px');
+        $('#bottomMenu').css('top', welcomeHeight + 'px'); // 원래 위치로 되돌리기
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // iOS에서 음수가 되는 것을 방지
+});
+
+
+$(document).ready(function(){
+    $('#main_pictures').on('mousedown', function(e){
+        let startX = e.pageX;
+        let scrollLeft = this.scrollLeft;
+        $(this).on('mousemove', function(e){
+            e.preventDefault();
+            let x = e.pageX - startX;
+            this.scrollLeft = scrollLeft - x;
+        });
+    }).on('mouseup', function(){
+        $(this).off('mousemove');
+    });
+});

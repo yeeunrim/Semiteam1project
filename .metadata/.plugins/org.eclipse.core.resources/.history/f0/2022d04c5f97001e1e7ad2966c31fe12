@@ -1,0 +1,9 @@
+package semi;
+
+public class Test_ExchangeRate {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

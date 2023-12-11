@@ -1,0 +1,47 @@
+package controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("*.do")
+public class MainController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	/*
+	 * public MainController() { super(); }
+	 */
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+		
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//한글 인코딩
+		request.setCharacterEncoding("utf-8");
+		//응답할 컨텐츠 유형
+		response.setContentType("text/html; charset=utf-8");
+		
+		// Jsoup 크롤링 코드...
+	    // 환율 정보를 리스트나 배열에 저장
+	    ArrayList<String> rates = new ArrayList<String>();
+	    rates.add("환율1");
+	    rates.add("환율2");
+	    rates.add("환율3");
+	    rates.add("환율4");
+
+	    // JSP에 데이터를 전달
+	    request.setAttribute("rates", rates);
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+	    dispatcher.forward(request, response);
+	}
+	}
+
+}

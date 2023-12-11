@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 가입1</title>
+<link rel="stylesheet" href="../resources/css/style.css">
+<script src="https://kit.fontawesome.com/630c352365.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../resources/js/main.js"></script>
+</head>
+<body>
+	<jsp:include page="../header.jsp" />
+	<section id="joinform01">
+	
+		<div id="joinform01_box">
+			<h2>약관 동의</h2>
+			<div class="joinform01_checkbox">
+				<input type="checkbox"/>
+				<p>이용약관, 개인정보 수집 및 이용에 모두 동의합니다.</p>
+				<span class="essential">(필수)</span>
+			</div>
+			<div>
+				<div class="joinform01_checkbox">
+					<input type="checkbox"/>
+					<p>개인정보 수집 및 이용 동의</p>
+					<span class="essential">(필수)</span>
+				</div>
+				<div class="joinform01_contentBox">
+				</div>
+			</div>
+			
+		</div>
+	
+	</section>
+	<jsp:include page="../footer.jsp" />
+</body>
+</html>

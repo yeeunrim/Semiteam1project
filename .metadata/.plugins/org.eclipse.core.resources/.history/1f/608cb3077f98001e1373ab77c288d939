@@ -77,40 +77,26 @@ $(document).ready(function() {
     });
 });
 
-
-
 $(document).ready(function() {
-    var $mainPictures = $('#main_pictures');
-    var $divs = $mainPictures.children('div');
-    var divWidth = $divs.first().outerWidth(true);
-    var totalWidth = divWidth * $divs.length;
+  var $slider = $('#main_pictures'); // 슬라이더 컨테이너
+  var $slides = $slider.children('div'); // 모든 슬라이더 아이템
+  var slideCount = $slides.length; // 슬라이더 아이템의 총 개수
+  var slideWidth = $slides.width(); // 각 슬라이더 아이템의 너비
+  var totalWidth = slideWidth * slideCount; // 전체 슬라이더의 너비
+  var currentIndex = 0; // 현재 슬라이더 인덱스
 
-    // 무한 루프를 위해 div 요소들을 복제하고 main_pictures에 추가
-    $divs.clone().appendTo($mainPictures);
-
-    // div들을 슬라이드하는 함수
-    function slideDivs() {
-        $mainPictures.animate({
-            scrollLeft: '+=' + divWidth
-        }, 1000, function() {
-            // 첫 번째 세트의 div들의 끝에 도달했는지 확인
-            if ($mainPictures.scrollLeft() >= totalWidth) {
-                $mainPictures.scrollLeft(0);
-            }
-        });
-    }
-
-    // 슬라이드를 위한 인터벌 설정
-    var slideInterval = setInterval(slideDivs, 2500);
-
-    // 선택적: 마우스오버 시 슬라이드 일시정지
-    $mainPictures.on('mouseover', function() {
-        clearInterval(slideInterval);
-    }).on('mouseout', function() {
-        slideInterval = setInterval(slideDivs, 2500);
+  // 슬라이더 아이템을 복제하여 무한 슬라이딩을 위한 준비
+  $slider.append($slides.clone().addClass('clone'));
+  
+  // 슬라이더 이동 함수
+  function moveSlider(index) {
+    $slider.animate({'left': -index * slideWidth}, 500, function() {
+      if (index >= slideCount) {
+        $slider.css('left', 0);
+        currentIndex = 0;
+      }
     });
-});
-
+  }
 
 /* ==================================================================================================== */
 /*                          joinform01                                                                    */

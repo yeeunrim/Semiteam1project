@@ -101,13 +101,13 @@ $(document).ready(function() {
     }
 
     // 슬라이드를 위한 인터벌 설정
-    var slideInterval = setInterval(slideDivs, 2500);
+    var slideInterval = setInterval(slideDivs, 3000);
 
     // 선택적: 마우스오버 시 슬라이드 일시정지
     $mainPictures.on('mouseover', function() {
         clearInterval(slideInterval);
     }).on('mouseout', function() {
-        slideInterval = setInterval(slideDivs, 2500);
+        slideInterval = setInterval(slideDivs, 3000);
     });
 });
 

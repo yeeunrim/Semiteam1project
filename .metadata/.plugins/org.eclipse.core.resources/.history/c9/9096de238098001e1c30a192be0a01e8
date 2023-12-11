@@ -77,41 +77,6 @@ $(document).ready(function() {
     });
 });
 
-
-
-$(document).ready(function() {
-    var $mainPictures = $('#main_pictures');
-    var $divs = $mainPictures.children('div');
-    var divWidth = $divs.first().outerWidth(true);
-    var totalWidth = divWidth * $divs.length;
-
-    // 무한 루프를 위해 div 요소들을 복제하고 main_pictures에 추가
-    $divs.clone().appendTo($mainPictures);
-
-    // div들을 슬라이드하는 함수
-    function slideDivs() {
-        $mainPictures.animate({
-            scrollLeft: '+=' + divWidth
-        }, 1000, function() {
-            // 첫 번째 세트의 div들의 끝에 도달했는지 확인
-            if ($mainPictures.scrollLeft() >= totalWidth) {
-                $mainPictures.scrollLeft(0);
-            }
-        });
-    }
-
-    // 슬라이드를 위한 인터벌 설정
-    var slideInterval = setInterval(slideDivs, 2500);
-
-    // 선택적: 마우스오버 시 슬라이드 일시정지
-    $mainPictures.on('mouseover', function() {
-        clearInterval(slideInterval);
-    }).on('mouseout', function() {
-        slideInterval = setInterval(slideDivs, 2500);
-    });
-});
-
-
 /* ==================================================================================================== */
 /*                          joinform01                                                                    */
 /* ==================================================================================================== */

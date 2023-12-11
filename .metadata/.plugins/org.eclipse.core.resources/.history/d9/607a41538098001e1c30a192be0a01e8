@@ -107,7 +107,7 @@ $(document).ready(function() {
     $mainPictures.on('mouseover', function() {
         clearInterval(slideInterval);
     }).on('mouseout', function() {
-        slideInterval = setInterval(slideDivs, 2500);
+        slideInterval = setInterval(slideDivs, 3000);
     });
 });
 

@@ -1,0 +1,165 @@
+/* 국내 여행 메인페이지 */
+/* main.html */
+
+@charset "UTF-8";
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+*{margin: 0; padding: 0; font-family: NanumSquareRound; position: relative;}
+ul li{list-style: none;}
+a{text-decoration: none; color: black;}
+
+/* header 스타일 */
+header{width: 100%; margin : 0 auto;}
+header #welcome{text-align: center; border-bottom: 1px solid black;}
+header #welcome p{padding: 10px 0; font-size: 13px;}
+header #topMenu{display: flex; width: 100%;}
+
+/* sideMenu의 고정가로길이 270px 외의 나머지 공간에 mainMenu 가로 길이가 꽉 참. 
+   웹상의 가로 길이에 따라 가로길이 조정됨 */
+header #mainMenu{flex-grow: 1; line-height: 80px;}
+header #mainMenu ul{display: flex; justify-content: space-around;}
+header #mainMenu ul li a{font-size: 20px; color: black;}
+header #sideMenu{width: 285px;}
+header #sideMenu ul{line-height: 25px; display: flex; justify-content: flex-end;}
+header #sideMenu li{font-size: 13px; width: 95px;}
+header #sideMenu li a{display:flex; justify-content: center;}
+header #sideMenu li i{line-height: 25px;}
+header #sideMenu #sideMenu_1 a{padding-top: 15px;}
+header #sideMenu #sideMenu_2 a{padding-bottom: 15px;}
+
+/* header 스타일 - 하위 카테고리 */
+header #mainMenu ul ul{display: none; flex-direction: column; position: absolute;}
+header #mainMenu ul ul li{line-height: 42px;}
+header #mainMenu ul ul li a{color: rgb(94, 94, 94);}
+header ul ul #a_1{padding-left: 40px;}
+header ul ul #a_2{padding-left: 20px;}
+header #bottomMenu {display: none; width: 100%; height: 175px;
+	background-color: rgba(238, 238, 238, 0.8);}
+
+/* header 스타일 - 하위 카테고리 - hover */
+/* mainMenu에 마우스 올릴 시 하위메뉴 보이기 */
+header #mainMenu ul li:hover > ul {display: flex;} 
+header #mainMenu ul li a:hover {text-decoration: line-through;}
+header #mainMenu ul ul a:hover{color: black;}
+header #sideMenu a:hover{text-decoration: line-through;}
+
+
+/* body */
+section{height: 2200px;}
+
+/* 검색창 부분 */
+#mainPicture{width: 100%; height: 25%; position: relative;}
+#mainPicture img{width: 100%; height: 100%; position: absolute;}
+#mainPicture .searchTravel{background-color: hsl(0, 0%, 80%, 0.7); filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25)); 
+  position: absolute; left: 20%; top: 30%; width: 60%; height: 56%;}
+#mainPicture .searchTravel h3{color: #212020; font-size: 3.5vw; text-align: center;
+  width: 100%; margin: 0 auto; position: absolute; top: 23%;}
+#mainPicture .searchWord{width: 100%; margin: 0 auto; text-align: center;
+  position: absolute; top: 60%;} 
+#mainPicture .searchWord input[type="text"]{background-color: #dddddd; padding: 10px;
+  font-size: 1vw; filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));}
+#mainPicture .searchWord button{background: none; border: none; align-items: center; margin-left: 5px;}
+
+/* 도시 클릭 */
+#searchCity{background-color:#d0cfcf;
+  width: 100%; height: 20%;
+  z-index: -100; position: relative;}
+.searchCityBox{background-color: rgb(228, 227, 227); filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+  margin: 0 auto; width: 86%; height: 66%;
+  position: absolute; left: 7%; top: 15%; 
+  height: calc(65vh - 230px);}
+.searchCityBox p{width: 100%; margin: 0 auto; text-align: center; 
+  position: absolute; top: 15%; font-size: 3vw;}
+.searchCityBox table{border-collapse: collapse; border: 1px solid dimgray; margin: 0 5%; 
+  position: absolute; top: 40%; height: calc(40vh - 250px); background-color: whitesmoke;}
+.searchCityBox table tr{border-bottom: 1px solid dimgray;}
+.searchCityBox table tr td{border-bottom: 1px solid dimgray; text-align: center; 
+  width: 200px; padding: 1% 0.5%; font-size: 1.3vw; color: #707070;}
+.searchCityBox table tr:nth-of-type(1) td:nth-of-type(1){border-right: 1px solid dimgray;}
+
+.dropdown{position : relative; display : inline-block;}
+
+.dropbtn_icon{font-family : 'Material Icons';}
+.dropbtn{display : block;
+  border: none; background: none;
+  font-weight: 400; color : rgb(124, 124, 124);
+  padding : 12px; width : 100px;
+  text-align: left;
+  position : relative; cursor : pointer; z-index :1;}
+.dropdown-content{display : none;
+  background-color: whitesmoke;
+  min-width : 50px; height : 160px;
+  overflow : scroll;
+  box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);}
+.dropdown-content a{text-decoration: none;}
+
+.dropdown-content::-webkit-scrollbar{width : 5px; height : 10px;}
+.dropdown-content::-webkit-scrollbar-thumb{border-radius : 2px;
+  background-color :rgb(194, 194, 194)}
+
+.dropdown-content div{display : block;
+  text-decoration : none; padding : 12px 20px;
+  color : rgb(37, 37, 37); font-size: 13px;}
+.dropdown-content div:hover{background-color: rgb(201, 199, 199);}
+
+.dropdown-content.show{display : block;}
+
+
+
+
+
+
+/* .searchCityBox table tr td #dropdown button{background: none; border: none;}
+
+.searchCityBox #dropdown-item{display: block;}
+.searchCityBox #dropdown-item table{border-collapse: collapse;}
+.searchCityBox #dropdown-item table tr{background-color: whitesmoke;}
+.searchCityBox #dropdown-item table tr td{border: 1px solid dimgray; background: whitesmoke;} */
+
+
+/* .searchCityBox table tr td #dropdown{display: inline-block;}
+.searchCityBox table tr td #dropdown-item{display: block; }
+.searchCityBox table tr td #dropdown-item a{display: inline-block; } */
+
+
+
+/* 요즘 많이 찾는 지역 - 기본 css */
+#visitCity{width: 100%; height: 16.4%;}
+#visitCity p{font-size: 2vw; color: #212020; padding: 20px 0 0 20px;}
+.row align-items-start{margin: 0 auto; align-items: center;}
+.col{padding: 0; margin: 0 auto; align-items: center;}
+/*
+#visitCity_image{display: flex; margin: 1.5% 0 0 0;}
+.image_1, .image_2, .image_3, .image_4{margin-right: 33px;}
+.image_1{margin-left: 33px;}
+.image_detail{width: 315px; height: 282px;} */
+/* 요즘 많이 찾는 지역 - hover css */
+#visitCity_image img:hover .image_datail{background-color: hsl(0, 0%, 80%, 0.7);}
+
+#popularCity{width: 100%; height: 23%; border: 1px solid black;}
+#popularCity p{font-size: 2vw; color: #212020; margin: 20px 0 0 20px;}
+
+/* footer 스타일 */
+footer{width: 100%; line-height: 70px; display: flex; 
+	justify-content: space-between; align-items: center;}
+footer p{flex: 1; font-size: 40px; text-align: center;}
+footer a{font-size: 14px;}
+footer li{margin: 0 5px;}
+#footerMenu_left, #footerMenu_right{display: flex;}
+#footerMenu_left{width: 40%;}
+#footerMenu_right{width: 40%; justify-content: flex-end;}
+
+/* main 스타일 */
+#container {position: absolute; top: 0; left: 0; 
+  width: 100%; z-index: -1;}
+#main #main_img{width: 100%; height: 560px;}
+#main #main_img img {width: 100%; height: 100%; object-fit: cover;}
+/* main 스타일 - 도트 슬라이드 */
+#main #main_img #dots{width: 15px; background-color: blanchedalmond;}
+

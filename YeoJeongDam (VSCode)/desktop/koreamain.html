@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국내 여행 | 메인</title>
+  <link rel="stylesheet" href="../resources/css/bootstrap.css">
+  <link rel="stylesheet" href="../resources/header.css">
+  <link rel="stylesheet" href="css/koreamain.css">
+  <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
+ 
+</head>
+<body>
+  <header>
+		<div id="welcome">
+			<p>All travel information can be found in the YeoJeongDam !</p>
+		</div>
+		
+		<nav>
+			<div id="topMenu">
+				<div id="mainMenu">
+					<ul>
+						<li><a href="#">홈</a></li>
+						<li><a href="#">여행지</a>
+							<ul>
+								<li><a href="#">국내</a></li>
+								<li><a href="#">여행</a></li>
+								<li><a href="#">숙소 / 교통</a></li>
+							</ul>
+						</li>
+						<li><a href="#">커뮤니티</a>
+							<ul>
+								<li><a href="#">여행 후기</a><a href="#" id="a_1">Q&A</a></li>
+								<li><a href="#">동행자 찾기</a><a href="#" id="a_2">공지사항</a></li>
+								<li><a href="#">나의 계획</a></li>
+							</ul>
+						</li>
+						<li><a href="#">여정담</a>
+							<ul>
+								<li><a href="#">여정담 정보</a></li>
+								<li><a href="#">고객센터</a></li>
+								<li><a href="#">멤버쉽</a></li>
+								<li><a href="#">자주하는 질문</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="sideMenu">
+					<ul id="sideMenu_1">
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#"><i class="fa-solid fa-earth-americas"></i>&nbsp;South Korea</a></li>
+					</ul>
+					<ul id="sideMenu_2">
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">찜한 목록(0)</a></li>
+						<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
+					</ul>
+				</div>
+			</div> <!-- <div id="topMenu"> 끝 -->
+			
+			<div id="bottomMenu">
+				
+			</div>
+		</nav>
+  </header>
+
+  <div id="container">
+
+    <section>
+      <div id="mainPicture">
+        <img src="images/jeju-winter.jpg" alt="메인 화면">
+        <div class="searchTravel">
+          <h3>어디로 여행가시나요?</h3>
+          <div class="searchWord">
+            <input type="text" placeholder="국가명, 도시명으로 검색하세요. (추천 도시 : 홍콩, 뉴욕, 제주도)" size="45%">
+            <button type="button"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #606060;"></i></button>
+          </div>
+        </div>
+      </div>
+  
+      <div id="searchCity">
+        <div class="searchCityBox"> 
+          <p>국내 여행지</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>주요 도시</td>
+                <td>서울</td>
+                <td>제주</td>
+                <td>강릉</td>
+                <td>부산</td>
+                <td>포항</td>
+                <td>춘천</td>
+                <td>속초</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="dropdown">
+                    <button class="dropbtn">
+                      <span class="dropbtn_content">강원도</span>
+                      <span class="dropbtn_click" style="font-family: Material Icons; font-size : 20px; color : #707070; float:right;"
+                        onclick="dropdown()">arrow_drop_down<i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i></span>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#"><div class="city">원주</div></a>
+                      <a href="#"><div class="city">춘천</div></a>
+                      <a href="#"><div class="city">강릉</div></a>
+                      <a href="#"><div class="city">동해</div></a>
+                      <a href="#"><div class="city">속초</div></a>
+                      <a href="#"><div class="city">삼척</div></a>
+                      <a href="#"><div class="city">태백</div></a>
+                      <a href="#"><div class="city">홍천</div></a>
+                      <a href="#"><div class="city">철원</div></a>
+                      <a href="#"><div class="city">횡성</div></a>
+                      <a href="#"><div class="city">평창</div></a>
+                      <a href="#"><div class="city">정선</div></a>
+                      <a href="#"><div class="city">영월</div></a>
+                      <a href="#"><div class="city">인제</div></a>
+                      <a href="#"><div class="city">고성</div></a>
+                      <a href="#"><div class="city">양양</div></a>
+                      <a href="#"><div class="city">화천</div></a>
+                      <a href="#"><div class="city">양구</div></a>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div id="dropdown">
+                    경기도
+                    <button onclick="show()">
+                      <i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i>
+                    </button>
+                    <div id="dropdown-item">
+                      <a href="#">수원</a>
+                      <a href="#">용인</a>
+                      <a href="#">고양</a>
+                      <a href="#">성남</a>
+                      <a href="#">화성</a>
+                      <a href="#">부천</a>
+                      <a href="#">남양주</a>
+                      <a href="#">안산</a>
+                      <a href="#">평택</a>
+                      <a href="#">안양</a>
+                      <a href="#">시흥</a>
+                      <a href="#">파주</a>
+                      <a href="#">김포</a>
+                      <a href="#">의정부</a>
+                      <a href="#">광주</a>
+                      <a href="#">하남</a>
+                      <a href="#">광명</a>
+                      <a href="#">군포</a>
+                      <a href="#">양주</a>
+                      <a href="#">오산</a>
+                      <a href="#">이천</a>
+                      <a href="#">안산</a>
+                      <a href="#">구리</a>
+                      <a href="#">의왕</a>
+                      <a href="#">포천</a>
+                      <a href="#">여주</a>
+                      <a href="#">동두천</a>
+                      <a href="#">과천</a>
+                      <a href="#">양평</a>
+                      <a href="#">가평</a>
+                      <a href="#">연천</a>
+                    </div>
+                  </div>
+                </td>
+                <td>서울</td>
+                <td>인천</td>
+                <td>대전</td>
+                <td>
+                  <div id="dropdown">
+                    충청남도
+                    <button onclick="show()">
+                      <i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i>
+                    </button>
+                    <div id="dropdown-item">
+                      <a href="#">천안</a>
+                      <a href="#">공주</a>
+                      <a href="#">보령</a>
+                      <a href="#">아산</a>
+                      <a href="#">서산</a>
+                      <a href="#">논산</a>
+                      <a href="#">계룡</a>
+                      <a href="#">당진</a>
+                      <a href="#">금산</a>
+                      <a href="#">부여</a>
+                      <a href="#">서천</a>
+                      <a href="#">청양</a>
+                      <a href="#">홍성</a>
+                      <a href="#">예산</a>
+                      <a href="#">태안</a>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div id="dropdown">
+                    충청북도
+                    <button onclick="show()">
+                      <i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i>
+                    </button>
+                    <div id="dropdown-item">
+                      <a href="#">청주</a>
+                      <a href="#">충주</a>
+                      <a href="#">제천</a>
+                      <a href="#">보은</a>
+                      <a href="#">옥천</a>
+                      <a href="#">영동</a>
+                      <a href="#">증평</a>
+                      <a href="#">진천</a>
+                      <a href="#">괴산</a>
+                      <a href="#">음성</a>
+                      <a href="#">단양</a>
+                    </div>
+                  </div>
+                </td>
+                <td>제주도</td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="dropdown">
+                    전라북도
+                    <button onclick="show()">
+                      <i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i>
+                    </button>
+                    <div id="dropdown-item">
+                      <a href="#">전주</a>
+                      <a href="#">익산</a>
+                      <a href="#">군산</a>
+                      <a href="#">정읍</a>
+                      <a href="#">남원</a>
+                      <a href="#">김제</a>
+                      <a href="#">무주</a>
+                      <a href="#">완주</a>
+                      <a href="#">부안</a>
+                      <a href="#">고창</a>
+                      <a href="#">임실</a>
+                      <a href="#">순창</a>
+                      <a href="#">진안</a>
+                      <a href="#">장수</a>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div id="dropdown">
+                    전라남도
+                    <button onclick="show()">
+                      <i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i>
+                    </button>
+                    <div id="dropdown-item">
+                      <a href="#">목포</a>
+                      <a href="#">여수</a>
+                      <a href="#">순천</a>
+                      <a href="#">나주</a>
+                      <a href="#">광양</a>
+                      <a href="#">담양</a>
+                      <a href="#">곡성</a>
+                      <a href="#">구례</a>
+                      <a href="#">고흥</a>
+                      <a href="#">보성</a>
+                      <a href="#">화순</a>
+                      <a href="#">장흥</a>
+                      <a href="#">강진</a>
+                      <a href="#">해남</a>
+                      <a href="#">영암</a>
+                      <a href="#">무안</a>
+                      <a href="#">함평</a>
+                      <a href="#">영광</a>
+                      <a href="#">장성</a>
+                      <a href="#">완도</a>
+                      <a href="#">진도</a>
+                      <a href="#">신안</a>
+                    </div>
+                  </div>
+                </td>
+                <td>광주</td>
+                <td>울산</td>
+                <td>
+                  <div id="dropdown">
+                    경상북도
+                    <button onclick="show()">
+                      <i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i>
+                    </button>
+                    <div id="dropdown-item">
+                      <a href="#">포항</a>
+                      <a href="#">경주</a>
+                      <a href="#">김천</a>
+                      <a href="#">안동</a>
+                      <a href="#">구미</a>
+                      <a href="#">영주</a>
+                      <a href="#">영천</a>
+                      <a href="#">상주</a>
+                      <a href="#">문경</a>
+                      <a href="#">경산</a>
+                      <a href="#">의성</a>
+                      <a href="#">청송</a>
+                      <a href="#">영양</a>
+                      <a href="#">영덕</a>
+                      <a href="#">청도</a>
+                      <a href="#">고령</a>
+                      <a href="#">성주</a>
+                      <a href="#">칠곡</a>
+                      <a href="#">예천</a>
+                      <a href="#">봉화</a>
+                      <a href="#">울진</a>
+                      <a href="#">울릉</a>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div id="dropdown">
+                    경상남도
+                    <button onclick="show()">
+                      <i class="fa-solid fa-caret-down fa-lg" style="color: #707070;"></i>
+                    </button>
+                    <div id="dropdown-item">
+                      <a href="#">창원</a>
+                      <a href="#">김해</a>
+                      <a href="#">양산</a>
+                      <a href="#">진주</a>
+                      <a href="#">거제</a>
+                      <a href="#">통영</a>
+                      <a href="#">사천</a>
+                      <a href="#">밀양</a>
+                      <a href="#">함안</a>
+                      <a href="#">거창</a>
+                      <a href="#">창녕</a>
+                      <a href="#">고산</a>
+                      <a href="#">창녕</a>
+                      <a href="#">고성</a>
+                      <a href="#">하동</a>
+                      <a href="#">합천</a>
+                      <a href="#">남해</a>
+                      <a href="#">함양</a>
+                      <a href="#">산청</a>
+                      <a href="#">의령</a>
+                    </div>
+                  </div>
+                </td>
+                <td>부산</td>
+                <td>대구</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <script src="js/koreamain.js"></script>
+
+      <!-- <div id="visitCity">
+        <p>요즘 많이 찾는 지역</p>
+        
+        <div id="visitCity_image"> 
+          <div class="row my-4">
+            <div class="col-4">
+              <img src="images/gangneung.png" alt="강릉">
+            </div>
+            <div class="col-4">
+              <img src="images/seoul.png" alt="서울">
+            </div>
+            <div class="col-4">
+              <img src="images/jeju.png" alt="제주">
+            </div>
+            <div class="col-4">
+              <img src="images/busan.png" alt="부산">
+            </div>
+          </div> -->
+
+         
+          <!-- <div class="image_1">
+            <img src="images/gangneung.png" alt="강릉">
+            <div class="image_datail">
+              <p>강릉<br>상세보기</p>
+            </div>
+          </div>
+  
+          <div class="image_2">
+            <img src="images/seoul.png" alt="서울">
+          </div>
+          
+          <div class="image_3">
+            <img src="images/jeju.png" alt="제주">
+          </div>
+
+          <div class="image_4">
+            <img src="images/busan.png" alt="부산">
+          </div> -->
+        </div>
+      </div>
+
+      <div id="popularCity">
+        <p>요즘 인기 있는 공간</p>
+      </div> 
+
+    </section>
+
+    <footer>
+      <ul id="footerMenu_left">
+        <li><a href="">개인정보 처리방침</a></li>
+        <li><a href="">이용약관</a></li>
+        <li><a href="">자주하는 질문</a></li>
+        <li><a href="">고객센터</a></li>
+      </ul>
+      
+      <p>여정담</p>
+      
+      <ul id="footerMenu_right">
+        <li><a href="">인스타그램</a></li>
+        <li><a href="">© 여정담 2023.website by 여정담</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>

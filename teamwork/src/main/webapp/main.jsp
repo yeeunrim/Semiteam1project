@@ -116,15 +116,15 @@
 						<p class="main_community_content_title">동행자 찾기</p>
 						<div class="main_community_content">	
 							<h3>인기글</h3>
-							<p><a href="#">스페인 - 바르셀로나 여행자 1명 (여) 구해</a>
-							<p><a href="#">12/5 ~ 12/12 부분 동행 구해요.</a>
-							<p><a href="#">축구 좋아하시는 분, 같이 축구 보러 갑시다</a>
+							<c:forEach items="${likeList1}" var="like1">
+								<p><a href="board1view.do?bno1=${like1.bno1}">${like1.title1 }</a></p>
+							</c:forEach>
 						</div>
 						<div class="main_community_content" id="main_community_content_bottom">
 							<h3>최신글</h3>	
-							<p><a href="#">스페인 - 바르셀로나 여행자 1명 (여) 구해</a>
-							<p><a href="#">12/5 ~ 12/12 부분 동행 구해요.</a>
-							<p><a href="#">축구 좋아하시는 분, 같이 축구 보러 갑시다</a>
+							<c:forEach items="${boardList1}" var="board1">
+								<p><a href="board1view.do?bno1=${board1.bno1}">${board1.title1 }</a></p>
+							</c:forEach>
 						</div>
 					</div>
 					<div id="main_community_box">
@@ -146,15 +146,15 @@
 						<p class="main_community_content_title">나의 계획</p>
 						<div class="main_community_content">
 							<h3>인기글</h3>
-							<p><a href="#">요르단 여행 일정 (4박 5일)</a>
-							<p><a href="#">북유럽 여행 일정 (30박 32일)</a>
-							<p><a href="#">국내 배낭 여행 (20일)</a>
+							<c:forEach items="${likeList2}" var="like">
+								<p><a href="board2view.do?bno2=${like.bno2}">${like.title2 }</a></p>
+							</c:forEach>
 						</div>
 						<div class="main_community_content" id="main_community_content_bottom">
 							<h3>최신글</h3>	
-							<p><a href="#">요르단 여행 일정 (4박 5일)</a>
-							<p><a href="#">북유럽 여행 일정 (30박 32일)</a>
-							<p><a href="#">국내 배낭 여행 (20일)</a>
+							<c:forEach items="${boardList2}" var="board">
+								<p><a href="board2view.do?bno2=${board.bno2}">${board.title2 }</a></p>
+							</c:forEach>
 						</div>
 					</div>
 				</div>

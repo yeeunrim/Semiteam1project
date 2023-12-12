@@ -290,6 +290,8 @@ public class BoardDAO {
 				b.setHit(rs.getInt("hit"));
 				b.setFilename(rs.getString("filename"));
 				b.setId(rs.getString("id"));
+				b.setReply_count(rs.getInt("reply_count"));
+				b.setLike_count(rs.getInt("like_count"));
 				
 				boardList.add(b); //list에 b 객체 저장함
 			}

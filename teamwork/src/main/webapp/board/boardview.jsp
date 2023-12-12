@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 상세보기</title>
+<title>여행 후기 - 여정담</title>
 <script src="https://kit.fontawesome.com/69798321c6.js"></script>
 <link rel="stylesheet" href="../resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

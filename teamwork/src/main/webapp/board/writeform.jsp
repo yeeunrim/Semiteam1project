@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글쓰기 폼</title>
+<title>여행 후기 - 여정담</title>
 <link rel="stylesheet" href="/resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../resources/js/main.js"></script>

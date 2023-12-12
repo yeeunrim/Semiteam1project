@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -20,6 +21,24 @@ import blike.Blike;
 import blike.BlikeDAO;
 import board.Board;
 import board.BoardDAO;
+import board1.Blike1;
+import board1.Blike1DAO;
+import board1.Board1;
+import board1.Board1DAO;
+import board1.Reply1;
+import board1.Reply1DAO;
+import board2.Blike2;
+import board2.Blike2DAO;
+import board2.Board2;
+import board2.Board2DAO;
+import board2.Reply2;
+import board2.Reply2DAO;
+import board3.Blike3;
+import board3.Blike3DAO;
+import board3.Board3;
+import board3.Board3DAO;
+import board3.Reply3;
+import board3.Reply3DAO;
 import member.Member;
 import member.MemberDAO;
 import notice.NLikeDAO;
@@ -37,6 +56,15 @@ public class MainController extends HttpServlet {
 	BoardDAO bDAO;
 	ReplyDAO rDAO;
 	BlikeDAO lDAO;
+	Board1DAO b1DAO;
+	Reply1DAO r1DAO;
+	Blike1DAO l1DAO;
+	Board2DAO b2DAO;
+	Reply2DAO r2DAO;
+	Blike2DAO l2DAO;
+	Board3DAO b3DAO;
+	Reply3DAO r3DAO;
+	Blike3DAO l3DAO;
 	NoticeDAO nDAO;
 	NReplyDAO nrDAO;
 	NLikeDAO nlDAO;
@@ -46,6 +74,15 @@ public class MainController extends HttpServlet {
         bDAO = new BoardDAO();
         rDAO = new ReplyDAO();
         lDAO = new BlikeDAO();
+        b1DAO = new Board1DAO();
+        r1DAO = new Reply1DAO();
+        l1DAO = new Blike1DAO();
+        b2DAO = new Board2DAO();
+        r2DAO = new Reply2DAO();
+        l2DAO = new Blike2DAO();
+        b3DAO = new Board3DAO();
+        r3DAO = new Reply3DAO();
+        l3DAO = new Blike3DAO();
         nDAO = new NoticeDAO();
         nrDAO = new NReplyDAO();
         nlDAO = new NLikeDAO();
@@ -76,6 +113,8 @@ public class MainController extends HttpServlet {
 		
 
 		if(command.equals("/main.do")){ //http://localhost:8080/
+					
+			
 			//메인 페이지에 게시글 보내기
 			List<Board> boardList = bDAO.getBoardList();
 			request.setAttribute("boardList", boardList);			
@@ -96,6 +135,49 @@ public class MainController extends HttpServlet {
 				Board[] newLikes = {likeList.get(0), likeList.get(1), likeList.get(2)};
 				
 				request.setAttribute("likeList", newLikes);
+			}
+			
+			
+			//메인 페이지에 동행자 찾기글 보내기
+			List<Board1> boardList1 = b1DAO.getBoardList1();
+			request.setAttribute("boardList1", boardList1);			
+			
+			if(boardList1.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board1[] newBoards1 = {boardList1.get(0), boardList1.get(1), boardList1.get(2)};
+				
+				request.setAttribute("boardList1", newBoards1);
+			}
+
+			List<Board1> likeList1 = b1DAO.getLikeList1();
+			request.setAttribute("likeList1", likeList1);			
+			
+			if(likeList1.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board1[] newLikes1 = {likeList1.get(0), likeList1.get(1), likeList1.get(2)};
+				
+				request.setAttribute("likeList1", newLikes1);
+			}
+			
+			//메인 페이지에 나의 계획 보내기
+			List<Board2> boardList2 = b2DAO.getBoardList2();
+			request.setAttribute("boardList2", boardList2);			
+			
+			if(boardList2.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board2[] newBoards2 = {boardList2.get(0), boardList2.get(1), boardList2.get(2)};
+				
+				request.setAttribute("boardList2", newBoards2);
+			}
+			
+			List<Board2> likeList2 = b2DAO.getLikeList2();
+			request.setAttribute("likeList2", likeList2);			
+			
+			if(likeList2.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board2[] newLikes2 = {likeList2.get(0), likeList2.get(1), likeList2.get(2)};
+				
+				request.setAttribute("likeList2", newLikes2);
 			}
 			
 			
@@ -615,11 +697,715 @@ public class MainController extends HttpServlet {
 			
 		}
 		
+		//동행자 찾기 게시판
+		if(command.equals("/board1list.do")) {
+			//페이지 처리
+			String pageNum = request.getParameter("pageNum");
+			if(pageNum == null) { //페이지 번호를 클릭하지 않았을때 기본값
+				pageNum = "1";
+			}
+			
+			//현재 페이지
+			int currentPage = Integer.parseInt(pageNum);
+			//페이지당 게시글 수 - 10(pageSize)
+			int pageSize = 10;
+			//1페이지의 첫번째행(startRow) : 1번, 2페이지 : 11번, 3페이지 : 21
+			int startRow = (currentPage - 1) * pageSize + 1;
+			
+			//시작페이지(startPage) : 12행 - 2페이지, 22행 - 3페이지
+			int startPage = startRow / pageSize + 1;
+			
+			//종료(끝) 페이지 : 전체 게시글총수 / 페이지당 개수
+			int totalRow = b1DAO.getBoardCount1();
+			int endPage = totalRow / pageSize;
+			//페이지당 개수(10)로 나누어 떨어지지 않는 경우 코딩
+			endPage = (totalRow % pageSize == 0) ? endPage : endPage + 1;
+			
+			//검색 처리
+			String _field = request.getParameter("field"); //임시로 저장
+			String _kw = request.getParameter("kw");
+			
+			String field = "";
+			String kw = "";
+			
+			//null 처리
+			if(_field != null) { //필드값이 있는 경우
+				field = _field;
+			}else { //필드값이 없는 경우(디폴트)
+				field = "title1";
+			}
+			
+			if(_kw != null) { //검색어가 있는 경우
+				kw = _kw;
+			}else {  //검색어가 없는 경우
+				kw = "";
+			}
+		
+			List<Board1> boardList1 = b1DAO.getBoardList1(field, kw, currentPage);
+			
+			//모델로 생성
+			request.setAttribute("boardList1", boardList1);
+			request.setAttribute("page", currentPage);    //현재 페이지
+			request.setAttribute("startPage", startPage); //시작 페이지
+			request.setAttribute("endPage", endPage);     //종료 페이지
+			request.setAttribute("field", field);  //검색어
+			request.setAttribute("kw", kw);  //검색어
+			
+			List<Board1> likeList1 = b1DAO.getLikeList1();
+			request.setAttribute("likeList1", likeList1);			
+			
+			if(likeList1.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board1 l1 = likeList1.get(0);
+				Board1 l2 = likeList1.get(1);
+				Board1 l3 = likeList1.get(2);
+				
+				request.setAttribute("l1", l1);
+				request.setAttribute("l2", l2);
+				request.setAttribute("l3", l3);
+			}
+			
+			nextPage="/board1/board1list.jsp";
+		}else if(command.equals("/write1form.do")) {
+			nextPage="/board/write1form.jsp";
+		}else if(command.equals("/write1.do")) {
+			String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+			int maxSize = 10*1024*1024; //10MB
+			String encType = "utf-8";	//파일 이름 한글 인코딩
+			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+			
+			//5가지 인자
+			MultipartRequest multi = 
+					new MultipartRequest(request, realFolder, maxSize, 
+							encType, policy);
+			
+			
+			//폼 데이터 받기
+			String title = multi.getParameter("title");
+			String content = multi.getParameter("content");
+			
+			//세션 가져오기
+			String id = (String) session.getAttribute("sessionId");
+			
+			//file 파라미터 추출
+			Enumeration<?> files = multi.getFileNames();
+			String filename = "";
+			while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+				String userFilename = (String) files.nextElement();
+				
+				//실제 저장될 이름
+				filename = multi.getFilesystemName(userFilename);		
+			}
+			
+			
+			
+			//db에 저장
+			Board1 b = new Board1();
+			b.setTitle1(title);
+			b.setContent1(content);
+			b.setFilename1(filename);
+			b.setId(id);
+			
+			b1DAO.write1(b);
+					
+		}else if(command.equals("/board1view.do")){
+
+			//글 제목에서 요청한 글 번호 받기
+			int bno = Integer.parseInt(request.getParameter("bno1"));
+			
+			//글 상세보기 처리
+			Board1 board1 = b1DAO.getBoard1(bno);
+			
+			//댓글 목록 보기
+			List<Reply1> replyList1 = r1DAO.getReplyList1(bno);
+			
+			//모델 생성해서 뷰로 보내기
+			request.setAttribute("board1", board1);
+			request.setAttribute("replyList1", replyList1);
+			
+			// 좋아요 개수 가져오기
+			int likeCount = l1DAO.getLikeCountByBno1(bno);
+
+			// 모델 생성해서 뷰로 보내기
+			request.setAttribute("like_count", likeCount);
+
+			l1DAO.updateLikeCount1(bno);
+			b1DAO.updateReplyCount1(bno);
+			
+			nextPage="/board1/board1view.jsp";
+		}else if(command.equals("/deleteboard1.do")) {
+			int bno = Integer.parseInt(request.getParameter("bno1"));
+			
+			b1DAO.deleteboard1(bno);
+			
+			nextPage="/board1list.do";
+		}else if(command.equals("/updateboard1form.do")) {
+			int bno = Integer.parseInt(request.getParameter("bno1"));
+			
+			//글 상세보기 처리
+			Board1 board = b1DAO.getBoard1(bno);
+			
+			//모델 생성해서 뷰로 보내기
+			request.setAttribute("board", board);
+			
+			
+			nextPage="/board1/updateboard1form.jsp";
+		}else if(command.equals("/updateboard1.do")) {
+			//게시글 제목, 내용을 파라미터로 받음
+			int bno = Integer.parseInt(request.getParameter("bno1"));
+			String title = request.getParameter("title");
+			String content = request.getParameter("content");
+				
+			//db에 저장
+			Board1 b = new Board1();
+			b.setTitle1(title);
+			b.setContent1(content);
+			b.setBno1(bno);
+			
+			b1DAO.updateboard1(b);
+			
+		}
+		//댓글 구현
+		if(command.equals("/insertreply1.do")) {
+			//댓글 폼 데이터 받기
+			int bno = Integer.parseInt(request.getParameter("bno1"));
+			String rcontent = request.getParameter("rcontent");
+			String replyer = request.getParameter("replyer");
+			
+			//댓글 등록 처리
+			Reply1 r = new Reply1();
+			r.setBno1(bno);
+			r.setRcontent1(rcontent);
+			r.setReplyer1(replyer);
+			
+			r1DAO.insertreply1(r);
+			
+		}else if(command.equals("/updatereply1form.do")) {
+			int rno = Integer.parseInt(request.getParameter("rno1"));
+						
+			//글 상세보기 처리
+			Reply1 reply = r1DAO.getReply1(rno);
+			
+			//모델 생성해서 뷰로 보내기
+			request.setAttribute("reply", reply);
+			
+			
+			nextPage="/board1/updatereply1form.jsp";
+		}else if(command.equals("/updatereply1.do")) {
+			int rno = Integer.parseInt(request.getParameter("rno1"));
+			String rcontent = request.getParameter("rcontent");
+			
+			Reply1 r = new Reply1();
+			r.setRno1(rno);
+			r.setRcontent1(rcontent);
+			
+			r1DAO.updatereply1(r);
+			
+		}
+		
+		
+		if(command.equals("/deletereply1.do")) {
+			int rno = Integer.parseInt(request.getParameter("rno1"));
+			//삭제 처리 메서드 호출
+			r1DAO.deletereply1(rno);	
+			
+			nextPage="/board1list.do";
+		}
+		
+		//좋아요
+		if(command.equals("/like1.do")) {
+			int bno = Integer.parseInt(request.getParameter("bno1"));
+			String id = request.getParameter("id");
+			List<Blike1> likeList = l1DAO.getLikeList1(bno);
+			
+			
+			//아이디가 중복되면 delete, 아니면 update
+			if (l1DAO.likeListContainsUser1(likeList, id)) {	
+				l1DAO.deleteLike1(id, bno);	
+			} else {
+				Blike1 l = new Blike1();
+				l.setBno1(bno);
+				l.setId(id);
+			    l1DAO.like1(l);
+			}	
+			l1DAO.updateLikeCount1(bno);
+			nextPage="board1view.do?bno1=" + bno;
+		}
 		
 		
 		
 		
 		
+		//나의 계획 게시판
+				if(command.equals("/board2list.do")) {
+					//페이지 처리
+					String pageNum = request.getParameter("pageNum");
+					if(pageNum == null) { //페이지 번호를 클릭하지 않았을때 기본값
+						pageNum = "1";
+					}
+					
+					//현재 페이지
+					int currentPage = Integer.parseInt(pageNum);
+					//페이지당 게시글 수 - 10(pageSize)
+					int pageSize = 10;
+					//1페이지의 첫번째행(startRow) : 1번, 2페이지 : 11번, 3페이지 : 21
+					int startRow = (currentPage - 1) * pageSize + 1;
+					
+					//시작페이지(startPage) : 12행 - 2페이지, 22행 - 3페이지
+					int startPage = startRow / pageSize + 1;
+					
+					//종료(끝) 페이지 : 전체 게시글총수 / 페이지당 개수
+					int totalRow = b2DAO.getBoardCount2();
+					int endPage = totalRow / pageSize;
+					//페이지당 개수(10)로 나누어 떨어지지 않는 경우 코딩
+					endPage = (totalRow % pageSize == 0) ? endPage : endPage + 1;
+					
+					//검색 처리
+					String _field = request.getParameter("field"); //임시로 저장
+					String _kw = request.getParameter("kw");
+					
+					String field = "";
+					String kw = "";
+					
+					//null 처리
+					if(_field != null) { //필드값이 있는 경우
+						field = _field;
+					}else { //필드값이 없는 경우(디폴트)
+						field = "title2";
+					}
+					
+					if(_kw != null) { //검색어가 있는 경우
+						kw = _kw;
+					}else {  //검색어가 없는 경우
+						kw = "";
+					}
+				
+					List<Board2> boardList2 = b2DAO.getBoardList2(field, kw, currentPage);
+					
+					//모델로 생성
+					request.setAttribute("boardList2", boardList2);
+					request.setAttribute("page", currentPage);    //현재 페이지
+					request.setAttribute("startPage", startPage); //시작 페이지
+					request.setAttribute("endPage", endPage);     //종료 페이지
+					request.setAttribute("field", field);  //검색어
+					request.setAttribute("kw", kw);  //검색어
+					
+					List<Board2> likeList2 = b2DAO.getLikeList2();
+					request.setAttribute("likeList2", likeList2);			
+					
+					if(likeList2.size()>=3) {
+						//게시글 3개를 저장할 배열 생성
+						Board2 l1 = likeList2.get(0);
+						Board2 l2 = likeList2.get(1);
+						Board2 l3 = likeList2.get(2);
+						
+						request.setAttribute("l1", l1);
+						request.setAttribute("l2", l2);
+						request.setAttribute("l3", l3);
+					}
+					
+					nextPage="/board2/board2list.jsp";
+				}else if(command.equals("/write2form.do")) {
+					nextPage="/board/write2form.jsp";
+				}else if(command.equals("/write2.do")) {
+					String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+					int maxSize = 10*1024*1024; //10MB
+					String encType = "utf-8";	//파일 이름 한글 인코딩
+					DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+					
+					//5가지 인자
+					MultipartRequest multi = 
+							new MultipartRequest(request, realFolder, maxSize, 
+									encType, policy);
+					
+					
+					//폼 데이터 받기
+					String title = multi.getParameter("title");
+					String content = multi.getParameter("content");
+					
+					//세션 가져오기
+					String id = (String) session.getAttribute("sessionId");
+					
+					//file 파라미터 추출
+					Enumeration<?> files = multi.getFileNames();
+					String filename = "";
+					while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+						String userFilename = (String) files.nextElement();
+						
+						//실제 저장될 이름
+						filename = multi.getFilesystemName(userFilename);		
+					}
+					
+					
+					
+					//db에 저장
+					Board2 b = new Board2();
+					b.setTitle2(title);
+					b.setContent2(content);
+					b.setFilename2(filename);
+					b.setId(id);
+					
+					b2DAO.write2(b);
+							
+				}else if(command.equals("/board2view.do")){
+
+					//글 제목에서 요청한 글 번호 받기
+					int bno = Integer.parseInt(request.getParameter("bno2"));
+					
+					//글 상세보기 처리
+					Board2 board2 = b2DAO.getBoard2(bno);
+					
+					//댓글 목록 보기
+					List<Reply2> replyList2 = r2DAO.getReplyList2(bno);
+					
+					//모델 생성해서 뷰로 보내기
+					request.setAttribute("board2", board2);
+					request.setAttribute("replyList2", replyList2);
+					
+					// 좋아요 개수 가져오기
+					int likeCount = l2DAO.getLikeCountByBno2(bno);
+
+					// 모델 생성해서 뷰로 보내기
+					request.setAttribute("like_count", likeCount);
+
+					l2DAO.updateLikeCount2(bno);
+					b2DAO.updateReplyCount2(bno);
+					
+					nextPage="/board2/board2view.jsp";
+				}else if(command.equals("/deleteboard2.do")) {
+					int bno = Integer.parseInt(request.getParameter("bno2"));
+					
+					b2DAO.deleteboard2(bno);
+					
+					nextPage="/board2list.do";
+				}else if(command.equals("/updateboard2form.do")) {
+					int bno = Integer.parseInt(request.getParameter("bno2"));
+					
+					//글 상세보기 처리
+					Board2 board = b2DAO.getBoard2(bno);
+					
+					//모델 생성해서 뷰로 보내기
+					request.setAttribute("board", board);
+					
+					
+					nextPage="/board2/updateboard2form.jsp";
+				}else if(command.equals("/updateboard2.do")) {
+					//게시글 제목, 내용을 파라미터로 받음
+					int bno = Integer.parseInt(request.getParameter("bno2"));
+					String title = request.getParameter("title");
+					String content = request.getParameter("content");
+						
+					//db에 저장
+					Board2 b = new Board2();
+					b.setTitle2(title);
+					b.setContent2(content);
+					b.setBno2(bno);
+					
+					b2DAO.updateboard2(b);
+					
+				}
+				//댓글 구현
+				if(command.equals("/insertreply2.do")) {
+					//댓글 폼 데이터 받기
+					int bno = Integer.parseInt(request.getParameter("bno2"));
+					String rcontent = request.getParameter("rcontent");
+					String replyer = request.getParameter("replyer");
+					
+					//댓글 등록 처리
+					Reply2 r = new Reply2();
+					r.setBno2(bno);
+					r.setRcontent2(rcontent);
+					r.setReplyer2(replyer);
+					
+					r2DAO.insertreply2(r);
+					
+				}else if(command.equals("/updatereply2form.do")) {
+					int rno = Integer.parseInt(request.getParameter("rno2"));
+								
+					//글 상세보기 처리
+					Reply2 reply = r2DAO.getReply2(rno);
+					
+					//모델 생성해서 뷰로 보내기
+					request.setAttribute("reply", reply);
+					
+					
+					nextPage="/board2/updatereply2form.jsp";
+				}else if(command.equals("/updatereply2.do")) {
+					int rno = Integer.parseInt(request.getParameter("rno2"));
+					String rcontent = request.getParameter("rcontent");
+					
+					Reply2 r = new Reply2();
+					r.setRno2(rno);
+					r.setRcontent2(rcontent);
+					
+					r2DAO.updatereply2(r);
+					
+				}
+				
+				
+				if(command.equals("/deletereply2.do")) {
+					int rno = Integer.parseInt(request.getParameter("rno2"));
+					//삭제 처리 메서드 호출
+					r2DAO.deletereply2(rno);	
+					
+					nextPage="/board2list.do";
+				}
+				
+				//좋아요
+				if(command.equals("/like2.do")) {
+					int bno = Integer.parseInt(request.getParameter("bno2"));
+					String id = request.getParameter("id");
+					List<Blike2> likeList = l2DAO.getLikeList2(bno);
+					
+					
+					//아이디가 중복되면 delete, 아니면 update
+					if (l2DAO.likeListContainsUser2(likeList, id)) {	
+						l2DAO.deleteLike2(id, bno);	
+					} else {
+						Blike2 l = new Blike2();
+						l.setBno2(bno);
+						l.setId(id);
+					    l2DAO.like2(l);
+					}	
+					l2DAO.updateLikeCount2(bno);
+					nextPage="board2view.do?bno2=" + bno;
+				}
+		
+		
+				//Q&A 게시판
+				if(command.equals("/board3list.do")) {
+					//페이지 처리
+					String pageNum = request.getParameter("pageNum");
+					if(pageNum == null) { //페이지 번호를 클릭하지 않았을때 기본값
+						pageNum = "1";
+					}
+					
+					//현재 페이지
+					int currentPage = Integer.parseInt(pageNum);
+					//페이지당 게시글 수 - 10(pageSize)
+					int pageSize = 10;
+					//1페이지의 첫번째행(startRow) : 1번, 2페이지 : 11번, 3페이지 : 21
+					int startRow = (currentPage - 1) * pageSize + 1;
+					
+					//시작페이지(startPage) : 12행 - 2페이지, 22행 - 3페이지
+					int startPage = startRow / pageSize + 1;
+					
+					//종료(끝) 페이지 : 전체 게시글총수 / 페이지당 개수
+					int totalRow = b3DAO.getBoardCount3();
+					int endPage = totalRow / pageSize;
+					//페이지당 개수(10)로 나누어 떨어지지 않는 경우 코딩
+					endPage = (totalRow % pageSize == 0) ? endPage : endPage + 1;
+					
+					//검색 처리
+					String _field = request.getParameter("field"); //임시로 저장
+					String _kw = request.getParameter("kw");
+					
+					String field = "";
+					String kw = "";
+					
+					//null 처리
+					if(_field != null) { //필드값이 있는 경우
+						field = _field;
+					}else { //필드값이 없는 경우(디폴트)
+						field = "title3";
+					}
+					
+					if(_kw != null) { //검색어가 있는 경우
+						kw = _kw;
+					}else {  //검색어가 없는 경우
+						kw = "";
+					}
+				
+					List<Board3> boardList3 = b3DAO.getBoardList3(field, kw, currentPage);
+					
+					//모델로 생성
+					request.setAttribute("boardList3", boardList3);
+					request.setAttribute("page", currentPage);    //현재 페이지
+					request.setAttribute("startPage", startPage); //시작 페이지
+					request.setAttribute("endPage", endPage);     //종료 페이지
+					request.setAttribute("field", field);  //검색어
+					request.setAttribute("kw", kw);  //검색어
+					
+					List<Board3> likeList3 = b3DAO.getLikeList3();
+					request.setAttribute("likeList3", likeList3);			
+					
+					if(likeList3.size()>=3) {
+						//게시글 3개를 저장할 배열 생성
+						Board3 l1 = likeList3.get(0);
+						Board3 l2 = likeList3.get(1);
+						Board3 l3 = likeList3.get(2);
+						
+						request.setAttribute("l1", l1);
+						request.setAttribute("l2", l2);
+						request.setAttribute("l3", l3);
+					}
+					
+					nextPage="/board3/board3list.jsp";
+				}else if(command.equals("/write3form.do")) {
+					nextPage="/board/write3form.jsp";
+				}else if(command.equals("/write3.do")) {
+					String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+					int maxSize = 10*1024*1024; //10MB
+					String encType = "utf-8";	//파일 이름 한글 인코딩
+					DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+					
+					//5가지 인자
+					MultipartRequest multi = 
+							new MultipartRequest(request, realFolder, maxSize, 
+									encType, policy);
+					
+					
+					//폼 데이터 받기
+					String title = multi.getParameter("title");
+					String content = multi.getParameter("content");
+					
+					//세션 가져오기
+					String id = (String) session.getAttribute("sessionId");
+					
+					//file 파라미터 추출
+					Enumeration<?> files = multi.getFileNames();
+					String filename = "";
+					while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+						String userFilename = (String) files.nextElement();
+						
+						//실제 저장될 이름
+						filename = multi.getFilesystemName(userFilename);		
+					}
+					
+					
+					
+					//db에 저장
+					Board3 b = new Board3();
+					b.setTitle3(title);
+					b.setContent3(content);
+					b.setFilename3(filename);
+					b.setId(id);
+					
+					b3DAO.write3(b);
+							
+				}else if(command.equals("/board3view.do")){
+
+					//글 제목에서 요청한 글 번호 받기
+					int bno = Integer.parseInt(request.getParameter("bno3"));
+					
+					//글 상세보기 처리
+					Board3 board3 = b3DAO.getBoard3(bno);
+					
+					//댓글 목록 보기
+					List<Reply3> replyList3 = r3DAO.getReplyList3(bno);
+					
+					//모델 생성해서 뷰로 보내기
+					request.setAttribute("board3", board3);
+					request.setAttribute("replyList3", replyList3);
+					
+					// 좋아요 개수 가져오기
+					int likeCount = l3DAO.getLikeCountByBno3(bno);
+
+					// 모델 생성해서 뷰로 보내기
+					request.setAttribute("like_count", likeCount);
+
+					l3DAO.updateLikeCount3(bno);
+					b3DAO.updateReplyCount3(bno);
+					
+					nextPage="/board3/board3view.jsp";
+				}else if(command.equals("/deleteboard3.do")) {
+					int bno = Integer.parseInt(request.getParameter("bno3"));
+					
+					b3DAO.deleteboard3(bno);
+					
+					nextPage="/board3list.do";
+				}else if(command.equals("/updateboard3form.do")) {
+					int bno = Integer.parseInt(request.getParameter("bno3"));
+					
+					//글 상세보기 처리
+					Board3 board = b3DAO.getBoard3(bno);
+					
+					//모델 생성해서 뷰로 보내기
+					request.setAttribute("board", board);
+					
+					
+					nextPage="/board2/updateboard2form.jsp";
+				}else if(command.equals("/updateboard2.do")) {
+					//게시글 제목, 내용을 파라미터로 받음
+					int bno = Integer.parseInt(request.getParameter("bno3"));
+					String title = request.getParameter("title");
+					String content = request.getParameter("content");
+						
+					//db에 저장
+					Board3 b = new Board3();
+					b.setTitle3(title);
+					b.setContent3(content);
+					b.setBno3(bno);
+					
+					b3DAO.updateboard3(b);
+					
+				}
+				//댓글 구현
+				if(command.equals("/insertreply3.do")) {
+					//댓글 폼 데이터 받기
+					int bno = Integer.parseInt(request.getParameter("bno3"));
+					String rcontent = request.getParameter("rcontent");
+					String replyer = request.getParameter("replyer");
+					
+					//댓글 등록 처리
+					Reply3 r = new Reply3();
+					r.setBno3(bno);
+					r.setRcontent3(rcontent);
+					r.setReplyer3(replyer);
+					
+					r3DAO.insertreply3(r);
+					
+				}else if(command.equals("/updatereply3form.do")) {
+					int rno = Integer.parseInt(request.getParameter("rno3"));
+								
+					//글 상세보기 처리
+					Reply3 reply = r3DAO.getReply3(rno);
+					
+					//모델 생성해서 뷰로 보내기
+					request.setAttribute("reply", reply);
+					
+					
+					nextPage="/board3/updatereply3form.jsp";
+				}else if(command.equals("/updatereply3.do")) {
+					int rno = Integer.parseInt(request.getParameter("rno3"));
+					String rcontent = request.getParameter("rcontent");
+					
+					Reply3 r = new Reply3();
+					r.setRno3(rno);
+					r.setRcontent3(rcontent);
+					
+					r3DAO.updatereply3(r);
+					
+				}
+				
+				
+				if(command.equals("/deletereply3.do")) {
+					int rno = Integer.parseInt(request.getParameter("rno3"));
+					//삭제 처리 메서드 호출
+					r3DAO.deletereply3(rno);	
+					
+					nextPage="/board3list.do";
+				}
+				
+				//좋아요
+				if(command.equals("/like3.do")) {
+					int bno = Integer.parseInt(request.getParameter("bno3"));
+					String id = request.getParameter("id");
+					List<Blike3> likeList = l3DAO.getLikeList3(bno);
+					
+					
+					//아이디가 중복되면 delete, 아니면 update
+					if (l3DAO.likeListContainsUser3(likeList, id)) {	
+						l3DAO.deleteLike3(id, bno);	
+					} else {
+						Blike3 l = new Blike3();
+						l.setBno3(bno);
+						l.setId(id);
+					    l3DAO.like3(l);
+					}	
+					l3DAO.updateLikeCount3(bno);
+					nextPage="board3view.do?bno3=" + bno;
+				}
 		
 
 		//redirect와 forward 구분하기
@@ -629,11 +1415,36 @@ public class MainController extends HttpServlet {
 		}else if (command.equals("/insertreply.do") || command.equals("/deletereply.do") || command.equals("/updatereply.do")) {
 			int bno = Integer.parseInt(request.getParameter("bno"));
 			response.sendRedirect("boardview.do?bno=" + bno);
+			
+			
 		}else if(command.equals("/nwrite.do") || command.equals("/updatenotice.do")) { 
 			response.sendRedirect("noticelist.do");
 		}else if (command.equals("/insertnreply.do") || command.equals("/deletenreply.do") || command.equals("/updatenreply.do")) {
 			int nno = Integer.parseInt(request.getParameter("nno"));
 			response.sendRedirect("noticeview.do?nno=" + nno);
+			
+			
+		}else if(command.equals("/write1.do") || command.equals("/updateboard1.do")) { 
+			response.sendRedirect("board1list.do");
+		}else if (command.equals("/insertreply1.do") || command.equals("/deletereply1.do") || command.equals("/updatereply1.do")) {
+			int bno = Integer.parseInt(request.getParameter("bno"));
+			response.sendRedirect("board1view.do?bno1=" + bno);
+			
+			
+		}else if(command.equals("/write2.do") || command.equals("/updateboard2.do")) { 
+			response.sendRedirect("board2list.do");
+		}else if (command.equals("/insertreply2.do") || command.equals("/deletereply2.do") || command.equals("/updatereply2.do")) {
+			int bno = Integer.parseInt(request.getParameter("bno"));
+			response.sendRedirect("board2view.do?bno2=" + bno);
+			
+			
+		}else if(command.equals("/write3.do") || command.equals("/updateboard3.do")) { 
+			response.sendRedirect("board3list.do");
+		}else if (command.equals("/insertreply3.do") || command.equals("/deletereply3.do") || command.equals("/updatereply3.do")) {
+			int bno = Integer.parseInt(request.getParameter("bno"));
+			response.sendRedirect("board3view.do?bno3=" + bno);
+			
+			
 		}else{
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);

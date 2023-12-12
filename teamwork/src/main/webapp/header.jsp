@@ -15,8 +15,8 @@
 					<li><a href="#">여행지</a>
 						<div class="test">
 							<ul>
-								<li><a href="#">국내</a></li>
-								<li><a href="#">여행</a></li>
+								<li><a href="/viewdetail/intravel.jsp">국내</a></li>
+								<li><a href="/viewdetail/outtravel.jsp">여행</a></li>
 								<li><a href="#">숙소 / 교통</a></li>
 							</ul>
 						</div>
@@ -25,10 +25,10 @@
 						<div class="test">
 							<ul>
 								<li><a href="/boardlist.do">여행 후기</a>
-								<a href="#" id="a_1">Q&A</a></li>
-								<li><a href="#">동행자 찾기</a>
+								<a href="/board3list.do" id="a_1">Q&A</a></li>
+								<li><a href="/board1list.do">동행자 찾기</a>
 								<a href="/noticelist.do" id="a_2">공지사항</a></li>
-								<li><a href="#">나의 계획</a></li>
+								<li><a href="/board2list.do">나의 계획</a></li>
 							</ul>
 						</div>
 					</li>
@@ -51,7 +51,7 @@
 					<li><a href="#"><i class="fa-solid fa-earth-americas"></i>&nbsp;South Korea</a></li>
 				</ul>
 				<ul id="sideMenu_2">
-					<li><a href="#">마이페이지</a></li>
+					<li><a href="/mypage/mypage.jsp">마이페이지</a></li>
 					<li><a href="#">찜한 목록(0)</a></li>
 					<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
 				</ul>

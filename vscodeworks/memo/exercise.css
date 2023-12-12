@@ -27,7 +27,7 @@ section{width: 100%; height: 2303px;}
 .main{width:100%; height: 30%; position: relative; overflow: hidden; } /* width 1440px에 img가 넘어가면 잘림 */
 .main .area_img #pic{height: 100%; overflow: hidden; } /* width 1440px에 img가 넘어가면 잘림 */
 
-.main .area_text{width: 100%; top: 32%; margin: 0 auto; text-align: center; position: absolute; }
+.main .area_text{width: 100%;  margin: 0 auto; text-align: center; position: absolute; top: 32%; }
 .main .area_en{width: 460px; font-size: 7vw; margin: 0 auto; text-align: center; letter-spacing: 2vw; color: white; }
 .main .area_ko{width: 480px; font-size: 3.5vw; text-align: center; letter-spacing: 1vw; color: white;}
 

@@ -80,12 +80,12 @@
 	        <hr>
 	        <div class="crud">
 	        	<p>
-				<a href="/boardlist.do"><button type="button">목록</button></a>
+				<a href="/boardlist.do"><button type="button" class="writebtn">목록</button></a>
 				<%-- <c:if test="${sessionId eq board.id }"> --%>
 					<a href="/deleteboard.do?bno=${board.bno }"
 						onclick="return confirm('정말로 삭제하시겠습니까?')">
-					<button type="button">삭제</button></a>
-					<a href="/updateboardform.do?bno=${board.bno }"><button type="button">수정</button></a>
+					<button type="button" class="writebtn">삭제</button></a>
+					<a href="/updateboardform.do?bno=${board.bno }"><button type="button" class="writebtn">수정</button></a>
 				<%-- </c:if> --%>
 				</p>
 			</div>

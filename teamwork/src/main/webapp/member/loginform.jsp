@@ -1,39 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 폼</title>
-<link rel="stylesheet" href="/resources/css/style.css">
+<title>로그인</title>
+<link rel="stylesheet" href="../resources/css/style.css">
+<script src="https://kit.fontawesome.com/630c352365.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../resources/js/main.js"></script>
 </head>
 <body>
-	<jsp:include page="../header.jsp"/>
-	<div id = "container">
-		<section id="login">
+	<jsp:include page="../header.jsp" />
+	<section id="loginform">
+		
+		<div id="loginform_box">
 			<h2>로그인</h2>
-			<hr>
-				<form action="/login.do" method="post">
-					<fieldset>
-						<ul>
-							<li>
-								<label for="id">아이디</label>
-								<input type="text" id="id" name="id" required>
-							</li>
-							<li>
-								<label for="passwd">비밀번호</label>
-								<input type="password" id="passwd" name="passwd" required>
-							</li>
-						</ul>
-					</fieldset>
-					<div class="error">${error }</div>
-					<div class="button">
-						<button type="submit">로그인</button>
-					</div>
-				</form>
-		</section>
-	</div>
-	<jsp:include page="../footer.jsp"/>
+			<input type="email" id="email" name="email"
+					placeholder="이메일">
+			<input type="password" id="passwd" name="passwd"
+					placeholder="비밀번호">
+			
+			<div id="loginform_checkbox">
+				<input type="checkbox"/>
+				<p>로그인상태유지</p>
+			</div>
+			
+			<div class="button">
+		    	<button type="button" onclick="">로그인</button>
+			</div>
+			
+			<div id="loginform_bottom">
+				<a href="http://localhost:8080/member/joinform01.jsp">회원가입</a>
+				<a href="">아이디 · 비밀번호 찾기</a>
+			</div>
+		</div>
+	
+	</section>
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

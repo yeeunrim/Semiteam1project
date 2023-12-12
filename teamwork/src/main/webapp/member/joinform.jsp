@@ -21,30 +21,29 @@
 		    		<li>
 		    			<label for="t_id">아이디</label>
 		    			<input type="text" id="t_id" name="id" 
-		    				placeholder="4~15자까지 입력 가능">
-	    				<button type="button" id="btnChk" value="N" 
-							class="btn_check" onclick="checkId()">ID 중복확인</button>
-						<p id="message"></p>
+		    							placeholder="아이디는 4 ~ 15자까지 입력 가능">
+		    					<button type="button" id="btnChk" value="N" 
+		    								class="btn_check" onclick="checkId()">ID 중복</button>
+		    					<div id="message"></div>
 		    		</li>
 		    		<li>
 		    			<label for="passwd">비밀번호</label>
-		    			<input type="password" id="passwd" name="passwd"
-		    			    placeholder="영문자, 숫자, 특수문자 포함 8자 이상 입력 가능">
+		    			<input type="password" id="passwd" name="passwd" 
+		    							placeholder="비밀번호는 영문자, 숫자, 특수문자 포함해서 8자 이상 입력 가능">
 		    		</li>
 		    		<li>
 		    			<label for="passwd2">비밀번호 확인</label>
 		    			<input type="password" id="passwd2" name="passwd2" 
-		    				placeholder="비밀번호 확인">
+		    							placeholder="비밀번호를 동일하게 입력해 주세요.">
 		    		</li>
 		    		<li>
 		    			<label for="name">이름</label>
 		    			<input type="text" id="name" name="name" 
-		    			   	placeholder="한글로 입력해 주세요">
+		    							placeholder="이름은 한글로 입력해 주세요.">
 		    		</li>
 		    		<li>
 		    			<label for="email">이메일</label>
-		    			<input type="text" id="email" name="email" 
-		    				placeholder="4~15자까지 입력 가능">
+		    			<input type="text" id="email" name="email">
 		    		</li>
 		    		<li>
 		    			<label for="gender">성별</label>
@@ -60,6 +59,7 @@
 		  </form>
 	  </section>
 	</div>
-	<jsp:include page="../footer.jsp" />
+	
+	<%-- <jsp:include page="../footer.jsp" /> --%>
 </body>
 </html>

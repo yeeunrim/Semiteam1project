@@ -17,9 +17,10 @@
 ul li{list-style: none;}
 a{text-decoration: none; color: black;}
 
-/*==============*/
-/* header 스타일 */
-/*==============*/
+/* ==================================================================================================== */
+/*                          header 스타일                                                   */
+/* ==================================================================================================== */
+
 header{
 	width: 100%;
 	margin : 0 auto;
@@ -38,12 +39,13 @@ header #welcome{
 header #welcome p{
 	padding: 10px 0;
 	font-size: 13px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 header #topMenu{
 	display: flex;
 	width: 100%;
 	position: fixed; /* 상단에 고정 */
-    top: 40px; /* 상단메뉴 위치 초기값(welcome 문구 아래) */
+    top: 39px; /* 상단메뉴 위치 초기값(welcome 문구 아래) */
     width: 100%;
     z-index: 999;
     transition: top 0.3s ease-in-out;
@@ -51,6 +53,7 @@ header #topMenu{
 header #mainMenu{
 	flex-grow: 1; /* sideMenu의 고정가로길이 270px 외의 나머지 공간에 mainMenu 가로 길이가 꽉 참. 웹상의 가로 길이에 따라 가로길이 조정됨 */
 	line-height: 60px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 header #mainMenu ul{
 	display: flex;
@@ -62,6 +65,7 @@ header #mainMenu ul li a{
 }
 header #sideMenu{
 	width: 285px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 header #sideMenu ul{
 	line-height: 20px;
@@ -84,11 +88,6 @@ header #sideMenu #sideMenu_1 a{
 }
 header #sideMenu #sideMenu_2 a{
 	padding-bottom: 10px;
-}
-@media screen and (max-width: 1024px) {
-	header #welcome p{
-		font-size: 1.3vw;
-	}
 }
 
 /* header 스타일 - 하위 카테고리 */
@@ -115,13 +114,13 @@ header ul  ul #a_2{
 #bottomMenu {
     display: none; 
     width: 100%;
-    height: 235px;
-    background-color: rgba(238, 238, 238, 0.95);
+    height: 174px;
+    background-color: rgba(255, 255, 255, 0.5);
     position: fixed;
     left: 0; 
-    top: 40px; /* 기본위치 : 상단문구 아래*/
+    top: 100px; /* 기본위치 : 상단문구 아래*/
     z-index: 998;
-    transition: all 0.1s; /* 부드러운 전환 효과 */
+    transition: all 0.1s;
 }
 header #mainMenu ul li a:hover {
     font-style: italic;
@@ -135,9 +134,10 @@ header #sideMenu a:hover{
     text-decoration: underline;
 }
 
-/*==============*/
-/* footer 스타일 */
-/*==============*/
+/* ==================================================================================================== */
+/*                          footer 스타일                                                   */
+/* ==================================================================================================== */
+
 footer{
 	width: 97%;
 	line-height: 70px;
@@ -150,13 +150,6 @@ footer p{
     flex: 1;
     font-size: 30px;
     text-align: center;
-    /* 여정담 문구 브라우저 고정 */
-    position: fixed; 
-    bottom: 0; 
-    left: 0;
-    right: 0; 
-    margin: auto; 
-    z-index: 100;
 }
 footer a{
 	font-size: 15px;
@@ -183,13 +176,11 @@ footer li{
 		font-size: 1.5vw;
 	}
 }
+
 /* ==================================================================================================== */
-/*                          여기까지 header, footer 스타일                                                   */
+/*                          main 스타일                                                   */
 /* ==================================================================================================== */
 
-/*==============*/
-/* main 스타일    */
-/*==============*/
 #main #main_img{
 	width: 100%;
 	height: 560px;
@@ -426,12 +417,13 @@ footer li{
 	}
 }
 
-/*==============*/
-/* 회원가입 스타일  */
-/*==============*/
+/* ==================================================================================================== */
+/*                          joinform01 스타일                                                   */
+/* ==================================================================================================== */
+
 #joinform01 #joinform01_box{
 	width: 755px;
-	height: 900px;
+	height: 930px;
 	border-radius: 5px;
 	border: 1px solid #E0E0E0;
 	margin: 200px auto 150px auto;
@@ -465,21 +457,200 @@ footer li{
 	overflow: auto; /* 스크롤바 */
 	white-space: pre-line;
 }
-#joinform01 button{
+#joinform01 button {
 	font-size: 16px;
-	width: 175px;
+	letter-spacing: 0.1em;
+	width: 180px;
 	height: 50px;
-	border-radius: 3px;
-	border: 1px solid #000;
-	background: #FFF;
-	display: block;
-	margin: 0 auto;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+	margin: 40px auto 0 auto;
+	border: none;
+	transition: all 1s;
+}
+#joinform01 button:hover {
+    background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(243, 243, 243));
+    cursor: pointer;
 }
 
 #joinform01 #joinform01_box > .joinform01_checkbox:nth-of-type(1) {
 	margin: 0 auto ;
 }
 
+#joinform01 input[type="checkbox"] {
+	accent-color: rgb(134, 134, 134);
+	color: white;
+}
+
+/* ==================================================================================================== */
+/*                          joinform02 스타일                                                   */
+/* ==================================================================================================== */
+#joinform02 #joinform02_box{
+	width: 590px;
+	height: 560px;
+	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	margin: 200px auto 150px auto;
+}
+#joinform02 #joinform02_box h2{
+	font-size: 24px;
+	text-align: center;
+	padding: 35px 0 30px 0;
+}
+#joinform02  ul li{
+	margin: 20px 20px 20px 30px;
+}
+#joinform02 label{
+	width: 120px;
+	font-size: 14px;
+	line-height: 37px;
+	float: left; 
+	padding-left: 20px;
+}
+#joinform02  input{
+	padding: 10px 15px;
+	width: 320px;
+	height: 16px;
+	font-size: 12px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+}
+#joinform02 #email, #domain-txt{
+	width: 75px !important;
+	font-size: 12px;
+	
+}
+#joinform02 #domain-list{
+	width: 109px;
+	height: 37.5px;
+	font-size: 12px;
+	color:rgb(117, 117, 117);
+	padding: 10px 15px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+}
+#joinform02 span{
+	font-size: 14px;
+	padding:  0 0 0 5px;
+}
+#joinform02 #birth-year, #birth-month, #birth-day{
+	width: 100px;
+	height: 37px;
+	font-size: 12px;
+	color:rgb(117, 117, 117);
+	padding: 9px 12px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+}
+#joinform02 #gender {
+	width: 20px;
+	line-height: 37px;
+	float: left;
+}
+#joinform02 #gender-option{
+	height: 37px;
+	display: flex;
+	align-items: center
+}
+#joinform02 p{
+	float: left;
+	font-size:14px;
+	padding: 0 5px;
+}
+#joinform02 button {
+	font-size: 16px;
+	letter-spacing: 0.1em;
+	width: 180px;
+	height: 50px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+	margin: 45px auto;
+	border: none;
+}
+#joinform02 button:hover {
+    background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(243, 243, 243));
+    cursor: pointer;
+}
+
+#joinform02 input[type="radio"] {
+	accent-color: rgb(134, 134, 134);
+	color: white;
+}
+
+/* ==================================================================================================== */
+/*                          loginform 스타일                                                              */
+/* ==================================================================================================== */
+#loginform_box{
+	width: 322px;
+	height: 325px;
+	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	margin: 200px auto 150px auto;
+	padding: 0 30px;
+}
+
+#loginform #loginform_box h2{
+	font-size: 24px;
+	text-align: center;
+	padding: 35px 0 30px 0;
+}
+#loginform input{
+	padding: 10px 15px;
+	width: 290px;
+	height: 17px;
+	font-size: 13px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+	margin-top: 5px;
+}
+#loginform #loginform_checkbox{
+	width: 322px;
+	height: 40px;
+	display: flex;
+    align-items: center;
+}
+#loginform #loginform_checkbox input{
+	width: 13px;
+	height: 13px;
+	margin: 0;
+}
+#loginform #loginform_checkbox p{
+	font-size: 13px;
+	padding-left: 7px;
+}
+#loginform button {
+	font-size: 16px;
+	width: 322px;
+	height: 39px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+    border: none;
+}
+#loginform button:hover {
+    background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(243, 243, 243));
+    cursor: pointer;
+}
+#loginform #loginform_bottom{
+	width: 322px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+#loginform #loginform_bottom a{
+	font-size: 13px;
+}
+
+#loginform input[type="checkbox"] {
+	accent-color: rgb(134, 134, 134);
+	color: white;
+}
 
 /* jihun */
 

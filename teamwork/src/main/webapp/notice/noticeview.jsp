@@ -80,12 +80,12 @@
 	        <hr>
 	        <div class="crud">
 	        	<p>
-				<a href="/noticelist.do"><button type="button">목록</button></a>
+				<a href="/noticelist.do"><button type="button" class="writebtn">목록</button></a>
 				<%-- <c:if test="${sessionId eq board.id }"> --%>
 					<a href="/deletenotice.do?nno=${notice.nno }"
 						onclick="return confirm('정말로 삭제하시겠습니까?')">
-					<button type="button">삭제</button></a>
-					<a href="/updatenoticeform.do?nno=${notice.nno }"><button type="button">수정</button></a>
+					<button type="button" class="writebtn">삭제</button></a>
+					<a href="/updatenoticeform.do?nno=${notice.nno }"><button type="button" class="writebtn">수정</button></a>
 				<%-- </c:if> --%>
 				</p>
 			</div>

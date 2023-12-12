@@ -46,7 +46,7 @@
 			</div>
 			<div id="sideMenu">
 				<ul id="sideMenu_1">
-					<li><a href="#">로그인</a></li>
+					<li><a href="http://localhost:8080/member/loginform.jsp">로그인</a></li>
 					<li><a href="http://localhost:8080/member/joinform01.jsp">회원가입</a></li>
 					<li><a href="#"><i class="fa-solid fa-earth-americas"></i>&nbsp;South Korea</a></li>
 				</ul>

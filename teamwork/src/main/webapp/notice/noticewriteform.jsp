@@ -44,10 +44,13 @@
 							</td>
 						</tr>
 						<tr>
-							<td>
+							<!-- <td>
 								<p><label for="file-input" class="file-label">
 								<i class="fa-regular fa-folder-open"></i>첨부파일 선택</label>
-    							<input type="file" id="file-input" class="file-input" /></p>
+    							<input type="file" id="file-input" class="file-input" name="filename"/></p>
+							</td> -->
+							<td>
+								<input type="file" name="filename">
 							</td>
 						</tr>
 						<tr>

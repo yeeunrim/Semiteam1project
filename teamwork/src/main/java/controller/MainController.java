@@ -366,18 +366,14 @@ public class MainController extends HttpServlet {
 				filename = multi.getFilesystemName(userFilename);		
 			}
 			
-			/*
-			String title = request.getParameter("title");
-			String content = request.getParameter("content");
-			String id = (String) session.getAttribute("sessionId");
-			*/
+
 
 			
 			//db에 저장
 			Board b = new Board();
 			b.setTitle(title);
 			b.setContent(content);
-			//b.setFilename(filename);
+			b.setFilename(filename);
 			b.setId(id);
 			
 			bDAO.write(b);
@@ -396,6 +392,8 @@ public class MainController extends HttpServlet {
 			//모델 생성해서 뷰로 보내기
 			request.setAttribute("board", board);
 			request.setAttribute("replyList", replyList);
+			String filename = board.getFilename();
+			request.setAttribute("filename", filename);
 			
 			// 좋아요 개수 가져오기
 			int likeCount = lDAO.getLikeCountByBno(bno);
@@ -426,14 +424,38 @@ public class MainController extends HttpServlet {
 			nextPage="/board/updateboardform.jsp";
 		}else if(command.equals("/updateboard.do")) {
 			//게시글 제목, 내용을 파라미터로 받음
-			int bno = Integer.parseInt(request.getParameter("bno"));
-			String title = request.getParameter("title");
-			String content = request.getParameter("content");
+			
+			
+			String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
+			int maxSize = 10*1024*1024; //10MB
+			String encType = "utf-8";	//파일 이름 한글 인코딩
+			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+			
+			//5가지 인자
+			MultipartRequest multi = 
+					new MultipartRequest(request, realFolder, maxSize, 
+							encType, policy);
+			
+			//폼 데이터 받기
+			String title = multi.getParameter("title");
+			String content = multi.getParameter("content");
+			int bno = Integer.parseInt(multi.getParameter("bno"));
+			
+			//file 파라미터 추출
+			Enumeration<?> files = multi.getFileNames();
+			String filename = "";
+			while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+				String userFilename = (String) files.nextElement();
+				
+				//실제 저장될 이름
+				filename = multi.getFilesystemName(userFilename);		
+			}
 				
 			//db에 저장
 			Board b = new Board();
 			b.setTitle(title);
 			b.setContent(content);
+			b.setFilename(filename);
 			b.setBno(bno);
 			
 			bDAO.updateboard(b);
@@ -772,7 +794,7 @@ public class MainController extends HttpServlet {
 			
 			nextPage="/board1/board1list.jsp";
 		}else if(command.equals("/write1form.do")) {
-			nextPage="/board/write1form.jsp";
+			nextPage="/board1/write1form.jsp";
 		}else if(command.equals("/write1.do")) {
 			String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
 			int maxSize = 10*1024*1024; //10MB
@@ -1422,7 +1444,7 @@ public class MainController extends HttpServlet {
 			response.sendRedirect("boardview.do?bno=" + bno);
 			
 			
-		}else if(command.equals("/nwrite.do") || command.equals("/updatenotice.do")) { 
+		}else if(command.equals("/noticewrite.do") || command.equals("/updatenotice.do")) { 
 			response.sendRedirect("noticelist.do");
 		}else if (command.equals("/insertnreply.do") || command.equals("/deletenreply.do") || command.equals("/updatenreply.do")) {
 			int nno = Integer.parseInt(request.getParameter("nno"));

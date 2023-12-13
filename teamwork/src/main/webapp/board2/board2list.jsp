@@ -168,7 +168,7 @@
 	     <button type="submit" id="search-button">검색</button>
 	    </div>
 	    </form>
-	    <a href="writeform.do"><input type="button" value="글쓰기" id="write"></a>
+	    <a href="write2form.do"><input type="button" value="글쓰기" id="write"></a>
 	</div>
 	</section>
 

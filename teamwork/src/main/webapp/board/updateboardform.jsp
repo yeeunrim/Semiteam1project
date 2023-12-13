@@ -21,7 +21,7 @@
 	            <hr>
 	        </div>
 	    </div>
-		<form action="/updateboard.do" method="post">
+		<form action="/updateboard.do" method="post" enctype="multipart/form-data">
 			<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
 			<input type="hidden" name="bno" value="${board.bno}">
 			<table>
@@ -33,7 +33,9 @@
 					<td><textarea rows="7" cols="100" name="content" id="writeContent">${board.content }</textarea></td>
 				</tr>
 				<tr>
-					<td>${board.id }</td>
+					<td>
+						<input type="file" name="filename" value="${board.filename }">
+					</td>
 				</tr>
 					<tr>
 						<td class="writeBot">

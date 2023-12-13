@@ -1,94 +1,97 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¸¶ÀÌÆäÀÌÁö</title>
+<meta charset="UTF-8">
+<title>ë§ˆì´íŽ˜ì´ì§€</title>
   <link rel="stylesheet" href="../resources/css/style.css">
+  <script src="https://kit.fontawesome.com/d591ef8969.js" crossorigin="anonymous"></script>
   <script src="../resources/js/a.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+  <script src="../resources/js/main.js"></script>
 </head>
 <body>
-  <div class="container">
+<div>	
+  <jsp:include page="../header.jsp" />
+  <section class="my_container">
     <div class="profile">
-      <img src="resource/images/dog.PNG" alt="ÇÁ·ÎÇÊ»çÁø">
+      <img src="../resource/images/page.png" alt="í”„ë¡œí•„ì‚¬ì§„">
       <div id="my_an">
-        <p>³ªÀÇ ÇÁ·ÎÇÊ</p>
-        <p><br>´Ð³×ÀÓ</p>
-        <p>ÁÖ¼Ò</p>
-        <p><br>¾È³çÇÏ¼¼¿ä</p>
+        <p>ë‚˜ì˜ í”„ë¡œí•„</p>
+        <p><br>ë‹‰ë„¤ìž„</p>
+        <p>ì£¼ì†Œ</p>
+        <p><br>ì•ˆë…•í•˜ì„¸ìš”</p>
       </div>
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal()">&times;</span>
-          <!-- ÇÁ·ÎÇÊ ¼öÁ¤ ÆûÀÌ µé¾î°¥ ºÎºÐ -->
+          <!-- í”„ë¡œí•„ ìˆ˜ì • í¼ì´ ë“¤ì–´ê°ˆ ë¶€ë¶„ -->
           <form id="profileForm">
-            <img src="resource/images/dog.PNG" alt="ÇÁ·ÎÇÊ»çÁø">
-            <!-- ÇÁ·ÎÇÊ ¼öÁ¤ ³»¿ë ÀÔ·Â Æû µîÀ» Ãß°¡ÇÏ¼¼¿ä -->
+            <img src="../resource/imagespage.png" alt="í”„ë¡œí•„ì‚¬ì§„">
+            <!-- í”„ë¡œí•„ ìˆ˜ì • ë‚´ìš© ìž…ë ¥ í¼ ë“±ì„ ì¶”ê°€í•˜ì„¸ìš” -->
             <div id="my_p">
-              <p>³ªÀÇ ÇÁ·ÎÇÊ</p>
+              <p>ë‚˜ì˜ í”„ë¡œí•„</p>
               <hr>
-              <p><label for="nic">´Ð³×ÀÓ</label>
+              <p><label for="nic">ë‹‰ë„¤ìž„</label>
                 <input type="text" id="nic" name="nic"></p>
-              <p><label for="addr">ÁÖ¼Ò</label>
+              <p><label for="addr">ì£¼ì†Œ</label>
                 <input type="text" id="addr" name="addr"></p>
-              <p><label for="long">ÇÑ ÁÙ ¼Ò°³</label>
-                <input type="text" id="long" name="long"></p>
+              <p><label for="long">í•œ ì¤„ ì†Œê°œ</label>
+                <input type="textarea" id="long" name="long"></p>
               
-              <button type="button" onclick="saveProfile()">º¯°æ»çÇ× ÀúÀå</button>
+              <button type="button" onclick="saveProfile()">ë³€ê²½ì‚¬í•­ ì €ìž¥</button>
             </div>
           </form>
         </div>
       </div>
-      <button id="modify" onclick="openModal()">ÇÁ·ÎÇÊ ¼öÁ¤</button>
-      <button id="modify2"><a href="°èÁ¤¼³Á¤.html">¼³Á¤</a></button>
+      <button id="modify" onclick="openModal()"><i class="fa-solid fa-pen"></i></button>
+      <button id="modify2"><a href="setting.html"><i class="fa-solid fa-gear"></i></a></button>
     </div>
     <div class="select">
-      <a href="#" class="toggle-link">³» °Ô½Ã¹° </a>
-      <a href="#" class="toggle-link">³» ´ñ±Û </a>
-      <a href="#" class="toggle-link">Âò </a>
-      <a href="#" class="toggle-link">ÁÁ¾Æ¿ä </a>
+      <a href="#" class="toggle-link">ë‚´ ê²Œì‹œë¬¼ </a>
+      <a href="#" class="toggle-link">ë‚´ ëŒ“ê¸€ </a>
+      <a href="#" class="toggle-link">ì°œ </a>
     </div>
     <div class="box">
       <div id="box1">
-        <div class="title">Á¦¸ñ</div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
       <div id="box1">
-        <div class="title">Á¦¸ñ</div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
       <div id="box1">
-        <div class="title">Á¦¸ñ</div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
       <div id="box1">
-        <div class="title">Á¦¸ñ</div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
     </div>
     <div class="more">
         <a href="">+ MORE</a>
     </div>
+  </section>
   </div>
+  	<jsp:include page="../footer.jsp" />
 </body>
 </html>

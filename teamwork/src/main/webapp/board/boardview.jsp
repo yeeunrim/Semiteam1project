@@ -44,7 +44,10 @@
 	        </div>
 	        <hr>
 	        <div class = "content">
-	          ${board.content}
+	        		<c:if test="${not empty board.filename}">
+					<img src="../upload/${board.filename }" class="boardviewimage">
+					</c:if>
+	          		${board.content}
 	        </div>
 	        <div class = "right">
 				<c:choose>

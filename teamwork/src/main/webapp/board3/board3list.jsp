@@ -42,62 +42,6 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr class="medal1">
-                      <td><i class="fa-solid fa-medal" style="color: #ffd500;"></i></td>
-                      <td><a href="/board3view.do?bno3=${l1.bno3 }">${l1.title3 }
-					<c:if test="${l1.reply_count3 ne 0}">
-						<small>[&nbsp;<c:out value="${l1.reply_count3}"/>&nbsp;]</small>
-					</c:if>
-					</a></td>
-                      <td>${l1.id }</td>
-                      <td><c:choose>
-							<c:when test="${not empty l1.modifyDate3 }">
-								<fmt:formatDate value="${l1.modifyDate3 }" pattern="yyyy-MM-dd"/>
-							</c:when>
-							<c:otherwise>
-								<fmt:formatDate value="${l1.createDate3 }" pattern="yyyy-MM-dd"/>
-							</c:otherwise>
-						</c:choose></td>
-                      <td>${l1.hit3 }</td>
-                  </tr>
-  
-                  <tr class="medal2">
-                    <td><i class="fa-solid fa-medal" style="color: #dedede;"></i></td>
-                      <td><a href="/board3view.do?bno3=${l2.bno3 }">${l2.title3 }
-					<c:if test="${l2.reply_count3 ne 0}">
-						<small>[&nbsp;<c:out value="${l2.reply_count3}"/>&nbsp;]</small>
-					</c:if>
-					</a></td>
-                      <td>${l2.id }</td>
-                      <td><c:choose>
-							<c:when test="${not empty l2.modifyDate3 }">
-								<fmt:formatDate value="${l2.modifyDate3 }" pattern="yyyy-MM-dd"/>
-							</c:when>
-							<c:otherwise>
-								<fmt:formatDate value="${l2.createDate3 }" pattern="yyyy-MM-dd"/>
-							</c:otherwise>
-						</c:choose></td>
-                      <td>${l2.hit3 }</td>
-                  </tr>
-  
-                  <tr class="medal3">
-                    <td><i class="fa-solid fa-medal" style="color: #a85a00;"></i></td>
-                      <td><a href="/board3view.do?bno3=${l3.bno3 }">${l3.title3 }
-					<c:if test="${l3.reply_count3 ne 0}">
-						<small>[&nbsp;<c:out value="${l3.reply_count3}"/>&nbsp;]</small>
-					</c:if>
-					</a></td>
-                      <td>${l3.id }</td>
-                      <td><c:choose>
-							<c:when test="${not empty l3.modifyDate3 }">
-								<fmt:formatDate value="${l3.modifyDate3 }" pattern="yyyy-MM-dd"/>
-							</c:when>
-							<c:otherwise>
-								<fmt:formatDate value="${l3.createDate3 }" pattern="yyyy-MM-dd"/>
-							</c:otherwise>
-						</c:choose></td>
-                      <td>${l3.hit3 }</td>
-                  </tr>
                   <c:forEach items="${boardList3 }" var="b">
                   <tr>
                       <td>${b.bno3 }</td>
@@ -168,7 +112,7 @@
 	     <button type="submit" id="search-button">검색</button>
 	    </div>
 	    </form>
-	    <a href="writeform.do"><input type="button" value="글쓰기" id="write"></a>
+	    <a href="write3form.do"><input type="button" value="글쓰기" id="write"></a>
 	</div>
 	</section>
 

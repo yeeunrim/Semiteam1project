@@ -44,17 +44,20 @@
 	        </div>
 	        <hr>
 	        <div class = "content">
-	          ${board1.content1}
+	        		<c:if test="${not empty board1.filename1}">
+					<img src="../upload/${board1.filename1 }" class="boardviewimage">
+					</c:if>
+	          		${board.content}
 	        </div>
 	        <div class = "right">
 				<c:choose>
 					<c:when test="${not empty board1.filename1}">
-						<%-- <c:if test="${not empty sessionId}"> --%>
+						<c:if test="${not empty sessionId}">
 							첨부파일: ${board1.filename1 }<a href="/filedown.do?filename=${board1.filename1 }">&nbsp;[다운로드]</a>
-						<%-- </c:if>
+						</c:if>
 						<c:if test="${empty sessionId}">
 							<c:out value="첨부파일은 로그인 후 확인 가능합니다. "/>
-						</c:if> --%>
+						</c:if>
 					</c:when>
 					<c:otherwise>
 						<c:out value="첨부파일: - "/>

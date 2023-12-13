@@ -24,3 +24,12 @@ function openModal() {
     closeModal(); // 저장 후 모달 창 닫기
   }
   
+  
+  //계정 설정
+  function check(){
+ 		if(document.fr.pass.value == ""){
+ 			alert("비밀번호를 입력하세요! ");
+ 			document.fr.pass.focus();
+ 			return false;
+ 		}
+ 	}

@@ -114,7 +114,7 @@ public class MainController extends HttpServlet {
 		if(command.equals("/main.do")){ //http://localhost:8080/
 					
 			
-			//메인 페이지에 게시글 보내기
+			//메인 페이지에 게시글 보내기 최신
 			List<Board> boardList = bDAO.getBoardList();
 			request.setAttribute("boardList", boardList);			
 			
@@ -125,7 +125,7 @@ public class MainController extends HttpServlet {
 				request.setAttribute("boardList", newBoards);
 			}
 			
-			//메인 페이지에 게시글 보내기
+			//메인 페이지에 게시글 보내기 좋아요
 			List<Board> likeList = bDAO.getLikeList();
 			request.setAttribute("likeList", likeList);			
 			

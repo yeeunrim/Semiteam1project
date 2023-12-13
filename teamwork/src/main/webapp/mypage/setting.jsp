@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>계정 설정</title>
 <link rel="stylesheet" href="../resources/css/style.css">
+<script src="../resources/js/a.js"></script>
 </head>
 <body>
 	<section class="my_container">

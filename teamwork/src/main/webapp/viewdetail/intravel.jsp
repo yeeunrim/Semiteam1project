@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>국내여행 상세 페이지</title>
-        <script src="../resources/js/trave.js"></script>
-        <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../resources/css/style.css">
-     <script src="../resources/js/main.js"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>국내여행 상세 페이지</title>
+      <script src="../resources/js/trave.js"></script>
+      <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../resources/css/style.css">
+   <script src="../resources/js/main.js"></script>
 </head>
 <body>
     <!-- ============== header ====================================== -->

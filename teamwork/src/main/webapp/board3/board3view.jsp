@@ -30,7 +30,9 @@
 	          ${board3.title3}
 	        </div>
 	        <div class="upper">
-	          <div class="thumb"></div>
+	          <div class="thumb">
+	          <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
+	          </div>
 	          <div class="nickname1">
 	            ${board3.id}
 	          </div>
@@ -95,7 +97,9 @@
 	        <p class="rtitle">댓글</p>
 	        <c:forEach items="${replyList3 }" var="reply">
 	          <div class = "reply">
-	            <div class = "reThumb"></div>
+	            <div class = "reThumb">
+	            <i class="fa-regular fa-user" style="color: #ffffff; font-size : 15px;"></i>
+	            </div>
 	            <div class = "replyer">
 		              ${reply.replyer3}
 	              	<div class="recrud">

@@ -30,7 +30,9 @@
 	          ${board.title}
 	        </div>
 	        <div class="upper">
-	          <div class="thumb"></div>
+	          <div class="thumb">
+	          <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
+	          </div>
 	          <div class="nickname1">
 	            ${board.id}
 	          </div>
@@ -68,7 +70,9 @@
 	            <c:if test="${not empty sessionId}">
 					<div id="likeSection">
 						<div id="likeCount">
-						<a href="/like.do?bno=${board.bno }&id=${sessionId}"><i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i></a>
+						<a href="/like.do?bno=${board.bno }&id=${sessionId}">
+						<i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+						</a>
 						좋아요: ${like_count }개
 						</div>
 					</div>
@@ -91,7 +95,9 @@
 	        <p class="rtitle">댓글</p>
 	        <c:forEach items="${replyList }" var="reply">
 	          <div class = "reply">
-	            <div class = "reThumb"></div>
+	            <div class = "reThumb">
+	            <i class="fa-regular fa-user" style="color: #ffffff; font-size : 15px;"></i>
+	            </div>
 	            <div class = "replyer">
 		              ${reply.replyer}
 	              	<div class="recrud">

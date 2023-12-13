@@ -16,7 +16,7 @@
   <jsp:include page="../header.jsp" />
   <section class="my_container">
     <div class="profile">
-      <img src="../resource/images/page.png" alt="프로필사진">
+      <img src="../resources/images/page.png" alt="프로필사진">
       <div id="my_an">
         <p>나의 프로필</p>
         <p><br>닉네임</p>
@@ -28,7 +28,7 @@
           <span class="close" onclick="closeModal()">&times;</span>
           <!-- 프로필 수정 폼이 들어갈 부분 -->
           <form id="profileForm">
-            <img src="../resource/imagespage.png" alt="프로필사진">
+            <img src="../resources/images/page.png" alt="프로필사진">
             <!-- 프로필 수정 내용 입력 폼 등을 추가하세요 -->
             <div id="my_p">
               <p>나의 프로필</p>
@@ -46,7 +46,7 @@
         </div>
       </div>
       <button id="modify" onclick="openModal()"><i class="fa-solid fa-pen"></i></button>
-      <button id="modify2"><a href="setting.html"><i class="fa-solid fa-gear"></i></a></button>
+      <button id="modify2"><a href="setting.jsp"><i class="fa-solid fa-gear"></i></a></button>
     </div>
     <div class="select">
       <a href="#" class="toggle-link">내 게시물 </a>

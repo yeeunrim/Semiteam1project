@@ -30,7 +30,9 @@
 	          ${notice.ntitle}
 	        </div>
 	        <div class="upper">
-	          <div class="thumb"></div>
+	          <div class="thumb">
+	          <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
+	          </div>
 	          <div class="nickname1">
 	            ${notice.id}
 	          </div>
@@ -64,7 +66,9 @@
 				</c:choose>
 			</div>
 	        <div class = "under">
-	          <p><div class="thumb"></div>
+	          <p><div class="thumb">
+	          <i class="fa-regular fa-user" style="color: #ffffff; font-size : 15px;"></i>
+	          </div>
 	          <div class="nickname2">
 	            ${notice.id}
 	          </div>

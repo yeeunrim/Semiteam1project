@@ -1,0 +1,653 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+   	font-family: 'Newsreader';
+   	src: url(https://fonts.gstatic.com/s/newsreader/v20/cY9VfjOCX1hbuyalUrK49dLafXjalZCsZBsgBgbNJYQ.woff2) format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+/* 공통 스타일 */
+*{margin: 0; padding: 0; font-family: 'NanumSquareRound';}
+ul li{list-style: none;}
+a{text-decoration: none; color: black;}
+
+/* ==================================================================================================== */
+/*                          header 스타일                                                   */
+/* ==================================================================================================== */
+
+header{
+	width: 100%;
+	margin : 0 auto;
+	position: relative
+}
+header #welcome{
+	text-align: center;
+	border-bottom: 1px solid black;
+	
+	position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* 다른 컨텐츠 위에 위치하도록 */
+    transition: transform 0.3s ease-out;
+}
+header #welcome p{
+	padding: 10px 0;
+	font-size: 13px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+header #topMenu{
+	display: flex;
+	width: 100%;
+	position: fixed; /* 상단에 고정 */
+    top: 39px; /* 상단메뉴 위치 초기값(welcome 문구 아래) */
+    width: 100%;
+    z-index: 999;
+    transition: top 0.3s ease-in-out;
+}
+header #mainMenu{
+	flex-grow: 1; /* sideMenu의 고정가로길이 270px 외의 나머지 공간에 mainMenu 가로 길이가 꽉 참. 웹상의 가로 길이에 따라 가로길이 조정됨 */
+	line-height: 60px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+header #mainMenu ul{
+	display: flex;
+	justify-content: space-around;
+}
+header #mainMenu ul li a{
+	font-size: 20px;
+	color: black;
+}
+header #sideMenu{
+	width: 285px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+header #sideMenu ul{
+	line-height: 20px;
+	display: flex;
+	justify-content: flex-end;
+}
+header #sideMenu li{
+	font-size: 13px;
+	width: 95px;
+}
+header #sideMenu li a{
+	display:flex;
+	justify-content: center;
+}
+header #sideMenu li i{
+	line-height: 20px;
+}
+header #sideMenu #sideMenu_1 a{
+	padding-top: 10px;
+}
+header #sideMenu #sideMenu_2 a{
+	padding-bottom: 10px;
+}
+
+/* header 스타일 - 하위 카테고리 */
+header #mainMenu ul ul{
+	flex-direction: column;
+	position: absolute;
+}
+header #mainMenu .test{
+	display: none;
+	transition: all 0.3s;
+}
+header #mainMenu ul ul li{
+	line-height: 42px;
+}
+header #mainMenu ul ul li a{
+	color: rgb(158, 156, 163);
+}
+header ul  ul #a_1{
+	padding-left: 40px;
+}
+header ul  ul #a_2{
+	padding-left: 20px;
+}
+#bottomMenu {
+    display: none; 
+    width: 100%;
+    height: 174px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    left: 0; 
+    top: 100px; /* 기본위치 : 상단문구 아래*/
+    z-index: 998;
+    transition: all 0.1s;
+}
+header #mainMenu ul li a:hover {
+    font-style: italic;
+    text-decoration: underline;
+}
+header #mainMenu ul ul a:hover{
+	color: black;
+}
+header #sideMenu a:hover{
+	font-style: italic;
+    text-decoration: underline;
+}
+
+/* ==================================================================================================== */
+/*                          footer 스타일                                                   */
+/* ==================================================================================================== */
+
+footer{
+	width: 97%;
+	line-height: 70px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+footer p{
+    flex: 1;
+    font-size: 30px;
+    text-align: center;
+}
+footer a{
+	font-size: 15px;
+}
+footer li{
+	margin: 0 5px;
+}
+#footerMenu_left, #footerMenu_right{
+    display: flex;
+}
+#footerMenu_left{
+    width: 40%;
+}
+#footerMenu_right{
+    width: 40%;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 1024px) {
+	footer p{
+		font-size : 3vw;
+	}
+	footer a{
+		font-size: 1.5vw;
+	}
+}
+
+/* ==================================================================================================== */
+/*                          main 스타일                                                   */
+/* ==================================================================================================== */
+
+#main #main_img{
+	width: 100%;
+	height: 560px;
+	position: relative;
+}
+#main #main_img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+/* main 스타일 - 도트 슬라이드 */
+#main #main_img #dots{
+	width: 100px;
+	display: flex;
+	justify-content: space-between;
+	position: absolute; /* 절대 위치 설정 */
+    bottom: 10px; /* 하단에서의 거리 */
+    left: 0; /* 왼쪽에서의 시작 위치 */
+    right: 0; /* 오른쪽에서의 시작 위치 */
+    margin: auto; /* 자동 마진으로 가운데 정렬 */
+}
+#main #main_img #dots .dot{
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	border-radius: 100%;
+	background-color: #878585;
+}
+#main #main_img #dots .dot_active{
+	width: 40px;
+	height: 17px;
+	display: inline-block;
+	border-radius: 15px;
+	background-color: #F5F5F5;
+}
+@media screen and (max-width: 1024px) {
+	#main #main_img #dots{
+		width: 10vw;
+	}
+	#main #main_img #dots .dot{
+		width: 1.8vw;
+		height: 1.8vw;
+	}
+	#main #main_img #dots .dot_active{
+		width: 3.7vw;
+		height: 1.8vw;
+	}
+}
+
+/* main 스타일 - 검색창 */
+#search_currency{
+	width: 97%;
+	margin:15px auto;
+	display: flex;
+	justify-content: space-between;
+}
+.search-box {
+	width: 285px;
+	height: 30px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    padding: 5px 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.search-input {
+    border: none; /* 테두리 제거 */
+    background-color: transparent; /* 배경색 투명 */
+    margin-right: 10px; /* 검색 아이콘과의 간격 설정 */
+    outline: none; /* 선택됐을 때 테두리 없애기 */
+    flex-grow: 1; /* 남은 공간 채우기 */
+}
+.search-button {
+    background: none; /* 배경색 흰색 -> 투명 */
+    border: none;
+    cursor: pointer; /* 마우스 오버 시 포인터 모양 변경 */
+    outline: none; /* 선택됐을 때 테두리 없애기 */
+}
+.search-button img{
+	width: 22px;
+	height: 22px;
+}
+
+/* main 스타일 - 환율창 */
+#currency_box{
+	width:800px;
+	height: 40px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#currency_box p{
+	font-size: 15px;
+	padding: 10px;
+}
+
+/* main 스타일 - 문구창 */
+#main_phrase{
+	width: 85%;
+	margin:24.5vw auto 35vw auto;
+}
+#main_phrase p{
+	color: #338BA7;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-size: 5.8vw;
+	font-weight: 500;
+	font-family: Newsreader;
+}
+@media screen and (max-width: 1440px) {
+	#main_phrase{
+		margin:20vw auto 28vw auto;
+	}
+}
+
+/* main 스타일 - 사진 */
+#main_pictures.active {
+    cursor: grabbing;
+}
+#main_pictures{
+	width: 98%;
+	margin: 0 auto;
+	display: flex;
+	/*justify-content: space-evenly;*/
+	overflow-x: hidden; /* 수평 스크롤 숨김 */
+	/*scroll-snap-type: x mandatory;*/ /* 스크롤 스냅 활성화 */
+	cursor: grab;
+}
+#main_pictures div{
+	/*width: 29vw;
+	height: 35vw;*/
+	
+	background-color: rgb(228, 228, 228);
+	filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));
+	
+	flex: 0 0 30.5vw; 
+    height: 35vw; 
+    margin-right: 2vw; 
+    
+    /*scroll-snap-align: start;*/ /* 스크롤 스냅 정렬 */
+    
+}
+#main_pictures div img{
+	width: 25vw;
+	height: 26vw;
+	margin: 7% 7%;
+	filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));
+}
+#main_pictures div p{
+	margin: 0 7%;
+}
+/* main 스타일 - 커뮤니티 */
+#main_community{
+	width: 98%;
+	height: 36vw;
+	margin: 170px auto 230px auto;
+}
+#main_community img{
+	width: 32px;
+	height: 32px;
+	float: left;
+}
+#main_community #main_community_title{
+	margin: 10px 0px 10px 10px;
+	font-size: 32px;
+}
+#main_community #main_community_box{
+	width: 33.3%;
+	height: 32.5vw;
+	float: left;
+	background-color: #CAC8C8;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border-width : 1px solid rgb(160, 160, 163);
+}
+
+#main_community .main_community_content_title{
+	font-size: 25px;
+	text-align: center;
+	color: #646161;
+	margin-top: 15px;
+}
+#main_community .main_community_content{
+	width: 85%;
+	height: 35%;
+	margin: 10px auto;
+	border-bottom: 1px solid black;
+}
+#main_community .main_community_content h3{
+	font-size: 21px;
+	padding-bottom: 10px;
+}
+#main_community #main_community_boxes p{
+	line-height: 1.8;
+}
+#main_community #main_community_boxes p a{
+	font-size: 19px;
+	color: black;
+	/* 문자가 넘치는 부분은 숨기고, 끝에 "..." 표시 */
+	display: block; /* 블록 요소로 만들기 */
+    white-space: nowrap; /* 텍스트를 한 줄로 만들기 */
+    overflow: hidden; /* 내용이 넘치면 숨기기 */
+    text-overflow: ellipsis; /* 넘친 텍스트를 ...로 표시 */
+    max-width: 100%; /* 최대 너비 설정 */
+}
+#main_community #main_community_box #main_community_content_bottom{ /* 아래 main_community_content의 border-bottom 없애기*/
+	border: none;
+	padding-top: 10px;
+}
+#main_community #main_community_boxes p a:hover{
+	font-style: italic;
+    text-decoration: underline;
+}
+@media screen and (max-width: 1440px) {
+	#main_community .main_community_content_title{
+		font-size: 1.75vw;
+		margin-top: 15px;
+	}
+	#main_community .main_community_content h3{
+		font-size: 1.45vw;
+		padding-bottom: 10px;
+	}
+	#main_community #main_community_boxes p a{
+		font-size: 1.35vw;
+	}
+}
+@media screen and (max-width: 1440px) {
+	#main_community img{
+		width: 2.5vw;
+		height: 2.5vw;
+		float: left;
+	}
+	#main_community #main_community_title p{
+		font-size: 2.5vw;
+	}
+}
+
+/* ==================================================================================================== */
+/*                          joinform01 스타일                                                   */
+/* ==================================================================================================== */
+
+#joinform01 #joinform01_box{
+	width: 755px;
+	height: 930px;
+	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	margin: 200px auto 150px auto;
+}
+#joinform01 #joinform01_box h2{
+	font-size: 24px;
+	text-align: center;
+	padding: 35px 0;
+}
+#joinform01 #joinform01_box .joinform01_checkbox{
+	width: 675px;
+	margin: 30px auto 12px auto ;
+	display: flex;
+	align-items: center;
+}
+#joinform01 #joinform01_box p{
+	font-size: 14px;
+	padding: 0 7px;
+}
+#joinform01 #joinform01_box .essential{
+	font-size: 15px;
+	color: #F84A71;
+}
+#joinform01 #joinform01_box .joinform01_contentBox{
+	width: 655px;
+	height: 105px;
+	margin: 0 auto;
+	padding: 10px 10px 0 10px;
+	border-radius: 3px;
+	border: 1px solid #DFDFDF;
+	overflow: auto; /* 스크롤바 */
+	white-space: pre-line;
+}
+#joinform01 button {
+	font-size: 16px;
+	letter-spacing: 0.1em;
+	width: 180px;
+	height: 50px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+	margin: 40px auto 0 auto;
+	border: none;
+	transition: all 1s;
+}
+#joinform01 button:hover {
+    background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(243, 243, 243));
+    cursor: pointer;
+}
+
+#joinform01 #joinform01_box > .joinform01_checkbox:nth-of-type(1) {
+	margin: 0 auto ;
+}
+
+#joinform01 input[type="checkbox"] {
+	accent-color: rgb(134, 134, 134);
+	color: white;
+}
+
+/* ==================================================================================================== */
+/*                          joinform02 스타일                                                   */
+/* ==================================================================================================== */
+#joinform02 #joinform02_box{
+	width: 590px;
+	height: 560px;
+	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	margin: 200px auto 150px auto;
+}
+#joinform02 #joinform02_box h2{
+	font-size: 24px;
+	text-align: center;
+	padding: 35px 0 30px 0;
+}
+#joinform02  ul li{
+	margin: 20px 20px 20px 30px;
+}
+#joinform02 label{
+	width: 120px;
+	font-size: 14px;
+	line-height: 37px;
+	float: left; 
+	padding-left: 20px;
+}
+#joinform02  input{
+	padding: 10px 15px;
+	width: 320px;
+	height: 16px;
+	font-size: 12px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+}
+#joinform02 #email, #domain-txt{
+	width: 75px !important;
+	font-size: 12px;
+	
+}
+#joinform02 #domain-list{
+	width: 109px;
+	height: 37.5px;
+	font-size: 12px;
+	color:rgb(117, 117, 117);
+	padding: 10px 15px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+}
+#joinform02 span{
+	font-size: 14px;
+	padding:  0 0 0 5px;
+}
+#joinform02 #birth-year, #birth-month, #birth-day{
+	width: 100px;
+	height: 37px;
+	font-size: 12px;
+	color:rgb(117, 117, 117);
+	padding: 9px 12px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+}
+#joinform02 #gender {
+	width: 20px;
+	line-height: 37px;
+	float: left;
+}
+#joinform02 #gender-option{
+	height: 37px;
+	display: flex;
+	align-items: center
+}
+#joinform02 p{
+	float: left;
+	font-size:14px;
+	padding: 0 5px;
+}
+#joinform02 button {
+	font-size: 16px;
+	letter-spacing: 0.1em;
+	width: 180px;
+	height: 50px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+	margin: 45px auto;
+	border: none;
+}
+#joinform02 button:hover {
+    background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(243, 243, 243));
+    cursor: pointer;
+}
+
+#joinform02 input[type="radio"] {
+	accent-color: rgb(134, 134, 134);
+	color: white;
+}
+
+/* ==================================================================================================== */
+/*                          loginform 스타일                                                              */
+/* ==================================================================================================== */
+#loginform_box{
+	width: 322px;
+	height: 325px;
+	border-radius: 5px;
+	border: 1px solid #E0E0E0;
+	margin: 200px auto 150px auto;
+	padding: 0 30px;
+}
+
+#loginform #loginform_box h2{
+	font-size: 24px;
+	text-align: center;
+	padding: 35px 0 30px 0;
+}
+#loginform input{
+	padding: 10px 15px;
+	width: 290px;
+	height: 17px;
+	font-size: 13px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+	margin-top: 5px;
+}
+#loginform #loginform_checkbox{
+	width: 322px;
+	height: 40px;
+	display: flex;
+    align-items: center;
+}
+#loginform #loginform_checkbox input{
+	width: 13px;
+	height: 13px;
+	margin: 0;
+}
+#loginform #loginform_checkbox p{
+	font-size: 13px;
+	padding-left: 7px;
+}
+#loginform button {
+	font-size: 16px;
+	width: 322px;
+	height: 39px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+    border: none;
+}
+#loginform button:hover {
+    background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(243, 243, 243));
+    cursor: pointer;
+}
+#loginform #loginform_bottom{
+	width: 322px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+#loginform #loginform_bottom a{
+	font-size: 13px;
+}
+
+#loginform input[type="checkbox"] {
+	accent-color: rgb(134, 134, 134);
+	color: white;
+}

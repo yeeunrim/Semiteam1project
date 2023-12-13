@@ -1,0 +1,170 @@
+/* ==================================================================================================== */
+/*                          header, footer                                                              */
+/* ==================================================================================================== */
+
+/* header의 메뉴 클릭 시, bottomMenu(회색배경, 하위카테고리) 나옴 */
+$(document).ready(function() {
+    // 메인 메뉴 항목에 마우스 오버 이벤트 추가
+    $('#mainMenu ul li').mouseenter(function() {
+        // 하위 메뉴 및 bottomMenu 보이기
+        $(this).find('.test').css('display', 'block');
+        $('#bottomMenu').css('display', 'block');
+    }).mouseleave(function() {
+        // 마우스가 벗어나면 하위 메뉴 및 bottomMenu 숨기기
+        $(this).find('.test').css('display', 'none');
+        $('#bottomMenu').css('display', 'none');
+    });
+});
+
+/* 스크롤 40px기준으로, 상단문구 숨김 및 상단 메뉴 위치 조정  */
+let lastScrollTop = 0;
+const scrollThreshold = 40; // 스크롤이 이 값 이상으로 변화했을 때 동작을 변경하는 기준점
+
+$(window).on('scroll', function() {
+    let currentScroll = $(this).scrollTop();
+    let welcomeHeight = $('#welcome').outerHeight();
+    let topMenuHeight = $('#welcome').outerHeight()+$('#topMenu').outerHeight();
+
+    if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+        // 아래로 40px 이상 스크롤
+        $('#welcome').css('transform', 'translateY(-' + welcomeHeight + 'px)');
+        $('#topMenu').css('top', '0');
+        $('#bottomMenu').css('top', '61px'); // topMenu 바로 아래에 bottomMenu 위치
+    } else if (currentScroll < lastScrollTop && currentScroll < scrollThreshold) {
+        // 위로 40px 이상 스크롤
+        $('#welcome').css('transform', '');
+        $('#topMenu').css('top', welcomeHeight + 'px');
+        $('#bottomMenu').css('top', topMenuHeight + 'px'); // 원래 위치로 되돌리기
+    }
+    lastScrollTop = currentScroll; // 스크롤 위치 업데이트
+});
+
+/* ==================================================================================================== */
+/*                          main                                                                        */
+/* ==================================================================================================== */
+
+/* 사진 슬라이드 */
+$(document).ready(function() {
+    var isDown = false; // 마우스 버튼의 상태를 추적
+    var startX;
+    var scrollLeft;
+
+    var slider = $('#main_pictures'); // 이미지의 컨테이너
+
+    slider.mousedown(function(e) {
+        isDown = true;
+        slider.addClass('active');
+        startX = e.pageX - slider.offset().left;
+        scrollLeft = slider.scrollLeft();
+    });
+
+    $(document).mouseup(function() {
+        isDown = false;
+        slider.removeClass('active');
+    });
+
+    $(document).mouseleave(function() {
+        isDown = false;
+        slider.removeClass('active');
+    });
+
+    slider.mousemove(function(e) {
+        if(!isDown) return;
+        e.preventDefault();
+        var x = e.pageX - slider.offset().left;
+        var walk = (x - startX) * 1.2; // 스크롤 속도 인수 (* 3)
+        slider.scrollLeft(scrollLeft - walk);
+    });
+});
+
+
+
+$(document).ready(function() {
+    var $mainPictures = $('#main_pictures');
+    var $divs = $mainPictures.children('div');
+    var divWidth = $divs.first().outerWidth(true);
+    var totalWidth = divWidth * $divs.length;
+
+    // 무한 루프를 위해 div 요소들을 복제하고 main_pictures에 추가
+    $divs.clone().appendTo($mainPictures);
+
+    // div들을 슬라이드하는 함수
+    function slideDivs() {
+        $mainPictures.animate({
+            scrollLeft: '+=' + divWidth
+        }, 1000, function() {
+            // 첫 번째 세트의 div들의 끝에 도달했는지 확인
+            if ($mainPictures.scrollLeft() >= totalWidth) {
+                $mainPictures.scrollLeft(0);
+            }
+        });
+    }
+
+    // 슬라이드를 위한 인터벌 설정
+    var slideInterval = setInterval(slideDivs, 2500);
+
+    // 선택적: 마우스오버 시 슬라이드 일시정지
+    $mainPictures.on('mouseover', function() {
+        clearInterval(slideInterval);
+    }).on('mouseout', function() {
+        slideInterval = setInterval(slideDivs, 2500);
+    });
+});
+
+
+/* ==================================================================================================== */
+/*                          joinform01                                                                    */
+/* ==================================================================================================== */
+
+/* 체크박스 모두 체크*/
+$(document).ready(function () {
+    $('#all_agree').change(function () {
+        $('#joinform01 input[type="checkbox"]').prop('checked', this.checked);
+    });
+});
+
+/* ==================================================================================================== */
+/*                          joinform02                                                                        */
+/* ==================================================================================================== */
+
+// 도메인 직접 입력 or domain option 선택
+$(document).ready(function() {
+    // 도메인 목록 드롭다운의 변경사항을 감지하는 리스너 설정
+    $('#domain-list').change(function() {
+        var selectedValue = $(this).val();
+        
+        // '직접 입력' 옵션이 선택되었는지 확인
+        if (selectedValue === 'type') {
+            // 직접 입력을 위해 텍스트 입력 필드를 활성화
+            $('#domain-txt').prop('disabled', false).val('');
+        } else {
+            // 텍스트 입력 필드를 비활성화하고 선택된 도메인으로 값 설정
+            $('#domain-txt').prop('disabled', true).val(selectedValue);
+        }
+    });
+});
+
+// '출생 연도' 셀렉트 박스 option 목록 동적 생성
+$(document).ready(function() {
+    // 출생 연도 설정 (1940년부터 2023년까지)
+    for (var year = 1940; year <= 2023; year++) {
+        $('#birth-year').append($('<option>', {
+            value: year,
+            text: year
+        }));
+    }
+    // 월 설정 (1월부터 12월까지)
+    for (var month = 1; month <= 12; month++) {
+        $('#birth-month').append($('<option>', {
+            value: month,
+            text: month
+        }));
+    }
+    // 일 설정 (1일부터 31일까지)
+    for (var day = 1; day <= 31; day++) {
+        $('#birth-day').append($('<option>', {
+            value: day,
+            text: day
+        }));
+    }
+});

@@ -11,7 +11,7 @@ CREATE TABLE board1 (
     id          VARCHAR2(20) NOT NULL,
     reply_count1 int,
     like_count1 int,
-    FOREIGN KEY(id) REFERENCES member(id) ON DELETE CASCADE    
+    FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE    
 );
 
 CREATE SEQUENCE seq_bno1 NOCACHE;
@@ -55,7 +55,7 @@ CREATE TABLE blike1(
     bno1    NUMBER NOT NULL,
     id     VARCHAR2(20) NOT NULL,
     FOREIGN KEY (bno1) REFERENCES board1(bno1) ON DELETE CASCADE,
-    FOREIGN KEY(id) REFERENCES member(id) ON DELETE CASCADE   
+    FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE   
 );
 
 CREATE SEQUENCE seq_likeno1 NOCACHE;

@@ -203,7 +203,15 @@ public class MainController extends HttpServlet {
 				request.setAttribute("w2", w2);
 				request.setAttribute("w3", w3);
 			}else if(boardList.size() == 2) {
-				
+				Board w1 = boardList.get(0);
+				Board w2 = boardList.get(1);
+
+				request.setAttribute("w1", w1);
+				request.setAttribute("w2", w2);
+			}else if(boardList.size() == 1) {
+				Board w1 = boardList.get(0);
+
+				request.setAttribute("w1", w1);
 			}
 			
 			
@@ -220,6 +228,18 @@ public class MainController extends HttpServlet {
 				request.setAttribute("w11", w11);
 				request.setAttribute("w21", w21);
 				request.setAttribute("w31", w31);
+				
+			}else if(boardList1.size() == 2) {
+				Board1 w11 = boardList1.get(0);
+				Board1 w21 = boardList1.get(1);
+
+				request.setAttribute("w11", w11);
+				request.setAttribute("w21", w21);
+				
+			}else if(boardList1.size() == 1) {
+				Board1 w11 = boardList1.get(0);
+
+				request.setAttribute("w11", w11);
 			}
 			
 			List<Board2> boardList2 = b2DAO.getBoardListBlike2(id);
@@ -235,6 +255,16 @@ public class MainController extends HttpServlet {
 				request.setAttribute("w12", w12);
 				request.setAttribute("w22", w22);
 				request.setAttribute("w32", w32);
+			}else if(boardList2.size() == 2) {
+				Board2 w12 = boardList2.get(0);
+				Board2 w22 = boardList2.get(1);
+
+				request.setAttribute("w12", w12);
+				request.setAttribute("w22", w22);
+			}else if(boardList2.size() == 1) {
+				Board2 w12 = boardList2.get(0);
+
+				request.setAttribute("w12", w12);
 			}
 			
 			List<Board3> boardList3 = b3DAO.getBoardListBlike3(id);
@@ -250,6 +280,18 @@ public class MainController extends HttpServlet {
 				request.setAttribute("w13", w13);
 				request.setAttribute("w23", w23);
 				request.setAttribute("w33", w33);
+				
+			}else if(boardList3.size() == 2) {
+				Board3 w13 = boardList3.get(0);
+				Board3 w23 = boardList3.get(1);
+
+				request.setAttribute("w13", w13);
+				request.setAttribute("w23", w23);
+				
+			}else if(boardList3.size() == 1) {
+				Board3 w13 = boardList3.get(0);
+
+				request.setAttribute("w13", w13);
 			}
 			
 			

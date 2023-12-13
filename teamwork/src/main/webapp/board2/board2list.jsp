@@ -163,7 +163,7 @@
 				<option value="content2" ${(field eq "content") ? "selected" : "" }>내용</option>
 				<option value="id" ${(field eq "id") ? "selected" : "" }>작성자</option>
 	        </select>
-	        <input type="text" id="search-input" placeholder="검색어를 입력하세요." value="${kw }" size="30%">
+	        <input type="text" id="search-input" placeholder="검색어를 입력하세요." name="kw" value="${kw }" size="30%">
 	     <button type="submit" id="search-button">검색</button>
 	    </div>
 	    </form>

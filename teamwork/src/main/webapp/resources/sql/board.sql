@@ -10,7 +10,7 @@ CREATE TABLE board (
     id          VARCHAR2(20) NOT NULL,
     reply_count int,
     like_count int,
-    FOREIGN KEY(id) REFERENCES member(id) ON DELETE CASCADE    
+    FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE    
 );
 
 CREATE SEQUENCE seq_bno NOCACHE;

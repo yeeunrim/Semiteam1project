@@ -9,7 +9,7 @@ CREATE TABLE notice (
     id          VARCHAR2(20) NOT NULL,
     nreply_count int,
     nlike_count int,
-    FOREIGN KEY(id) REFERENCES member(id) ON DELETE CASCADE    
+    FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE    
 );
 
 CREATE SEQUENCE seq_nno NOCACHE;
@@ -44,7 +44,7 @@ CREATE TABLE nlike(
     nno    NUMBER NOT NULL,
     id     VARCHAR2(20) NOT NULL,
     FOREIGN KEY (nno) REFERENCES notice(nno) ON DELETE CASCADE,
-    FOREIGN KEY(id) REFERENCES member(id) ON DELETE CASCADE   
+    FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE   
 );
 
 CREATE SEQUENCE seq_nlikeno NOCACHE;

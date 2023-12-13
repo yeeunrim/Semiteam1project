@@ -19,7 +19,7 @@
 	<section class="notice">
     	<div class="mainBoard">
 		 <div class="board-title">
-		        <div class="board">
+		        <div class="board1">
 		            <h3>여행 후기</h3>
 		            <p>게시판에 맞는 정보를 공유해주세요.</p>
 		            <hr>

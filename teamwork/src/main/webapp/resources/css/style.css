@@ -247,20 +247,20 @@ footer li{
     padding: 5px 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.search-input {
+#search-input {
     border: none; /* 테두리 제거 */
     background-color: transparent; /* 배경색 투명 */
     margin-right: 10px; /* 검색 아이콘과의 간격 설정 */
     outline: none; /* 선택됐을 때 테두리 없애기 */
     flex-grow: 1; /* 남은 공간 채우기 */
 }
-.search-button {
+#search-button {
     background: none; /* 배경색 흰색 -> 투명 */
     border: none;
     cursor: pointer; /* 마우스 오버 시 포인터 모양 변경 */
     outline: none; /* 선택됐을 때 테두리 없애기 */
 }
-.search-button img{
+#search-button img{
 	width: 22px;
 	height: 22px;
 }
@@ -981,6 +981,7 @@ section.notice {
   display: flex;
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
 .input-wrapper {
@@ -990,8 +991,6 @@ section.notice {
   border-radius: 20px;
   overflow: hidden;
   background-color: #e4d7d7;
-
-  margin: auto;
   height: 30px;
 }
 
@@ -1021,18 +1020,21 @@ section.notice {
   border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
+  align-items: center;
 }
 
 #write{
-  padding: 10px 20px;
+  padding: 0 20px;
   font-size: 16px;
   background-color: #e4d7d7;
   border-radius: 20px;
-  margin: auto;
-}
+  margin-left: 100px;
+  cursor: pointer;
+  height: 30px;
+  border: none;
 }
 
-
+}
 
 
 
@@ -1043,7 +1045,7 @@ section.notice {
 
 
 
-.mainBoard, .replyUpdateForm, #writeform{width: 900px; margin: 0 auto;}
+.mainBoard, .replyUpdateForm, #writeform{width: 800px; margin: 0 auto;}
 section#writeform, #replyUpdate{
   padding: 80px 0;
 }
@@ -1052,8 +1054,19 @@ section#writeform, #replyUpdate{
 
 .boardName{margin: 5px;}
 
-hr{margin : 20px 0;}
-.boardViewForm{width: 860px; padding: 30px; border: 1px solid #cdcdcd;}
+.board1 {
+  width: 950px;
+}
+
+.board2{
+	width: 805px;
+	margin: 0 auto;
+}
+
+
+hr{margin: 10px;}
+
+.boardViewForm{width: 860px; padding: 30px; border: 1px solid #cdcdcd; margin: 0 auto;}
 .btitle{
   width: 800px; height: 34px; margin: 0 auto; margin-bottom: 10px;
   font-size: 26px;
@@ -1094,6 +1107,8 @@ hr{margin : 20px 0;}
 
 #writeTitle{padding : 5px; width: 500px; margin-bottom: 10px;}
 #writeContent{padding: 5px; width: 800px; height: 500px; resize: none;}
+
+
 .file{
   padding: 10px 20px;
   font-size: 16px;
@@ -1124,4 +1139,17 @@ hr{margin : 20px 0;}
 
 .file-input {
     display: none;
+}
+
+
+
+
+
+/* 반응형 */
+@media screen and (max-width: 780px) {
+	
+  .boardViewForm{width: 550px;}
+  #replyform textarea{width: 450px;}
+  
+  #writeContent{width: 500px;}
 }

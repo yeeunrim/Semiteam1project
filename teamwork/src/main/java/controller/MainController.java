@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -39,8 +38,6 @@ import board3.Board3;
 import board3.Board3DAO;
 import board3.Reply3;
 import board3.Reply3DAO;
-import member.Member;
-import member.MemberDAO;
 import notice.NLikeDAO;
 import notice.NReply;
 import notice.NReplyDAO;
@@ -48,11 +45,12 @@ import notice.Notice;
 import notice.NoticeDAO;
 import reply.Reply;
 import reply.ReplyDAO;
+import users.Users;
+import users.UsersDAO;
 
 @WebServlet("*.do")	// "/" 이하의 경로에서 do로 끝나는 확장자는 모두 허용
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 10L;
-	MemberDAO mDAO;
 	BoardDAO bDAO;
 	ReplyDAO rDAO;
 	BlikeDAO lDAO;
@@ -68,9 +66,9 @@ public class MainController extends HttpServlet {
 	NoticeDAO nDAO;
 	NReplyDAO nrDAO;
 	NLikeDAO nlDAO;
+	UsersDAO uDAO;
        
     public MainController() {	//생성자
-        mDAO = new MemberDAO();
         bDAO = new BoardDAO();
         rDAO = new ReplyDAO();
         lDAO = new BlikeDAO();
@@ -86,6 +84,7 @@ public class MainController extends HttpServlet {
         nDAO = new NoticeDAO();
         nrDAO = new NReplyDAO();
         nlDAO = new NLikeDAO();
+        uDAO = new UsersDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -183,61 +182,61 @@ public class MainController extends HttpServlet {
 			
 			
 			nextPage="/main.jsp";
-		}else if(command.equals("/memberlist.do")) {
+		}else if(command.equals("/userslist.do")) {
 			//회원 정보를 db에서 가져옴
-			List<Member> memberList = mDAO.getMemberList();
+			List<Users> usersList = uDAO.getUsersList();
 			//모델 생성
-			request.setAttribute("memberList", memberList);
+			request.setAttribute("usersList", usersList);
 			//이동할 페이지
-			nextPage = "/member/memberlist.jsp";
+			nextPage = "/member/userslist.jsp";
 		}else if(command.equals("/joinform.do")) {
 			nextPage = "/member/joinform.jsp";
-		}else if(command.equals("/insertmember.do")) {
+		}else if(command.equals("/insertusers.do")) {
 			//빈 회원 객체를 생성해서 데이터를 받아서 세팅
 			//폼 데이터 받기
 			String id = request.getParameter("id");
-			String passwd = request.getParameter("passwd");
-			String name = request.getParameter("name");
+			String pw = request.getParameter("pw");
+			String tel = request.getParameter("tel");
 			String email = request.getParameter("email");
+			int birth = Integer.parseInt(request.getParameter("birth"));
 			String gender = request.getParameter("gender");
 			
-			Member m = new Member();
+			Users u = new Users();
 			//db에 저장
-			m.setId(id);
-			m.setPasswd(passwd);
-			m.setName(name);
-			m.setEmail(email);
-			m.setGender(gender);
+			u.setId(id);
+			u.setPw(pw);
+			u.setTel(tel);
+			u.setEmail(email);
+			u.setGender(gender);
 			//db에 저장함
-			mDAO.insertMember(m);
+			uDAO.insertUsers(u);
 			//자동 로그인
-			session.setAttribute("sessionId", m.getId());	//아이디를 가져와서 sessionId(세션이름) 발급
-			session.setAttribute("sessionName", m.getName());	//이름을 가져와서 sessionName(세션이름) 발급
+			session.setAttribute("sessionId", u.getId());	//아이디를 가져와서 sessionId(세션이름) 발급
 			nextPage = "/index.jsp";
-		}else if(command.equals("/memberview.do")) {
+		}else if(command.equals("/usersview.do")) {
 			String id = request.getParameter("id");
-			Member member = mDAO.getMember(id);
+			Users users = uDAO.getUsers(id);
 			//모델 생성
-			request.setAttribute("member", member);
-			nextPage = "/member/memberview.jsp";
+			request.setAttribute("users", users);
+			nextPage = "/member/usersview.jsp";
 		}else if(command.equals("/loginform.do")){	//로그인 폼 페이지 이동
 			nextPage = "/member/loginform.jsp";
 		}else if(command.equals("/login.do")) {	//로그인 처리
 			//아이디와 비밀번호 파라미터 받기
-			String id = request.getParameter("id");
-			String passwd = request.getParameter("passwd");
+			String email = request.getParameter("email");
+			String pw = request.getParameter("pw");
 			
 			//빈 객체를 생성해서 아이디와 비번 세팅해줌
-			Member m = new Member();
-			m.setId(id);
-			m.setPasswd(passwd);
+			Users u = new Users();
+			u.setEmail(email);
+			u.setPw(pw);
 			
 			//로그인 인증
-			Member member = mDAO.checkLogin(m);
-			String name = member.getName();
-			if(name != null){
+			Users users = uDAO.checkLogin(u);
+			String id = users.getId();
+			if(id != null){
 				session.setAttribute("sessionId", id);//아이디 세션 발급
-				session.setAttribute("sessionName", name);//이름 세션 발급
+				
 				//로그인 후 페이지 이동
 				//nextPage = "/index.jsp";			
 				out.println("<script>");
@@ -251,7 +250,7 @@ public class MainController extends HttpServlet {
 				String error = "아이디나 비밀번호를 다시 확인해주세요.";
 				request.setAttribute("error", error);
 				//에러 발생 후 페이지 이동
-				nextPage="/member/loginform.do";
+				nextPage="/users/loginform.do";
 			}
 			
 		}else if(command.equals("/logout.do")) {
@@ -338,7 +337,8 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/writeform.do")) {
 			nextPage="/board/writeform.jsp";
 		}else if(command.equals("/write.do")) {
-			String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+			
+			String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
 			int maxSize = 10*1024*1024; //10MB
 			String encType = "utf-8";	//파일 이름 한글 인코딩
 			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
@@ -366,13 +366,18 @@ public class MainController extends HttpServlet {
 				filename = multi.getFilesystemName(userFilename);		
 			}
 			
-			
+			/*
+			String title = request.getParameter("title");
+			String content = request.getParameter("content");
+			String id = (String) session.getAttribute("sessionId");
+			*/
+
 			
 			//db에 저장
 			Board b = new Board();
 			b.setTitle(title);
 			b.setContent(content);
-			b.setFilename(filename);
+			//b.setFilename(filename);
 			b.setId(id);
 			
 			bDAO.write(b);
@@ -563,7 +568,7 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/noticewriteform.do")) {
 			nextPage="/notice/noticewriteform.jsp";
 		}else if(command.equals("/noticewrite.do")) {
-			String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+			String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
 			int maxSize = 10*1024*1024; //10MB
 			String encType = "utf-8";	//파일 이름 한글 인코딩
 			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
@@ -575,8 +580,8 @@ public class MainController extends HttpServlet {
 			
 			
 			//폼 데이터 받기
-			String title = multi.getParameter("title");
-			String content = multi.getParameter("content");
+			String title = multi.getParameter("ntitle");
+			String content = multi.getParameter("ncontent");
 			
 			//세션 가져오기
 			String id = (String) session.getAttribute("sessionId");
@@ -600,7 +605,7 @@ public class MainController extends HttpServlet {
 			n.setNfilename(filename);
 			n.setId(id);
 			
-			nDAO.write(n);
+			nDAO.nwrite(n);
 					
 		}else if(command.equals("/noticeview.do")){
 
@@ -769,7 +774,7 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/write1form.do")) {
 			nextPage="/board/write1form.jsp";
 		}else if(command.equals("/write1.do")) {
-			String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+			String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
 			int maxSize = 10*1024*1024; //10MB
 			String encType = "utf-8";	//파일 이름 한글 인코딩
 			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
@@ -1006,9 +1011,9 @@ public class MainController extends HttpServlet {
 					
 					nextPage="/board2/board2list.jsp";
 				}else if(command.equals("/write2form.do")) {
-					nextPage="/board/write2form.jsp";
+					nextPage="/board2/write2form.jsp";
 				}else if(command.equals("/write2.do")) {
-					String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+					String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
 					int maxSize = 10*1024*1024; //10MB
 					String encType = "utf-8";	//파일 이름 한글 인코딩
 					DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
@@ -1242,9 +1247,9 @@ public class MainController extends HttpServlet {
 					
 					nextPage="/board3/board3list.jsp";
 				}else if(command.equals("/write3form.do")) {
-					nextPage="/board/write3form.jsp";
+					nextPage="/board3/write3form.jsp";
 				}else if(command.equals("/write3.do")) {
-					String realFolder = "C:\\jspworks\\members\\src\\main\\webapp\\upload";
+					String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
 					int maxSize = 10*1024*1024; //10MB
 					String encType = "utf-8";	//파일 이름 한글 인코딩
 					DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
@@ -1324,7 +1329,7 @@ public class MainController extends HttpServlet {
 					request.setAttribute("board", board);
 					
 					
-					nextPage="/board2/updateboard2form.jsp";
+					nextPage="/board3/updateboard3form.jsp";
 				}else if(command.equals("/updateboard2.do")) {
 					//게시글 제목, 내용을 파라미터로 받음
 					int bno = Integer.parseInt(request.getParameter("bno3"));

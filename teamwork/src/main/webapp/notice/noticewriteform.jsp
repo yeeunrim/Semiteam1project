@@ -22,13 +22,13 @@
 	<jsp:include page="../header.jsp"/>
 		<section id="writeform">
 		    <div class="board-title">
-		        <div class="board">
-		            <h3>여행 후기</h3>
-		            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
+		        <div class="board2">
+		            <h3>공지 사항</h3>
+		            <p>공지 사항은 신중히 작성합시다.</p>
 		            <hr>
 		        </div>
 		    </div>
-			<form action="/noticewrite.do" method="post">
+			<form action="/noticewrite.do" method="post" enctype="multipart/form-data">
 				<table>
 					<tbody>
 						<tr>
@@ -54,7 +54,7 @@
 							<td class="writeBot">
 								<button type="submit" class="writebtn">등록</button>
 								<button type="reset" class="writebtn">리셋</button>
-								<a href="/boardlist.do"><button type="button" class="writebtn">취소</button></a>
+								<a href="/noticelist.do"><button type="button" class="writebtn">취소</button></a>
 							</td>
 						</tr>
 					</tbody>

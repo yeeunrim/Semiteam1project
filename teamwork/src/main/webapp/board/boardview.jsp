@@ -19,7 +19,7 @@
 	<section class="notice">
     	<div class="mainBoard">
 		 <div class="board-title">
-		        <div class="board">
+		        <div class="board1">
 		            <h3>여행 후기</h3>
 		            <p>게시판에 맞는 정보를 공유해주세요.</p>
 		            <hr>
@@ -49,12 +49,12 @@
 	        <div class = "right">
 				<c:choose>
 					<c:when test="${not empty board.filename}">
-						<%-- <c:if test="${not empty sessionId}"> --%>
+						<c:if test="${not empty sessionId}">
 							첨부파일: ${board.filename }<a href="/filedown.do?filename=${board.filename }">&nbsp;[다운로드]</a>
-						<%-- </c:if>
+						</c:if>
 						<c:if test="${empty sessionId}">
 							<c:out value="첨부파일은 로그인 후 확인 가능합니다. "/>
-						</c:if> --%>
+						</c:if>
 					</c:when>
 					<c:otherwise>
 						<c:out value="첨부파일: - "/>
@@ -67,26 +67,26 @@
 	            ${board.id}
 	          </div>
 	          <div class="likeReply">
-	            <%-- <c:if test="${not empty sessionId}"> --%>
+	            <c:if test="${not empty sessionId}">
 					<div id="likeSection">
 					    <form action="/like.do?bno=${board.bno }&id=${sessionId}" method="post">
    							<button type="submit" id="DR"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
 						</form>
 						<div id="likeCount">좋아요: ${like_count }개</div>
 					</div>
-				<%-- </c:if> --%>
+				</c:if>
 	          </div>
 	        </div>
 	        <hr>
 	        <div class="crud">
 	        	<p>
 				<a href="/boardlist.do"><button type="button" class="writebtn">목록</button></a>
-				<%-- <c:if test="${sessionId eq board.id }"> --%>
+				<c:if test="${sessionId eq board.id }">
 					<a href="/deleteboard.do?bno=${board.bno }"
 						onclick="return confirm('정말로 삭제하시겠습니까?')">
 					<button type="button" class="writebtn">삭제</button></a>
 					<a href="/updateboardform.do?bno=${board.bno }"><button type="button" class="writebtn">수정</button></a>
-				<%-- </c:if> --%>
+				</c:if>
 				</p>
 			</div>
 	        <div class="replyform">
@@ -122,7 +122,7 @@
 	          </div>
 	          </c:forEach>
 	          <div class="replyWrite">
-	            <%-- <c:if test="${not empty sessionId}"> --%>
+	            <c:if test="${not empty sessionId}">
 				<form action="/insertreply.do" method="post" id="replyform">
 					<input type="hidden" name="bno" value="${board.bno }">
 					<input type="hidden" name="replyer" value="${sessionId }">
@@ -132,7 +132,7 @@
 					</p>
 					<button type="submit" class="writebtn">등록</button>
 				</form>	
-				<%-- </c:if> --%>
+				</c:if>
 				</div>	
 	        </div>
 	      </div>

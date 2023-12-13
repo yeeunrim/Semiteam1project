@@ -15,7 +15,7 @@
 	<jsp:include page="../header.jsp"/>
 	<section id="writeform">
 	    <div class="board-title">
-	        <div class="board">
+	        <div class="board2">
 	            <h3>게시글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
 	            <hr>
@@ -27,7 +27,7 @@
 			<table>
 				<tbody>
 					<tr>
-					<td><input type="text" name="title" value="${board3.title3 }"></td>
+					<td><input type="text" name="title" value="${board3.title3 }" id="writeTitle"></td>
 				</tr>
 				<tr>
 					<td><textarea rows="7" cols="100" name="content">${board3.content3 }</textarea></td>

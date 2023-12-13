@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.MemberDAO;
+import users.UsersDAO;
 
 @WebServlet("/member/checkid")
 public class CheckIdServlet extends HttpServlet {
@@ -27,7 +27,7 @@ public class CheckIdServlet extends HttpServlet {
 		//메지지 받기
 		String id = request.getParameter("id");
 		
-		MemberDAO dao = new MemberDAO();
+		UsersDAO dao = new UsersDAO();
 		boolean result =  dao.getDuplicatedId(id);
 		if(result) { //result == true
 			//중복 데이터가 있으면

@@ -48,7 +48,7 @@ public class NoticeDAO {
 		return noticeList;
 	}
 	//글 작성
-	public void write(Notice n) {
+	public void nwrite(Notice n) {
 		conn = JDBCUtil.getConnection();
 		
 		try {

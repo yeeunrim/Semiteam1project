@@ -16,19 +16,24 @@
 		
 		<div id="loginform_box">
 			<h2>로그인</h2>
-			<input type="email" id="email" name="email"
-					placeholder="이메일">
-			<input type="password" id="passwd" name="passwd"
-					placeholder="비밀번호">
-			
-			<div id="loginform_checkbox">
-				<input type="checkbox"/>
-				<p>로그인상태유지</p>
-			</div>
-			
-			<div class="button">
-		    	<button type="button" onclick="">로그인</button>
-			</div>
+			<form action="/login.do" method="post">
+				<fieldset>
+					<ul>
+						<li>
+							<label for="email">이메일</label>
+							<input type="text" id="email" name="email" required>
+						</li>
+						<li>
+							<label for="passwd">비밀번호</label>
+							<input type="password" id="pw" name="pw" required>
+						</li>
+					</ul>
+				</fieldset>
+				<div class="error">${error }</div>
+				<div class="button">
+					<button type="submit">로그인</button>
+				</div>
+			</form>
 			
 			<div id="loginform_bottom">
 				<a href="http://localhost:8080/member/joinform01.jsp">회원가입</a>

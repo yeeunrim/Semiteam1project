@@ -15,7 +15,7 @@
 	<jsp:include page="../header.jsp"/>
 	<section id="writeform">
 	    <div class="board-title">
-	        <div class="board">
+	        <div class="board2">
 	            <h3>공지글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
 	            <hr>

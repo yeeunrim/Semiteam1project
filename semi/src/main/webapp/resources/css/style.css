@@ -103,7 +103,7 @@ header #mainMenu ul ul li{
 	line-height: 42px;
 }
 header #mainMenu ul ul li a{
-	color: rgb(128, 125, 138);
+	color: rgb(158, 156, 163);
 }
 header ul  ul #a_1{
 	padding-left: 40px;
@@ -274,7 +274,7 @@ footer li{
 	align-items: center;
 }
 #currency_box p{
-	font-size: 15px;
+	font-size: 16px;
 	padding: 10px;
 }
 
@@ -308,7 +308,7 @@ footer li{
 	/*justify-content: space-evenly;*/
 	overflow-x: hidden; /* 수평 스크롤 숨김 */
 	/*scroll-snap-type: x mandatory;*/ /* 스크롤 스냅 활성화 */
-	cursor: grab;
+	/*cursor: grab;*/
 }
 #main_pictures div{
 	/*width: 29vw;
@@ -489,7 +489,7 @@ footer li{
 /* ==================================================================================================== */
 #joinform02 #joinform02_box{
 	width: 590px;
-	height: 625px;
+	height: 620px;
 	border-radius: 5px;
 	border: 1px solid #E0E0E0;
 	margin: 200px auto 150px auto;
@@ -518,12 +518,11 @@ footer li{
 	border: 1px solid rgb(196, 196, 196);
 }
 #joinform02 #email, #domain-txt{
-	width: 68px !important;
+	width: 75px !important;
 	font-size: 12px;
-	
 }
 #joinform02 #domain-list{
-	width: 139px;
+	width: 109px;
 	height: 37.5px;
 	font-size: 12px;
 	color:rgb(117, 117, 117);
@@ -535,20 +534,12 @@ footer li{
 	font-size: 14px;
 	padding:  0 0 0 5px;
 }
-#joinform02 #birth-year, #birth-month, #birth-day, #tel_option{
+#joinform02 #birth-year, #birth-month, #birth-day{
 	width: 100px;
 	height: 37px;
 	font-size: 12px;
 	color:rgb(117, 117, 117);
 	padding: 9px 12px;
-	border-radius: 3px;
-	border: 1px solid rgb(196, 196, 196);
-}
-#joinform02  #info_tel #tel_box{
-	padding: 10px 15px;
-	width: 215px;
-	height: 16px;
-	font-size: 12px;
 	border-radius: 3px;
 	border: 1px solid rgb(196, 196, 196);
 }
@@ -659,3 +650,609 @@ footer li{
 	color: white;
 }
 
+
+
+
+/*=========================================================================*/
+/* chaehee */
+/*=========================================================================*/
+
+
+#mmm{margin: 200px auto 110px auto;}
+.my_container{
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 마이페이지 */
+.my_container .profile, .select, .box, .more{
+
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+}
+.my_container .profile, #box1{
+  background-color: #eee;
+  border-radius: 10px;
+}
+.my_container .select, .more {
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;;
+}
+.my_container .box{
+  padding-left: 0;
+  padding-right: 0;
+}
+.my_container #box1{
+  width: 100%;
+  height: 150px;
+  background-color: #eee;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+.my_container #box1 .con{ padding: 10px; height: 80px;}
+
+.my_container .profile {
+	
+  height: 400px;
+  display: flex; /* flex container로 만듦 */
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; /* 세로 중앙 정렬 */
+  position: relative; /* 부모 기준으로 자식 요소를 배치하기 위해 필요 */
+
+}
+
+.my_container .profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.my_container .profile button {
+  border: none;
+  padding: 8px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+.my_container .profile #modify{
+  position: absolute; /* 절대 위치로 설정 */
+  top: 20px;
+  right: 50px;
+  border-right: solid 0.5px #eee;
+}
+.my_container .profile #modify2{
+  position: absolute;
+  top: 20px; 
+  right: 20px; 
+}
+.my_container .profile #my_an{  
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px; /* 이미지 우측 여백 설정 */
+  margin-right: 100px;
+}
+.my_container .select{margin-top: 20px; padding: 15px;}
+.my_container .select a, .box .like a {
+  text-decoration: none;
+  color: #333;
+  border-right: 1.5px solid #ccc; 
+  padding: 0 30px;
+}
+.my_container .select a:last-child , .box .like a:last-child {
+  border: none;
+}
+.my_container .select a:active{font-weight: 900;}
+.my_container .box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.my_container .box > div {
+  flex: 0 0 calc(50% - 10px);
+  margin-bottom: 20px; /* 각 박스 사이의 간격 조절 */
+}
+
+/* 프로필 수정 */
+.my_container #profileForm img{margin: 20px;}
+.my_container #my_p{border: 0.5px solid #eee;}
+.my_container #my_p hr{border: 0.5px solid #eee;}
+.my_container #my_p p{margin: 20px;}
+.my_container #my_p label{margin-top: 5px;}
+.my_container #my_p button{background-color: #eee; margin: 10px;} 
+.my_container .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.my_container .modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  max-width: 400px; /* 최대 너비 지정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+}
+.my_container .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.my_container .close:hover,
+.my_container .close:focus {
+  cursor: pointer;
+}
+
+
+/* 찜리스트 */
+.my_container #wish{
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: right;
+  font-size: 15px;
+}
+.my_container #wish i{margin: 10px;}
+.my_container #wish h1{text-align: left; margin:10px}
+.my_container #wish a:last-child{border: none;}
+.my_container .box2 img{width: 100%; height: 300px;}
+.my_container #tt{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0 70px 0;
+}
+.my_container #tt .box2{
+  width: 100%;
+  flex: 0 0 calc(40% - 10px); /* 2행 2열로 설정 */
+  margin: 19px;
+  text-align: center;
+  line-height:  50px;
+  background-color : rgb(245 245 245);
+  border-radius: 10px;
+}
+.my_container #tt .box2 #b{
+  border: 0.5px dashed white;
+  }
+.my_container #tt .box2 a{
+	color: black; 
+	margin: 0 20px 0 20px;
+	}
+.my_container .box2 hr {
+  border: 0.5px solid white;
+}
+.my_container #more2{
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color : rgb(245 245 245);
+  text-align: center;
+}
+.my_container .select2 a{
+  border-right: 1.5px solid #ccc; 
+  text-decoration: none;
+  padding: 0 15px;
+}
+.my_container .select2 a:last-child{border: none;}
+.my_container #wish a{
+  border-right: 1.5px solid #ccc; 
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+
+/* 계정설정 스타일 */
+.my_container ul li{list-style: none;}
+.my_container a{text-decoration: none;}
+.my_container #memberlist h2{margin: 20px;}
+.my_container #join{width: 80%; margin: 20px auto;}
+.my_container #join form{margin: 20px auto;}
+.my_container form ul li{margin: 20px;}
+.my_container form .button{margin-top: 16px;}
+.my_container form .button button{
+    margin: 20px;
+    padding: 5px;
+    float: right;
+    background-color: rgb(88, 88, 255); 
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.my_container #memberlist2{width: 370px; height: 350px; border: solid 1px #eee;}
+.my_container #fd a{
+  font-size: 15px;
+  color: #333;
+  float: left;
+  margin: 20px;
+  padding: 5px;
+  text-decoration:underline;
+}
+.my_container form label{width: 120px; float: left; padding-left: 15px; text-align: left;}
+.my_container form input{padding: 5px;}
+.my_container .ch input{margin: 5px;}
+
+
+/* 모바일 버전 */
+@media screen and (max-width: 850px) {
+  .my_container .box > div {
+    flex: 0 0 calc(100% - 0px); /* 4행 1열로 변경 */
+  }
+  .my_container #tt .box2 {
+    flex: 0 0 calc(100% - 0px); /* 4행 1열로 변경 */
+  }
+  .my_container #wish, #more2{width: 100%;}
+  .my_container .modal-content {
+    width: 80%;
+  }
+  .my_container .profile {
+    height: 400px;
+    flex-direction: column; /* 세로 배치로 변경 */
+    align-items: center; /* 가운데 정렬 */
+  }
+
+  .my_container .profile #my_an {
+    width: 80%;
+    margin: 0 0 30px 0;
+  }
+}
+/* 데스크탑 */
+@media screen and (min-width: 1440px) {
+	.my_container{
+		width: 1100px;
+	}
+}
+@media screen and (min-width: 850px) {
+	.my_container .profile img{
+		width: 300px;
+		height: 300px;
+	}
+}
+
+
+
+
+
+   
+/* jihun */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+section.notice {
+  padding: 80px 0;
+  width: 100%;
+  
+}
+
+.board-title {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.board-title h3 {
+  height: 20px;
+  margin: 50px 0px;
+  font-size: 33px;
+  font-weight: 400;
+  text-align: left;
+  color: #333; /* 제목 색상 추가 */
+}
+
+.board-title p {
+  color: #ccc;
+  margin: 20px 0px;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+}
+
+.board-table {
+  font-size: 15px;
+  
+}
+
+.medal1 {
+  background-color: #f1efef;
+  border-left: 3px solid #d1cccc;
+  border-right: 3px solid #d1cccc;
+  border-top: 3px solid #d1cccc;
+}
+.medal2 {
+  background-color: #f1efef;
+  border-left: 3px solid #d1cccc;
+  border-right: 3px solid #d1cccc;
+}
+.medal3 {
+  background-color: #f1efef;
+  border-left: 3px solid #d1cccc;
+  border-right: 3px solid #d1cccc;
+  border-bottom: 3px solid #d1cccc;
+}
+
+
+.board-table td {
+  border-bottom: 1px solid #ccc;
+}
+
+.board-table .th-num {
+  width: 40px;
+}
+
+.board-table .th-title {
+  width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* 긴 제목에 대한 처리 */
+}
+
+.board-table .th-id {
+  width: 150px;
+}
+
+.board-table .th-date {
+  width: 150px;
+}
+
+.board-table .th-hit {
+  width: 100px;
+}
+
+.board-table th,
+.board-table td {
+  padding: 12px 0;
+  text-align: center;
+}
+
+
+
+.board {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.blind {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+
+
+
+
+
+/* 검색 */
+.search-container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e4d7d7;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+  height: 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#search-input {
+  padding: 0px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 20px 0 0 20px;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+  
+}
+
+#search-select {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+  border-radius: 0 20px 20px 0;
+}
+
+#search-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  align-items: center;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#write{
+  padding: 0 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  margin-left: 100px;
+  cursor: pointer;
+  height: 32px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 780px) {
+  .board {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+
+  #write {
+    padding: 0 20px;
+    font-size: 16px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    margin-left: 30px;
+    cursor: pointer;
+    height: 32px;
+    border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+}
+
+
+
+
+
+/*sanghyun*/
+
+
+
+.mainBoard, .replyUpdateForm, #writeform{width: 800px; margin: 0 auto;}
+section#writeform, #replyUpdate{
+  padding: 80px 0;
+}
+#bottomlist{height:100px; margin:10px auto; text-align: center; margin-top: -80px}
+.pagination{margin: 10px;}
+
+.boardName{margin: 5px;}
+
+.board1 {
+  width: 950px;
+}
+
+.board2{
+	width: 805px;
+	margin: 0 auto;
+}
+
+
+hr{margin: 10px;}
+
+.boardViewForm{width: 860px; padding: 30px; border: 1px solid #cdcdcd; margin: 0 auto;}
+.btitle{
+  width: 800px; height: 34px; margin: 0 auto; margin-bottom: 10px;
+  font-size: 30px; font-weight: bold;
+}
+.boardInfo{color: #919191;}
+
+.upper{width: 800px; margin: 0 auto;}
+.thumb{background-color: pink; border-radius: 50%; width:36px; height:36px; float: left; margin-right: 5px;}
+.nickname1{font-size: 13px; font-weight: bold;}
+.update{font-size: 12px; color: #979797;}
+.etc{text-align: right; font-size:13px;}
+.content{width: 800px; margin: 20px auto;}
+.right{text-align: right; color:#979797; }
+
+.crud{text-align: center;}
+#DR{margin: 0px 2.5px ;padding: 2px ; border-radius: 50%; float: right;}
+
+.under{width: 800px; margin: 0 auto;}
+.nickname2{font-size: 13px; font-weight: bold; line-height: 3;}
+.likeReply{font-size: 13px; }
+
+
+
+.reply{width: 800px; margin: 0 auto;}
+.replyer{font-size: 13px;  font-weight: bold; padding-top: 7px;}
+.rcontent{font-size: 13px;}
+.rdate{font-size: 12px; color: #9f9f9f;}
+.reThumb{background-color: rgb(192, 219, 255); border-radius: 50%; width:20px; height:20px; float: left; margin: 5px 3px;}
+.rtitle{font-size: 17px; margin-left: 30px;}
+
+#replyform {margin-left: 50px; margin-top: 10px;}
+#replyform textarea{width: 750px; padding: 5px; height: 100px; resize: none;}
+.replylogin{background-color: #eee; margin: 10px 0; padding: 16px; text-align: center;}
+.replylogin a{color: blue;}
+.replylogin a:hover{text-decoration: underline;}
+.replyUpdateForm .replyUpdateForm2{margin: 0 auto;}
+.replycontent{padding: 5px; resize: none;}
+
+#writeTitle{padding : 5px; width: 500px; margin-bottom: 10px;}
+#writeContent{padding: 5px; width: 800px; height: 500px; resize: none;}
+
+
+.file{
+  padding: 10px 20px;
+  font-size: 16px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );;
+  border-radius: 20px;
+}
+.writeBot{text-align: center;}
+.writebtn{
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e4d7d7;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: rgb(180, 138, 137);
+}
+
+.file-input {
+    display: none;
+}
+
+.boardviewimage{width: 800px; }
+
+
+
+/* 반응형 */
+@media screen and (max-width: 780px) {
+	
+  .boardViewForm{width: 550px;}
+  #replyform textarea{width: 450px;}
+  
+  #writeContent{width: 500px;}
+  .boardviewimage{width: 548px; }
+}

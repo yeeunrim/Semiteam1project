@@ -44,26 +44,10 @@
 				</div>
 				<!-- 환율창 -->
 				<div id="currency_box">
-					<%-- <c:forEach var="rate" items="${rates}" varStatus="status">
-					    <c:choose>
-					        <c:when test="${status.index == 0}">
-					            <p>미국 USD&nbsp;${rate}</p>
-					        </c:when>
-					        <c:when test="${status.index == 1}">
-					            <p>일본 JPY&nbsp;${rate}</p>
-					        </c:when>
-					        <c:when test="${status.index == 2}">
-					            <p>유럽연합 EUR&nbsp;${rate}</p>
-					        </c:when>
-					        <c:when test="${status.index == 3}">
-					            <p>중국 CNY&nbsp;${rate}</p>
-					        </c:when>
-					    </c:choose>
-					</c:forEach> --%>
-					 <p>미국 USD&nbsp;${rate}</p>
-					 <p>일본 JPY&nbsp;${rate}</p>
-					 <p>유럽연합 EUR&nbsp;${rate}</p>
-					 <p>중국 CNY&nbsp;${rate}</p>
+					 <p>미국 USD&nbsp;&nbsp;${rateList[0]}</p>
+					 <p>일본 JPY&nbsp;&nbsp;${rateList[1]}</p>
+					 <p>유럽연합 EUR&nbsp;&nbsp;${rateList[2]}</p>
+					 <p>중국 CNY&nbsp;&nbsp;${rateList[3]}</p>
 				</div>
 			</div>
 			
@@ -77,11 +61,11 @@
 			<!-- 가로 슬라이드 : https://junhee6773.tistory.com/19 참고 -->
 			<div id="main_pictures">
 				<div>
-					<img src="resources/images/busan.png" alt="부산">
+					<a href=""><img src="resources/images/busan.png" alt="부산"></a>
 			  		<p>부산에서</p>
 			  	</div>
 				<div>
-					<img src="resources/images/seoul.png" alt="서울">
+					<a href="http://localhost:8080/desktop/travel/intravel.jsp"><img src="resources/images/seoul.png" alt="서울"></a>
 			  		<p>서울에서</p>
 			  	</div>
 				<div>
@@ -110,49 +94,55 @@
 					<p>인기글</p>
 				</div>
 				<div id="main_community_boxes">
+					<%-- <div>
+						<p>동행자 찾기</p>
+						<c:forEach items="${boardList}" var="board">
+							<p><a href="/boardview.do?bno=${board.bno}">${board.title}</a>
+						</c:forEach>
+					</div> --%>
 					<div id="main_community_box">
 						<p class="main_community_content_title">동행자 찾기</p>
 						<div class="main_community_content">	
 							<h3>인기글</h3>
-							<p><a href="#">스페인 - 바르셀로나 여행자 1명 (여) 구해</a>
-							<p><a href="#">12/5 ~ 12/12 부분 동행 구해요.</a>
-							<p><a href="#">축구 좋아하시는 분, 같이 축구 보러 갑시다</a>
+							<c:forEach items="${likeList1}" var="like1">
+								<p><a href="board1view.do?bno1=${like1.bno1}">${like1.title1 }</a></p>
+							</c:forEach>
 						</div>
 						<div class="main_community_content" id="main_community_content_bottom">
 							<h3>최신글</h3>	
-							<p><a href="#">스페인 - 바르셀로나 여행자 1명 (여) 구해</a>
-							<p><a href="#">12/5 ~ 12/12 부분 동행 구해요.</a>
-							<p><a href="#">축구 좋아하시는 분, 같이 축구 보러 갑시다</a>
+							<c:forEach items="${boardList1}" var="board1">
+								<p><a href="board1view.do?bno1=${board1.bno1}">${board1.title1 }</a></p>
+							</c:forEach>
 						</div>
 					</div>
 					<div id="main_community_box">
 						<p class="main_community_content_title">여행 후기</p>
 						<div class="main_community_content" >
 							<h3>인기글</h3>
-							<p><a href="#">일본 오사카 3박 4일 총 경비 150만원 (2인) 계획 공유 :)</a>
-							<p><a href="#">즐겁게 다녀온 이탈리아 렌트카 후기 (16박 17일)</a>
-							<p><a href="#">제주도 한달 살이 후기</a>
+							<c:forEach items="${likeList}" var="like">
+								<p><a href="boardview.do?bno=${like.bno}">${like.title }</a></p>
+							</c:forEach>
 						</div>
 						<div class="main_community_content" id="main_community_content_bottom">
 							<h3>최신글</h3>	
-							<p><a href="#">일본 오사카 3박 4일 총 경비 150만원 (2인) 계획 공유 :)</a>
-							<p><a href="#">즐겁게 다녀온 이탈리아 렌트카 후기 (16박 17일)</a>
-							<p><a href="#">제주도 한달 살이 후기</a>
+							<c:forEach items="${boardList}" var="board">
+								<p><a href="boardview.do?bno=${board.bno}">${board.title }</a></p>
+							</c:forEach>
 						</div>
 					</div>
 					<div id="main_community_box">
 						<p class="main_community_content_title">나의 계획</p>
 						<div class="main_community_content">
 							<h3>인기글</h3>
-							<p><a href="#">요르단 여행 일정 (4박 5일)</a>
-							<p><a href="#">북유럽 여행 일정 (30박 32일)</a>
-							<p><a href="#">국내 배낭 여행 (20일)</a>
+							<c:forEach items="${likeList2}" var="like">
+								<p><a href="board2view.do?bno2=${like.bno2}">${like.title2 }</a></p>
+							</c:forEach>
 						</div>
 						<div class="main_community_content" id="main_community_content_bottom">
 							<h3>최신글</h3>	
-							<p><a href="#">요르단 여행 일정 (4박 5일)</a>
-							<p><a href="#">북유럽 여행 일정 (30박 32일)</a>
-							<p><a href="#">국내 배낭 여행 (20일)</a>
+							<c:forEach items="${boardList2}" var="board">
+								<p><a href="board2view.do?bno2=${board.bno2}">${board.title2 }</a></p>
+							</c:forEach>
 						</div>
 					</div>
 				</div>

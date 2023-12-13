@@ -105,7 +105,7 @@ $(document).ready(function() {
 });
 
 /* 여행지사진 슬라이드 : 마우스로 임의로 슬라이드 */
-$(document).ready(function() {
+/*$(document).ready(function() {
     var isDown = false; // 마우스 버튼의 상태를 추적
     var startX;
     var scrollLeft;
@@ -137,7 +137,7 @@ $(document).ready(function() {
         slider.scrollLeft(scrollLeft - walk);
     });
 });
-
+*/
 
 /* 여행지사진 슬라이드 : 사진 1장씩 슬라이드 */
 $(document).ready(function() {
@@ -165,11 +165,11 @@ $(document).ready(function() {
     var slideInterval = setInterval(slideDivs, 3000);
 
     // 선택적: 마우스오버 시 슬라이드 일시정지
-    $mainPictures.on('mouseover', function() {
+   /* $mainPictures.on('mouseover', function() {
         clearInterval(slideInterval);
     }).on('mouseout', function() {
         slideInterval = setInterval(slideDivs, 3000);
-    });
+    });*/
 });
 
 /* 여행지사진 슬라이드 : 연속적으로 슬라이드 */
@@ -218,7 +218,7 @@ $(document).ready(function () {
 /*                          joinform02                                                                        */
 /* ==================================================================================================== */
 
-// 도메인 직접 입력 or domain option 선택
+// 도메인 직접 입력 or domain option 선택 및 전체이메일 input #full-email에 값 넣기
 $(document).ready(function() {
     // 도메인 목록 드롭다운의 변경사항을 감지하는 리스너 설정
     $('#domain-list').change(function() {
@@ -227,13 +227,25 @@ $(document).ready(function() {
         // '직접 입력' 옵션이 선택되었는지 확인
         if (selectedValue === 'type') {
             // 직접 입력을 위해 텍스트 입력 필드를 활성화
-            $('#domain-txt').prop('disabled', false).val('');
+            $('#domain-txt').prop('readonly', false).val('').focus();
         } else {
-            // 텍스트 입력 필드를 비활성화하고 선택된 도메인으로 값 설정
-            $('#domain-txt').prop('disabled', true).val(selectedValue);
+            // 텍스트 입력 필드를 읽기 전용으로 설정하고 선택된 도메인으로 값 설정
+            $('#domain-txt').prop('readonly', true).val(selectedValue);
         }
     });
+
+    // 폼 제출 이벤트를 처리하는 부분
+    $('form').on('submit', function(e) {
+        // 이메일 로컬 부분과 도메인을 결합
+        var emailLocalPart = $('#email').val();
+        var emailDomainPart = $('#domain-txt').val();
+        var fullEmail = emailLocalPart + '@' + emailDomainPart;
+        
+        // 전체 이메일 주소를 hidden input에 설정
+        $('#full-email').val(fullEmail);
+    });
 });
+
 
 // '출생 연도' 셀렉트 박스 option 목록 동적 생성
 $(document).ready(function() {
@@ -259,3 +271,29 @@ $(document).ready(function() {
         }));
     }
 });
+
+
+/* 채희 */
+
+$(document).ready(function(){
+    $(".my_container .select a").click(function(){
+      $(this).toggleClass("selected");
+    });
+  });
+// 모달 창 열기
+function openModal() {
+    document.getElementById('myModal').style.display = 'block';
+  }
+  
+  // 모달 창 닫기
+  function closeModal() {
+    document.getElementById('myModal').style.display = 'none';
+  }
+  
+  // 프로필 저장 (수정) 기능 - 원하는 동작으로 변경하세요
+  function saveProfile() {
+    // 여기에 프로필 저장 로직을 추가하세요
+    alert('프로필이 저장되었습니다.'); // 예시로 경고창을 띄우는 것입니다.
+    closeModal(); // 저장 후 모달 창 닫기
+  }
+  

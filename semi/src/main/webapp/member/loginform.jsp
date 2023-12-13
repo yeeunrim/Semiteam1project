@@ -14,12 +14,12 @@
 	<jsp:include page="../header.jsp" />
 	<section id="loginform">
 		
-		<div id="loginform_box">
+		<form id="loginform_box" action="/login.do" method="post">
 			<h2>로그인</h2>
 			<input type="email" id="email" name="email"
-					placeholder="이메일">
-			<input type="password" id="passwd" name="passwd"
-					placeholder="비밀번호">
+					placeholder="이메일" required>
+			<input type="password" id="pw" name="pw"
+					placeholder="비밀번호" required>
 			
 			<div id="loginform_checkbox">
 				<input type="checkbox"/>
@@ -27,14 +27,14 @@
 			</div>
 			
 			<div class="button">
-		    	<button type="button" onclick="">로그인</button>
+		    	<button type="submit" onclick="">로그인</button>
 			</div>
 			
 			<div id="loginform_bottom">
-				<a href="http://localhost:8080/member/joinform01.jsp">회원가입</a>
+				<a href="/joinform01.do">회원가입</a>
 				<a href="">아이디 · 비밀번호 찾기</a>
 			</div>
-		</div>
+		</form>
 	
 	</section>
 	<jsp:include page="../footer.jsp" />

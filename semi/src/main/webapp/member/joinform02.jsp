@@ -10,12 +10,14 @@
 <script src="https://kit.fontawesome.com/630c352365.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../resources/js/main.js"></script>
+<script src="../resources/js/validation.js"></script>
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
-      <section id="joinform02">
+      <section id="joinform02" >
       	
 	  <div id="joinform02_box">
+	  	  <form action="/insertusers.do" method="post" name="users">
 		  <h2>회원 가입</h2>
 		    	<ul>
 		    		<li>
@@ -27,21 +29,21 @@
 		    		
 		    		<li>
 		    			<label for="passwd">비밀번호</label>
-		    			<input type="password" id="passwd" name="passwd" 
+		    			<input type="password" id="pw" name="pw" 
 		    							placeholder="영문, 숫자, 특수문자 조합 8~15자를 사용해주세요">
 		    			<div id="message"></div>
 		    		</li>
 		    		<li>
 		    			<label for="passwd2">비밀번호 확인</label>
-		    			<input type="password" id="passwd2" name="passwd2">
+		    			<input type="password" id="pw2" name="pw2">
 		    			<div id="message"></div>
 		    		</li>
 		    		<li>
 		    			<label for="email">이메일</label>
 		    			<input type="text" id="email" name="email" 
-		    				placeholder="이메일"><!-- <span>@</span> -->
-		    			<input class="box" id="domain-txt" type="text"/>
-							<select class="box" id="domain-list">
+		    				placeholder="이메일"><span>@</span>
+		    			<input class="domain_box" id="domain-txt" type="text" name="domain-txt"/>
+							<select class="box" id="domain-list" >
 							  <option value="type">직접 입력</option>
 							  <option value="naver.com">naver.com</option>
 							  <option value="google.com">google.com</option>
@@ -49,36 +51,28 @@
 							  <option value="nate.com">nate.com</option>
 							  <option value="kakao.com">kakao.com</option>
 							</select>
+						<!-- 이메일 전체값 받는 input 박스 -->	
+						<input type="hidden" id="full-email" name="full-email" value="">
 		    		</li>
 		    		<li>
-		    			<div class="info" id="info_birth">
-		    			<label for="birth">생년월일</label>
-						  <select class="box" id="birth-year">
+		    			<div class="info" id="info__birth">
+		    			<label for="birthday">생년월일</label>
+						  <select class="box" id="birth-year" name="birth-year">
 						    <option disabled selected>출생 연도</option>
 						  </select>
-						  <select class="box" id="birth-month">
+						  <select class="box" id="birth-month" name="birth-month">
 						    <option disabled selected>월</option>
 						  </select>
-						  <select class="box" id="birth-day">
+						  <select class="box" id="birth-day" name="birth-day">
 						    <option disabled selected>일</option>
 						  </select>
 						</div>
 		    		</li>
-		    		
 		    		<li>
-		    			<div class="info" id="info_tel">
+		    			<div class="tel" id="tel_box">
 		    			<label for="tel">전화번호</label>
-						  <select class="box" id="tel_option">
-						    <option disabled selected>통신사</option>
-						    <option value="skt">SKT</option>
-						    <option value="kt">KT</option>
-						    <option value="lg">LG U+</option>
-						    <option value="skt_mvno">SKT 알뜰폰</option>
-						    <option value="kt_mvno">KT 알뜰폰</option>
-						    <option value="lg_mvno">LG U+ 알뜰폰</option>
-						  </select>
-						  <input class="box" id="tel_box" type="text"
-						  			placeholder="' - '을 제외한 숫자만 입력해주세요"/>
+						  <input type="text" id="tel" name="tel" 
+		    				placeholder="' - '을 제외한 숫자를 입력해주세요">
 						</div>
 		    		</li>
 		    		
@@ -93,8 +87,10 @@
 		    		</li>
 		    	</ul>
 		    <div class="button">
-		    	<button type="button" onclick="checkMember()">가입하기</button>
+		    	<!-- checkMember(): 유효성 검사  -->
+		    	<button type="button" onclick="checkUser()">가입하기</button> 
 	    	</div>
+	    	</form>
 	  	</div>
 		  
 	  </section>

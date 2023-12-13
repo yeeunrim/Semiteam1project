@@ -146,14 +146,14 @@ public class UsersDAO {
 		return result;
 	}
 	//프로필 편집
-	public void editProfile(Users u) {
+	public void editProfile(Users u, String sessionId) {
 		conn = JDBCUtil.getConnection();
 		
 		try {
 			String sql = "UPDATE users SET id = ?, "
 					+ "introduction = ? WHERE id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, u.getId()); //원래 닉네임
+			pstmt.setString(1, sessionId); //원래 닉네임
 			pstmt.setString(2, u.getIntroduction());
 			pstmt.setString(3, u.getId()); //변경 닉네임
 			//sql 실행

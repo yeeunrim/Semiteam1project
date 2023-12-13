@@ -305,17 +305,18 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/editprofile.do")) {
 			Users u = new Users();
 			
+			// 현재 세션에서 세션 ID 가져오기
+		    String sessionId = session.getId();
+		    
 			//수정란에 입력한 닉네임, 소개글 가져오기
-			String id = u.getId(); //원래 닉네임
 			String introduction = request.getParameter("introduction");
-			String id2 = request.getParameter("id2"); //변경 닉네임
+			String id = request.getParameter("id"); //변경 닉네임
 			
 			//수정 처리 메서드
-			u.setId(id);
 			u.setIntroduction(introduction);
-			u.setId(id2);
+			u.setId(id);
 			
-			uDAO.editProfile(u);
+			uDAO.editProfile(u, sessionId);
 			
 			nextPage="/member/mypage.jsp";
 		}else if(command.equals("/userslist.do")) {

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,31 +17,31 @@
 	<div id=mmm>
   <section class="my_container">
     <div class="profile">
-      <img src="../resources/images/page.png" alt="ÇÁ·ÎÇÊ»çÁø">
+      <img src="../resources/images/page.png" alt="í”„ë¡œí•„ì‚¬ì§„">
       <div id="my_an">
-        <h3>³ªÀÇ ÇÁ·ÎÇÊ</h3>
-        <p><br>´Ð³×ÀÓ : ${sessionId}</p>
-        <p><br>¼Ò°³±ÛÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä</p>
+        <h3>ë‚˜ì˜ í”„ë¡œí•„</h3>
+        <p><br>ë‹‰ë„¤ìž„ : ${sessionId}</p>
+        <p><br>ì†Œê°œê¸€ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”</p>
       </div>
       
-      <!-- ÇÁ·ÎÇÊ º¯°æ -->
+      <!-- í”„ë¡œí•„ ë³€ê²½ -->
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal()">&times;</span>
           
-          <!-- ÇÁ·ÎÇÊ ¼öÁ¤ ÆûÀÌ µé¾î°¥ ºÎºÐ -->
+          <!-- í”„ë¡œí•„ ìˆ˜ì • í¼ì´ ë“¤ì–´ê°ˆ ë¶€ë¶„ -->
           <form id="profileForm" action="/editprofile.do" method="post" name="profile">
-            <img src="../resources/images/page.png" alt="ÇÁ·ÎÇÊ»çÁø">
-            <!-- ÇÁ·ÎÇÊ ¼öÁ¤ ³»¿ë ÀÔ·Â Æû µîÀ» Ãß°¡ÇÏ¼¼¿ä -->
+            <img src="../resources/images/page.png" alt="í”„ë¡œí•„ì‚¬ì§„">
+            <!-- í”„ë¡œí•„ ìˆ˜ì • ë‚´ìš© ìž…ë ¥ í¼ ë“±ì„ ì¶”ê°€í•˜ì„¸ìš” -->
             <div id="my_p">
-              <p>³ªÀÇ ÇÁ·ÎÇÊ</p>
+              <p>ë‚˜ì˜ í”„ë¡œí•„</p>
               <hr>
-              <p><label for="nic">´Ð³×ÀÓ</label>
+              <p><label for="nic">ë‹‰ë„¤ìž„</label>
                 <input type="text" id="id" name="id"></p>
-              <p><label for="long">ÇÑ ÁÙ ¼Ò°³</label>
+              <p><label for="long">í•œ ì¤„ ì†Œê°œ</label>
                 <input type="textarea" id="introduction" name="introduction"></p>
               
-              <button type="button" onclick="saveProfile()">º¯°æ»çÇ× ÀúÀå</button>
+              <button type="button" onclick="saveProfile()">ë³€ê²½ì‚¬í•­ ì €ìž¥</button>
             </div>
           </form>
         </div>
@@ -50,41 +50,41 @@
       <button id="modify2"><a href="setting.jsp"><i class="fa-solid fa-gear"></i></a></button>
     </div>
     <div class="select">
-      <a href="#" class="toggle-link">³» °Ô½Ã¹° </a>
-      <a href="#" class="toggle-link">³» ´ñ±Û </a>
-      <a href="#" class="toggle-link">Âò </a>
+      <a href="#" class="toggle-link">ë‚´ ê²Œì‹œë¬¼ </a>
+      <a href="#" class="toggle-link">ë‚´ ëŒ“ê¸€ </a>
+      <a href="#" class="toggle-link">ì°œ </a>
     </div>
     <div class="box">
       <div id="box1">
-        <div class="title"><a href="">Á¦¸ñ</a></div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
       <div id="box1">
-        <div class="title"><a href="">Á¦¸ñ</a></div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
       <div id="box1">
-        <div class="title"><a href="">Á¦¸ñ</a></div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
       <div id="box1">
-        <div class="title"><a href="">Á¦¸ñ</a></div>
-        <div class="con">±Û³»¿ë</div>
+        <div class="title"><a href="">ì œëª©</a></div>
+        <div class="con">ê¸€ë‚´ìš©</div>
         <div class="like">
-          <a href=""> Âò 0 </a>
-          <a href=""> ´ñ±Û 0 </a>
+          <a href=""> ì°œ 0 </a>
+          <a href=""> ëŒ“ê¸€ 0 </a>
         </div>
       </div>
     </div>

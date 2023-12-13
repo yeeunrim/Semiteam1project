@@ -11,8 +11,8 @@ public class JDBCTest {
 		
 		String driverClass = "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521/xe";
-		String user = "jweb";
-		String password = "pwjweb";
+		String user = "semi";
+		String password = "pwsemi";
 		
 		try {
 			Class.forName(driverClass);	//오라클 연결 드라이버

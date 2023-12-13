@@ -1157,6 +1157,8 @@ section.notice {
 .board-title p {
   color: #ccc;
   margin: 20px 0px;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
 }
 
 .board-table {
@@ -1188,7 +1190,7 @@ section.notice {
 }
 
 .board-table .th-num {
-  width: 30px;
+  width: 40px;
 }
 
 .board-table .th-title {
@@ -1216,12 +1218,7 @@ section.notice {
   text-align: center;
 }
 
-* {
-  list-style: none;
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-}
+
 
 .board {
   width: 1100px;
@@ -1254,8 +1251,9 @@ section.notice {
   border: 1px solid #e4d7d7;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #e4d7d7;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
   height: 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #search-input {
@@ -1264,7 +1262,7 @@ section.notice {
   border: none;
   outline: none;
   border-radius: 20px 0 0 20px;
-  background-color: #e4d7d7;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
   
 }
 
@@ -1273,29 +1271,31 @@ section.notice {
   font-size: 16px;
   border: none;
   outline: none;
-  background-color: #e4d7d7;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
   border-radius: 0 20px 20px 0;
 }
 
 #search-button {
   padding: 10px 20px;
-  background-color: #e4d7d7;
   border: none;
   border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
   align-items: center;
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #write{
   padding: 0 20px;
   font-size: 16px;
-  background-color: #e4d7d7;
   border-radius: 20px;
   margin-left: 100px;
   cursor: pointer;
-  height: 30px;
+  height: 32px;
   border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
 }
 
 
@@ -1320,15 +1320,15 @@ section.notice {
   #write {
     padding: 0 20px;
     font-size: 16px;
-    background-color: #e4d7d7;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
     border-radius: 20px;
     margin-left: 30px;
     cursor: pointer;
-    height: 30px;
+    height: 32px;
     border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 }
-
 
 
 
@@ -1362,7 +1362,7 @@ hr{margin: 10px;}
 .boardViewForm{width: 860px; padding: 30px; border: 1px solid #cdcdcd; margin: 0 auto;}
 .btitle{
   width: 800px; height: 34px; margin: 0 auto; margin-bottom: 10px;
-  font-size: 26px;
+  font-size: 30px; font-weight: bold;
 }
 .boardInfo{color: #919191;}
 
@@ -1405,15 +1405,17 @@ hr{margin: 10px;}
 .file{
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #e4d7d7;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );;
   border-radius: 20px;
 }
 .writeBot{text-align: center;}
 .writebtn{
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #e4d7d7;
   border-radius: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
 }
 
 .file-label {

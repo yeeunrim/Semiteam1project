@@ -22,7 +22,6 @@
 		        <div class="board1">
 		            <h3>여행 후기</h3>
 		            <p>게시판에 맞는 정보를 공유해주세요.</p>
-		            <hr>
 		        </div>
 		    </div>
 
@@ -65,17 +64,13 @@
 				</c:choose>
 			</div>
 	        <div class = "under">
-	          <p><div class="thumb"></div>
-	          <div class="nickname2">
-	            ${board.id}
-	          </div>
 	          <div class="likeReply">
 	            <c:if test="${not empty sessionId}">
 					<div id="likeSection">
-					    <form action="/like.do?bno=${board.bno }&id=${sessionId}" method="post">
-   							<button type="submit" id="DR"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
-						</form>
-						<div id="likeCount">좋아요: ${like_count }개</div>
+						<div id="likeCount">
+						<a href="/like.do?bno=${board.bno }&id=${sessionId}"><i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i></a>
+						좋아요: ${like_count }개
+						</div>
 					</div>
 				</c:if>
 	          </div>

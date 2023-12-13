@@ -18,7 +18,6 @@
 	        <div class="board2">
 	            <h3>게시글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
-	            <hr>
 	        </div>
 	    </div>
 		<form action="/updateboard3.do" method="post">

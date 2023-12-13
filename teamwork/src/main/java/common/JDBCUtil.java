@@ -10,8 +10,8 @@ import java.sql.SQLException;
 public class JDBCUtil {
 	static String driverClass = "oracle.jdbc.OracleDriver";
 	static String url = "jdbc:oracle:thin:@localhost:1521/xe";
-	static String user = "jweb";
-	static String password = "pwjweb";
+	static String user = "semi";
+	static String password = "pwsemi";
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;

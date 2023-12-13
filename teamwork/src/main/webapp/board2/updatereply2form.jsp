@@ -18,7 +18,6 @@
 		     <div class="board">
 	            <h3>댓글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
-	            <hr>
 		    </div>
 		</div>
 		<div class="replyUpdateForm">

@@ -13,19 +13,18 @@
 </head>
 <body>
 	<!-- 로그인한 사용자만 글쓰기 허용됨 -->
-	<%-- <c:if test="${empty sessionId }">
+	<c:if test="${empty sessionId }">
 		<script type="text/javascript">
 			alert("로그인이 필요합니다.");
 			location.href = "/loginform.do";
 		</script>
-	</c:if> --%>
+	</c:if>
 	<jsp:include page="../header.jsp"/>
 		<section id="writeform">
 		    <div class="board-title">
 		        <div class="board2">
 		            <h3>동행자 찾기</h3>
 		            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
-		            <hr>
 		        </div>
 		    </div>
 			<form action="/write1.do" method="post" enctype="multipart/form-data">

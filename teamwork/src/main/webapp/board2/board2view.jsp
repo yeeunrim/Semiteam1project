@@ -22,7 +22,6 @@
 		        <div class="board1">
 		            <h3>나의 계획</h3>
 		            <p>게시판에 맞는 정보를 공유해주세요.</p>
-		            <hr>
 		        </div>
 		    </div>
 
@@ -75,7 +74,7 @@
 					    <form action="/like2.do?bno2=${board2.bno2 }&id=${sessionId}" method="post">
    							<button type="submit" id="DR"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
 						</form>
-						<div id="likeCount">좋아요: ${like_count2 }개</div>
+						<div id="likeCount">좋아요: ${board2.like_count2 }개</div>
 					</div>
 				<%-- </c:if> --%>
 	          </div>

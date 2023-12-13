@@ -25,7 +25,6 @@
 		        <div class="board2">
 		            <h3>공지 사항</h3>
 		            <p>공지 사항은 신중히 작성합시다.</p>
-		            <hr>
 		        </div>
 		    </div>
 			<form action="/noticewrite.do" method="post" enctype="multipart/form-data">

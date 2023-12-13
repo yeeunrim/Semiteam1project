@@ -21,7 +21,6 @@
         <div class="board">
             <h3>동행자 찾기</h3>
             <p>게시판에 맞는 정보를 공유해주세요.</p>
-            <hr>
         </div>
     </div>
 
@@ -164,7 +163,7 @@
 				<option value="content1" ${(field eq "content") ? "selected" : "" }>내용</option>
 				<option value="id" ${(field eq "id") ? "selected" : "" }>작성자</option>
 	        </select>
-	        <input type="text" id="search-input" placeholder="검색어를 입력하세요." value="${kw }">
+	        <input type="text" id="search-input" placeholder="검색어를 입력하세요." value="${kw }" size="30%">
 	     <button type="submit" id="search-button">검색</button>
 	    </div>
 	    </form>

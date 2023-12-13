@@ -2,6 +2,7 @@
 
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 @font-face {
   font-family: 'NanumSquareRound';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
@@ -84,6 +85,120 @@ section{height: 2800px;}
 #visitCity_image .image_datail:hover{opacity: 0.5;}
 
 /* 요즘 인기 있는 공간 */
-#popularCity{width: 100%; height: 500px;}
+#popularCity{width: 100%; height: 600px;}
 #popularCity p{font-size: 40px; color: #212020; padding: 20px 0 20px 20px;}
-#popularCity #slide_image{width: 3000px;height: 500px; margin: 0; padding: 0; display: flex;}
+
+.rollingbanner{width: 100%; height: 500px; display: flex;}
+.rollingbanner > .slide{position: relative; width: 100%; height: 500px; overflow: hidden; display: flex;}
+.roller{width: 2000px; height: 100%; margin: 0; padding: 0;}
+.roller > ul{height: 100%; display: flex;
+  margin: 0; padding: 0; list-style: none; flex-flow: row nowrap;}
+.roller .slide_image img{width: 333px;}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#popularCity #slide{overflow: hidden; display: flex; position: relative; width: 100%; height: 500px;}
+
+
+ #popularCity #slide_image{width: 3330px; height: 100%; margin: 0; padding: 0; 
+  display: flex; flex-wrap: nowrap;/*  animation: slideMove 30s linear infinite; }
+#popularCity #slide_image img{width: 333px;}
+
+#slide_image.original {
+	animation: rollingleft1 33s linear infinite;
+}
+#slide_image.clone {
+	animation: rollingleft2 33s linear infinite;
+}
+
+@keyframes rollingleft1 {
+	0% { transform: translateX(0); }
+	50% { transform: translateX(-100%); }
+	50.01% { transform: translateX(100%); }
+	100% { transform: translateX(0); }
+}
+
+@keyframes rollingleft2 {
+	0% { transition: translateX(0); }
+	100% { transform: translateX(-200%); }
+} */
+
+
+
+/* 슬라이드 애니메이션 */
+/* @keyframes slideMove {
+  0% {transform: translate(0, 0);}
+  100%{transform: translate(-50%, 0);}
+} */
+/* 슬라이드 이미지 개별 CSS */
+/* 1/10 (10개 중 첫번째 이미지 CSS) */
+/* #slide_image .image1{position: absolute; top: 175px; left: 91.5px;} */
+/* 2/10 (10개 중 두번째 이미지 CSS) */
+/* #slide_image .image2{position: absolute; top: 175px; left: 424.5px;} */
+/* 3/10 (10개 중 세번째 이미지 CSS) */
+/* #slide_image .image3{position: absolute; top: 175px; left: 757.5px;} */
+/* 4/10 (10개 중 네번째 이미지 CSS) */
+/* #slide_image .image4{position: absolute; top: 175px; left: 1090.5px;} */
+
+/* 5/10 (10개 중 다섯번째 이미지 CSS) */
+/* #slide_image .image5{position: absolute; top: 175px; left: 1423.5px;} */
+/* 6/10 (10개 중 여섯번째 이미지 CSS) */
+/* #slide_image .image5{position: absolute; top: 175px; left: 1756.5px;} */
+/* 7/10 (10개 중 일곱번째 이미지 CSS) */
+/* #slide_image .image5{position: absolute; top: 175px; left: 2089.5px;} */
+/* 8/10 (10개 중 여덟번째 이미지 CSS) */
+/* #slide_image .image5{position: absolute; top: 175px; left: 2422.5px;} */
+/* 9/10 (10개 중 아홉번째 이미지 CSS) */
+/* #slide_image .image5{position: absolute; top: 175px; left: 2755.5px;} */
+/* 10/10 (10개 중 열번째 이미지 CSS) */
+/* #slide_image .image5{position: absolute; top: 175px; right: 91.5px;} */
+
+/* 슬라이드 이미지 공통 CSS */
+/* #slide_image .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8, .image9, .image10{
+  width: 150px; height: 150px; background-color: #cbcbcbb0; border-radius: 100%; 
+  box-shadow: 2px 2px 5px 2px rgb(136, 136, 136);
+  transform: rotate(-20deg); display: none; text-align: center;
+}
+
+#slide_image .image1 span,
+#slide_image .image2 span,
+#slide_image .image3 span,
+#slide_image .image4 span{ 
+  position: absolute; top: 30px; left: 32px; 
+  text-shadow: 2px 2px 3px rgb(126, 126, 126); 
+  font-family: 'Arimo', sans-serif; font-size: 25px;
+}
+
+#slide_image .image5 span,
+#slide_image .image6 span,
+#slide_image .image7 span,
+#slide_image .image8 span,
+#slide_image .image9 span,
+#slide_image .image10 span{
+  position: absolute; top: 30px; left: 50px;
+}
+
+#slide_image #image1:hover ~ .image1,
+#slide_image #image2:hover ~ .image2,
+#slide_image #image3:hover ~ .image3,
+#slide_image #image4:hover ~ .image4
+{display: block;}
+
+#slide_image #image5:hover ~ .image5,
+#slide_image #image6:hover ~ .image6,
+#slide_image #image7:hover ~ .image7,
+#slide_image #image8:hover ~ .image8,
+#slide_image #image9:hover ~ .image9,
+#slide_image #image10:hover ~ .image10{
+  display: block;
+} */

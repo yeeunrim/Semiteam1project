@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>국내 여행 | 메인</title>
   <link rel="stylesheet" href="css/korea_main.css">
-  <script src="js/koreamain.js"></script>
   <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -331,11 +330,7 @@
             </tbody>
           </table>
         </div>
-
       </div>
-
-      <!-- 도시 선택 -> 드롭다운 (자바스크립트) -->
-      <script src="js/koreamain.js"></script> 
 
       <!-- 요즘 많이 찾는 지역 -> 상세보기 이동 영역 -->
       <div id="visitCity">
@@ -364,20 +359,57 @@
         </div>
       </div>
 
-      <!-- 요즘 인기 있는 공간 -->
+      <!-- 요즘 인기 있는 공간 : 롤링배너 -->
       <div id="popularCity">
         <p>요즘 인기 있는 공간</p>
-        <div id="slide">
-          <div id="slide_image"> 
-            <img src="images/lighthouse.jpg" alt="등대">
-            <img src="images/morning.jpg" alt="숲속의 아침">
-            <img src="images/woman-flower.jpg" alt="사진찍는여성">
-            <img src="images/lotte-tower.jpg" alt="롯데타워">
-            <img src="images/Daegwallyeong.jpg" alt="대관령">
-            <img src="images/gyeongbokgung-palace.jpg" alt="경복궁">
-            <img src="images/seoul.jpg" alt="서울의 전경">
-            <img src="images/choenjiyeon-falls.jpg" alt="천지연폭포">
-            <img src="images/incheon-bridge.jpg" alt="서울의 전경">
+        <!-- 스토리 형식 : 10개로 고정 -->
+        <!-- 사진 클릭 시, 여행 후기 카데고리로 이동 후 내용 확인 가능 -->
+        <div class="rollingbanner">
+          <div class="slide"> <!-- 배너 표시 영역 -->
+            <div class="roller"> <!-- 원본 배너 -->
+              <ul> <!-- 배너 데이터 -->
+                <li class="slide_image">
+                  <a href="#"><img id="image1" src="images/pohang-homigot.png" alt="호미곶"></a>
+                  <div class="image1"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image2" src="images/woman-flower.jpg" alt="사진찍는여성"></a>
+                  <div class="image2"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image3" src="images/lotte-tower.jpg" alt="롯데타워"></a>
+                  <div class="image3"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image4" src="images/Daegwallyeong.jpg" alt="대관령"></a>
+                  <div class="image4"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image5" src="images/gyeongbokgung-palace.jpg" alt="경복궁"></a>
+                  <div class="image5"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image6" src="images/damyang-metasequoia.jpg" alt="담양의 메타세콰이어길"></a>
+                  <div class="image6"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image7" src="images/busan-train.jpg" alt="부산레일기차"></a>
+                  <div class="image7"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image8" src="images/choenjiyeon-falls.jpg" alt="천지연폭포"></a>
+                  <div class="image8"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image9" src="images/incheon-bridge.jpg" alt="인천대교"></a>
+                  <div class="image9"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+                <li class="slide_image">
+                  <a href="#"><img id="image10" src="images/gyeongju.jpg" alt="경주"></a>
+                  <div class="image10"><span>CLICK<br>AND<br>DETAIL</span></div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div> 
@@ -389,6 +421,8 @@
         </div>
       </div>
     </section>
+
+    <script src="js/koreamain.js"></script>
 
     <!-- footer 부분 -->
 

@@ -138,7 +138,7 @@ public class BoardDAO {
 			conn = JDBCUtil.getConnection();
 			//sql 처리 : 수정일 처리는 현재 날짜와 시간을 입력함
 			String sql = "UPDATE board SET title = ?"
-					+ ", content = ?, filename = ? modifydate= ? WHERE bno = ?";
+					+ ", content = ?, filename = ?, modifydate= ? WHERE bno = ?";
 			pstmt = conn.prepareStatement(sql);
 			//폼에 입력된 데이터를 가져와서 db에 저장
 			pstmt.setString(1, b.getTitle());

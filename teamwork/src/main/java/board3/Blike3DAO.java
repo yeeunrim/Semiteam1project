@@ -119,7 +119,7 @@ public class Blike3DAO {
             conn = JDBCUtil.getConnection();
             String sql = "SELECT COUNT(*) as like_count3 FROM blike3 WHERE bno3 = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(3, bno);
+            pstmt.setInt(1, bno);
             rs = pstmt.executeQuery();
 
             if (rs.next()) {

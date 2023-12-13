@@ -109,7 +109,7 @@
 	            	</div>
 	            </div>
 	            <div class = "rcontent">
-	              ${reply.rcontent2}
+	              ${reply.rcontent3}
 	            </div>
 	            <div class = "rdate">
 	              <c:choose>

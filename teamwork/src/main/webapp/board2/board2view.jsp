@@ -64,10 +64,6 @@
 				</c:choose>
 			</div>
 	        <div class = "under">
-	          <p><div class="thumb"></div>
-	          <div class="nickname2">
-	            ${board2.id}
-	          </div>
 	          <div class="likeReply">
 	            <c:if test="${not empty sessionId}">
 					<div id="likeSection">

@@ -1099,6 +1099,8 @@ public class MainController extends HttpServlet {
 					b2DAO.updateReplyCount2(bno);
 					
 					nextPage="/board2/board2view.jsp";
+
+					
 				}else if(command.equals("/deleteboard2.do")) {
 					int bno = Integer.parseInt(request.getParameter("bno2"));
 					
@@ -1196,7 +1198,9 @@ public class MainController extends HttpServlet {
 					}	
 					l2DAO.updateLikeCount2(bno);
 					nextPage="board2view.do?bno2=" + bno;
+
 				}
+				
 		
 		
 				//Q&A 게시판

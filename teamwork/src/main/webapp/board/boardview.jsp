@@ -95,13 +95,13 @@
 	            <div class = "replyer">
 		              ${reply.replyer}
 	              	<div class="recrud">
-		            	<%-- <c:if test="${sessionId eq reply.replyer }"> --%>
+		            	<c:if test="${sessionId eq reply.replyer }">
 						<a href="/deletereply.do?bno=${board.bno }&rno=${reply.rno }"
 								onclick="return confirm('댓글을 삭제하시겠습니까?')">
 						<button type="button" id=DR><i class="fa-solid fa-trash-can"></i></button></a>
 						<a href="/updatereplyform.do?bno=${board.bno }&rno=${reply.rno }">
 						<button type="button" id=DR><i class="fa-solid fa-pen"></i></button></a>
-						<%-- </c:if> --%>
+						</c:if>
 	            	</div>
 	            </div>
 	            <div class = "rcontent">

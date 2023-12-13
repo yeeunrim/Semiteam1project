@@ -69,26 +69,26 @@
 	            ${board3.id}
 	          </div>
 	          <div class="likeReply">
-	            <%-- <c:if test="${not empty sessionId}"> --%>
+	             <c:if test="${not empty sessionId}">
 					<div id="likeSection">
-					    <form action="/like3.do?bno3=${board3.bno3 }&id=${sessionId}" method="post">
-   							<button type="submit" id="DR"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
-						</form>
-						<div id="likeCount">좋아요: ${board3.like_count3 }개</div>
+						<div id="likeCount">
+						<a href="/like3.do?bno3=${board3.bno3 }&id=${sessionId}"><i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i></a>
+						좋아요: ${like_count }개
+						</div>
 					</div>
-				<%-- </c:if> --%>
+				</c:if>
 	          </div>
 	        </div>
 	        <hr>
 	        <div class="crud">
 	        	<p>
 				<a href="/board3list.do"><button type="button" class="writebtn">목록</button></a>
-				<%-- <c:if test="${sessionId eq board.id }"> --%>
+				<c:if test="${sessionId eq board3.id }">
 					<a href="/deleteboard3.do?bno3=${board3.bno3 }"
 						onclick="return confirm('정말로 삭제하시겠습니까?')">
 					<button type="button" class="writebtn">삭제</button></a>
 					<a href="/updateboard3form.do?bno3=${board3.bno3 }"><button type="button" class="writebtn">수정</button></a>
-				<%-- </c:if> --%>
+				</c:if>
 				</p>
 			</div>
 	        <div class="replyform">
@@ -99,13 +99,13 @@
 	            <div class = "replyer">
 		              ${reply.replyer3}
 	              	<div class="recrud">
-		            	<%-- <c:if test="${sessionId eq reply.replyer }"> --%>
+		            	<c:if test="${sessionId eq reply.replyer3 }">
 						<a href="/deletereply3.do?bno3=${board3.bno3 }&rno3=${reply.rno3 }"
 								onclick="return confirm('댓글을 삭제하시겠습니까?')">
 						<button type="button" id=DR><i class="fa-solid fa-trash-can"></i></button></a>
 						<a href="/updatereply3form.do?bno3=${board3.bno3 }&rno2=${reply.rno3 }">
 						<button type="button" id=DR><i class="fa-solid fa-pen"></i></button></a>
-						<%-- </c:if> --%>
+						</c:if>
 	            	</div>
 	            </div>
 	            <div class = "rcontent">
@@ -124,7 +124,7 @@
 	          </div>
 	          </c:forEach>
 	          <div class="replyWrite">
-	            <%-- <c:if test="${not empty sessionId}"> --%>
+	            <c:if test="${not empty sessionId}">
 				<form action="/insertreply3.do" method="post" id="replyform">
 					<input type="hidden" name="bno" value="${board3.bno3 }">
 					<input type="hidden" name="replyer" value="${sessionId }">
@@ -134,7 +134,7 @@
 					</p>
 					<button type="submit" class="writebtn">등록</button>
 				</form>	
-				<%-- </c:if> --%>
+				</c:if>
 				</div>	
 	        </div>
 	      </div>

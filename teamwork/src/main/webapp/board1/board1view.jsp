@@ -64,31 +64,27 @@
 				</c:choose>
 			</div>
 	        <div class = "under">
-	          <p><div class="thumb"></div>
-	          <div class="nickname2">
-	            ${board1.id}
-	          </div>
 	          <div class="likeReply">
-	            <%-- <c:if test="${not empty sessionId}"> --%>
+	            <c:if test="${not empty sessionId}">
 					<div id="likeSection">
-					    <form action="/like1.do?bno1=${board1.bno1 }&id=${sessionId}" method="post">
-   							<button type="submit" id="DR"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
-						</form>
-						<div id="likeCount">좋아요: ${board1.like_count1 }개</div>
+						<div id="likeCount">
+						<a href="/like1.do?bno1=${board1.bno1 }&id=${sessionId}"><i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i></a>
+						좋아요: ${like_count }개
+						</div>
 					</div>
-				<%-- </c:if> --%>
+				</c:if>
 	          </div>
 	        </div>
 	        <hr>
 	        <div class="crud">
 	        	<p>
 				<a href="/board1list.do"><button type="button" class="writebtn">목록</button></a>
-				<%-- <c:if test="${sessionId eq board.id }"> --%>
+				<c:if test="${sessionId eq board1.id }">
 					<a href="/deleteboard1.do?bno1=${board1.bno1 }"
 						onclick="return confirm('정말로 삭제하시겠습니까?')">
 					<button type="button" class="writebtn">삭제</button></a>
 					<a href="/updateboard1form.do?bno1=${board1.bno1 }"><button type="button" class="writebtn">수정</button></a>
-				<%-- </c:if> --%>
+				</c:if>
 				</p>
 			</div>
 	        <div class="replyform">
@@ -99,14 +95,14 @@
 	            <div class = "replyer">
 		              ${reply.replyer1}
 	              	<div class="recrud">
-		            	<%-- <c:if test="${sessionId eq reply.replyer }"> --%>
+		            	<c:if test="${sessionId eq reply.replyer1 }">
 						<a href="/deletereply1.do?bno1=${board1.bno1 }&rno1=${reply.rno1 }"
 								onclick="return confirm('댓글을 삭제하시겠습니까?')">
 						<button type="button" id=DR><i class="fa-solid fa-trash-can"></i></button></a>
 						<a href="/updatereply1form.do?bno1=${board1.bno1 }&rno1=${reply.rno1 }">
 						<button type="button" id=DR><i class="fa-solid fa-pen"></i></button></a>
-						<%-- </c:if> --%>
-	            	</div>
+						</c:if>
+					</div>
 	            </div>
 	            <div class = "rcontent">
 	              ${reply.rcontent1}
@@ -124,7 +120,7 @@
 	          </div>
 	          </c:forEach>
 	          <div class="replyWrite">
-	            <%-- <c:if test="${not empty sessionId}"> --%>
+	            <c:if test="${not empty sessionId}">
 				<form action="/insertreply1.do" method="post" id="replyform">
 					<input type="hidden" name="bno" value="${board1.bno1 }">
 					<input type="hidden" name="replyer" value="${sessionId }">
@@ -134,7 +130,7 @@
 					</p>
 					<button type="submit" class="writebtn">등록</button>
 				</form>	
-				<%-- </c:if> --%>
+				</c:if>
 				</div>	
 	        </div>
 	      </div>

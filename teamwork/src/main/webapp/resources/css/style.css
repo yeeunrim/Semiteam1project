@@ -1343,7 +1343,7 @@ section#writeform, #replyUpdate{
   padding: 80px 0;
 }
 #bottomlist{height:100px; margin:10px auto; text-align: center; margin-top: -80px}
-
+.pagination{margin: 10px;}
 
 .boardName{margin: 5px;}
 

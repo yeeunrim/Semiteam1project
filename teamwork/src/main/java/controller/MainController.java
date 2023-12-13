@@ -895,7 +895,7 @@ public class MainController extends HttpServlet {
 		//댓글 구현
 		if(command.equals("/insertreply1.do")) {
 			//댓글 폼 데이터 받기
-			int bno = Integer.parseInt(request.getParameter("bno1"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			String rcontent = request.getParameter("rcontent");
 			String replyer = request.getParameter("replyer");
 			
@@ -1134,7 +1134,7 @@ public class MainController extends HttpServlet {
 				//댓글 구현
 				if(command.equals("/insertreply2.do")) {
 					//댓글 폼 데이터 받기
-					int bno = Integer.parseInt(request.getParameter("bno2"));
+					int bno = Integer.parseInt(request.getParameter("bno"));
 					String rcontent = request.getParameter("rcontent");
 					String replyer = request.getParameter("replyer");
 					
@@ -1370,7 +1370,7 @@ public class MainController extends HttpServlet {
 				//댓글 구현
 				if(command.equals("/insertreply3.do")) {
 					//댓글 폼 데이터 받기
-					int bno = Integer.parseInt(request.getParameter("bno3"));
+					int bno = Integer.parseInt(request.getParameter("bno"));
 					String rcontent = request.getParameter("rcontent");
 					String replyer = request.getParameter("replyer");
 					
@@ -1454,21 +1454,21 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/write1.do") || command.equals("/updateboard1.do")) { 
 			response.sendRedirect("board1list.do");
 		}else if (command.equals("/insertreply1.do") || command.equals("/deletereply1.do") || command.equals("/updatereply1.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno"));
+			int bno = Integer.parseInt(request.getParameter("bno1"));
 			response.sendRedirect("board1view.do?bno1=" + bno);
 			
 			
 		}else if(command.equals("/write2.do") || command.equals("/updateboard2.do")) { 
 			response.sendRedirect("board2list.do");
 		}else if (command.equals("/insertreply2.do") || command.equals("/deletereply2.do") || command.equals("/updatereply2.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno"));
+			int bno = Integer.parseInt(request.getParameter("bno2"));
 			response.sendRedirect("board2view.do?bno2=" + bno);
 			
 			
 		}else if(command.equals("/write3.do") || command.equals("/updateboard3.do")) { 
 			response.sendRedirect("board3list.do");
 		}else if (command.equals("/insertreply3.do") || command.equals("/deletereply3.do") || command.equals("/updatereply3.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno"));
+			int bno = Integer.parseInt(request.getParameter("bno3"));
 			response.sendRedirect("board3view.do?bno3=" + bno);
 			
 			

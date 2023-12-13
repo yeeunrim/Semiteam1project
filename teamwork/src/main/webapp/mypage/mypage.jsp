@@ -12,7 +12,7 @@
   <script src="../resources/js/main.js"></script>
 </head>
 <body>
-<div>	
+<div id="mmm">	
   <jsp:include page="../header.jsp" />
   <section class="my_container">
     <div class="profile">

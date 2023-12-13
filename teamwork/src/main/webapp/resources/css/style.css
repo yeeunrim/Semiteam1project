@@ -661,7 +661,7 @@ footer li{
 
 /* chaehee */
 
-
+#mmm{margin: 200px auto 110px auto;}
 .my_container{
   margin: 0 auto;
   width: 80%;
@@ -1338,7 +1338,7 @@ section.notice {
 
 
 
-.mainBoard, .replyUpdateForm, #writeform{width: 800px; margin: 0 auto;}
+.mainBoard, .replyUpdateForm, #writeform{width: 1100px; margin: 0 auto;}
 section#writeform, #replyUpdate{
   padding: 80px 0;
 }
@@ -1348,11 +1348,12 @@ section#writeform, #replyUpdate{
 .boardName{margin: 5px;}
 
 .board1 {
-  width: 950px;
+  width: 930px;
+  margin: 0 auto;
 }
 
 .board2{
-	width: 805px;
+	width: 930px;
 	margin: 0 auto;
 }
 
@@ -1375,6 +1376,7 @@ hr{margin: 10px;}
 .right{text-align: right; color:#979797; }
 
 .crud{text-align: center;}
+.crud button{margin: 10px;}
 #DR{margin: 0px 2.5px ;padding: 2px ; border-radius: 50%; float: right;}
 
 .under{width: 800px; margin: 0 auto;}
@@ -1383,15 +1385,16 @@ hr{margin: 10px;}
 
 
 
-.reply{width: 800px; margin: 10px auto;}
+.reply{width: 800px; margin: 20px auto;}
 .replyer{font-size: 13px;  font-weight: bold; padding-top: 7px;}
 .rcontent{font-size: 13px;}
 .rdate{font-size: 12px; color: #9f9f9f;}
 .reThumb{background-color: rgb(192, 219, 255); border-radius: 50%; width:20px; height:20px; float: left; margin: 0px 3px; text-align: center}
 .rtitle{font-size: 17px; margin-left: 30px;}
 
-#replyform {margin-left: 50px; margin-top: 10px;}
-#replyform textarea{width: 750px; padding: 5px; height: 100px; resize: none;}
+#replyform {margin-left: 30px; margin-top: 10px;}
+#replyform textarea{width: 780px; padding: 5px; height: 100px; resize: none; text-align: left;}
+
 .replylogin{background-color: #eee; margin: 10px 0; padding: 16px; text-align: center;}
 .replylogin a{color: blue;}
 .replylogin a:hover{text-decoration: underline;}
@@ -1408,6 +1411,7 @@ hr{margin: 10px;}
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );;
   border-radius: 20px;
+  border: none;
 }
 .writeBot{text-align: center;}
 .writebtn{
@@ -1416,25 +1420,10 @@ hr{margin: 10px;}
   border-radius: 20px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+  border: none;
 }
 
-.file-label {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e4d7d7;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
 
-.file-label:hover {
-    background-color: rgb(180, 138, 137);
-}
-
-.file-input {
-    display: none;
-}
 
 .boardviewimage{width: 800px; }
 

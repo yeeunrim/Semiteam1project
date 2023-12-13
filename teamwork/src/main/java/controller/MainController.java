@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -182,6 +183,77 @@ public class MainController extends HttpServlet {
 			
 			
 			nextPage="/main.jsp";
+		
+		//찜한 목록
+		}else if(command.equals("/wishlist.do")) {
+
+			String id = "show3239";
+			List<Board> boardList = bDAO.getBoardListBlike(id);
+			
+			request.setAttribute("boardList", boardList);	
+			
+			
+			if(boardList.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board w1 = boardList.get(0);
+				Board w2 = boardList.get(1);
+				Board w3 = boardList.get(2);
+				
+				request.setAttribute("w1", w1);
+				request.setAttribute("w2", w2);
+				request.setAttribute("w3", w3);
+			}else if(boardList.size() == 2) {
+				
+			}
+			
+			
+			List<Board1> boardList1 = b1DAO.getBoardListBlike1(id);
+			
+			request.setAttribute("boardList1", boardList1);	
+			
+			if(boardList1.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board1 w11 = boardList1.get(0);
+				Board1 w21 = boardList1.get(1);
+				Board1 w31 = boardList1.get(2);
+				
+				request.setAttribute("w11", w11);
+				request.setAttribute("w21", w21);
+				request.setAttribute("w31", w31);
+			}
+			
+			List<Board2> boardList2 = b2DAO.getBoardListBlike2(id);
+			
+			request.setAttribute("boardList2", boardList2);	
+			
+			if(boardList2.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board2 w12 = boardList2.get(0);
+				Board2 w22 = boardList2.get(1);
+				Board2 w32 = boardList2.get(2);
+				
+				request.setAttribute("w12", w12);
+				request.setAttribute("w22", w22);
+				request.setAttribute("w32", w32);
+			}
+			
+			List<Board3> boardList3 = b3DAO.getBoardListBlike3(id);
+			
+			request.setAttribute("boardList3", boardList3);	
+			
+			if(boardList3.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board3 w13 = boardList3.get(0);
+				Board3 w23 = boardList3.get(1);
+				Board3 w33 = boardList3.get(2);
+				
+				request.setAttribute("w13", w13);
+				request.setAttribute("w23", w23);
+				request.setAttribute("w33", w33);
+			}
+			
+			
+			nextPage="/mypage/wishlist.jsp";
 		}else if(command.equals("/userslist.do")) {
 			//회원 정보를 db에서 가져옴
 			List<Users> usersList = uDAO.getUsersList();

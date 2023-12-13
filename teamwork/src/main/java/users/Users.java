@@ -1,8 +1,9 @@
 package users;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Users {
+public class Users implements Serializable{
 	private static final long serialVersionUID = 8L;
 
 	private String id;			//회원 아이디

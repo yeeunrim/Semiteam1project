@@ -303,4 +303,40 @@ public class BoardDAO {
 		}
 		return boardList;
 	}
+	
+	public List<Board> getBoardListBlike(String id) {
+		conn = JDBCUtil.getConnection();
+		List<Board> boardListBlike = new ArrayList<>();
+		
+		try {
+			String sql = "SELECT * FROM board WHERE bno IN "
+					+ "(SELECT bno FROM blike WHERE id = ?) "
+					+ "ORDER BY createdate DESC";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Board b = new Board();
+				b.setBno(rs.getInt("bno"));
+				b.setTitle(rs.getString("title"));
+				b.setContent(rs.getString("content"));
+				b.setCreateDate(rs.getTimestamp("createdate"));
+				b.setModifyDate(rs.getTimestamp("modifydate"));
+				b.setHit(rs.getInt("hit"));
+				b.setFilename(rs.getString("filename"));
+				b.setId(rs.getString("id"));
+				b.setReply_count(rs.getInt("reply_count"));
+				b.setLike_count(rs.getInt("like_count"));
+				
+				boardListBlike.add(b);	//어레이리스트에 객체 1명 저장
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+		return boardListBlike;
+	}
+	
+	
 }

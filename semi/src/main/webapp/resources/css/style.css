@@ -103,7 +103,7 @@ header #mainMenu ul ul li{
 	line-height: 42px;
 }
 header #mainMenu ul ul li a{
-	color: rgb(158, 156, 163);
+	color: rgb(128, 125, 138);
 }
 header ul  ul #a_1{
 	padding-left: 40px;
@@ -207,7 +207,7 @@ footer li{
 	height: 17px;
 	display: inline-block;
 	border-radius: 100%;
-	background-color: #878585;
+	background-color: rgba(135, 133, 133, 0.5);
 }
 #main #main_img #dots .dot_active{
 	width: 40px;
@@ -302,6 +302,7 @@ footer li{
 }
 #main_pictures{
 	width: 98%;
+	height: 37vw;
 	margin: 0 auto;
 	display: flex;
 	/*justify-content: space-evenly;*/
@@ -459,7 +460,6 @@ footer li{
 }
 #joinform01 button {
 	font-size: 16px;
-	letter-spacing: 0.1em;
 	width: 180px;
 	height: 50px;
     background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
@@ -489,7 +489,7 @@ footer li{
 /* ==================================================================================================== */
 #joinform02 #joinform02_box{
 	width: 590px;
-	height: 560px;
+	height: 625px;
 	border-radius: 5px;
 	border: 1px solid #E0E0E0;
 	margin: 200px auto 150px auto;
@@ -518,12 +518,12 @@ footer li{
 	border: 1px solid rgb(196, 196, 196);
 }
 #joinform02 #email, #domain-txt{
-	width: 75px !important;
+	width: 68px !important;
 	font-size: 12px;
 	
 }
 #joinform02 #domain-list{
-	width: 109px;
+	width: 139px;
 	height: 37.5px;
 	font-size: 12px;
 	color:rgb(117, 117, 117);
@@ -535,12 +535,20 @@ footer li{
 	font-size: 14px;
 	padding:  0 0 0 5px;
 }
-#joinform02 #birth-year, #birth-month, #birth-day{
+#joinform02 #birth-year, #birth-month, #birth-day, #tel_option{
 	width: 100px;
 	height: 37px;
 	font-size: 12px;
 	color:rgb(117, 117, 117);
 	padding: 9px 12px;
+	border-radius: 3px;
+	border: 1px solid rgb(196, 196, 196);
+}
+#joinform02  #info_tel #tel_box{
+	padding: 10px 15px;
+	width: 215px;
+	height: 16px;
+	font-size: 12px;
 	border-radius: 3px;
 	border: 1px solid rgb(196, 196, 196);
 }
@@ -561,7 +569,6 @@ footer li{
 }
 #joinform02 button {
 	font-size: 16px;
-	letter-spacing: 0.1em;
 	width: 180px;
 	height: 50px;
     background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
@@ -651,3 +658,4 @@ footer li{
 	accent-color: rgb(134, 134, 134);
 	color: white;
 }
+

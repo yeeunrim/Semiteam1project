@@ -20,7 +20,7 @@
 		    	<ul>
 		    		<li>
 		    			<label for="name">닉네임</label>
-		    			<input type="text" id="nickname" name="nickname" 
+		    			<input type="text" id="id" name="id" 
 		    							placeholder="한글, 영문, 숫자만 사용해 주세요">
 						<div id="message"></div>
 		    		</li>
@@ -39,7 +39,7 @@
 		    		<li>
 		    			<label for="email">이메일</label>
 		    			<input type="text" id="email" name="email" 
-		    				placeholder="이메일"><span>@</span>
+		    				placeholder="이메일"><!-- <span>@</span> -->
 		    			<input class="box" id="domain-txt" type="text"/>
 							<select class="box" id="domain-list">
 							  <option value="type">직접 입력</option>
@@ -51,8 +51,8 @@
 							</select>
 		    		</li>
 		    		<li>
-		    			<div class="info" id="info__birth">
-		    			<label for="birthday">생년월일</label>
+		    			<div class="info" id="info_birth">
+		    			<label for="birth">생년월일</label>
 						  <select class="box" id="birth-year">
 						    <option disabled selected>출생 연도</option>
 						  </select>
@@ -62,6 +62,23 @@
 						  <select class="box" id="birth-day">
 						    <option disabled selected>일</option>
 						  </select>
+						</div>
+		    		</li>
+		    		
+		    		<li>
+		    			<div class="info" id="info_tel">
+		    			<label for="tel">전화번호</label>
+						  <select class="box" id="tel_option">
+						    <option disabled selected>통신사</option>
+						    <option value="skt">SKT</option>
+						    <option value="kt">KT</option>
+						    <option value="lg">LG U+</option>
+						    <option value="skt_mvno">SKT 알뜰폰</option>
+						    <option value="kt_mvno">KT 알뜰폰</option>
+						    <option value="lg_mvno">LG U+ 알뜰폰</option>
+						  </select>
+						  <input class="box" id="tel_box" type="text"
+						  			placeholder="' - '을 제외한 숫자만 입력해주세요"/>
 						</div>
 		    		</li>
 		    		

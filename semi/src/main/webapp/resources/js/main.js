@@ -43,7 +43,68 @@ $(window).on('scroll', function() {
 /*                          main                                                                        */
 /* ==================================================================================================== */
 
-/* 사진 슬라이드 */
+/* 메인이미지 슬라이드 */
+$(document).ready(function() {
+    var images = ['resources/images/main_image01.png', 'resources/images/main_image02.png', 'resources/images/main_image03.png'];
+    var currentIndex = 0;
+    var imageInterval;
+
+     function changeImage(index) {
+		 // Dot 업데이트
+    	updateDots(index);
+		 
+        var $currentImg = $('#main_img .img_current');
+        var $nextImg = $('#main_img .img_next');
+
+        // 다음 이미지 설정 및 투명도 초기화
+        $nextImg.attr('src', images[index]).css('opacity', 0.02).show();
+
+        // 현재 이미지 투명도 감소 및 다음 이미지 투명도 증가
+        $currentImg.animate({ opacity: 0.2 }, 500);
+        $nextImg.animate({ opacity: 1 }, 500, function() {
+            // 현재 이미지 소스 변경 및 투명도 재설정
+            $currentImg.attr('src', images[index]).css('opacity', 1);
+            
+            // 인덱스 업데이트
+            currentIndex = index;
+        });
+    }
+
+    function updateDots(index) {
+        // 모든 dots에서 dot_active 클래스 제거
+        $('#dots div').removeClass('dot_active').addClass('dot');
+
+        // 현재 인덱스의 dot에 dot_active 클래스 추가
+        $('#dots div').eq(index).removeClass('dot').addClass('dot_active');
+    }
+
+    // Dot 클릭 이벤트 핸들러
+    $('#dots div').click(function() {
+        var index = $(this).index(); // 클릭된 dot의 인덱스
+        currentIndex = index;
+        changeImage(index);
+        restartInterval();
+    });
+
+    // 이미지 자동 변경 함수
+    function startInterval() {
+        imageInterval = setInterval(function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            changeImage(currentIndex);
+        }, 5000); // 5초 간격
+    }
+
+    // 인터벌 재시작 함수
+    function restartInterval() {
+        clearInterval(imageInterval);
+        startInterval();
+    }
+
+    // 이미지 자동 변경 시작
+    startInterval();
+});
+
+/* 여행지사진 슬라이드 : 마우스로 임의로 슬라이드 */
 $(document).ready(function() {
     var isDown = false; // 마우스 버튼의 상태를 추적
     var startX;
@@ -78,7 +139,7 @@ $(document).ready(function() {
 });
 
 
-
+/* 여행지사진 슬라이드 : 사진 1장씩 슬라이드 */
 $(document).ready(function() {
     var $mainPictures = $('#main_pictures');
     var $divs = $mainPictures.children('div');
@@ -101,15 +162,45 @@ $(document).ready(function() {
     }
 
     // 슬라이드를 위한 인터벌 설정
-    var slideInterval = setInterval(slideDivs, 2500);
+    var slideInterval = setInterval(slideDivs, 3000);
 
     // 선택적: 마우스오버 시 슬라이드 일시정지
     $mainPictures.on('mouseover', function() {
         clearInterval(slideInterval);
     }).on('mouseout', function() {
-        slideInterval = setInterval(slideDivs, 2500);
+        slideInterval = setInterval(slideDivs, 3000);
     });
 });
+
+/* 여행지사진 슬라이드 : 연속적으로 슬라이드 */
+/*$(document).ready(function() {
+    var $mainPictures = $('#main_pictures');
+    var $divs = $mainPictures.children('div');
+    var divWidth = $divs.width();
+    var totalWidth = divWidth * $divs.length;
+
+    // Div들을 복제하고 추가
+    $divs.clone().appendTo($mainPictures);
+
+    // 연속 슬라이드 함수
+    function slideDivs() {
+        var currentScroll = $mainPictures.scrollLeft();
+        $mainPictures.animate({scrollLeft: currentScroll + totalWidth}, totalWidth * 10, 'linear', function() {
+            $mainPictures.scrollLeft(0); totalWidth * 15 : 애니메이션의 총 지속 시간
+            slideDivs();
+        });
+    }
+
+    // 슬라이드 시작
+    slideDivs();
+
+    // 호버 시 일시정지
+    $mainPictures.hover(
+        function() { $mainPictures.stop(); },
+        function() { slideDivs(); }
+    );
+});*/
+
 
 
 /* ==================================================================================================== */

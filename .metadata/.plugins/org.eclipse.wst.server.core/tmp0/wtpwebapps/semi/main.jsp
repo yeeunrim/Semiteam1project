@@ -14,12 +14,16 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<section id="container">
+	<section id="main_container">
 	
 		<div id ="main">
 			<!-- 메인 이미지 -->
 			<div id="main_img">
-				<img src="resources/images/train.png" alt="배경">
+				<div id="main_img">
+				    <img class="img_current" src="resources/images/main_image01.png" alt="배경" style="position: absolute; top: 0; left: 0; opacity: 1;">
+    				<img class="img_next" src="" alt="배경" style="position: absolute; top: 0; left: 0; opacity: 0; display: none;">
+				</div>
+				
 				<!-- vscode -> imageslide.html , slide.js 참고 -->
 			<!-- 슬라이드 도트 -->
 				<div id="dots">

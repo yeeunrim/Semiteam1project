@@ -72,12 +72,12 @@ function checkUser(){
 
 
 /* 프로필 변경 유효성 검사 */
-function saveProfile(){
+/*function saveProfile(){
 	alert("test...");
 	
 	let form = document.profile; 
 	
 	form.submit();
 	
-};
+};*/
 	

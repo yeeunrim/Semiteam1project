@@ -301,16 +301,30 @@ public class MainController extends HttpServlet {
 			
 			
 			nextPage="/mypage/wishlist.jsp";
+		}else if(command.equals("/mypage.do")) {
+			// 현재 세션에서 세션 ID 가져오기
+			String sessionId = (String) session.getAttribute("sessionId");
+			//세션 ID에 대한 상세정보 가져오기
+			Users usersList = uDAO.getUsers(sessionId);
+			
+			//user 정보를 보냄 (소개글 넣기 위해)
+			request.setAttribute("user", usersList);
+			
+			nextPage="/member/mypage.jsp";
 		//프로필 변경
 		}else if(command.equals("/editprofile.do")) {
 			Users u = new Users();
 			
 			// 현재 세션에서 세션 ID 가져오기
-		    String sessionId = session.getId();
+			String sessionId = (String) session.getAttribute("sessionId");
 		    
 			//수정란에 입력한 닉네임, 소개글 가져오기
 			String introduction = request.getParameter("introduction");
 			String id = request.getParameter("id"); //변경 닉네임
+			
+			System.out.println(sessionId);
+			System.out.println(introduction);
+			System.out.println(id);
 			
 			//수정 처리 메서드
 			u.setIntroduction(introduction);

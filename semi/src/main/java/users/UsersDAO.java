@@ -36,6 +36,7 @@ public class UsersDAO {
 				u.setEmail(rs.getString("email"));
 				u.setGender(rs.getString("gender"));
 				u.setAccountDay(rs.getTimestamp("accountDay"));
+				u.setIntroduction(rs.getString("introduction"));
 				//리스트에 회원 추가
 				usersList.add(u);	
 			}
@@ -92,8 +93,7 @@ public class UsersDAO {
 				u.setEmail(rs.getString("email"));
 				u.setGender(rs.getString("gender"));
 				u.setAccountDay(rs.getTimestamp("accountDay"));
-				
-				
+				u.setIntroduction(rs.getString("introduction"));
 
 			}
 		} catch (SQLException e) {
@@ -153,9 +153,10 @@ public class UsersDAO {
 			String sql = "UPDATE users SET id = ?, "
 					+ "introduction = ? WHERE id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, sessionId); //원래 닉네임
+			pstmt.setString(1, u.getId()); //변경 닉네임
 			pstmt.setString(2, u.getIntroduction());
-			pstmt.setString(3, u.getId()); //변경 닉네임
+			pstmt.setString(3, sessionId); //원래 닉네임
+			
 			//sql 실행
 			pstmt.executeUpdate();
 		} catch (SQLException e) {

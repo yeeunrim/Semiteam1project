@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,14 @@
       <div id="my_an">
         <h3>나의 프로필</h3>
         <p><br>닉네임 : ${sessionId}</p>
-        <p><br>소개글을 입력해주세요</p>
+		  <c:choose>
+		    <c:when test="${empty user.introduction}">
+		      <p><br>소개글을 입력해주세요</p>
+		    </c:when>
+		    <c:otherwise>
+		      <p><br>${user.introduction}</p>
+		    </c:otherwise>
+		  </c:choose>
       </div>
       
       <!-- 프로필 변경 -->

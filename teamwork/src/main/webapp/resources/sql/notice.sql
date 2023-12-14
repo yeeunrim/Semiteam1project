@@ -6,7 +6,6 @@ CREATE TABLE notice (
     nmodifydate  TIMESTAMP,
     nhit         NUMBER DEFAULT 0,
     nfilename    VARCHAR2(50),
-    id          VARCHAR2(20) NOT NULL,
     nreply_count int,
     nlike_count int,
     FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE    
@@ -14,8 +13,8 @@ CREATE TABLE notice (
 
 CREATE SEQUENCE seq_nno NOCACHE;
 
-INSERT INTO notice(nno, ntitle, ncontent, id)
-VALUES (seq_nno.NEXTVAL, '공지사항', '공지사항입니다.', 'show3239');
+INSERT INTO notice(nno, ntitle, ncontent)
+VALUES (seq_nno.NEXTVAL, '공지사항', '공지사항입니다.');
 
 commit;
 
@@ -38,13 +37,3 @@ CREATE SEQUENCE seq_nrno NOCACHE;
 
 INSERT INTO nreply(nrno, nno, nrcontent, nreplyer)
 VALUES (seq_nrno.NEXTVAL, 1, '첫번째 댓글입니다.', 'show3239');
-
-CREATE TABLE nlike(
-    nlikeno NUMBER PRIMARY KEY,
-    nno    NUMBER NOT NULL,
-    id     VARCHAR2(20) NOT NULL,
-    FOREIGN KEY (nno) REFERENCES notice(nno) ON DELETE CASCADE,
-    FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE   
-);
-
-CREATE SEQUENCE seq_nlikeno NOCACHE;

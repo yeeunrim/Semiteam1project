@@ -35,7 +35,7 @@
 					<li><a href="#">여정담</a>
 						<div class="test">
 							<ul>
-								<li><a href="#">여정담 정보</a></li>
+								<li><a href="/about.do">여정담 정보</a></li>
 								<li><a href="#">고객센터</a></li>
 								<li><a href="#">멤버쉽</a></li>
 								<li><a href="#">자주하는 질문</a></li>
@@ -44,6 +44,11 @@
 					</li>
 				</ul>
 			</div>
+			
+			<div id="sideMenuIcon">
+		    	<i class="fa fa-bars"></i>
+			</div>
+			
 			<c:choose>
     		<c:when test="${empty sessionId}">
 				<div id="sideMenu">
@@ -75,6 +80,8 @@
 			</c:otherwise>
    			</c:choose>
 		</div>
+		
+		
 		
 		<div id="bottomMenu">
 			

@@ -94,12 +94,6 @@
 					<p>인기글</p>
 				</div>
 				<div id="main_community_boxes">
-					<%-- <div>
-						<p>동행자 찾기</p>
-						<c:forEach items="${boardList}" var="board">
-							<p><a href="/boardview.do?bno=${board.bno}">${board.title}</a>
-						</c:forEach>
-					</div> --%>
 					<div id="main_community_box">
 						<p class="main_community_content_title">동행자 찾기</p>
 						<div class="main_community_content">	

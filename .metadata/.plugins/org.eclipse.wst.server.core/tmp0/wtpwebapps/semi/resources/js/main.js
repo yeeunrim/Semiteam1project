@@ -39,6 +39,44 @@ $(window).on('scroll', function() {
     lastScrollTop = currentScroll; // 스크롤 위치 업데이트
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var sideMenuIcon = document.getElementById('sideMenuIcon');
+    var mainMenu = document.getElementById('mainMenu');
+    var sideMenu = document.getElementById('sideMenu');
+    var topMenu = document.getElementById('topMenu'); // topMenu 요소 추가
+
+    function adjustMenuDisplay() {
+        if (window.innerWidth > 780) {
+            // 781px 이상일 경우
+            mainMenu.style.display = 'block'; 
+            sideMenu.style.display = 'block';
+            sideMenuIcon.style.display = 'none';
+            topMenu.style.flexDirection = 'row';
+        } else {
+            // 780px 이하일 경우
+            sideMenuIcon.style.display = 'flex';
+            sideMenu.style.display = 'none';
+        }
+    }
+
+    sideMenuIcon.onclick = function() {
+        if (mainMenu.style.display === 'none') {
+            mainMenu.style.display = 'block';
+            sideMenu.style.display = 'none';
+            topMenu.style.flexDirection = 'row';
+        } else {
+            mainMenu.style.display = 'none';
+            sideMenu.style.display = 'block';
+            topMenu.style.flexDirection = 'row-reverse';
+        }
+    };
+
+    window.addEventListener('resize', adjustMenuDisplay); // 창 크기 변경 감지
+
+    adjustMenuDisplay(); // 초기 로드 시 메뉴 조정
+});
+    
+
 /* ==================================================================================================== */
 /*                          main                                                                        */
 /* ==================================================================================================== */

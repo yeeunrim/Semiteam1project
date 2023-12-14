@@ -348,8 +348,8 @@ public class MainController extends HttpServlet {
 			uDAO.updateProfilePic(u, sessionId);
 			
 			// 업데이트된 사용자 정보 다시 로드(리디렉트)
-		    Users updatedUser = uDAO.getUsers(sessionId);
-		    request.setAttribute("user", updatedUser);
+		    //Users updatedUser = uDAO.getUsers(sessionId);
+		    ///equest.setAttribute("user", updatedUser);
 			
 			nextPage="/member/mypage.jsp";
 			//프로필 수정
@@ -950,6 +950,8 @@ public class MainController extends HttpServlet {
 			
 			nrDAO.updatenreply(nr);
 			
+		}else if(command.equals("/about.do")) {
+			nextPage="/member/about.jsp";
 		}
 		
 		//동행자 찾기 게시판

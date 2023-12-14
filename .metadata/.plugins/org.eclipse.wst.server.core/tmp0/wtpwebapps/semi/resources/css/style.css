@@ -134,6 +134,36 @@ header #sideMenu a:hover{
     text-decoration: underline;
 }
 
+
+header #sideMenuIcon{
+	display: none;
+}
+
+
+@media screen and (max-width: 780px) {
+	header #mainMenu ul li a{
+		font-size: 18px;
+	}
+    #sideMenu {
+        display: none;
+    }
+    header #sideMenuIcon{
+		display: flex;
+	    background-color: rgba(255, 255, 255, 0.5);
+	    align-items: center;
+	    justify-content: center;
+	    width: 55px;
+	}
+	header #sideMenuIcon i{
+   		font-size: 25px;
+	}
+	
+	/* sideMenu */
+	header #sideMenu{
+	    width: 100%;
+	}
+}
+
 /* ==================================================================================================== */
 /*                          footer 스타일                                                   */
 /* ==================================================================================================== */
@@ -174,6 +204,37 @@ footer li{
 	}
 	footer a{
 		font-size: 1.5vw;
+	}
+}
+@media screen and (max-width: 780px) {
+	footer {
+	    width: 97%;
+	    margin: 0 auto;
+	    align-items: center;
+	    flex-direction: column;
+	    line-height: 1.5;
+	    margin: 0 auto 3% auto;
+	}
+	footer a{
+		font-size: 2vw;
+	}
+
+	#footerMenu_left{
+		display: flex;
+	    flex-direction: column;
+	    align-items: center
+	}
+	footer p {
+    	text-align: center;
+    	font-size: 3.5vw;
+    	font-weight: bold;
+    	padding: 1% 0;
+	}
+	#footerMenu_right{
+		width: 50%;
+		display: flex;
+	    align-items: center;
+	    padding-right: 4%;
 	}
 }
 
@@ -233,13 +294,14 @@ footer li{
 /* main 스타일 - 검색창 */
 #search_currency{
 	width: 97%;
-	margin:15px auto;
-	display: flex;
-	justify-content: space-between;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .search-box {
-	width: 285px;
-	height: 30px;
+	width: 30%;
+    height: 100%;
     display: flex;
     align-items: center;
     background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
@@ -267,14 +329,13 @@ footer li{
 
 /* main 스타일 - 환율창 */
 #currency_box{
-	width:800px;
-	height: 40px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 #currency_box p{
-	font-size: 16px;
 	padding: 10px;
 }
 
@@ -295,34 +356,29 @@ footer li{
 		margin:20vw auto 28vw auto;
 	}
 }
+@media screen and (max-width: 780px) {
+	.search-box{
+		display:none;
+	}
+	#currency_box p{
+		font-size: 2.2vw;
+	}
+}
 
 /* main 스타일 - 사진 */
-#main_pictures.active {
-    cursor: grabbing;
-}
 #main_pictures{
 	width: 98%;
-	height: 37vw;
+	height: 39vw;
 	margin: 0 auto;
 	display: flex;
-	/*justify-content: space-evenly;*/
-	overflow-x: hidden; /* 수평 스크롤 숨김 */
-	/*scroll-snap-type: x mandatory;*/ /* 스크롤 스냅 활성화 */
-	/*cursor: grab;*/
+	overflow-x: hidden;/* 수평 스크롤 숨김 */
 }
 #main_pictures div{
-	/*width: 29vw;
-	height: 35vw;*/
-	
 	background-color: rgb(228, 228, 228);
 	filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));
-	
 	flex: 0 0 30.5vw; 
     height: 35vw; 
     margin-right: 2vw; 
-    
-    /*scroll-snap-align: start;*/ /* 스크롤 스냅 정렬 */
-    
 }
 #main_pictures div img{
 	width: 25vw;
@@ -332,6 +388,7 @@ footer li{
 }
 #main_pictures div p{
 	margin: 0 7%;
+	font-size: 1.5vw;
 }
 /* main 스타일 - 커뮤니티 */
 #main_community{
@@ -416,6 +473,50 @@ footer li{
 	#main_community #main_community_title p{
 		font-size: 2.5vw;
 	}
+}
+@media screen and (max-width: 780px) {
+	#main_container #main_community{
+		height: 100%;
+	}
+	
+	#main_container #main_community_boxes{
+		display: flex;
+		flex-direction: column;
+	}
+	#main_community #main_community_box{
+		width: 100%;
+		border-bottom: 1px solid #9e9e9e;
+	}
+	#main_community #main_community_box:last-of-type{
+		border-bottom: none;
+	}
+	#main_community .main_community_content{
+		height: 65%;
+		border-bottom: none;
+	}
+	#main_container #main_community_content_bottom{
+		display: none;
+	}
+	#main_community .main_community_content_title{
+		font-size: 2.75vw;
+		font-weight: bold;
+	}
+	#main_community .main_community_content h3{
+		font-size: 2.45vw;
+	}
+	#main_community #main_community_boxes p a{
+		font-size: 2.35vw;
+	}
+	#main_community #main_community_title p{
+		font-size: 3.5vw;
+	}
+	#main_community{
+		margin: 22% auto 25% auto;
+	}
+	#main_pictures div p{
+		font-size: 1.8vw;
+	}
+	
 }
 
 /* ==================================================================================================== */
@@ -650,6 +751,66 @@ footer li{
 	color: white;
 }
 
+/* ==================================================================================================== */
+/*                          about 스타일                                                                  */
+/* ==================================================================================================== */
+#about_container #about{
+	width: 75%;
+	margin: 120px auto 150px auto;
+}
+
+#about_container h1{
+	font-size: 4vw;
+	width: 100%;
+	text-align: center;
+	padding: 6% 0 4% 0;
+}
+#about_container #about_introduction{
+	width: 85%;
+    height: 21vw;
+    margin: 0 auto;
+    background: rgba(231, 228, 228, 0.70);
+	box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 5%;
+}
+#about_container span{
+	font-size: 5vw;
+}
+#about_container h2{
+	font-size: 2.5vw;
+    padding: 5% 0 0 4%
+}
+#about_container img{
+	width: 25%;
+    height: 22%;
+    object-fit: contain;
+}
+#about_container #people{
+	display: flex;
+	flex-direction: column;
+	    margin: 0 5%;
+}
+#about_container #people > div{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center
+}
+#about_container #people div div{
+	width: 70%;
+    height: 12.5vw;
+	background-color: blanchedalmond;
+}
+#about_container #people div:nth-of-type(2n){
+    flex-direction: row-reverse;
+}
+
+
+
+
+
 
 
 
@@ -709,8 +870,8 @@ footer li{
 }
 
 .my_container .profile img {
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   margin: 20px;
 }
@@ -906,7 +1067,7 @@ footer li{
     width: 80%;
   }
   .my_container .profile {
-    height: 400px;
+    height: 500px;
     flex-direction: column; /* 세로 배치로 변경 */
     align-items: center; /* 가운데 정렬 */
   }
@@ -924,8 +1085,8 @@ footer li{
 }
 @media screen and (min-width: 850px) {
 	.my_container .profile img{
-		width: 300px;
-		height: 300px;
+		width: 280px;
+   		height: 280px;
 	}
 }
 

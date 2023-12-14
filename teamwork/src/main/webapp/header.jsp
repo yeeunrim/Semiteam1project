@@ -53,8 +53,10 @@
 						<li><a href="#"><i class="fa-solid fa-earth-americas"></i>&nbsp;South Korea</a></li>
 					</ul>
 					<ul id="sideMenu_2">
+						<c:if test="${not empty sessionId }">
 						<li><a href="http://localhost:8080/member/mypage.jsp">마이페이지</a></li>
 						<li><a href="http://localhost:8080/member/wishlist.do">찜한 목록(0)</a></li>
+						</c:if>
 						<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
 					</ul>
 				</div>

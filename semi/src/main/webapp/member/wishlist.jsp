@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,52 +18,52 @@
 	<section class="my_container">
         <div id="tt">
         <div id="wish">
-			<h1><i class="fa-solid fa-heart-circle-check"></i>Âò ¸®½ºÆ®</h1>
-            <a href=""> ÀüÃ¼ </a>
-            <a href=""> ¿©Çà ÈÄ±â </a>
-            <a href=""> µ¿ÇàÀÚ Ã£±â </a>
-            <a href=""> ³ªÀÇ °èÈ¹ </a>
-            <a href=""> ³» °Ô½Ã¹° </a>
+			<h1><i class="fa-solid fa-heart-circle-check"></i>ì°œ ë¦¬ìŠ¤íŠ¸</h1>
+            <a href=""> ì „ì²´ </a>
+            <a href=""> ì—¬í–‰ í›„ê¸° </a>
+            <a href=""> ë™í–‰ìž ì°¾ê¸° </a>
+            <a href=""> ë‚˜ì˜ ê³„íš </a>
+            <a href=""> Q & A </a>
         </div>
         <div class="box2">
-            <h4>¿©ÇàÈÄ±â</h4>
+            <h4>ì—¬í–‰í›„ê¸°</h4>
             <hr>
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
             <a href="#"> + MORE </a>
         </div>
         <div class="box2">
-            <h4>µ¿ÇàÀÚ Ã£±â</h4>
+            <h4>ë™í–‰ìž ì°¾ê¸°</h4>
             <hr>
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
             <a href="#"> + MORE </a>
         </div><div class="box2">
-            <h4>³ªÀÇ °èÈ¹</h4>
+            <h4>ë‚˜ì˜ ê³„íš</h4>
             <hr>
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
             <a href="#"> + MORE </a>
         </div><div class="box2">
-            <h4>³» °Ô½Ã¹°</h4>
+            <h4>Q & A</h4>
             <hr>
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
-            <a href="#">Á¦¸ñ</a><a href="">ÀÛ¼ºÀÚ</a>
+            <a href="#">ì œëª©</a><a href="">ìž‘ì„±ìž</a>
             <hr id="b">
             <a href="#"> + MORE </a>
         </div>

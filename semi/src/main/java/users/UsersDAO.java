@@ -145,7 +145,7 @@ public class UsersDAO {
 		}
 		return result;
 	}
-	//프로필 편집
+	//프로필 편집(닉네임, 소개글)
 	public void editProfile(Users u, String sessionId) {
 		conn = JDBCUtil.getConnection();
 		
@@ -165,6 +165,33 @@ public class UsersDAO {
 			JDBCUtil.close(conn, pstmt);
 		}
 	}
+	
+	//채희
+	//회원 정보 수정
+	/*public void updateUsers(Users users) {
+		//db 연결
+		conn = JDBCUtil.getConnection();
+		try {
+			//sql 처리
+			String sql = "UPDATE users "
+					+ "SET username = ?, pw = ?, email = ?, "
+					+ "gender = ? WHERE id = ?";
+			pstmt = conn.prepareStatement(sql);
+			//폼에 입력된 데이터를 가져와서 db에 저장
+			pstmt.setString(1, users.getUsername());
+			pstmt.setString(2, users.getPw());
+			pstmt.setString(3, users.getEmail());
+			pstmt.setString(4, users.getGender());
+			pstmt.setString(5, users.getId());
+			//sql 실행
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally { //db 종료
+			JDBCUtil.close(conn, pstmt);
+		}
+	}*/
+	
 	
 	
 	

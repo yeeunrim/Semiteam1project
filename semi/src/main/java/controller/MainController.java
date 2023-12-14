@@ -300,7 +300,7 @@ public class MainController extends HttpServlet {
 			}
 			
 			
-			nextPage="/mypage/wishlist.jsp";
+			nextPage="/member/wishlist.jsp";
 		}else if(command.equals("/mypage.do")) {
 			// 현재 세션에서 세션 ID 가져오기
 			String sessionId = (String) session.getAttribute("sessionId");
@@ -322,15 +322,15 @@ public class MainController extends HttpServlet {
 			String introduction = request.getParameter("introduction");
 			String id = request.getParameter("id"); //변경 닉네임
 			
-			System.out.println(sessionId);
-			System.out.println(introduction);
-			System.out.println(id);
-			
 			//수정 처리 메서드
 			u.setIntroduction(introduction);
 			u.setId(id);
 			
 			uDAO.editProfile(u, sessionId);
+			
+			// 업데이트된 사용자 정보 다시 로드(리디렉트)
+		    Users updatedUser = uDAO.getUsers(sessionId);
+		    request.setAttribute("user", updatedUser);
 			
 			nextPage="/member/mypage.jsp";
 		}else if(command.equals("/userslist.do")) {

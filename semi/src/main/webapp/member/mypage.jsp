@@ -45,9 +45,9 @@
               <p>나의 프로필</p>
               <hr>
               <p><label for="nic">닉네임</label>
-                <input type="text" id="id" name="id"></p>
+                <input type="text" id="id" name="id" value=${user.id}></p>
               <p><label for="long">한 줄 소개</label>
-                <input type="textarea" id="introduction" name="introduction"></p>
+                <input type="textarea" id="introduction" name="introduction" value=${user.introduction}></p>
               
               <button type="button" onclick="saveProfile()">변경사항 저장</button>
             </div>
@@ -60,7 +60,7 @@
     <div class="select">
       <a href="#" class="toggle-link">내 게시물 </a>
       <a href="#" class="toggle-link">내 댓글 </a>
-      <a href="#" class="toggle-link">찜 </a>
+      <a href="/wishlist.do" class="toggle-link">찜 </a>
     </div>
     <div class="box">
       <div id="box1">

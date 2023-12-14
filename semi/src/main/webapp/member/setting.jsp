@@ -15,38 +15,54 @@
 <body>
 	<body>
 	<jsp:include page="../header.jsp" />
+	<jsp:useBean id="userDAO" class="users.UsersDAO" scope="application" />
+	<% 
+		//bnum으로 찾은 객체를 생성
+		String id = request.getParameter("id");
+		Users users = userDAO.getUsers(id);
+	%>
 	<section class="my_container">
 	  <section id="memberlist">
 		<h2>계정 설정</h2>
-			<form>
+			<form action="success.jsp" method="post">
 				<fieldset id="fd">
                     <ul>
-                    	<li>
-                            <label for="email">이메일</label>
-                            <input type="text" id="email" name="email">
+                        <li>
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name" 
+                            value=<%=users.getUsername() %>required>
+                        </li>
+                        <li>
+                            <label for="id">아이디</label>
+                            <input type="text" id="id" name="id" required
+                            value=<%=users.getId() %>>
                         </li>
                         <li>
                             <label for="passwd">비밀번호</label>
-                            <input type="password" id="passwd" name="passwd" required>
+                            <input type="password" id="passwd" name="passwd" required
+                            value=<%=users.getPw() %>>
                         </li>
                         <li>
-                            <label for="passwd2">비밀번호 확인</label>
-                            <input type="password" id="passwd2" name="passwd2" required>
+                            <label for="email">이메일</label>
+                            <input type="text" id="email" name="email"
+                            value=<%=users.getEmail() %>>
                         </li>
-                        <li>
-                            <label for="tel">전화번호</label>
-                            <input type="text" id="tel" name="tel" required>
-                        </li>
-                        <li class="ch">
+                        <%-- <li class="ch">
                             <label for="gender">성별</label>
+                            <% if(users.getGender().equals("남")){ %>
                             <input type="radio" id="gender" name="gender" value="남" checked>남
                             <input type="radio" id="gender" name="gender" value="여">여
-                        </li>
+                            <% }else{ %>
+                            <input type="radio" id="gender" name="gender" value="남">남
+                            <input type="radio" id="gender" name="gender" value="여" checked>여
+                            <% } %>
+                        </li> --%>
                         <li class="ch">
                             <label for="mailing">mailing</label>
                             <input type="checkbox" id="mailing" name="mailing" value="email" checked>email
                             <input type="checkbox" id="mailing" name="mailing" value="SMS" checked>SMS
                         </li>
+                        
                         <hr>
                         
                         <div class="button">
@@ -54,6 +70,7 @@
                             <button type="submit">변경사항 저장</button>
                       	</div>
                     </ul>
+                    	
                    
 				</fieldset>
 			</form>

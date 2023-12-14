@@ -1329,6 +1329,91 @@ section.notice {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 }
+/* 지훈 - 멤버쉽*/
+section.membership{
+  padding: 200px 0;
+  width: 100%;
+}
+
+.membership-title {
+  margin-right: 18%;
+  margin-top: 150px;
+  font-size: 25px;
+}
+
+
+
+.membership-member,.membership-nonmember{
+  margin-left: 30%;
+  margin-top: 80px;
+}
+
+
+.membership-member p, .membership-nonmember p{
+  text-decoration: none;
+  display: inline-block; /* inline-block으로 설정하여 width, height, padding, margin 속성 적용 가능 */
+  width: 50%; 
+  border-bottom: 1px solid black;
+  color: rgb(114, 110, 110);
+  padding: 10px 0;
+}
+
+
+
+
+/* 지훈 - 자주하는 질문*/
+
+section.question{
+  padding: 200px 0;
+  width: 100%;
+}
+
+.question-title {
+  margin-right: 18%;
+  margin-top: 150px;
+  font-size: 25px;
+}
+
+.fao-user,.fao-travel,.fao-other{
+  margin-left: 30%;
+  margin-top: 80px;
+}
+
+.fao-section1 label,.fao-section2 label,.fao-section3 label{
+    text-decoration: none;
+    display: inline-block;
+    width: 50%;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+
+.menubars { 
+  display: none; 
+  color: rgb(114, 110, 110);
+}
+
+/* 체크되면 메뉴를 표시하기 */
+#check-btn1:checked ~ .menubars,
+#check-btn2:checked ~ .menubars,
+#check-btn3:checked ~ .menubars,
+#check-btn4:checked ~ .menubars,
+#check-btn5:checked ~ .menubars,
+#check-btn6:checked ~ .menubars,
+#check-btn7:checked ~ .menubars,
+#check-btn8:checked ~ .menubars,
+#check-btn9:checked ~ .menubars { 
+  display: block; 
+}
+
+/* 체크박스는 화면에서 감추기 */
+#check-btn1, #check-btn2, #check-btn3, 
+#check-btn4, #check-btn5, #check-btn6, 
+#check-btn7, #check-btn8, #check-btn9
+ { 
+  display: none; 
+}
+
+
 
 
 
@@ -1338,7 +1423,8 @@ section.notice {
 
 
 
-.mainBoard{width: 1100px; margin: 0 auto;}
+
+.mainBoard{width: 800px; margin: 0 auto;}
 
 .replyUpdateForm, #writeform{width : 800px; margin: 0 auto;}
 
@@ -1434,17 +1520,37 @@ hr{margin: 10px;}
 
 
 /* 반응형 */
+
 @media screen and (max-width: 780px) {
-	
-  .boardViewForm{width: 550px;}
+.upper{width: 550px;}
+  .btitle{width: 550px;}
+  .boardViewForm, .writeform, form{width: 550px; margin: 0 auto;}
   #replyform textarea{width: 450px;}
   
-  .board1{width: 550px;}
-  
+  .board1{width: 600px;}
+  .writeMid{width: 550px;}
   #writeContent{width: 500px;}
+  #writeTitle{width: 250px;}
   .boardviewimage{width: 548px; }
   
-  .board2{width: 500px;}
+  .board2{width: 500px; margin-left: 130px;}
 
+  .content{width: 550px;}
+}
 
+@media screen and (max-width: 500px) {
+.upper{width: 350px;}
+  .board-title{width: 500px;}
+  .btitle{width: 350px;}
+  .boardViewForm, .writeform, form{width: 350px; margin: 0 auto;}
+  #replyform textarea{width: 300px;}
+  
+  .board1{width: 400px; margin-left: 200px;}
+  .writeMid{width: 350px;}
+  #writeContent{width: 300px;}
+  .boardviewimage{width: 348px; }
+  
+  .board2{width: 330px; margin-left: 220px;}
+
+  .content{width: 350px;}
 }

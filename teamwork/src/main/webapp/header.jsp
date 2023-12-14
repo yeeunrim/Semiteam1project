@@ -37,8 +37,8 @@
 							<ul>
 								<li><a href="#">여정담 정보</a></li>
 								<li><a href="#">고객센터</a></li>
-								<li><a href="#">멤버쉽</a></li>
-								<li><a href="#">자주하는 질문</a></li>
+								<li><a href="/membership/membership.jsp">멤버쉽</a></li>
+								<li><a href="/fao/fao.jsp">자주하는 질문</a></li>
 							</ul>
 						</div>
 					</li>

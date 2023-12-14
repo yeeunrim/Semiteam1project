@@ -300,24 +300,109 @@ public class MainController extends HttpServlet {
 			
 			
 			nextPage="/member/wishlist.jsp";
-		}else if(command.equals("/editprofile.do")) {
+		}else if(command.equals("/mypage.do")) {
+			// 현재 세션에서 세션 ID 가져오기
+			String sessionId = (String) session.getAttribute("sessionId");
+			//세션 ID에 대한 상세정보 가져오기
+			Users usersList = uDAO.getUsers(sessionId);
+			
+			//user 정보를 보냄 (소개글 넣기 위해)
+			request.setAttribute("user", usersList);
+			
+			nextPage="/member/mypage.jsp";
+			
+		//프로필 사진 변경
+		}else if(command.equals("/editprofile_pic.do")) {
 			Users u = new Users();
 			
 			// 현재 세션에서 세션 ID 가져오기
-		    String sessionId = session.getId();
-		    
-			//수정란에 입력한 닉네임, 소개글 가져오기
-			String introduction = request.getParameter("introduction");
-			String id = request.getParameter("id"); //변경 닉네임
+			String sessionId = (String) session.getAttribute("sessionId");
 			
-			//수정 처리 메서드
-			u.setIntroduction(introduction);
-			u.setId(id);
+			//프로필 사진 추가
+			String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload\\profile_pic";
+			int maxSize = 10*1024*1024; //10MB
+			String encType = "utf-8";	//파일 이름 한글 인코딩
+			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
 			
-			uDAO.editProfile(u, sessionId);
+			//5가지 인자
+			MultipartRequest multi = 
+					new MultipartRequest(request, realFolder, maxSize, 
+							encType, policy);
+			
+			//file 파라미터 추출
+			Enumeration<?> files = multi.getFileNames();
+			String filename = "";
+			while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+				String userFilename = (String) files.nextElement();
+				
+				//실제 저장될 이름
+				filename = multi.getFilesystemName(userFilename);		
+			}
+			//db에 저장
+			u.setImage(filename);
+			
+			//파일 이름 확인
+			System.out.println(filename);
+			
+			uDAO.updateProfilePic(u, sessionId);
+			
+			// 업데이트된 사용자 정보 다시 로드(리디렉트)
+		    Users updatedUser = uDAO.getUsers(sessionId);
+		    request.setAttribute("user", updatedUser);
 			
 			nextPage="/member/mypage.jsp";
-		}else if(command.equals("/userslist.do")) {
+			//프로필 수정
+			}else if(command.equals("/editprofile.do")) {
+				Users u = new Users();
+				
+				// 현재 세션에서 세션 ID 가져오기
+				String sessionId = (String) session.getAttribute("sessionId");
+			    
+				//수정란에 입력한 닉네임, 소개글 가져오기
+				String id = request.getParameter("id"); //변경 닉네임
+				String introduction = request.getParameter("introduction");
+				
+				//수정 처리 메서드
+				u.setIntroduction(introduction);
+				u.setId(id);
+				
+				//데이터 들어오는 것 확인
+				System.out.println(introduction);
+				System.out.println(id);
+				
+				uDAO.editProfile(u, sessionId);
+				
+				// 업데이트된 사용자 정보 다시 로드(리디렉트)
+			    //Users updatedUser = uDAO.getUsers(sessionId);
+			    //request.setAttribute("user", updatedUser);
+				
+				nextPage="/member/mypage.jsp";
+		    }else if(command.equals("/setting.do")) {
+		        Users users = new Users();
+		        
+		        // 현재 세션에서 세션 ID 가져오기
+		        String sessionId = (String) session.getAttribute("sessionId");
+		         
+		        //수정란에 입력한 닉네임, 소개글 가져오기
+		        String pw = request.getParameter("pw");
+		        String pw2 = request.getParameter("pw2");
+		        String tel = request.getParameter("tel"); //변경 닉네임
+		        String email = request.getParameter("email"); //변경 닉네임
+		        
+		        //수정 처리 메서드
+		        users.setPw(pw);
+		        users.setPw(pw2);
+		        users.setTel(tel);
+		        users.setEmail(email);
+		        
+		        uDAO.editProfile(users, sessionId);
+		        
+		        // 업데이트된 사용자 정보 다시 로드(리디렉트)
+		         Users updatedUser = uDAO.getUsers(sessionId);
+		         request.setAttribute("user", updatedUser);
+		        
+		        nextPage="/member/setting.jsp";
+		     }else if(command.equals("/userslist.do")) {
 			//회원 정보를 db에서 가져옴
 			List<Users> usersList = uDAO.getUsersList();
 			//모델 생성
@@ -838,9 +923,7 @@ public class MainController extends HttpServlet {
 			//request.setAttribute("nlike_count", nlikeCount);
 			 
 
-			nlDAO.updateNLikeCount(nno);
-			nDAO.updateNReplyCount(nno);
-			
+			nlDAO.updateNLikeCount(nno);			
 			nextPage="/notice/noticeview.jsp";
 		}else if(command.equals("/deletenotice.do")) {
 			int nno = Integer.parseInt(request.getParameter("nno"));

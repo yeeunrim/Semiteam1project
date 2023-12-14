@@ -8,6 +8,7 @@ CREATE TABLE users(
     accountDay    TIMESTAMP DEFAULT SYSTIMESTAMP,
     modifiedDay   TIMESTAMP, 
     introduction VARCHAR2(2000),
+    image VARCHAR2(100),
     PRIMARY KEY(id)
 );
 

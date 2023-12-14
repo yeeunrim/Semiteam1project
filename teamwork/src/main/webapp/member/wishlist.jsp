@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="../resources/css/style.css">
     <script src="https://kit.fontawesome.com/d591ef8969.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	  <script src="../resources/js/main.js"></script>
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>

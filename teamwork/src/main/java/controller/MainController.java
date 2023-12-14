@@ -190,7 +190,7 @@ public class MainController extends HttpServlet {
 		//찜한 목록
 		}else if(command.equals("/wishlist.do")) {
 
-			String id = "show3239";
+			String id = (String) session.getAttribute("sessionId");
 			List<Board> boardList = bDAO.getBoardListBlike(id);
 			
 			request.setAttribute("boardList", boardList);	
@@ -298,7 +298,7 @@ public class MainController extends HttpServlet {
 			}
 			
 			
-			nextPage="/mypage/wishlist.jsp";
+			nextPage="/member/wishlist.jsp";
 		}else if(command.equals("/editprofile.do")) {
 			Users u = new Users();
 			

@@ -1,80 +1,61 @@
 <%@page import="users.UsersDAO"%>
 <%@ page import="users.Users"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>∞Ë¡§ º≥¡§</title>
+<title>Insert title here</title>
   <link rel="stylesheet" href="../resources/css/style.css">
   <script src="https://kit.fontawesome.com/d591ef8969.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="../resources/js/a.js"></script>
-  <script src="../resources/js/main.js"></script>
+  <!-- <script src="../resources/js/main.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-
 	<body>
 	<jsp:include page="../header.jsp" />
 	<jsp:useBean id="userDAO" class="users.UsersDAO" scope="application" />
-	<% 
-		//bnum¿∏∑Œ √£¿∫ ∞¥√º∏¶ ª˝º∫
-		String id = request.getParameter("id");
-		Users users = userDAO.getUsers(id);
-	%>
+
 	<section class="my_container">
 	  <section id="memberlist">
-		<h2>∞Ë¡§ º≥¡§</h2>
-			<form action="success.jsp" method="post">
+		<h2>Í≥ÑÏ†ï ÏÑ§Ï†ï</h2>
+			<form action="/updateUsers.do" method="post">
 				<fieldset id="fd">
                     <ul>
                         <li>
-                            <label for="name">¿Ã∏ß</label>
-                            <input type="text" id="name" name="name" 
-                            value=<%=users.getUsername() %>required>
+			 			<li>
+			                <label for="passwd">ÎπÑÎ∞ÄÎ≤àÌò∏</label>
+			                <input type="password" id="passwd" name="passwd" required>
+			            </li>
+			            <li>
+			                <label for="passwd2">ÎπÑÎ∞ÄÎ≤àÌò∏ ÌôïÏù∏</label>
+			                <input type="password" id="passwd2" name="passwd2" required>
+			            </li>
+                        <li>
+                            <label for="tel">Ìú¥ÎåÄÌè∞ Î≤àÌò∏</label>
+                            <input type="text" id="tel" name="tel" required>
                         </li>
                         <li>
-                            <label for="id">æ∆¿Ãµ</label>
-                            <input type="text" id="id" name="id" required
-                            value=<%=users.getId() %>>
+                            <label for="email">Ïù¥Î©îÏùº</label>
+                            <input type="text" id="email" name="email">
                         </li>
-                        <li>
-                            <label for="passwd">∫Òπ–π¯»£</label>
-                            <input type="password" id="passwd" name="passwd" required
-                            value=<%=users.getPw() %>>
-                        </li>
-                        <li>
-                            <label for="email">¿Ã∏ﬁ¿œ</label>
-                            <input type="text" id="email" name="email"
-                            value=<%=users.getEmail() %>>
-                        </li>
-                        <%-- <li class="ch">
-                            <label for="gender">º∫∫∞</label>
-                            <% if(users.getGender().equals("≥≤")){ %>
-                            <input type="radio" id="gender" name="gender" value="≥≤" checked>≥≤
-                            <input type="radio" id="gender" name="gender" value="ø©">ø©
-                            <% }else{ %>
-                            <input type="radio" id="gender" name="gender" value="≥≤">≥≤
-                            <input type="radio" id="gender" name="gender" value="ø©" checked>ø©
-                            <% } %>
-                        </li> --%>
+  
                         <li class="ch">
                             <label for="mailing">mailing</label>
                             <input type="checkbox" id="mailing" name="mailing" value="email" checked>email
                             <input type="checkbox" id="mailing" name="mailing" value="SMS" checked>SMS
-                        </li>
-                        
+                        </li> 
                         <hr>
-                        
                         <div class="button">
-                            <a href="#">»∏ø¯ ≈ª≈</a>
-                            <button type="submit">∫Ø∞ÊªÁ«◊ ¿˙¿Â</button>
+                            <a href="#">ÌöåÏõê ÌÉàÌá¥</a>
+                            <button type="submit" onclick="saveSetting()">Î≥ÄÍ≤ΩÏÇ¨Ìï≠ Ï†ÄÏû•</button>
                       	</div>
                     </ul>
-                    	
-                   
 				</fieldset>
 			</form>
 	  </section>

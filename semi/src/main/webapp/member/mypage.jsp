@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>마이페이지</title>
+<title>Insert title here</title>
   <link rel="stylesheet" href="../resources/css/style.css">
   <script src="https://kit.fontawesome.com/d591ef8969.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -21,7 +22,14 @@
       <div id="my_an">
         <h3>나의 프로필</h3>
         <p><br>닉네임 : ${sessionId}</p>
-        <p><br>소개글을 입력해주세요</p>
+		  <c:choose>
+		    <c:when test="${empty user.introduction}">
+		      <p><br>소개글을 입력해주세요</p>
+		    </c:when>
+		    <c:otherwise>
+		      <p><br>${user.introduction}</p>
+		    </c:otherwise>
+		  </c:choose>
       </div>
       
       <!-- 프로필 변경 -->
@@ -37,9 +45,9 @@
               <p>나의 프로필</p>
               <hr>
               <p><label for="nic">닉네임</label>
-                <input type="text" id="id" name="id"></p>
+                <input type="text" id="id" name="id" value=${user.id}></p>
               <p><label for="long">한 줄 소개</label>
-                <input type="textarea" id="introduction" name="introduction"></p>
+                <input type="textarea" id="introduction" name="introduction" value=${user.introduction}></p>
               
               <button type="button" onclick="saveProfile()">변경사항 저장</button>
             </div>
@@ -47,12 +55,12 @@
         </div>
       </div>
       <button id="modify" onclick="openModal()"><i class="fa-solid fa-pen"></i></button>
-      <button id="modify2"><a href="setting.jsp"><i class="fa-solid fa-gear"></i></a></button>
+      <a href="/setting.do"><button type="button" id="modify2"><i class="fa-solid fa-gear"></i></button></a>
     </div>
     <div class="select">
       <a href="#" class="toggle-link">내 게시물 </a>
       <a href="#" class="toggle-link">내 댓글 </a>
-      <a href="#" class="toggle-link">찜 </a>
+      <a href="/wishlist.do" class="toggle-link">찜 </a>
     </div>
     <div class="box">
       <div id="box1">

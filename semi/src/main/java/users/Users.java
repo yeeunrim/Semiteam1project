@@ -6,7 +6,6 @@ import java.sql.Timestamp;
 public class Users implements Serializable{
 	private static final long serialVersionUID = 8L;
 
-	private String username;
 	private String id;			//회원 닉네임
 	private String email;		//회원 이메일
 	private String pw;			//비밀번호
@@ -17,12 +16,6 @@ public class Users implements Serializable{
 	private Timestamp modifiedDay;		//수정일
 	private String introduction;		//소개글
 	
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	public String getId() {
 		return id;
 	}

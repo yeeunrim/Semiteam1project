@@ -68,7 +68,7 @@
 				</ul>
 				<ul id="sideMenu_2">
 					<li><a href="/mypage.do">마이페이지</a></li>
-					<li><a href="http://localhost:8080/member/wishlist.jsp">찜한 목록(0)</a></li>
+					<li><a href="/wishlist.do">찜한 목록(0)</a></li>
 					<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
 				</ul>
 				</div>

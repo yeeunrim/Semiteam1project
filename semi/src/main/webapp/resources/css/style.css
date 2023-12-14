@@ -865,8 +865,7 @@ footer li{
 /* 계정설정 스타일 */
 .my_container ul li{list-style: none;}
 .my_container a{text-decoration: none;}
-
-.my_container #memberlist{margin: 150px auto 110px auto;}
+.my_container #memberlist {margin: 150px auto 110px auto;}
 .my_container #memberlist h2{margin: 20px;}
 .my_container #join{width: 80%; margin: 20px auto;}
 .my_container #join form{margin: 20px auto;}

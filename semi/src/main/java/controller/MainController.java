@@ -300,13 +300,23 @@ public class MainController extends HttpServlet {
 			}
 			
 			
-			nextPage="/mypage/wishlist.jsp";
+			nextPage="/member/wishlist.jsp";
+		}else if(command.equals("/mypage.do")) {
+			// 현재 세션에서 세션 ID 가져오기
+			String sessionId = (String) session.getAttribute("sessionId");
+			//세션 ID에 대한 상세정보 가져오기
+			Users usersList = uDAO.getUsers(sessionId);
+			
+			//user 정보를 보냄 (소개글 넣기 위해)
+			request.setAttribute("user", usersList);
+			
+			nextPage="/member/mypage.jsp";
 		//프로필 변경
 		}else if(command.equals("/editprofile.do")) {
 			Users u = new Users();
 			
 			// 현재 세션에서 세션 ID 가져오기
-		    String sessionId = session.getId();
+			String sessionId = (String) session.getAttribute("sessionId");
 		    
 			//수정란에 입력한 닉네임, 소개글 가져오기
 			String introduction = request.getParameter("introduction");
@@ -318,8 +328,38 @@ public class MainController extends HttpServlet {
 			
 			uDAO.editProfile(u, sessionId);
 			
+			// 업데이트된 사용자 정보 다시 로드(리디렉트)
+		    Users updatedUser = uDAO.getUsers(sessionId);
+		    request.setAttribute("user", updatedUser);
+			
 			nextPage="/member/mypage.jsp";
-		}else if(command.equals("/userslist.do")) {
+			
+			
+			
+		//회원정보 수정
+		}else if(command.equals("/setting.do")) {
+			nextPage="/member/setting.jsp";
+		}else if(command.equals("/updateUsers.do")) {
+			  // 현재 세션에서 세션 ID 가져오기
+			  String sessionId = (String) session.getAttribute("sessionId");
+
+			  String pw = request.getParameter("passwd");
+			  String pw2 = request.getParameter("passwd2");
+			  String tel = request.getParameter("tel");
+			  String email = request.getParameter("email");
+
+			  Users users = new Users();
+
+			  // 수정된 사용자 정보 업데이트
+			  users.setPw(pw);
+			  users.setTel(tel);
+			  users.setEmail(email);
+
+			  uDAO.updateUsers(users, sessionId);
+
+			  nextPage = "/member/setting.jsp";
+			  
+			}else if(command.equals("/userslist.do")) {
 			//회원 정보를 db에서 가져옴
 			List<Users> usersList = uDAO.getUsersList();
 			//모델 생성
@@ -351,13 +391,6 @@ public class MainController extends HttpServlet {
 			//자동 로그인
 			session.setAttribute("sessionId", u.getId());	//아이디를 가져와서 sessionId(세션이름) 발급
 			nextPage = "/index.jsp";
-			
-			System.out.println(id);
-			System.out.println(pw);
-			System.out.println(tel);
-			System.out.println(email);
-			System.out.println(birth);
-			System.out.println(gender);
 		}else if(command.equals("/usersview.do")) {
 			String id = request.getParameter("id");
 			Users users = uDAO.getUsers(id);
@@ -1625,20 +1658,14 @@ public class MainController extends HttpServlet {
 		}else if (command.equals("/insertreply3.do") || command.equals("/deletereply3.do") || command.equals("/updatereply3.do")) {
 			int bno = Integer.parseInt(request.getParameter("bno3"));
 			response.sendRedirect("board3view.do?bno3=" + bno);
-		}//프로필 변경
-		else if(command.equals("/mypage.do")) {
-	         List<Users> usersList = uDAO.getUsersList();
-	         
-	         //user 정보를 보냄 (소개글 넣기 위해)
-	         request.setAttribute("user", usersList);
-	         
-	         nextPage="/member/mypage.jsp";
-			
+		//}else if (command.equals("/setting.do")) {
+			//response.sendRedirect("/mypage.do");
 			
 		}else{
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);
-		}   
+		}
+		
 
 
 	}

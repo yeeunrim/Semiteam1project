@@ -42,8 +42,8 @@ public class ExchangeRate {
 				
 				String[] currencyName = currency.split(" "); //" " 구분기호를 사용하여 각 단어 Array인 word에 저장
 				//System.out.println(Arrays.toString(currencyName)); //currencyName 배열의 값 출력
-				System.out.println(currencyName[1] + ": " + rate); //currencyName 배열 중 통화를 나타내는 인덱스1의 값 출력
-				System.out.println(rate);
+				//System.out.println(currencyName[1] + ": " + rate); //currencyName 배열 중 통화를 나타내는 인덱스1의 값 출력
+				//System.out.println(rate);
 				
 				//환율 정보를 리스트에 추가
 				rateList.add(rate);					
@@ -53,7 +53,7 @@ public class ExchangeRate {
 			}
 			
 			// 리스트 출력
-                System.out.println("rateList : " + rateList);
+                //System.out.println("rateList : " + rateList);
             
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -13,7 +13,7 @@
   <script src="https://kit.fontawesome.com/d591ef8969.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="../resources/js/a.js"></script>
-  <!-- <script src="../resources/js/main.js"></script> -->
+   <script src="../resources/js/main.js"></script> 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
                         </li> 
                         <hr>
                         <div class="button">
-                            <a href="#">회원 탈퇴</a>
+                            <a href="/deleteUser.do">회원 탈퇴</a>
                             <button type="submit" onclick="saveSetting()">변경사항 저장</button>
                       	</div>
                     </ul>

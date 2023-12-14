@@ -298,4 +298,3 @@ function openModal() {
     form.submit();
     closeModal(); // 저장 후 모달 창 닫기
   }
-

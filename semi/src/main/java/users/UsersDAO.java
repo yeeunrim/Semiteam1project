@@ -187,5 +187,22 @@ public class UsersDAO {
 			JDBCUtil.close(conn, pstmt);
 		}
 	}
+	//회원 탈퇴
+    public void deleteUser(String userId) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = JDBCUtil.getConnection();
+            String sql = "DELETE FROM users WHERE id = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, userId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(conn, pstmt);
+        }
+    }
 } //DAO 클래스 닫기
 

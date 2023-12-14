@@ -366,7 +366,21 @@ public class MainController extends HttpServlet {
 			request.setAttribute("usersList", usersList);
 			//이동할 페이지
 			nextPage = "/member/userslist.jsp";
-		}else if(command.equals("/joinform01.do")) {
+		}// 회원 삭제
+		else if(command.equals("/deleteUser.do")) {
+			    // 현재 세션에서 세션 ID 가져오기
+			    String sessionId = (String) session.getAttribute("sessionId");
+
+			    // 사용자 삭제 메서드 호출
+			    uDAO.deleteUser(sessionId);
+
+			    // 세션 로그아웃 처리 등 필요한 작업 수행
+			    session.invalidate();
+
+			    // 삭제 후 리다이렉트할 페이지 지정 (예: 메인 페이지)
+			    nextPage = "/main.do";
+			}
+			else if(command.equals("/joinform01.do")) {
 			nextPage = "/member/joinform01.jsp";
 		}else if(command.equals("/insertusers.do")) {
 			//빈 회원 객체를 생성해서 데이터를 받아서 세팅

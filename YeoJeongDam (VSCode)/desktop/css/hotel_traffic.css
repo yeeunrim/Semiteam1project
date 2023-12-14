@@ -1,0 +1,74 @@
+/* 숙소/교통 - 페이지 CSS */
+
+@charset "UTF-8";
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/* 공통 스타일 */
+*{margin: 0; padding: 0; font-family: NanumSquareRound;}
+ul li{list-style: none;}
+a{text-decoration: none; color: black;}
+/* 숙소/교통 - 전체 body 크기 */
+section{height: 1140px; box-sizing: border-box;}
+
+
+
+
+/* 숙소 */
+#hotel{
+	width: 100%; 
+	height: 570px; 
+	position: relative;
+}
+#hotel .searchHotel{
+	background-color: hsla(0, 0%, 80%, 0.517); 
+ 	position: absolute; 
+ 	top: 30%; 
+ 	width: 100%; 
+ 	height: 400px;
+}
+#hotel .searchHotel p{
+	color: #212020; 
+	font-size: 50px; 
+	text-align: center;
+  	width: 100%; 
+  	margin: 0 auto; 
+  	position: absolute; 
+  	top: 55px;
+}
+.clickbrand{
+  margin: 50px auto;
+  width: 100%; height: 45%; position: absolute; bottom: 0; text-align: center;
+}
+.clickbrand a:nth-of-type(1) img:nth-of-type(1){margin-left: 40px;}
+.clickbrand a img{width: 200px; height: 100%; margin-right: 40px;}
+
+hr{margin: 40px;}
+
+/* 교통 */
+#traffic{
+	width: 100%; 
+	height: 400px; 
+	position: relative;
+}
+#traffic .searchTraffic{
+  background-color: hsla(0, 0%, 80%, 0.517);  
+ 	position: absolute; 
+ 	width: 100%; 
+ 	height: 400px;
+}
+#traffic .searchTraffic p{
+	color: #212020; 
+	font-size: 50px; 
+	text-align: center;
+  	width: 100%; 
+  	margin: 0 auto; 
+  	position: absolute; 
+  	top: 40px;
+}

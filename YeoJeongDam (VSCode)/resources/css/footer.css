@@ -1,9 +1,0 @@
-/* footer 스타일 */
-footer{width: 100%; line-height: 70px; display: flex; 
-	justify-content: space-between; align-items: center;}
-footer p{flex: 1; font-size: 40px; text-align: center;}
-footer a{font-size: 14px;}
-footer li{margin: 0 5px;}
-#footerMenu_left, #footerMenu_right{display: flex;}
-#footerMenu_left{width: 40%;}
-#footerMenu_right{width: 40%; justify-content: flex-end;}

@@ -272,4 +272,5 @@ public class NoticeDAO {
 		}
 		return noticeList;
 	}
+	
 }

@@ -72,7 +72,16 @@
 	            <c:if test="${not empty sessionId}">
 					<div id="likeSection">
 						<div id="likeCount">
-						<a href="/like1.do?bno1=${board1.bno1 }&id=${sessionId}"><i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i></a>
+						<a href="/like1.do?bno1=${board1.bno1 }&id=${sessionId}">
+						<c:choose>
+								<c:when test= "${ n eq true}">
+									<i class="fa-solid fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+								</c:when>
+								<c:otherwise>
+									<i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+								</c:otherwise>
+						</c:choose> 
+						</a>
 						좋아요: ${like_count }개
 						</div>
 					</div>

@@ -194,6 +194,7 @@ public class MainController extends HttpServlet {
 			List<Board> boardList = bDAO.getBoardListBlike(id);
 			
 			request.setAttribute("boardList", boardList);	
+			request.setAttribute("id", id);	
 			
 			
 			if(boardList.size()>=3) {
@@ -469,7 +470,7 @@ public class MainController extends HttpServlet {
 			}
 			
 			nextPage="/board/boardlist.jsp";
-		/*
+		
 		}else if(command.equals("/boardlistBlike.do")) {
 
 			String id = request.getParameter("id");
@@ -496,7 +497,7 @@ public class MainController extends HttpServlet {
 			
 			nextPage="/board/boardlist.jsp";
 		
-		*/
+		
 		}else if(command.equals("/writeform.do")) {
 			nextPage="/board/writeform.jsp";
 		}else if(command.equals("/write.do")) {
@@ -759,6 +760,7 @@ public class MainController extends HttpServlet {
 			request.setAttribute("kw", kw);  //검색어
 						
 			nextPage="/notice/noticelist.jsp";
+
 		}else if(command.equals("/noticewriteform.do")) {
 			nextPage="/notice/noticewriteform.jsp";
 		}else if(command.equals("/noticewrite.do")) {
@@ -965,6 +967,35 @@ public class MainController extends HttpServlet {
 			}
 			
 			nextPage="/board1/board1list.jsp";
+			
+		}else if(command.equals("/board1listBlike.do")) {
+
+			String id = request.getParameter("id");
+		
+			List<Board1> boardList = b1DAO.getBoardListBlike1(id);
+			
+			//모델로 생성
+			request.setAttribute("boardList1", boardList);
+
+			
+			List<Board1> likeList = b1DAO.getLikeList1();
+			request.setAttribute("likeList", likeList);			
+			
+			if(likeList.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board1 l1 = likeList.get(0);
+				Board1 l2 = likeList.get(1);
+				Board1 l3 = likeList.get(2);
+				
+				request.setAttribute("l1", l1);
+				request.setAttribute("l2", l2);
+				request.setAttribute("l3", l3);
+			}
+			
+			nextPage="/board1/board1list.jsp";
+		
+			
+			
 		}else if(command.equals("/write1form.do")) {
 			nextPage="/board1/write1form.jsp";
 		}else if(command.equals("/write1.do")) {
@@ -1116,17 +1147,21 @@ public class MainController extends HttpServlet {
 			int bno = Integer.parseInt(request.getParameter("bno1"));
 			String id = request.getParameter("id");
 			List<Blike1> likeList = l1DAO.getLikeList1(bno);
-			
+			boolean n = true;
 			
 			//아이디가 중복되면 delete, 아니면 update
 			if (l1DAO.likeListContainsUser1(likeList, id)) {	
 				l1DAO.deleteLike1(id, bno);	
+				n = false;
 			} else {
 				Blike1 l = new Blike1();
 				l.setBno1(bno);
 				l.setId(id);
 			    l1DAO.like1(l);
+			    n = true;
 			}	
+			
+			request.setAttribute("n", n);
 			l1DAO.updateLikeCount1(bno);
 			nextPage="board1view.do?bno1=" + bno;
 		}
@@ -1204,6 +1239,35 @@ public class MainController extends HttpServlet {
 					}
 					
 					nextPage="/board2/board2list.jsp";
+					
+				}else if(command.equals("/board2listBlike.do")) {
+
+					String id = request.getParameter("id");
+				
+					List<Board2> boardList = b2DAO.getBoardListBlike2(id);
+					
+					//모델로 생성
+					request.setAttribute("boardList2", boardList);
+
+					
+					List<Board2> likeList = b2DAO.getLikeList2();
+					request.setAttribute("likeList", likeList);			
+					
+					if(likeList.size()>=3) {
+						//게시글 3개를 저장할 배열 생성
+						Board2 l1 = likeList.get(0);
+						Board2 l2 = likeList.get(1);
+						Board2 l3 = likeList.get(2);
+						
+						request.setAttribute("l1", l1);
+						request.setAttribute("l2", l2);
+						request.setAttribute("l3", l3);
+					}
+					
+					nextPage="/board2/board2list.jsp";
+				
+						
+					
 				}else if(command.equals("/write2form.do")) {
 					nextPage="/board2/write2form.jsp";
 				}else if(command.equals("/write2.do")) {
@@ -1357,17 +1421,21 @@ public class MainController extends HttpServlet {
 					int bno = Integer.parseInt(request.getParameter("bno2"));
 					String id = request.getParameter("id");
 					List<Blike2> likeList = l2DAO.getLikeList2(bno);
-					
+					boolean n = true;
 					
 					//아이디가 중복되면 delete, 아니면 update
 					if (l2DAO.likeListContainsUser2(likeList, id)) {	
 						l2DAO.deleteLike2(id, bno);	
+						n = false;
 					} else {
 						Blike2 l = new Blike2();
 						l.setBno2(bno);
 						l.setId(id);
 					    l2DAO.like2(l);
+					    n = true;
 					}	
+					request.setAttribute("n", n);
+					
 					l2DAO.updateLikeCount2(bno);
 					nextPage="board2view.do?bno2=" + bno;
 
@@ -1444,6 +1512,34 @@ public class MainController extends HttpServlet {
 					}
 					
 					nextPage="/board3/board3list.jsp";
+					
+				}else if(command.equals("/board3listBlike.do")) {
+
+					String id = request.getParameter("id");
+				
+					List<Board3> boardList = b3DAO.getBoardListBlike3(id);
+					
+					//모델로 생성
+					request.setAttribute("boardList3", boardList);
+
+					
+					List<Board3> likeList = b3DAO.getLikeList3();
+					request.setAttribute("likeList", likeList);			
+					
+					if(likeList.size()>=3) {
+						//게시글 3개를 저장할 배열 생성
+						Board3 l1 = likeList.get(0);
+						Board3 l2 = likeList.get(1);
+						Board3 l3 = likeList.get(2);
+						
+						request.setAttribute("l1", l1);
+						request.setAttribute("l2", l2);
+						request.setAttribute("l3", l3);
+					}
+					
+					nextPage="/board3/board3list.jsp";	
+					
+					
 				}else if(command.equals("/write3form.do")) {
 					nextPage="/board3/write3form.jsp";
 				}else if(command.equals("/write3.do")) {
@@ -1595,17 +1691,23 @@ public class MainController extends HttpServlet {
 					int bno = Integer.parseInt(request.getParameter("bno3"));
 					String id = request.getParameter("id");
 					List<Blike3> likeList = l3DAO.getLikeList3(bno);
-					
+					boolean n = true;
 					
 					//아이디가 중복되면 delete, 아니면 update
 					if (l3DAO.likeListContainsUser3(likeList, id)) {	
-						l3DAO.deleteLike3(id, bno);	
+						l3DAO.deleteLike3(id, bno);
+						n = false;
+						
 					} else {
 						Blike3 l = new Blike3();
 						l.setBno3(bno);
 						l.setId(id);
 					    l3DAO.like3(l);
+					    n = true;
 					}	
+					
+					request.setAttribute("n", n);
+					
 					l3DAO.updateLikeCount3(bno);
 					nextPage="board3view.do?bno3=" + bno;
 				}

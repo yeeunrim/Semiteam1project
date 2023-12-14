@@ -33,7 +33,7 @@
             <hr id="b">
             <a href="/boardview.do?bno=${w3.bno }">${w3.title} </a><a href="">${w3.id}</a>
             <hr id="b">
-            <a href="#"> + MORE </a>
+            <a href="/boardlistBlike.do?id=${sessionId}"> + MORE </a>
         </div>
         <div class="box2">
             <h4>동행자 찾기</h4>
@@ -44,7 +44,7 @@
             <hr id="b">
             <a href="/board1view.do?bno1=${w31.bno1 }">${w31.title1}</a><a href="">${w31.id}</a>
             <hr id="b">
-            <a href="#"> + MORE </a>
+            <a href="/board1listBlike.do?id=${sessionId}"> + MORE </a>
         </div><div class="box2">
             <h4>나의 계획</h4>
             <hr>
@@ -54,7 +54,7 @@
             <hr id="b">
             <a href="/board2view.do?bno2=${w32.bno2 }">${w32.title2}</a><a href="">${w32.id}</a>
             <hr id="b">
-            <a href="#"> + MORE </a>
+            <a href="/board2listBlike.do?id=${sessionId}"> + MORE </a>
         </div><div class="box2">
             <h4>Q&A</h4>
             <hr>
@@ -64,7 +64,7 @@
             <hr id="b">
             <a href="/board3view.do?bno3=${w33.bno3 }">${w33.title3}</a><a href="">${w33.id}</a>
             <hr id="b">
-            <a href="#"> + MORE </a>
+            <a href="/board3listBlike.do?id=${sessionId}"> + MORE </a>
         </div>
         <!--
         <div id="more2">

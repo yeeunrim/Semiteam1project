@@ -833,9 +833,9 @@ public class MainController extends HttpServlet {
 			request.setAttribute("notice", notice);
 			request.setAttribute("nreplyList", nreplyList);
 			  
-			int nlikeCount = nlDAO.getNLikeCountByNno(nno);
+			//int nlikeCount = nlDAO.getNLikeCountByNno(nno);
 			  
-			request.setAttribute("nlike_count", nlikeCount);
+			//request.setAttribute("nlike_count", nlikeCount);
 			 
 
 			nlDAO.updateNLikeCount(nno);

@@ -467,6 +467,16 @@ public class MainController extends HttpServlet {
 				request.setAttribute("l1", l1);
 				request.setAttribute("l2", l2);
 				request.setAttribute("l3", l3);
+			}else if(likeList.size() == 2) {
+				Board l1 = likeList.get(0);
+				Board l2 = likeList.get(1);
+
+				request.setAttribute("l1", l1);
+				request.setAttribute("l2", l2);
+			}else if(likeList.size() == 1) {
+				Board l1 = likeList.get(0);
+
+				request.setAttribute("l1", l1);
 			}
 			
 			nextPage="/board/boardlist.jsp";
@@ -493,6 +503,16 @@ public class MainController extends HttpServlet {
 				request.setAttribute("l1", l1);
 				request.setAttribute("l2", l2);
 				request.setAttribute("l3", l3);
+			}else if(likeList.size() == 2) {
+				Board l1 = likeList.get(0);
+				Board l2 = likeList.get(1);
+
+				request.setAttribute("l1", l1);
+				request.setAttribute("l2", l2);
+			}else if(likeList.size() == 1) {
+				Board l1 = likeList.get(0);
+
+				request.setAttribute("l1", l1);
 			}
 			
 			nextPage="/board/boardlist.jsp";
@@ -960,6 +980,16 @@ public class MainController extends HttpServlet {
 				request.setAttribute("l1", l1);
 				request.setAttribute("l2", l2);
 				request.setAttribute("l3", l3);
+			}else if(likeList1.size() == 2) {
+				Board1 l1 = likeList1.get(0);
+				Board1 l2 = likeList1.get(1);
+
+				request.setAttribute("l1", l1);
+				request.setAttribute("l2", l2);
+			}else if(likeList1.size() == 1) {
+				Board1 l1 = likeList1.get(0);
+
+				request.setAttribute("l1", l1);
 			}
 			
 			nextPage="/board1/board1list.jsp";
@@ -986,6 +1016,16 @@ public class MainController extends HttpServlet {
 				request.setAttribute("l1", l1);
 				request.setAttribute("l2", l2);
 				request.setAttribute("l3", l3);
+			}else if(likeList.size() == 2) {
+				Board1 l1 = likeList.get(0);
+				Board1 l2 = likeList.get(1);
+
+				request.setAttribute("l1", l1);
+				request.setAttribute("l2", l2);
+			}else if(likeList.size() == 1) {
+				Board1 l1 = likeList.get(0);
+
+				request.setAttribute("l1", l1);
 			}
 			
 			nextPage="/board1/board1list.jsp";
@@ -1232,6 +1272,16 @@ public class MainController extends HttpServlet {
 						request.setAttribute("l1", l1);
 						request.setAttribute("l2", l2);
 						request.setAttribute("l3", l3);
+					}else if(likeList2.size() == 2) {
+						Board2 l1 = likeList2.get(0);
+						Board2 l2 = likeList2.get(1);
+
+						request.setAttribute("l1", l1);
+						request.setAttribute("l2", l2);
+					}else if(likeList2.size() == 1) {
+						Board2 l1 = likeList2.get(0);
+
+						request.setAttribute("l1", l1);
 					}
 					
 					nextPage="/board2/board2list.jsp";
@@ -1258,6 +1308,16 @@ public class MainController extends HttpServlet {
 						request.setAttribute("l1", l1);
 						request.setAttribute("l2", l2);
 						request.setAttribute("l3", l3);
+					}else if(likeList.size() == 2) {
+						Board2 l1 = likeList.get(0);
+						Board2 l2 = likeList.get(1);
+
+						request.setAttribute("l1", l1);
+						request.setAttribute("l2", l2);
+					}else if(likeList.size() == 1) {
+						Board2 l1 = likeList.get(0);
+
+						request.setAttribute("l1", l1);
 					}
 					
 					nextPage="/board2/board2list.jsp";
@@ -1493,19 +1553,6 @@ public class MainController extends HttpServlet {
 					request.setAttribute("field", field);  //검색어
 					request.setAttribute("kw", kw);  //검색어
 					
-					List<Board3> likeList3 = b3DAO.getLikeList3();
-					request.setAttribute("likeList3", likeList3);			
-					
-					if(likeList3.size()>=3) {
-						//게시글 3개를 저장할 배열 생성
-						Board3 l1 = likeList3.get(0);
-						Board3 l2 = likeList3.get(1);
-						Board3 l3 = likeList3.get(2);
-						
-						request.setAttribute("l1", l1);
-						request.setAttribute("l2", l2);
-						request.setAttribute("l3", l3);
-					}
 					
 					nextPage="/board3/board3list.jsp";
 					

@@ -22,7 +22,7 @@
                            section
 --------------------------------------------------------------------*/
 /* 기준 넓이 1440px 반응형>100% , 높이 2350px  */
-body section{ height: 3600px; } 
+body section{ height: 100%; } 
 
 /*======================================================
     body 국내 지역 사진, 이름
@@ -124,7 +124,7 @@ body section{ height: 3600px; }
     padding: 0 4.5vw;
     font-size: 3vw;
     border: 1px solid black;
-    border-radius: 14px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,7 +164,7 @@ body section{ height: 3600px; }
     display: none;
     background-color: whitesmoke;
     min-width: 50px;
-    height: 20vh;
+    height: 30vh;
     overflow: scroll;
     box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
 }
@@ -198,9 +198,9 @@ body section{ height: 3600px; }
     padding-top: 3vh;
     padding-bottom: 3vh;
     width: 33.2vw;
-    height: 13vh;
+    height: 18vh;
 }
-#weather_container #box_weather #bottom_weather p{font-size: 2.5vw; line-height: 7vh;}
+#weather_container #box_weather #bottom_weather p{font-size: 2.5vw; line-height: 9vh;}
 #weather_container #box_weather #bottom_weather #a{color: #2695fd;}
 #weather_container #box_weather #bottom_weather #b{color: #ff6219;}
 
@@ -254,7 +254,7 @@ body section{ height: 3600px; }
     display: flex;
     align-items: center;
     background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
-    border-radius: 20px;
+    border-radius: 33px;
     padding: 5px 15px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: relative;
@@ -283,42 +283,56 @@ body section{ height: 3600px; }
 /* 주요 관광지 */
 #tourist_attraction{ /*관광지 3곳 틀 container */
     width: 100%; 
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: baseline;
 }
 .attraction{ /* 각 관광지 틀 */
-    width: 31%;
-    height: 40vh;
+    width: 30%;
+    height: 100%;
     border: 1px solid #1d1d1f;
     border-top-left-radius: 40px; border-top-right-radius: 40px; 
     box-shadow: 0 -5px 0 0 #000;
     display:flex;
     flex-direction: column;
     margin-top: 20px;
+    position: relative;
 }
 /* 관광지 이름 */
 .attraction .attr_text p{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 40px;
-    padding-left: 40px;
-    padding-top: 1vh;
-    margin-top: 15px;
+    /* height: auto; */
     font-size: 2vw;
+    font-weight: 600;
+    position: relative; top: 10px;
+    letter-spacing: 2.5px;
+    text-align: center;
 }
-.attraction .attr_text .xmark:hover{ color: darkgray;}
-
 /* 관광지 이미지  */
 .attraction .attr_imgbox{
+    width: 100%;
+    height: 16vw;
     margin-top: 20px;
     border-top: 1px solid #000;
-    overflow:hidden;
+    overflow: hidden;
 }
 .attraction .attr_imgbox img{
-    width: 35vw;
-    height: 40vh;
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+}
+.attraction .dot{
+    z-index: 2;
+    text-align: center;
+    font-size: 1.5vw;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.567);
+    border-top-right-radius: 20px;
+    padding: 3px 3px;
+    position: absolute; bottom: 0px;
+}
+.attraction .dot .dot_text{
+    color: #535356;
 }
 
 /*=========================================================
@@ -344,9 +358,9 @@ body section{ height: 3600px; }
 
 #curation_content .curationBox{
     margin: 0 5px;
-    width: 50vw;
+    width: 55vw;
     height: 35vw;
-    border-radius: 35px;
+    border-radius: 30px;
     border: 1px solid #000;
     display: flex;
     justify-content: center;
@@ -364,7 +378,7 @@ body section{ height: 3600px; }
 
 #curation_content .curationBox .textBox1{
     position: absolute;
-    top: 26.6vw;
+    top: 24.3vw;
     width: 20vw;
     border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);
@@ -420,11 +434,10 @@ body section{ height: 3600px; }
 }
 
 
-
 /*-------------------------------------------------------------------
                         footer
 ----------------------------------------------------------------------*/ 
-.Yfooter{width: 100%; text-align: center; font-size: 2vw; }
+.Yfooter{width: 100%; text-align: center; font-size: 2vw; margin-top: 4vh;}
 
 
     

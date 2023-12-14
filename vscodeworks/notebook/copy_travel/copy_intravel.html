@@ -57,7 +57,7 @@
                                         <span id="dropdown_month"> 
                                             <p>December <!-- 현재 월 -->
                                             <!-- <i class="fa-solid fa-angle-down" id="angledown"></i> -->
-                                            <span id="dropbtn_click" style="font-family: Material Icons; font-size : 30px; color : #707070; float:right;"
+                                            <span id="dropbtn_click" style="font-family: Material Icons; font-size : 3.4vw; color : #707070; float:right;"
                                                  onclick="dropdown()">arrow_drop_down</span>
                                             </p>
                                         </span>
@@ -97,11 +97,14 @@
                 <div id="location_img">
                     <img src="../images/seoul.png" alt="seoul location">
                     
-                    <div id="circleinfo">
-                        <p>
-                            <i class="fa-solid fa-circle-info" style="color: #7d7d7d;"></i>
-                        </p>
-                    </div>
+                    <a href="https://www.google.com/maps/place/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/data=!4m15!1m8!3m7!1s0x357ca2012d5c39cf:0x7e11eca1405bf29b!2z7ISc7Jq47Yq567OE7Iuc!3b1!8m2!3d37.5518911!4d126.9917937!16zL20vMGhzcWY!3m5!1s0x357ca2012d5c39cf:0x7e11eca1405bf29b!8m2!3d37.5518911!4d126.9917937!16zL20vMGhzcWY?entry=ttu"
+                        target="_blank">
+                        <div id="circleinfo">
+                            <p>
+                                <i class="fa-solid fa-circle-info" style="color: #7d7d7d;"></i>
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -125,37 +128,48 @@
             <!-- 첫번째 관광지 -->
             <div class="attraction"> 
                 <div class="attr_text"> 
-                    <p>경복궁
-                        <i class="fa-solid fa-xmark" style="color: #404040;" class="xmark"></i>
-                    </p>
+                    <p>경복궁</p>
                 </div>
                 <!-- 관광지 사진 -->
                 <div class="attr_imgbox"> 
                     <img src="../images/Gyeongbokgung.png" alt="Gyeongbokgung palace">
+                </div>
+                <!-- 관광지 상세 위치-->
+                <div class="dot">
+                    <i class="fa-solid fa-location-dot" style="color: rgb(239, 64, 64);"> 
+                        <span class="dot_text">종로구</span></i>
                 </div>
             </div><!-- first_attr -->
 
             <!-- 두번째 관광지 -->
             <div class="attraction">
                 <div class="attr_text">
-                    <p>여의도 한강공원
-                        <i class="fa-solid fa-xmark" style="color: #404040;" id="xmark2"></i>
-                    </p>
+                    <p>여의도 한강공원</p>
                 </div>
+
                 <div class="attr_imgbox">
                     <img src="../images/hankang.png" alt="hankang river">
+                </div>
+
+                <div class="dot">
+                    <i class="fa-solid fa-location-dot" style="color: rgb(239, 64, 64);"> 
+                        <span class="dot_text">영등포구</span></i>
                 </div>
             </div>
             
              <!-- 세번째 관광지 -->
             <div class="attraction">
                 <div class="attr_text">
-                    <p>롯데월드
-                        <i class="fa-solid fa-xmark" style="color: #404040;" id="xmark3"></i>
-                    </p>
+                    <p>롯데월드</p>
+                    
                 </div>
                 <div class="attr_imgbox">
                     <img src="../images/lotteworld.png" alt="lotteworld">
+                </div>
+
+                <div class="dot">
+                    <i class="fa-solid fa-location-dot" style="color: rgb(239, 64, 64);"> 
+                        <span class="dot_text">송파구</span></i>
                 </div>
             </div>
         </div>
@@ -176,6 +190,7 @@
 
                 <div class="textBox1"> 
                     <div class="Ctext1">
+                        <p><br></p>
                         <p>책 읽기 좋은 서울<br>독서 공간 10곳</p>
                     </div>
                 </div>

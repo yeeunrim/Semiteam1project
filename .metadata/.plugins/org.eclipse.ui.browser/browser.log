@@ -1,0 +1,76 @@
+
+11월 21, 2023 15:09:59.586 NEW SESSION
+11월 21, 2023 15:09:59.586 [2156:2160:1121/150959.584:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+11월 22, 2023 09:32:23.559 NEW SESSION
+11월 22, 2023 09:32:23.559 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 22, 2023 11:16:51.790 [5432:2440:1122/111651.790:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+
+11월 24, 2023 10:21:38.994 NEW SESSION
+11월 24, 2023 10:21:38.994 [16644:5376:1124/102138.992:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+11월 24, 2023 10:21:38.995 [16644:5376:1124/102138.992:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+11월 24, 2023 10:21:38.996 [16644:5376:1124/102138.992:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+11월 24, 2023 10:21:38.999 [16644:5376:1124/102138.998:ERROR:CONSOLE(1)] "Received error with code E_PROTOCOLERROR while checking if react has loaded: "Inspector protocol error: %s"", source: chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/main.js (1)
+11월 24, 2023 11:04:50.745 [16644:5376:1124/110450.745:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+
+11월 24, 2023 15:54:13.115 NEW SESSION
+11월 24, 2023 15:54:13.115 [4400:16872:1124/155413.113:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 24, 2023 17:41:55.727 [12576:12704:1124/174155.727:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8080/jwbook/validation/joinProcess.jsp has no execution context", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+11월 24, 2023 17:44:36.422 [12576:12704:1124/174436.422:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8080/jwbook/validation/joinProcess.jsp has no execution context", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+11월 24, 2023 17:54:19.718 [12576:12704:1124/175419.718:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8080/jwbook/validation/joinProcess.jsp has no execution context", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+11월 24, 2023 17:55:08.75 [12576:12704:1124/175508.075:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8080/jwbook/validation/joinProcess.jsp has no execution context", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+11월 24, 2023 18:08:29.30 [12576:12704:1124/180829.030:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8080/jwbook/validation/joinProcess.jsp has no execution context", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+11월 24, 2023 18:08:55.591 [12576:12704:1124/180855.590:ERROR:CONSOLE(1)] "Extension server error: Operation failed: http://localhost:8080/jwbook/validation/joinProcess.jsp has no execution context", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+
+11월 28, 2023 10:23:41.470 NEW SESSION
+11월 28, 2023 10:23:41.470 [16680:16676:1128/102341.468:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 28, 2023 10:49:16.313 [16680:16676:1128/104916.313:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 28, 2023 11:01:38.458 [16680:16676:1128/110138.457:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 28, 2023 11:03:12.66 [16680:16676:1128/110312.065:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+
+11월 30, 2023 10:05:24.43 NEW SESSION
+11월 30, 2023 10:05:24.43 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 30, 2023 10:09:43.572 [1692:9420:1130/100943.572:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 10:22:15.494 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 30, 2023 10:28:32.238 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 30, 2023 10:29:22.334 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 30, 2023 10:43:03.99 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 30, 2023 10:55:54.518 [11944:11088:1130/105554.517:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 11:41:25.774 [11944:11088:1130/114125.773:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 11:41:25.774 [11944:11088:1130/114125.773:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 11:57:11.80 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 30, 2023 12:06:59.164 [7024:13080:1130/120659.164:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 12:51:04.726 [7024:4852:1130/125104.726:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 30, 2023 13:14:31.350 [7024:4852:1130/131431.350:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 30, 2023 13:14:35.315 [7024:13080:1130/131435.314:ERROR:device_event_log_impl.cc(192)] [13:14:35.314] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 30, 2023 13:30:05.231 [7024:13080:1130/133005.231:ERROR:device_event_log_impl.cc(192)] [13:30:05.230] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 30, 2023 13:35:05.644 [7024:13080:1130/133505.644:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 13:46:41.555 [7024:13080:1130/134641.555:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 13:46:41.555 [7024:13080:1130/134641.555:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 13:54:48.421 [7024:13080:1130/135448.421:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 13:54:48.421 [7024:13080:1130/135448.421:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 14:32:31.633 [7024:13080:1130/143231.633:ERROR:device_event_log_impl.cc(192)] [14:32:31.633] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+11월 30, 2023 15:21:19.219 [7024:13080:1130/152119.218:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 30, 2023 15:32:31.230 [7024:13080:1130/153231.230:ERROR:device_event_log_impl.cc(192)] [15:32:31.230] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+
+12월 06, 2023 10:06:37.467 NEW SESSION
+12월 06, 2023 10:06:37.467 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 06, 2023 10:08:27.414 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 06, 2023 10:50:30.208 [6792:11296:1206/105030.208:ERROR:gpu_process_host.cc(992)] GPU process exited unexpectedly: exit_code=34
+
+12월 12, 2023 09:52:57.559 NEW SESSION
+12월 12, 2023 09:52:57.559 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 12, 2023 10:08:29.457 [11752:14248:1212/100829.457:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 12, 2023 10:26:26.205 [11752:14248:1212/102626.205:ERROR:device_event_log_impl.cc(192)] [10:26:26.204] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+12월 12, 2023 10:56:40.289 [11752:14248:1212/105640.289:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+12월 12, 2023 10:56:45.987 [11752:14248:1212/105645.987:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+12월 12, 2023 10:59:22.91 [11752:14248:1212/105922.091:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+
+12월 14, 2023 16:24:02.35 NEW SESSION
+12월 14, 2023 16:24:02.35 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+12월 14, 2023 17:18:04.07 NEW SESSION
+12월 14, 2023 17:18:04.07 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 14, 2023 17:20:45.285 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 14, 2023 17:21:39.895 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 14, 2023 17:22:07.865 [7196:11096:1214/172207.865:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost

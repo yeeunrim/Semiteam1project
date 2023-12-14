@@ -6,7 +6,8 @@ CREATE TABLE users(
     birth   NUMBER NOT NULL,
     gender  VARCHAR2(6) NOT NULL,
     accountDay    TIMESTAMP DEFAULT SYSTIMESTAMP,
-    modifiedDay   TIMESTAMP,  
+    modifiedDay   TIMESTAMP, 
+    introduction VARCHAR2(2000),
     PRIMARY KEY(id)
 );
 

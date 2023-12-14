@@ -569,6 +569,7 @@ public class MainController extends HttpServlet {
 			lDAO.updateLikeCount(bno);
 			bDAO.updateReplyCount(bno);
 			
+			
 			nextPage="/board/boardview.jsp";
 		}else if(command.equals("/deleteboard.do")) {
 			int bno = Integer.parseInt(request.getParameter("bno"));
@@ -678,17 +679,23 @@ public class MainController extends HttpServlet {
 			int bno = Integer.parseInt(request.getParameter("bno"));
 			String id = request.getParameter("id");
 			List<Blike> likeList = lDAO.getLikeList(bno);
-			
+			boolean n = true;
 			
 			//아이디가 중복되면 delete, 아니면 update
 			if (lDAO.likeListContainsUser(likeList, id)) {	
-				lDAO.deleteLike(id, bno);	
+				lDAO.deleteLike(id, bno);
+				n = false;
 			} else {
 				Blike l = new Blike();
 				l.setBno(bno);
 				l.setId(id);
 			    lDAO.like(l);
+			    n = true;
 			}	
+			
+			request.setAttribute("n", n);
+			
+			
 			lDAO.updateLikeCount(bno);
 			nextPage="boardview.do?bno=" + bno;
 		}

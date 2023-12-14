@@ -374,8 +374,8 @@ public class MainController extends HttpServlet {
 				uDAO.editProfile(u, sessionId);
 				
 				// 업데이트된 사용자 정보 다시 로드(리디렉트)
-			    Users updatedUser = uDAO.getUsers(sessionId);
-			    request.setAttribute("user", updatedUser);
+			    //Users updatedUser = uDAO.getUsers(sessionId);
+			    //request.setAttribute("user", updatedUser);
 				
 				nextPage="/member/mypage.jsp";
 		    }else if(command.equals("/setting.do")) {
@@ -1703,6 +1703,8 @@ public class MainController extends HttpServlet {
 			int bno = Integer.parseInt(request.getParameter("bno3"));
 			response.sendRedirect("board3view.do?bno3=" + bno);
 			
+		}else if (command.equals("/editprofile_pic.do") || command.equals("/editprofile.do")){
+			response.sendRedirect("/mypage.do");
 			
 		}else{
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);

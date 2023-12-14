@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-<html lang="ko">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>국내여행 상세 페이지</title>
-      <script src="../resources/js/trave.js"></script>
-      <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="../resources/css/style.css">
-   <script src="../resources/js/main.js"></script>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>국내여행 상세 페이지</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../../resources/js/main.js"></script>
+<script src="../js/trave.js"></script>
+<script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../../resources/css/style.css">
+<link rel="stylesheet" href="css/travel.css">
 </head>
 <body>
-    <!-- ============== header ====================================== -->
-    <jsp:include page="../header.jsp"/>
-    <!-- ============== body ====================================== -->
+	<jsp:include page="../../header.jsp" />
+	<!-- ============== body ====================================== -->
     <section>
         <section class="main">
             <div class="area_img">
-                <img src="../images/namsantower.jpg" alt="namsantower" id="pic">
+                <img src="images/namsantower.jpg" alt="namsantower" id="pic">
             </div>
 
             <div class="area_text">
@@ -67,7 +67,7 @@
                     <p>위치</p>
                 </div>
                 <div class="imgLocation">
-                    <img src="../images/seoul.png" alt="seoul location">
+                    <img src="images/seoul.png" alt="seoul location">
                 </div>
                 
                 <i class="fa-solid fa-circle-info" style="color: #7d7d7d;" id="circleinfo"></i>
@@ -91,7 +91,7 @@
                     </p>
                 </div>
                 <div class="attr1">
-                    <img src="../images/Gyeongbokgung.png" alt="Gyeongbokgung palace">
+                    <img src="images/Gyeongbokgung.png" alt="Gyeongbokgung palace">
                 </div>
             </div><!-- first_attr -->
 
@@ -102,7 +102,7 @@
                     </p>
                 </div>
                 <div class="attr2">
-                    <img src="../images/hankang.png" alt="hankang river">
+                    <img src="images/hankang.png" alt="hankang river">
                 </div>
             </div><!-- second_attr -->
 
@@ -113,7 +113,7 @@
                     </p>
                 </div>
                 <div class="attr3">
-                    <img src="../images/lotteworld.png" alt="lotteworld">
+                    <img src="images/lotteworld.png" alt="lotteworld">
                 </div>
             </div><!-- third_attr -->
         </section><!-- attraction -->
@@ -123,7 +123,7 @@
             
             <div class="curationBox1"> <!--큰 박스 -->
                 <div class="imgBox1">
-                    <img src="../images/library.png" alt="recommend library">
+                    <img src="images/library.png" alt="recommend library">
                 </div>
                 <div class="textBox1">
                     <div class="Ctext1">
@@ -134,7 +134,7 @@
 
             <div class="curationBox2"> 
                 <div class="imgBox2">
-                    <img src="../images/hanok.png" alt="traditional hanok">
+                    <img src="images/hanok.png" alt="traditional hanok">
                 </div>
                 <div class="textBox2">
                     <div class="Ctext2">
@@ -145,7 +145,7 @@
 
             <div class="curationBox3"> 
                 <div class="imgBox3">
-                    <img src="../images/toast.png" alt="toast yummy">
+                    <img src="images/toast.png" alt="toast yummy">
                 </div>
                 <div class="textBox3">
                     <div class="Ctext3">
@@ -156,7 +156,7 @@
             
             <div class="curationBox4"> 
                 <div class="imgBox4">
-                    <img src="../images/seoulnight.png" alt="night">
+                    <img src="images/seoulnight.png" alt="night">
                 </div>
                 <div class="textBox4">
                     <div class="Ctext4">
@@ -164,12 +164,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- curation -->
+        </section><!-- curation -->
     </section>
-    <!-- ============= footer ================================= -->
-    <jsp:include page="../footer.jsp"/>
-    
-   
+    <jsp:include page="../../footer.jsp" />
 </body>
 </html>

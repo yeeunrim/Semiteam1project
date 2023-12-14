@@ -74,7 +74,7 @@
 			  	</div>
 				<div>
 					<img src="resources/images/busan.png" alt="부산">
-			  		<p>부산에서</p>
+			  		<p>스위스에서</p>
 			  	</div>
 				<div>
 					<img src="resources/images/busan.png" alt="부산">

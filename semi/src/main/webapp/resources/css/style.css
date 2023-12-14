@@ -163,6 +163,12 @@ header #sideMenuIcon{
 	    width: 100%;
 	}
 }
+@media screen and (max-width: 400px) {
+	header #welcome p{
+		font-size: 11.5px;
+	}
+}
+
 
 /* ==================================================================================================== */
 /*                          footer 스타일                                                   */
@@ -760,55 +766,88 @@ footer li{
 }
 
 #about_container h1{
-	font-size: 4vw;
-	width: 100%;
-	text-align: center;
-	padding: 6% 0 4% 0;
+    font-size: 4vw;
+    width: 100%;
+    text-align: center;
+    padding: 6% 0 2% 0;
+    border-bottom: 1px solid;
 }
 #about_container #about_introduction{
-	width: 85%;
-    height: 21vw;
-    margin: 0 auto;
-    background: rgba(231, 228, 228, 0.70);
-	box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	padding: 5%;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 4% 0;
 }
-#about_container span{
-	font-size: 5vw;
+#about_container #about_introduction img{
+    width: 80%;
 }
 #about_container h2{
-	font-size: 2.5vw;
-    padding: 5% 0 0 4%
+    font-size: 2.5vw;
+    padding-left: 4%;
 }
-#about_container img{
+#about_container #people img{
 	width: 25%;
     height: 22%;
     object-fit: contain;
 }
 #about_container #people{
-	display: flex;
-	flex-direction: column;
-	    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: gainsboro;
+    border-radius: 10px;
+    padding-bottom: 5%;
+    margin-top: 1%;
 }
 #about_container #people > div{
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center
 }
-#about_container #people div div{
-	width: 70%;
-    height: 12.5vw;
-	background-color: blanchedalmond;
-}
 #about_container #people div:nth-of-type(2n){
     flex-direction: row-reverse;
 }
 
+/* 말풍선 */
+#about_container #people div div{
+    position: relative;
+    margin: 30px;
+    padding: 20px;
+    width: 40%;
+    height: 9vw;
+    color: #FFF;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 2px 7px 0px rgb(0 0 0 / 13%)
+}
 
+#about_container #people div:nth-of-type(even) div:after {
+    content: "";
+    position: absolute;
+    top: 21px;
+    right: -35px;
+    border-left: 36px solid #f7f7f7;
+    border-top: 20px solid transparent;
+    border-bottom: 8px solid transparent;
+}
 
+#about_container #people div:nth-of-type(odd) div:after {
+	content: "";
+    position: absolute;
+    top: 21px;
+    left: -35px;
+    border-right: 36px solid #f7f7f7;
+    border-top: 20px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+#about_container #people span{
+	line-height: 1.5;
+    font-size: 2vw;
+    color: black;
+}
+#about_container #people p{
+    font-size: 1.5vw;
+    color: black;
+}
 
 
 

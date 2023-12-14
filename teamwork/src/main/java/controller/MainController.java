@@ -717,7 +717,7 @@ public class MainController extends HttpServlet {
 			int pageSize = 10;
 			//1페이지의 첫번째행(startRow) : 1번, 2페이지 : 11번, 3페이지 : 21
 			int startRow = (currentPage - 1) * pageSize + 1;
-			System.out.println("페이지 첫행: " + startRow);
+			
 			
 			//시작페이지(startPage) : 12행 - 2페이지, 22행 - 3페이지
 			int startPage = startRow / pageSize + 1;
@@ -778,10 +778,7 @@ public class MainController extends HttpServlet {
 			//폼 데이터 받기
 			String title = multi.getParameter("ntitle");
 			String content = multi.getParameter("ncontent");
-			
-			//세션 가져오기
-			String id = (String) session.getAttribute("sessionId");
-			
+						
 			//file 파라미터 추출
 			Enumeration<?> files = multi.getFileNames();
 			String filename = "";
@@ -799,7 +796,6 @@ public class MainController extends HttpServlet {
 			n.setNtitle(title);
 			n.setNcontent(content);
 			n.setNfilename(filename);
-			n.setId(id);
 			
 			nDAO.nwrite(n);
 					

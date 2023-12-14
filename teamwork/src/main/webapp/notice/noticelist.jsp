@@ -49,7 +49,7 @@
 						<small>[&nbsp;<c:out value="${n.nreply_count}"/>&nbsp;]</small>
 					</c:if>
 					</a></td>
-                      <td>${n.id }</td>
+                      <td>관리자</td>
                       <td><c:choose>
 							<c:when test="${not empty n.nmodifyDate }">
 								<fmt:formatDate value="${n.nmodifyDate }" pattern="yyyy-MM-dd"/>

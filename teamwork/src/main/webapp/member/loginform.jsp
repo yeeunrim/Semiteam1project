@@ -17,7 +17,7 @@
 		<div id="loginform_box">
 			<h2>로그인</h2>
 			<form action="/login.do" method="post">
-				<fieldset>
+				<div>
 					<ul>
 						<li>
 							<label for="email">이메일</label>
@@ -28,7 +28,7 @@
 							<input type="password" id="pw" name="pw" required>
 						</li>
 					</ul>
-				</fieldset>
+				</div>
 				<div class="error">${error }</div>
 				<div class="button">
 					<button type="submit">로그인</button>

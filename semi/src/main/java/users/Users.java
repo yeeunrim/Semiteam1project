@@ -15,10 +15,12 @@ public class Users implements Serializable{
 	private Timestamp accountDay;		//가입일
 	private Timestamp modifiedDay;		//수정일
 	private String introduction;		//소개글
+	private String image;		//프로필사진
 	
 	public String getId() {
 		return id;
 	}
+	
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -69,5 +71,11 @@ public class Users implements Serializable{
 	}
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

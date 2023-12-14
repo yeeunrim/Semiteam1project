@@ -931,7 +931,17 @@ footer li{
 
 
 
-
+.my_container #profileForm img {
+	position: relative;
+}
+.my_container #profileForm h2 {
+	position: absolute;
+    font-size: 40px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.6);
+}
 
    
 /* jihun */

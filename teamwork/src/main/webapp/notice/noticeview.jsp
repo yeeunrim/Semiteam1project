@@ -50,7 +50,7 @@
 						<img src="../upload/${notice.nfilename }" class="boardviewimage">
 					</c:if>
 				</div>
-	          		${board.content}
+	          		${notice.ncontent}
 	        </div>
 	        <div class = "right">
 				<c:choose>
@@ -68,12 +68,6 @@
 				</c:choose>
 			</div>
 	        <div class = "under">
-	          <p><div class="thumb">
-	          <i class="fa-regular fa-user" style="color: #ffffff; font-size : 15px;"></i>
-	          </div>
-	          <div class="nickname2">
-	            ${notice.id}
-	          </div>
 	          <%-- <div class="likeReply">
 	            <c:if test="${not empty sessionId}">
 					<div id="likeSection">

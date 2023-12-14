@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -68,6 +67,7 @@ public class MainController extends HttpServlet {
 	NReplyDAO nrDAO;
 	NLikeDAO nlDAO;
 	UsersDAO uDAO;
+	//ExchangeRate rate;
        
     public MainController() {	//생성자
         bDAO = new BoardDAO();
@@ -86,6 +86,7 @@ public class MainController extends HttpServlet {
         nrDAO = new NReplyDAO();
         nlDAO = new NLikeDAO();
         uDAO = new UsersDAO();
+        //rate = new ExchageRate();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -180,7 +181,9 @@ public class MainController extends HttpServlet {
 				request.setAttribute("likeList2", newLikes2);
 			}
 			
-			
+			//환율정보 가져오기
+			//List<String> rateList = rate.getRateList();
+			//request.setAttribute("rateList", rateList);
 			
 			nextPage="/main.jsp";
 		
@@ -296,6 +299,23 @@ public class MainController extends HttpServlet {
 			
 			
 			nextPage="/mypage/wishlist.jsp";
+		}else if(command.equals("/editprofile.do")) {
+			Users u = new Users();
+			
+			// 현재 세션에서 세션 ID 가져오기
+		    String sessionId = session.getId();
+		    
+			//수정란에 입력한 닉네임, 소개글 가져오기
+			String introduction = request.getParameter("introduction");
+			String id = request.getParameter("id"); //변경 닉네임
+			
+			//수정 처리 메서드
+			u.setIntroduction(introduction);
+			u.setId(id);
+			
+			uDAO.editProfile(u, sessionId);
+			
+			nextPage="/member/mypage.jsp";
 		}else if(command.equals("/userslist.do")) {
 			//회원 정보를 db에서 가져옴
 			List<Users> usersList = uDAO.getUsersList();
@@ -303,16 +323,16 @@ public class MainController extends HttpServlet {
 			request.setAttribute("usersList", usersList);
 			//이동할 페이지
 			nextPage = "/member/userslist.jsp";
-		}else if(command.equals("/joinform.do")) {
-			nextPage = "/member/joinform.jsp";
+		}else if(command.equals("/joinform01.do")) {
+			nextPage = "/member/joinform01.jsp";
 		}else if(command.equals("/insertusers.do")) {
 			//빈 회원 객체를 생성해서 데이터를 받아서 세팅
 			//폼 데이터 받기
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
 			String tel = request.getParameter("tel");
-			String email = request.getParameter("email");
-			int birth = Integer.parseInt(request.getParameter("birth"));
+			String email = request.getParameter("email") + "@" + request.getParameter("domain-txt");
+			int birth = Integer.parseInt(request.getParameter("birth-year") + request.getParameter("birth-month") + request.getParameter("birth-day"));
 			String gender = request.getParameter("gender");
 			
 			Users u = new Users();
@@ -321,6 +341,7 @@ public class MainController extends HttpServlet {
 			u.setPw(pw);
 			u.setTel(tel);
 			u.setEmail(email);
+			u.setBirth(birth);
 			u.setGender(gender);
 			//db에 저장함
 			uDAO.insertUsers(u);
@@ -364,7 +385,7 @@ public class MainController extends HttpServlet {
 				String error = "아이디나 비밀번호를 다시 확인해주세요.";
 				request.setAttribute("error", error);
 				//에러 발생 후 페이지 이동
-				nextPage="/users/loginform.do";
+				nextPage="/member/loginform.do";
 			}
 			
 		}else if(command.equals("/logout.do")) {
@@ -448,6 +469,34 @@ public class MainController extends HttpServlet {
 			}
 			
 			nextPage="/board/boardlist.jsp";
+		/*
+		}else if(command.equals("/boardlistBlike.do")) {
+
+			String id = request.getParameter("id");
+		
+			List<Board> boardList = bDAO.getBoardListBlike(id);
+			
+			//모델로 생성
+			request.setAttribute("boardList", boardList);
+
+			
+			List<Board> likeList = bDAO.getLikeList();
+			request.setAttribute("likeList", likeList);			
+			
+			if(likeList.size()>=3) {
+				//게시글 3개를 저장할 배열 생성
+				Board l1 = likeList.get(0);
+				Board l2 = likeList.get(1);
+				Board l3 = likeList.get(2);
+				
+				request.setAttribute("l1", l1);
+				request.setAttribute("l2", l2);
+				request.setAttribute("l3", l3);
+			}
+			
+			nextPage="/board/boardlist.jsp";
+		
+		*/
 		}else if(command.equals("/writeform.do")) {
 			nextPage="/board/writeform.jsp";
 		}else if(command.equals("/write.do")) {
@@ -499,6 +548,7 @@ public class MainController extends HttpServlet {
 			
 			//글 상세보기 처리
 			Board board = bDAO.getBoard(bno);
+			List<Blike> likeList = lDAO.getLikeList(bno);
 			
 			//댓글 목록 보기
 			List<Reply> replyList = rDAO.getReplyList(bno);
@@ -513,8 +563,9 @@ public class MainController extends HttpServlet {
 			int likeCount = lDAO.getLikeCountByBno(bno);
 
 			// 모델 생성해서 뷰로 보내기
+			request.setAttribute("likeList", likeList);
 			request.setAttribute("like_count", likeCount);
-
+			
 			lDAO.updateLikeCount(bno);
 			bDAO.updateReplyCount(bno);
 			

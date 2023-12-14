@@ -1338,7 +1338,10 @@ section.notice {
 
 
 
-.mainBoard, .replyUpdateForm, #writeform{width: 1100px; margin: 0 auto;}
+.mainBoard{width: 1100px; margin: 0 auto;}
+
+.replyUpdateForm, #writeform{width : 800px; margin: 0 auto;}
+
 section#writeform, #replyUpdate{
   padding: 80px 0;
 }
@@ -1353,7 +1356,7 @@ section#writeform, #replyUpdate{
 }
 
 .board2{
-	width: 930px;
+	width: 810px;
 	margin: 0 auto;
 }
 
@@ -1421,6 +1424,7 @@ hr{margin: 10px;}
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
   border: none;
+  margin: 10px;
 }
 
 

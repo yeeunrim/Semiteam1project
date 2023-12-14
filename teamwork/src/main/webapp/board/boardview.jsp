@@ -73,7 +73,14 @@
 					<div id="likeSection">
 						<div id="likeCount">
 						<a href="/like.do?bno=${board.bno }&id=${sessionId}">
-						<i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+							<c:choose>
+								<c:when test="${not empty blike.id }">
+									<i class="fa-solid fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+								</c:when>
+								<c:otherwise>
+									<i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+								</c:otherwise>
+							</c:choose>
 						</a>
 						좋아요: ${like_count }개
 						</div>

@@ -14,6 +14,7 @@ public class Users implements Serializable{
 	private String gender;			//성별
 	private Timestamp accountDay;		//가입일
 	private Timestamp modifiedDay;		//수정일
+	private String introduction;		//소개글
 	
 	
 	
@@ -64,5 +65,11 @@ public class Users implements Serializable{
 	}
 	public void setModifiedDay(Timestamp modifiedDay) {
 		this.modifiedDay = modifiedDay;
+	}
+	public String getIntroduction() {
+		return introduction;
+	}
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
 	}
 }

@@ -33,7 +33,7 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="file" name="filename" value="${board.filename }">
+						<input type="file" name="filename">${board.filename }
 					</td>
 				</tr>
 					<tr>

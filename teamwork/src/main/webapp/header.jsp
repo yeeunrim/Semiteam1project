@@ -11,12 +11,12 @@
 		<div id="topMenu">
 			<div id="mainMenu">
 				<ul>
-					<li><a href="http://localhost:8080/main.do">홈</a></li>
+					<li><a href="/main.do">홈</a></li>
 					<li><a href="#">여행지</a>
 						<div class="test">
 							<ul>
-								<li><a href="/viewdetail/intravel.jsp">국내</a></li>
-								<li><a href="/viewdetail/outtravel.jsp">여행</a></li>
+								<li><a href="http://localhost:8080/desktop/travel/travel_main.jsp">국내</a></li>
+								<li><a href="#">해외</a></li>
 								<li><a href="#">숙소 / 교통</a></li>
 							</ul>
 						</div>
@@ -44,18 +44,36 @@
 					</li>
 				</ul>
 			</div>
-			<div id="sideMenu">
+			<c:choose>
+    		<c:when test="${empty sessionId}">
+				<div id="sideMenu">
+					<ul id="sideMenu_1">
+						<li><a href="/loginform.do">로그인</a></li>
+						<li><a href="/joinform01.do">회원가입</a></li>
+						<li><a href="#"><i class="fa-solid fa-earth-americas"></i>&nbsp;South Korea</a></li>
+					</ul>
+					<ul id="sideMenu_2">
+						<li><a href="http://localhost:8080/member/loginform.jsp">마이페이지</a></li>
+						<li><a href="http://localhost:8080/member/loginform.jsp">찜한 목록(0)</a></li>
+						<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
+					</ul>
+				</div>
+			</c:when>
+    		<c:otherwise>
+    			<div id="sideMenu">
 				<ul id="sideMenu_1">
-					<li><a href="http://localhost:8080/member/loginform.jsp">로그인</a></li>
-					<li><a href="http://localhost:8080/member/joinform01.jsp">회원가입</a></li>
+					<li><a href="/logout.do">로그아웃</a></li>
+					<li><a href="#">${sessionId} 님</a></li>
 					<li><a href="#"><i class="fa-solid fa-earth-americas"></i>&nbsp;South Korea</a></li>
 				</ul>
 				<ul id="sideMenu_2">
-					<li><a href="/mypage/mypage.jsp">마이페이지</a></li>
-					<li><a href="/mypage/wishlist.do">찜한 목록(0)</a></li>
+					<li><a href="/mypage.do">마이페이지</a></li>
+					<li><a href="http://localhost:8080/member/wishlist.jsp">찜한 목록(0)</a></li>
 					<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
 				</ul>
-			</div>
+				</div>
+			</c:otherwise>
+   			</c:choose>
 		</div>
 		
 		<div id="bottomMenu">

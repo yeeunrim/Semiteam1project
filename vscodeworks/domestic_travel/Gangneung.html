@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스위스 여행 상세 페이지</title>
+    <title>강릉 여행 상세 페이지</title>
     <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/overseas.css">
+    <link rel="stylesheet" href="css/domestic.css">
 </head>
 <body>
 <!-- ================ header ========================================= -->
@@ -15,49 +15,28 @@
 <!-- ================= body =========================================== -->
     <section>
         <div id="main"> 
-            <div id="area_img"> <!-- item1 -->
-                <img src="images/Switzerland/swiss1.png" alt="switzerland bg" id="area_pic">
+            <div id="area_img"> 
+                <img src="images/Gangneung/Gangneung1.png" alt="Gangneung" id="area_pic">
             </div>
             
-            <div id="area_text"> <!-- item2 -->
-                <p>스위스</p>
+            <div id="area_text"> 
+                <p>강릉</p>
             </div>
         </div><!-- main -->
 
-        <!-- 해외 지역 정보 -->
+        <!-- 국내 지역 정보 -->
         <div id="infobox"> 
             <div id="infotext">
-                전 세계에서 가장 아름다운 자연과 함께 인간이 만들어낸 최고의 여행지
+                은은한 커피향이 남다른 강원도 강릉시. 
+                그중에도 카페거리로 유명한 안목해변은 발이 닿는 어디든 향긋한 커피 한 잔에 지평선 끝까지 펼쳐지는 바다 풍경은 덤으로 얻을 수 있다. 
+                일출 명소로 유명한 정동진과 야경이 아름다운 경포대는 대표 여행 코스! 
+                구름도 머물다 간다는 해발 1,100m에 위치한 강릉 안반데기 마을은 전망대에 올라 드넓게 펼쳐진 배추밭이 붉게 물드는 일출 전경이 일품이다.
             </div>
-        
-            <ul style="list-style: none; font-size: 1.7vw; text-align: left;" >
-                <li>💰 <b>환율&nbsp;&nbsp;</b>
-                        <span id="lg">1CHF&nbsp;</span>
-                        1,490.32원&nbsp;&nbsp; 
-                </li>
-                <li>🔌 <b>전압&nbsp;&nbsp;</b><span id="lg"> 정보 &nbsp;</span> 50Hz 230V</li>
-                <li>📅 <b>추천 여행 기간&nbsp;&nbsp;</b>
-                    <span id="lg">기준도시&nbsp;</span>취리히 /
-                    <span id="lg">추천기간</span>&nbsp;연중 내내
-                </li>
-                <li>💼 <b>비자&nbsp;&nbsp;</b><span id="lg"> 정보&nbsp;</span> 방문 시 최대 90일 무비자 체류 가능</li>
-                <li>📝 <b>출입국 신고서&nbsp;&nbsp;</b><span id="lg"> 정보&nbsp;</span>
-                    출입국 심사서가 없어도 출입국 가능</li>
-                <li>📞 <b>주요 연락처&nbsp;&nbsp;</b>
-                    <span id="lg"> 응급전화&nbsp;</span>144 /
-                    <span id="lg">경찰</span> 117
-                </li>
-                <li>🏛️ <b>한국 대사관 </b><small>(베른 주재)</small>
-                    <span id="lg">&nbsp; 전화&nbsp;</span>+41-31-356-24 44
-                </li>
-            </ul>
 
-            <!-- ( Tip! 여행 기초 정보 더보기 > ) 버튼 -->
+            <!-- ( Tip! 관광 안내 홈페이지 > ) 버튼 -->
             <div id="tipbox"> 
-                <p>
-                    <a href="https://travel.naver.com/overseas/CH188045/country/prepare/check?cardId=entrance" target="_blank">
-                     Tip ! 여행 기초 정보 더보기 <i class="fa-solid fa-angle-right" id="angleright"></i>
-                    </a>
+                <p><a href="https://www.gn.go.kr/tour/index.do" target="_blank">Tip ! 관광 안내 홈페이지 
+                    <i class="fa-solid fa-angle-right" id="angleright"></i></a>
                 </p>
             </div>
         </div>
@@ -78,6 +57,7 @@
                                     <button id="dropbtn" class="dropbtn">
                                         <span id="dropdown_month"> 
                                             <p>December <!-- 현재 월 -->
+                                            <!-- <i class="fa-solid fa-angle-down" id="angledown"></i> -->
                                             <span id="dropbtn_click" style="font-family: Material Icons; font-size : 3.4vw; color : #707070; float:right;"
                                                  onclick="dropdown()">arrow_drop_down</span>
                                             </p>
@@ -99,8 +79,8 @@
                                         <a href="#"><div class="month">December</div> </a>
                                     </div>
                                     <div id="bottom_weather">
-                                        <p> 📍 &nbsp;기준 도시&nbsp;&nbsp;&nbsp;<span id="dg">취리히</span></p>
-                                        <p>🌞 &nbsp;평년 기온&nbsp;&nbsp;&nbsp;<span id="a">-1.7</span> ~ <span id="b">2.9</span></p>
+                                        <p>🌡️ &nbsp;평년 기온&nbsp;&nbsp;&nbsp;<span id="a">0.6</span> ~ <span id="b">1.8</span></p>
+                                        <p>☔ 평년 강수 8.9 ~ 29.3mm</p>
                                     </div>
                                 </div>
                             </td>
@@ -116,9 +96,9 @@
                 </div>
                 
                 <div id="location_img">
-                    <img src="images/Switzerland/lo_swiss.png" alt="seoul location">
+                    <img src="images/Gangneung/location_gangneung.png" alt="Gangneung location">
                     
-                    <a href="https://www.google.com/maps?q=%EC%8A%A4%EC%9C%84%EC%8A%A4+%EC%9C%84%EC%B9%98&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABNIBCTQ3MDNqMGoxNagCALACAA&um=1&ie=UTF-8"
+                    <a href="https://www.google.com/maps/place/Gangneung-si,+Gangwon-do/data=!4m6!3m5!1s0x3561e5e1954f0f5b:0x80b7c6519c3d1d46!8m2!3d37.7091295!4d128.8324462!16zL20vMDF0a3lj?hl=en&entry=ttu"
                         target="_blank">
                         <div id="circleinfo">
                             <p>
@@ -130,9 +110,9 @@
             </div>
         </div>
 
-        <!-- 해외 지역 주요 관광지 -->
+        <!-- 국내 지역 주요 관광지 -->
         <div id="city_mainplace"> <!-- container -->
-            <h2>스위스의 주요 관광지</h2> <!-- 지역 이름, 각 지역 상세 페이지마다 바꿔주기  -->
+            <h2>강릉의 주요 관광지</h2> <!-- 지역 이름, 각 지역 상세 페이지마다 바꿔주기  -->
        
             <div id="searchWord">
                 <input type="text" placeholder="Search..." id="search_input">
@@ -149,48 +129,48 @@
             <!-- 첫번째 관광지 -->
             <div class="attraction"> 
                 <div class="attr_text"> 
-                    <p>인터라켄</p>
+                    <p>경포해변</p>
                 </div>
                 <!-- 관광지 사진 -->
                 <div class="attr_imgbox"> 
-                    <img src="images/Switzerland/interlaken.png" alt="interlaken">
+                    <img src="images/Gangneung/gyeongpo_beach.PNG" alt="gyeongpo_beach">
                 </div>
                 <!-- 관광지 상세 위치-->
                 <div class="dot">
                     <i class="fa-solid fa-location-dot" style="color: rgb(239, 64, 64);"> 
-                        <span class="dot_text">베른주</span></i>
+                        <span class="dot_text">안현동</span></i>
                 </div>
             </div><!-- first_attr -->
 
             <!-- 두번째 관광지 -->
             <div class="attraction">
                 <div class="attr_text">
-                    <p>취리히</p>
+                    <p>카페 툇마루</p>
                 </div>
 
                 <div class="attr_imgbox">
-                    <img src="images/Switzerland/zurich.png" alt="zurich">
+                    <img src="images/Gangneung/cafe.png" alt="cafe툇마루">
                 </div>
 
                 <div class="dot">
                     <i class="fa-solid fa-location-dot" style="color: rgb(239, 64, 64);"> 
-                        <span class="dot_text">취히리주</span></i>
+                        <span class="dot_text">초당동</span></i>
                 </div>
             </div>
             
              <!-- 세번째 관광지 -->
             <div class="attraction">
                 <div class="attr_text">
-                    <p>루체른</p>
+                    <p>하슬라아트월드</p>
                     
                 </div>
                 <div class="attr_imgbox">
-                    <img src="images/Switzerland/Luzern.png" alt="Luzern">
+                    <img src="images/Gangneung/hasllaArtWord.png" alt="hasllaArtWord">
                 </div>
 
                 <div class="dot">
                     <i class="fa-solid fa-location-dot" style="color: rgb(239, 64, 64);"> 
-                        <span class="dot_text">루체른주</span></i>
+                        <span class="dot_text">강동면</span></i>
                 </div>
             </div>
         </div>
@@ -203,54 +183,52 @@
         <!-- 큐레이션 게시물 4개 -->
         <div id="curation_content">
             
-            <a href="https://post.naver.com/viewer/postView.nhn?memberNo=15792726&volumeNo=36482702" target="_blank"
+            <a href="https://blog.naver.com/pinegn/223289405542" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox1"> 
-                    <img class="img" src="images/Switzerland/matterhorn.png" alt="matterhorn Mountain">
+                    <img class="img" src="images/Gangneung/gangmun.png" alt="gangmun">
                 </div>
 
                 <div class="textBox1"> 
                     <div class="Ctext1">
                         <p><br></p>
-                        <p>가장 완벽한 ‘마테호른’<br>을 보는 3가지 방법</p>
+                        <p>강릉 여행코스로 딱!<br>강문 해변</p>
                     </div>
-                    
                 </div>
             </a>
 
-            <a href="https://blog.naver.com/the_trip/223099509879" target="_blank"
+            <a href="https://blog.naver.com/pinegn/223254621596" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox2">
-                    <img class="img" src="images/Switzerland/cheese.png" alt="cheese and chocolate">
+                    <img class="img" src="images/Gangneung/nuddle.png" alt="nuddle">
                 </div>
                 <div class="textBox2">
                     <div class="Ctext2">
-                        <p>‘단짠매력 가득’초콜릿&<br>치즈의 나라 스위스</p>
+                        <p>강릉 장칼국수옹심이<br>최초 개발한 식당!</p>
                     </div>
-                    
                 </div>
             </a>
             
-            <a href="https://blog.naver.com/the_trip/223098042973" 
+            <a href="https://blog.naver.com/pinegn/223232792363" 
                 target="_blank"  class="curationBox"> 
                 <div class="imgBox3">
-                    <img class="img" src="images/Switzerland/activity.png" alt="activity">
+                    <img class="img" src="images/Gangneung/Wolhwa_street.png" alt="Wolhwa_street">
                 </div>
                 <div class="textBox3">
                     <div class="Ctext3">
-                        <p>강심장을 위한 인터라켄 액티비티 투어</p>
+                        <p><small>귀여운 선물, 기념품 찾기</small><br>월화거리 소품샵 투어</p>
                     </div>
                 </div>
             </a>
             
-            <a href="https://blog.naver.com/traveler_may/223278236957?isInf=true" target="_blank"
+            <a href="https://blog.naver.com/pinegn/223228713235" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox4">
-                    <img class="img" src="images/Switzerland/Jungfrau.png" alt="Jungfrau">
+                    <img class="img" src="images/Gangneung/namhangjin_beach.png" alt="namhangjin_beach">
                 </div>
                 <div class="textBox4">
                     <div class="Ctext4">
-                         <p>스위스 융프라우 200% 즐기기</p> 
+                         <p><small>조용한 바다에서 느끼는</small><br>낭만, 남항진 해변</p> 
                     </div>
                 </div>
             </a>
@@ -264,6 +242,6 @@
     </footer>
 
     
-<script src="js/Switzerland.js"></script>
+<script src="js/Gangneung.js"></script>
 </body>
 </html>

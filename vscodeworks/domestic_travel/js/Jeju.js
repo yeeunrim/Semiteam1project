@@ -1,10 +1,9 @@
-// outtravel.html과 연결
+// domesticViewDetails.html과 연결
 
 // 지역, 나라별 메인 배경이미지 슬라이드
 // 기준 배경img사이즈 : width 1440 / height 663 (Figma)
 window.onload = function(){
-    let picture = ["images/Switzerland/swiss1.png", "images/Switzerland/swiss2.png"];
-    
+    let picture = ["images/Jeju/jeju1.png", "images/Jeju/jeju2.png"];
     let picIdx = 0;
 
     showSlide();
@@ -94,3 +93,4 @@ function dropdown() {
     v.classList.toggle('show');
     dropbtn.style.borderColor = 'rgb(94, 94, 94)';
   }
+

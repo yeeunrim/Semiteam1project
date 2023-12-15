@@ -3,7 +3,7 @@
 // 지역, 나라별 메인 배경이미지 슬라이드
 // 기준 배경img사이즈 : width 1440 / height 663 (Figma)
 window.onload = function(){
-    let picture = ["Seoul_images/namsantower.jpg", "Seoul_images/gwanghwamun.jpg"];
+    let picture = ["images/Seoul/namsantower.jpg", "images/Seoul/gwanghwamun.jpg"];
     let picIdx = 0;
 
     showSlide();

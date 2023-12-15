@@ -3,7 +3,7 @@
 // 지역, 나라별 메인 배경이미지 슬라이드
 // 기준 배경img사이즈 : width 1440 / height 663 (Figma)
 window.onload = function(){
-    let picture = ["images/Switzerland/swiss1.png", "images/Switzerland/swiss2.png"];
+    let picture = ["#", "#"];
     
     let picIdx = 0;
 

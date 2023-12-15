@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <footer>
 	<ul id= footerMenu_left>
-		<li><a href="">개인정보 처리방침</a></li>
+		<li><a href="http://localhost:8080/data/data.jsp">개인정보 처리방침</a></li>
 		<li><a href="">이용약관</a></li>
-		<li><a href="">자주하는 질문</a></li>
+		<li><a href="http://localhost:8080/fao/fao.jsp">자주하는 질문</a></li>
 		<li><a href="">고객센터</a></li>
 	</ul>
 	

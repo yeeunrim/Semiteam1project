@@ -1397,6 +1397,34 @@ section.membership{
 }
 
 
+/* 지훈 - 개인정보 처리방침*/
+section.data{
+  padding: 200px 0;
+  width: 100%;
+}
+
+.data-title {
+  margin-right: 18%;
+  margin-top: 150px;
+  font-size: 25px;
+}
+
+
+
+.data-board{
+  margin-left: 30%;
+  margin-top: 80px;
+}
+
+
+.data-board p{
+  text-decoration: none;
+  display: inline-block; /* inline-block으로 설정하여 width, height, padding, margin 속성 적용 가능 */
+  width: 80%; 
+  padding: 10px 0;
+}
+
+
 
 
 /* 지훈 - 자주하는 질문*/

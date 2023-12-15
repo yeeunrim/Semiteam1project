@@ -6,16 +6,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>댓글 수정 폼</title>
+<title>여행 후기 - 여정담</title>
 <link rel="stylesheet" href="../resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../resources/js/main.js"></script>
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>
-	<section id = "replyUpdate">
+	<section id = "notice">
 		<div class="board-title">
-		     <div class="board">
+		     <div class="board2">
 	            <h3>댓글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
 		    </div>
@@ -23,12 +23,12 @@
 		<div class="replyUpdateForm">
 		    <form action="/updatereply3.do?bno3=${reply3.bno3 }&rno3=${reply3.rno3 }" method="post" class="replyUpdateForm2">
 				<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
-				<input type="hidden" name="rno" value="${reply3.rno3 }">
+				<input type="hidden" name="rno" value="${reply3.rno3}">
 				<input type="hidden" name="bno" value="${reply3.bno3 }">
 				<table>
 					<tbody>
 						<tr>
-							<td><textarea rows="7" cols="100" name="rcontent" class="replycontent">${reply3.rcontent3 }</textarea></td>
+							<td><textarea name="rcontent" class="replycontent">${reply3.rcontent3 }</textarea></td>
 						</tr>
 						<tr>
 							<td class="writeBot">
@@ -40,7 +40,7 @@
 					</tbody>
 				</table>
 			</form>
-		</div>
+		</div>s
 	</section>
 	<jsp:include page="../footer.jsp"/>
 </body>

@@ -8,6 +8,7 @@ CREATE TABLE notice (
     nfilename    VARCHAR2(50),
     nreply_count int,
     nlike_count int,
+    id			VARCHAR2(30),
     FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE    
 );
 

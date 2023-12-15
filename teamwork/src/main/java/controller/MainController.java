@@ -1878,21 +1878,21 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/write1.do") || command.equals("/updateboard1.do")) { 
 			response.sendRedirect("board1list.do");
 		}else if (command.equals("/insertreply1.do") || command.equals("/deletereply1.do") || command.equals("/updatereply1.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno1"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			response.sendRedirect("board1view.do?bno1=" + bno);
 			
 			
 		}else if(command.equals("/write2.do") || command.equals("/updateboard2.do")) { 
 			response.sendRedirect("board2list.do");
 		}else if (command.equals("/insertreply2.do") || command.equals("/deletereply2.do") || command.equals("/updatereply2.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno2"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			response.sendRedirect("board2view.do?bno2=" + bno);
 			
 			
 		}else if(command.equals("/write3.do") || command.equals("/updateboard3.do")) { 
 			response.sendRedirect("board3list.do");
 		}else if (command.equals("/insertreply3.do") || command.equals("/deletereply3.do") || command.equals("/updatereply3.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno3"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			response.sendRedirect("board3view.do?bno3=" + bno);
 			
 			

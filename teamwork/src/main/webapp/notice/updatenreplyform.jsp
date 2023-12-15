@@ -28,7 +28,7 @@
 				<table>
 					<tbody>
 						<tr>
-							<td><textarea rows="7" cols="100" name="rcontent" class="nreplycontent">${nreply.nrcontent }</textarea></td>
+							<td><textarea name="rcontent" class="replycontent">${nreply.nrcontent }</textarea></td>
 						</tr>
 						<tr>
 							<td class="writeBot">

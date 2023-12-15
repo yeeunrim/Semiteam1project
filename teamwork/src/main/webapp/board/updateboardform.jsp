@@ -29,7 +29,7 @@
 					<td><input type="text" name="title" value="${board.title }" id="writeTitle"></td>
 				</tr>
 				<tr>
-					<td><textarea rows="7" cols="100" name="content" id="writeContent">${board.content }</textarea></td>
+					<td><textarea name="content" id="writeContent">${board.content }</textarea></td>
 				</tr>
 				<tr>
 					<td>

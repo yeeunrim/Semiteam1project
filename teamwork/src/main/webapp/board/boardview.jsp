@@ -140,7 +140,7 @@
 					<input type="hidden" name="bno" value="${board.bno }">
 					<input type="hidden" name="replyer" value="${sessionId }">
 					<p>
-						<textarea rows="4" cols="50" name="rcontent"
+					<textarea name="rcontent" class="wrcontent"
 							placeholder="댓글 작성란"></textarea>
 					</p>
 					<button type="submit" class="writebtn">등록</button>

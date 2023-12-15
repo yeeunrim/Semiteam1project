@@ -23,13 +23,13 @@
 		<form action="/updatenboard.do" method="post">
 			<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
 			<input type="hidden" name="bno" value="{notice.nno}">
-			<table>
+			<table class="writeMid">
 				<tbody>
 					<tr>
 					<td><input type="text" name="title" value="${notice.ntitle }"></td>
 				</tr>
 				<tr>
-					<td><textarea rows="7" cols="100" name="content">${notice.ncontent }</textarea></td>
+					<td><textarea name="content">${notice.ncontent }</textarea></td>
 				</tr>
 				<tr>
 					<td>${notice.id }</td>

@@ -13,7 +13,7 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>
-	<section id = "replyUpdate">
+	<section id = "notice">
 		<div class="board-title">
 		     <div class="board2">
 	            <h3>댓글 수정</h3>
@@ -28,7 +28,7 @@
 				<table>
 					<tbody>
 						<tr>
-							<td><textarea rows="7" cols="115" name="rcontent" class="replycontent">${reply.rcontent }</textarea></td>
+							<td><textarea name="rcontent" class="replycontent">${reply.rcontent }</textarea></td>
 						</tr>
 						<tr>
 							<td class="writeBot">
@@ -40,7 +40,7 @@
 					</tbody>
 				</table>
 			</form>
-		</div>
+		</div>s
 	</section>
 	<jsp:include page="../footer.jsp"/>
 </body>

@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="../resources/css/style.css">
   <script src="https://kit.fontawesome.com/d591ef8969.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../resources/js/a.js"></script>
    <script src="../resources/js/main.js"></script> 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -24,7 +23,7 @@
 	<section class="my_container">
 	  <section id="memberlist">
 		<h2>계정 설정</h2>
-			<form action="/updateUsers.do" method="post">
+			<form action="/updateUsers.do" method="post" name="setting">
 				<fieldset id="fd">
                     <ul>
                         <li>
@@ -52,9 +51,12 @@
                         </li> 
                         <hr>
                         <div class="button">
-                            <a href="/deleteUser.do">회원 탈퇴</a>
-                            <button type="submit" onclick="saveSetting()">변경사항 저장</button>
-                      	</div>
+                            <a href="/deleteUser.do"
+                             onclick="return confirm('정말로 탈퇴하시겠습니까?')">
+                             회원 탈퇴</a>
+                          <button type="button" onclick="checkMember()">
+                            변경사항 저장</button>
+						</div>
                     </ul>
 				</fieldset>
 			</form>

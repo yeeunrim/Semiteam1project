@@ -339,25 +339,23 @@ public class MainController extends HttpServlet {
 		//회원정보 수정
 		}else if(command.equals("/setting.do")) {
 			nextPage="/member/setting.jsp";
+			
+			
 		}else if(command.equals("/updateUsers.do")) {
 			  // 현재 세션에서 세션 ID 가져오기
 			  String sessionId = (String) session.getAttribute("sessionId");
-
 			  String pw = request.getParameter("passwd");
-			  String pw2 = request.getParameter("passwd2");
 			  String tel = request.getParameter("tel");
 			  String email = request.getParameter("email");
-
+			//객체에 데이터 세팅
 			  Users users = new Users();
-
-			  // 수정된 사용자 정보 업데이트
 			  users.setPw(pw);
 			  users.setTel(tel);
 			  users.setEmail(email);
-
+			//db에 저장함
 			  uDAO.updateUsers(users, sessionId);
 
-			  nextPage = "/member/setting.jsp";
+			  nextPage = "/mypage.do";
 			  
 			}else if(command.equals("/userslist.do")) {
 			//회원 정보를 db에서 가져옴
@@ -1672,9 +1670,7 @@ public class MainController extends HttpServlet {
 		}else if (command.equals("/insertreply3.do") || command.equals("/deletereply3.do") || command.equals("/updatereply3.do")) {
 			int bno = Integer.parseInt(request.getParameter("bno3"));
 			response.sendRedirect("board3view.do?bno3=" + bno);
-		//}else if (command.equals("/setting.do")) {
-			//response.sendRedirect("/mypage.do");
-			
+
 		}else{
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);

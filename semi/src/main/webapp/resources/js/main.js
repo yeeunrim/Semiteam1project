@@ -298,3 +298,41 @@ function openModal() {
     form.submit();
     closeModal(); // 저장 후 모달 창 닫기
   }
+  
+  /**
+ * 유효성 검사
+ */
+function checkMember(){
+	//alert("test...");
+	//input의 name 속성을 변수에 할당
+	let form = document.setting;  //폼 이름
+	let pw1 = form.passwd.value;
+	let pw2 = form.passwd2.value;
+	let tel = form.tel.value;
+	
+	//정규 표현식
+	//비밀번호
+	let regexPw1 = /[0-9]+/;      //숫자
+	let regexPw2 = /[a-zA-Z]+/;   //영문자
+	let regexPw3 = /[~!@#$%^&*()_+|]+/; //특수문자
+	let regexPw4 = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}/ //전화번호
+	
+	if(pw1.length < 8 || !regexPw1.test(pw1) ||
+				!regexPw2.test(pw1) || !regexPw3.test(pw1)){
+		alert("비밀번호는 영문자, 숫자, 특수문자 포함 8자 이상 입력 가능");
+		pw1.select();
+		return false;
+	}else if(pw1 != pw2){ //pw1과 pw2 문자열이 일치하지 않으면
+		alert("비밀번호를 동일하게 입력해 주세요");
+		pw2.select();
+		return false;
+	}else if(!regexPw4.test(tel)){
+		alert("전화번호형식는 '-'를 제외한 9자리~11자리로 입력해주세요");
+		tel.select();
+		return false;
+	}else{
+		form.submit();  //오류가 없으면 폼을 메인 컨트롤러로 전송
+		alert("수정되었습니다.");
+	}
+}
+  

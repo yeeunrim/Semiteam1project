@@ -784,29 +784,32 @@ footer li{
 #about_container #about_introduction{
     display: flex;
     justify-content: center;
-    margin: 5% 0 4% 0;
+    margin: 2% 0 5% 0;
 }
 #about_container #about_introduction img{
     width: 80%;
 }
 #about_container h2{
-    font-size: 2.5vw;
-    padding-left: 4%;
+    font-size: 4vw;
+    width: 100%;
+    text-align: center;
+    padding: 6% 0 2% 0;
+    border-bottom: 1px solid;
+}
+#about_container #people{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    padding-bottom: 5%;
+    margin-top: 4%;
 }
 #about_container #people img{
 	width: 25%;
     height: 22%;
     object-fit: contain;
 }
-#about_container #people{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: gainsboro;
-    border-radius: 10px;
-    padding-bottom: 5%;
-    margin-top: 1%;
-}
+
 #about_container #people > div{
 	display: flex;
 	justify-content: space-evenly;
@@ -823,10 +826,10 @@ footer li{
     padding: 20px;
     width: 40%;
     height: 9vw;
-    color: #FFF;
+    color: #f4f4f4;
     border-radius: 20px;
-    background-color: #f7f7f7;
-    box-shadow: 0px 2px 7px 0px rgb(0 0 0 / 13%)
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 2px 7px 0px rgb(0 0 0 / 13%);
 }
 
 #about_container #people div:nth-of-type(even) div:after {
@@ -834,7 +837,7 @@ footer li{
     position: absolute;
     top: 21px;
     right: -35px;
-    border-left: 36px solid #f7f7f7;
+    border-left: 36px solid rgb(0, 0, 0);
     border-top: 20px solid transparent;
     border-bottom: 8px solid transparent;
 }
@@ -844,18 +847,18 @@ footer li{
     position: absolute;
     top: 21px;
     left: -35px;
-    border-right: 36px solid #f7f7f7;
+    border-right: 36px solid rgb(0, 0, 0);
     border-top: 20px solid transparent;
     border-bottom: 8px solid transparent;
 }
 #about_container #people span{
 	line-height: 1.5;
     font-size: 2vw;
-    color: black;
+    color: #f4f4f4;
 }
 #about_container #people p{
     font-size: 1.5vw;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 
@@ -1074,19 +1077,24 @@ footer li{
 /* 계정설정 스타일 */
 .my_container ul li{list-style: none;}
 .my_container a{text-decoration: none;}
+.my_container #memberlist {margin: 150px auto 110px auto;}
 .my_container #memberlist h2{margin: 20px;}
 .my_container #join{width: 80%; margin: 20px auto;}
 .my_container #join form{margin: 20px auto;}
 .my_container form ul li{margin: 20px;}
 .my_container form .button{margin-top: 16px;}
 .my_container form .button button{
-    margin: 20px;
-    padding: 5px;
-    float: right;
-    background-color: rgb(88, 88, 255); 
-    color: white;
-    font-size: 15px;
-    border-radius: 5px;
+	font-size: 13px;
+	width: 130px;
+	height: 48px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+	margin: 20px auto 0 auto;
+	margin-right: 18px;
+	border: none;
+	transition: all 1s;
 }
 .my_container #memberlist2{width: 370px; height: 350px; border: solid 1px #eee;}
 .my_container #fd a{
@@ -1115,7 +1123,7 @@ footer li{
     width: 80%;
   }
   .my_container .profile {
-    height: 500px;
+    height: 400px;
     flex-direction: column; /* 세로 배치로 변경 */
     align-items: center; /* 가운데 정렬 */
   }
@@ -1133,23 +1141,9 @@ footer li{
 }
 @media screen and (min-width: 850px) {
 	.my_container .profile img{
-		width: 280px;
-   		height: 280px;
+		width: 300px;
+		height: 300px;
 	}
-}
-
-
-
-.my_container #profileForm img {
-	position: relative;
-}
-.my_container #profileForm h2 {
-	position: absolute;
-    font-size: 40px;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    color: rgba(255, 255, 255, 0.6);
 }
 
    
@@ -1158,17 +1152,20 @@ footer li{
 table {
   border-collapse: collapse;
   width: 100%;
+  
 }
+
 
 section.notice {
   padding: 80px 0;
   width: 100%;
-  
 }
+
 
 .board-title {
   margin-bottom: 10px;
   text-align: left;
+  
 }
 
 .board-title h3 {
@@ -1178,6 +1175,7 @@ section.notice {
   font-weight: 400;
   text-align: left;
   color: #333; /* 제목 색상 추가 */
+  
 }
 
 .board-title p {
@@ -1213,10 +1211,15 @@ section.notice {
 
 .board-table td {
   border-bottom: 1px solid #ccc;
+  
+}
+
+.board-table td a{
+  text-decoration: none;
 }
 
 .board-table .th-num {
-  width: 40px;
+  width: 30px;
 }
 
 .board-table .th-title {
@@ -1358,13 +1361,115 @@ section.notice {
 
 
 
+/* 지훈 - 멤버쉽*/
+section.membership{
+  width: 100%;
+}
+.membership #membership_container{
+	width: 100%;
+    margin: 120px 1% 20% 1%;
+}
+#membership_container h1{
+	padding-bottom: 1%;
+}
+
+.membership-title {
+  font-size: 25px;
+}
+
+.membership .board{
+	width: 100%;
+}
+
+.membership-member,.membership-nonmember{
+  margin-top: 80px;
+  margin-left: 32%;
+}
+
+.membership-member p, .membership-nonmember p{
+  text-decoration: none;
+  display: inline-block; /* inline-block으로 설정하여 width, height, padding, margin 속성 적용 가능 */
+  width: 50%; 
+  border-bottom: 1px solid black;
+  color: rgb(114, 110, 110);
+  padding: 10px 0;
+}
+
+
+
+
+/* 지훈 - 자주하는 질문*/
+
+section .question{
+  width: 100%;
+}
+#question_container{
+	width: 100%;
+    margin: 120px 1% 10% 1%
+}
+
+.question-title {
+  font-size: 25px;
+}
+
+#question_container .board{
+  width: 100%;
+}
+#question_container h1{
+  padding-bottom: 1%;
+}
+
+.fao-user,.fao-travel,.fao-other{
+    margin-top: 80px;
+    margin-left: 32%;
+}
+
+.fao-section1 label,.fao-section2 label,.fao-section3 label{
+    text-decoration: none;
+    display: inline-block;
+    width: 50%;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+    color: rgb(114, 110, 110);
+}
+
+.menubars { 
+  display: none; 
+  color: rgb(114, 110, 110);
+}
+
+/* 체크되면 메뉴를 표시하기 */
+#check-btn1:checked ~ .menubars,
+#check-btn2:checked ~ .menubars,
+#check-btn3:checked ~ .menubars,
+#check-btn4:checked ~ .menubars,
+#check-btn5:checked ~ .menubars,
+#check-btn6:checked ~ .menubars,
+#check-btn7:checked ~ .menubars,
+#check-btn8:checked ~ .menubars,
+#check-btn9:checked ~ .menubars { 
+  display: block; 
+}
+
+/* 체크박스는 화면에서 감추기 */
+#check-btn1, #check-btn2, #check-btn3, 
+#check-btn4, #check-btn5, #check-btn6, 
+#check-btn7, #check-btn8, #check-btn9
+ { 
+  display: none; 
+}
+
+
+
+
 
 
 /*sanghyun*/
 
+.mainBoard{width: 800px; margin: 0 auto;}
 
+.replyUpdateForm, #writeform{width : 800px; margin: 0 auto;}
 
-.mainBoard, .replyUpdateForm, #writeform{width: 800px; margin: 0 auto;}
 section#writeform, #replyUpdate{
   padding: 80px 0;
 }
@@ -1374,11 +1479,12 @@ section#writeform, #replyUpdate{
 .boardName{margin: 5px;}
 
 .board1 {
-  width: 950px;
+  width: 930px;
+  margin: 0 auto;
 }
 
 .board2{
-	width: 805px;
+	width: 810px;
 	margin: 0 auto;
 }
 
@@ -1393,7 +1499,7 @@ hr{margin: 10px;}
 .boardInfo{color: #919191;}
 
 .upper{width: 800px; margin: 0 auto;}
-.thumb{background-color: pink; border-radius: 50%; width:36px; height:36px; float: left; margin-right: 5px;}
+.thumb{background-color: pink; border-radius: 50%; width:36px; height:36px; float: left; margin-right: 5px; text-align: center}
 .nickname1{font-size: 13px; font-weight: bold;}
 .update{font-size: 12px; color: #979797;}
 .etc{text-align: right; font-size:13px;}
@@ -1401,6 +1507,7 @@ hr{margin: 10px;}
 .right{text-align: right; color:#979797; }
 
 .crud{text-align: center;}
+.crud button{margin: 10px;}
 #DR{margin: 0px 2.5px ;padding: 2px ; border-radius: 50%; float: right;}
 
 .under{width: 800px; margin: 0 auto;}
@@ -1409,15 +1516,16 @@ hr{margin: 10px;}
 
 
 
-.reply{width: 800px; margin: 0 auto;}
+.reply{width: 800px; margin: 20px auto;}
 .replyer{font-size: 13px;  font-weight: bold; padding-top: 7px;}
 .rcontent{font-size: 13px;}
 .rdate{font-size: 12px; color: #9f9f9f;}
-.reThumb{background-color: rgb(192, 219, 255); border-radius: 50%; width:20px; height:20px; float: left; margin: 5px 3px;}
+.reThumb{background-color: rgb(192, 219, 255); border-radius: 50%; width:20px; height:20px; float: left; margin: 0px 3px; text-align: center}
 .rtitle{font-size: 17px; margin-left: 30px;}
 
-#replyform {margin-left: 50px; margin-top: 10px;}
-#replyform textarea{width: 750px; padding: 5px; height: 100px; resize: none;}
+#replyform {margin-left: 30px; margin-top: 10px;}
+#replyform textarea{width: 780px; padding: 5px; height: 100px; resize: none; text-align: left;}
+
 .replylogin{background-color: #eee; margin: 10px 0; padding: 16px; text-align: center;}
 .replylogin a{color: blue;}
 .replylogin a:hover{text-decoration: underline;}
@@ -1434,6 +1542,7 @@ hr{margin: 10px;}
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );;
   border-radius: 20px;
+  border: none;
 }
 .writeBot{text-align: center;}
 .writebtn{
@@ -1442,36 +1551,49 @@ hr{margin: 10px;}
   border-radius: 20px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+  border: none;
+  margin: 10px;
 }
 
-.file-label {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e4d7d7;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
 
-.file-label:hover {
-    background-color: rgb(180, 138, 137);
-}
-
-.file-input {
-    display: none;
-}
 
 .boardviewimage{width: 800px; }
 
 
 
 /* 반응형 */
+
 @media screen and (max-width: 780px) {
-	
-  .boardViewForm{width: 550px;}
+.upper{width: 550px;}
+  .btitle{width: 550px;}
+  .boardViewForm, .writeform, form{width: 550px; margin: 0 auto;}
   #replyform textarea{width: 450px;}
   
+  .board1{width: 600px;}
+  .writeMid{width: 550px;}
   #writeContent{width: 500px;}
+  #writeTitle{width: 250px;}
   .boardviewimage{width: 548px; }
+  .replycontent{width : 500px}
+  .board2{width: 500px; margin-left: 130px;}
+
+  .content{width: 550px;}
+}
+
+@media screen and (max-width: 500px) {
+.upper{width: 350px;}
+  .board-title{width: 500px;}
+  .mainBoard{width: 400px;}
+  .btitle{width: 350px;}
+  .boardViewForm, .writeform, form{width: 350px; margin: 0 auto;}
+  #replyform textarea{width: 300px;}
+  
+  .board1{width: 400px; margin: 5px;}
+  .writeMid{width: 350px;}
+  #writeContent{width: 300px;}
+  .boardviewimage{width: 348px; }
+  .replycontent{width : 330px;}
+  .board2{width: 330px; }
+  #likeCount{width: 350px;}
+  .content{width: 350px;}
 }

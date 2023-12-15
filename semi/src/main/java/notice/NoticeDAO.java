@@ -52,13 +52,12 @@ public class NoticeDAO {
 		conn = JDBCUtil.getConnection();
 		
 		try {
-			String sql = "INSERT INTO notice(nno, ntitle, ncontent, nfilename, id) "
-					+ "VALUES (seq_nno.NEXTVAL, ?, ?, ?, ?)";
+			String sql = "INSERT INTO notice(nno, ntitle, ncontent, nfilename) "
+					+ "VALUES (seq_nno.NEXTVAL, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, n.getNtitle());
 			pstmt.setString(2, n.getNcontent());
 			pstmt.setString(3, n.getNfilename());
-			pstmt.setString(4, n.getId());
 			
 
 			//sql 실행
@@ -92,7 +91,6 @@ public class NoticeDAO {
 				n.setNmodifyDate(rs.getTimestamp("nmodifydate"));
 				n.setNhit(rs.getInt("nhit"));
 				n.setNfilename(rs.getString("nfilename"));
-				n.setId(rs.getString("id"));
 				
 				
 				//조회수 1증가
@@ -200,7 +198,6 @@ public class NoticeDAO {
 				n.setNmodifyDate(rs.getTimestamp("nmodifydate"));
 				n.setNhit(rs.getInt("nhit"));
 				n.setNfilename(rs.getString("nfilename"));
-				n.setId(rs.getString("id"));
 				n.setNreply_count(rs.getInt("nreply_count"));
 				n.setNlike_count(rs.getInt("nlike_count"));
 				
@@ -259,7 +256,6 @@ public class NoticeDAO {
 				n.setNmodifyDate(rs.getTimestamp("nmodifydate"));
 				n.setNhit(rs.getInt("nhit"));
 				n.setNfilename(rs.getString("nfilename"));
-				n.setId(rs.getString("id"));
 				n.setNreply_count(rs.getInt("nreply_count"));
 				n.setNlike_count(rs.getInt("nlike_count"));
 				
@@ -272,4 +268,5 @@ public class NoticeDAO {
 		}
 		return noticeList;
 	}
+	
 }

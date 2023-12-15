@@ -69,7 +69,7 @@ public class BlikeDAO {
 				Blike l = new Blike();
 				l.setLikeno(rs.getInt("likeno"));
 				l.setBno(rs.getInt("bno"));
-				l.setId(rs.getString("Id"));
+				l.setId(rs.getString("id"));
 				
 				likeList.add(l);	//어레이리스트에 객체 1명 저장
 			}

@@ -166,57 +166,66 @@ public class UsersDAO {
 		}
 	}
 	//프로필사진 편집
-		public void updateProfilePic(Users u, String sessionId) {
-			conn = JDBCUtil.getConnection();
-			
-			try {
-				String sql = "UPDATE users SET image = ? WHERE id = ?";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, u.getImage()); //프로필 사진 이름
-				pstmt.setString(2, sessionId); //닉네임
-				
-				System.out.println(u.getImage());
-				System.out.println(sessionId);
-				
-				//sql 실행
-				pstmt.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				JDBCUtil.close(conn, pstmt);
-			}
-		}
-	
+	public void updateProfilePic(Users u, String sessionId) {
+		conn = JDBCUtil.getConnection();
 		
-	//채희
-   //회원 정보 수정
-   public void updateUsers(Users users, String sessionId) {
-      //db 연결
-      conn = JDBCUtil.getConnection();
-      try {
-         //sql 처리
-         String sql = "UPDATE users "
-               + "SET pw = ?, pw = ?, tel = ?, email = ?, "
-               + "WHERE id = ?";
-         pstmt = conn.prepareStatement(sql);
-         //폼에 입력된 데이터를 가져와서 db에 저장
-         pstmt.setString(1, users.getPw());
-         pstmt.setString(2, users.getPw());
-         pstmt.setString(4, users.getTel());
-         pstmt.setString(3, users.getEmail());
-         pstmt.setString(5, sessionId);
-         //sql 실행
-         pstmt.executeUpdate();
-      } catch (SQLException e) {
-         e.printStackTrace();
-      } finally { //db 종료
-         JDBCUtil.close(conn, pstmt);
-      }
-   }
-	   
+		try {
+			String sql = "UPDATE users SET image = ? WHERE id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, u.getImage()); //프로필 사진 이름
+			pstmt.setString(2, sessionId); //닉네임
+			
+			System.out.println(u.getImage());
+			System.out.println(sessionId);
+			
+			//sql 실행
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+	}
 	
-	
-	
+	//회원 정보 수정
+	public void updateUsers(Users users, String sessionId) {
+		//db 연결
+		conn = JDBCUtil.getConnection();
+		try {
+			//sql 처리
+			String sql = "UPDATE users SET pw = ?, tel = ?, email = ? "
+					+ "WHERE id = '" + sessionId + "'";
+			pstmt = conn.prepareStatement(sql);
+			//폼에 입력된 데이터를 가져와서 db에 저장
+			pstmt.setString(1, users.getPw());
+			pstmt.setString(2, users.getTel());
+			pstmt.setString(3, users.getEmail());
+			
+			//sql 실행
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally { //db 종료
+			JDBCUtil.close(conn, pstmt);
+		}
+	}
+	//회원 탈퇴
+    public void deleteUser(String userId) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = JDBCUtil.getConnection();
+            String sql = "DELETE FROM users WHERE id = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, userId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(conn, pstmt);
+        }
+    } 
 	
 } //DAO 클래스 닫기
 

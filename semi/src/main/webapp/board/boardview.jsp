@@ -30,8 +30,8 @@
 	          ${board.title}
 	        </div>
 	        <div class="upper">
-	          <div class="thumb">
-	          <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
+	          <div class="thumb">		          
+			    <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
 	          </div>
 	          <div class="nickname1">
 	            ${board.id}
@@ -73,7 +73,14 @@
 					<div id="likeSection">
 						<div id="likeCount">
 						<a href="/like.do?bno=${board.bno }&id=${sessionId}">
-						<i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+							<c:choose>
+								<c:when test = "${n eq true}">
+									<i class="fa-solid fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+								</c:when>
+								<c:otherwise>
+									<i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i>
+								</c:otherwise>
+							</c:choose>
 						</a>
 						좋아요: ${like_count }개
 						</div>
@@ -117,12 +124,12 @@
 	            </div>
 	            <div class = "rdate">
 	              <c:choose>
-							<c:when test="${not empty reply.rupdate }">
-								<fmt:formatDate value="${reply.rupdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
-							</c:when>
-							<c:otherwise>
-								<fmt:formatDate value="${reply.rdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
-							</c:otherwise>
+						<c:when test="${not empty reply.rupdate }">
+							<fmt:formatDate value="${reply.rupdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
+						</c:when>
+						<c:otherwise>
+							<fmt:formatDate value="${reply.rdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
+						</c:otherwise>
 					</c:choose> 
 	            </div>
 	          </div>

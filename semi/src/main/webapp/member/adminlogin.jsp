@@ -17,7 +17,7 @@
 			<div id="loginform_box">
 			<h2>관리자 로그인</h2>
 			<hr>
-				<form action="/j_security_check" method="post">
+				<form action="/j_security_check" method="post" id ="adminlogin_form">
 					<div>
 						<ul>
 							<li>

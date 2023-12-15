@@ -36,7 +36,7 @@
 						<div class="test">
 							<ul>
 								<li><a href="/about.do">여정담 정보</a></li>
-								<li><a href="#">고객센터</a></li>
+								<li><a href="/ccc.do">고객센터</a></li>
 								<li><a href="/membership.do">멤버쉽</a></li>
 								<li><a href="/fao.do">자주하는 질문</a></li>
 							</ul>
@@ -59,7 +59,7 @@
 					</ul>
 					<ul id="sideMenu_2">
 						<li><a href="http://localhost:8080/member/loginform.jsp">마이페이지</a></li>
-						<li><a href="http://localhost:8080/member/loginform.jsp">찜한 목록(0)</a></li>
+						<li><a href="http://localhost:8080/member/loginform.jsp">찜한 목록</a></li>
 						<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
 					</ul>
 				</div>
@@ -73,7 +73,7 @@
 				</ul>
 				<ul id="sideMenu_2">
 					<li><a href="/mypage.do">마이페이지</a></li>
-					<li><a href="/wishlist.do">찜한 목록(0)</a></li>
+					<li><a href="/wishlist.do">찜한 목록</a></li>
 					<li><a href="#">English</a></li> <!-- 스크롤로 언어(영어/한국) 선택 -->
 				</ul>
 				</div>

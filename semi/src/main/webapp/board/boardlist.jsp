@@ -121,7 +121,7 @@
               </table>
           </div>
       </div>
-      
+     </section>
       <!-- 페이지 처리 영역 -->
      	<section id="bottomlist">
 			<div class = "pagination">
@@ -170,11 +170,6 @@
 			    <a href="writeform.do"><input type="button" value="글쓰기" id="write"></a>
 			</div>
 	</section>
-      
-      
-     </section>
-     
-  
 
   <jsp:include page="../footer.jsp"/>
 </body>

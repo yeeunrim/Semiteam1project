@@ -44,10 +44,15 @@
 				</div>
 				<!-- 환율창 -->
 				<div id="currency_box">
-					 <p>미국 USD&nbsp;&nbsp;${rateList[0]}</p>
-					 <p>일본 JPY&nbsp;&nbsp;${rateList[1]}</p>
-					 <p>유럽연합 EUR&nbsp;&nbsp;${rateList[2]}</p>
-					 <p>중국 CNY&nbsp;&nbsp;${rateList[3]}</p>
+					<div>
+					<span>금일 환율</span>
+					</div>
+					<div id="currency_info">
+					 <p><a href="https://finance.naver.com/marketindex/" target="_blank">미국 USD&nbsp;&nbsp;${rateList[0]}</a></p>
+					 <p><a href="https://finance.naver.com/marketindex/" target="_blank">일본 JPY&nbsp;&nbsp;${rateList[1]}</a></p>
+					 <p><a href="https://finance.naver.com/marketindex/" target="_blank">유럽연합 EUR&nbsp;&nbsp;${rateList[2]}</a></p>
+					 <p><a href="https://finance.naver.com/marketindex/" target="_blank">중국 CNY&nbsp;&nbsp;${rateList[3]}</a></p>
+					</div>
 				</div>
 			</div>
 			
@@ -61,45 +66,51 @@
 			<!-- 가로 슬라이드 : https://junhee6773.tistory.com/19 참고 -->
 			<div id="main_pictures">
 				<div>
-					<a href=""><img src="resources/images/busan.png" alt="부산"></a>
+					<a href="http://localhost:8080/travel/busan.jsp">
+					<img src="resources/images/busan.png" alt="부산"></a>
 					<div>
 						<i class="fa-solid fa-location-dot"></i>
 			  			<p>부산에서</p>
 			  		</div>
 			  	</div>
 				<div>
-					<a href="http://localhost:8080/desktop/travel/intravel.jsp"><img src="resources/images/seoul.png" alt="서울"></a>
+					<a href="http://localhost:8080/travel/seoul.jsp">
+					<img src="resources/images/seoul.png" alt="서울"></a>
 			  		<div>
 						<i class="fa-solid fa-location-dot"></i>
 			  			<p>서울에서</p>
 			  		</div>
 			  	</div>
 				<div>
-					<img src="resources/images/jeju.png" alt="제주">
+					<a href="http://localhost:8080/travel/jeju.jsp">
+					<img src="resources/images/jeju.png" alt="제주"></a>
 			  		<div>
 						<i class="fa-solid fa-location-dot"></i>
 			  			<p>제주에서</p>
 			  		</div>
 			  	</div>
 				<div>
-					<img src="resources/images/busan.png" alt="부산">
+					<a href="http://localhost:8080/travel/switzerland.png">
+					<img src="resources/images/switzerland.png" alt="스위스"></a>
 			  		<div>
 						<i class="fa-solid fa-location-dot"></i>
 			  			<p>스위스에서</p>
 			  		</div>
 			  	</div>
 				<div>
-					<img src="resources/images/namsan2.png" alt="부산">
+					<a href="http://localhost:8080/travel/australia.png">
+					<img src="resources/images/australia.png" alt="호주"></a>
 			  		<div>
 						<i class="fa-solid fa-location-dot"></i>
-			  			<p>부산에서</p>
+			  			<p>호주에서</p>
 			  		</div>
 			  	</div>
 				<div>
-					<img src="resources/images/busan.png" alt="부산">
+					<a href="http://localhost:8080/travel/japan.jsp">
+					<img src="resources/images/japan.png" alt="일본"></a>
 			  		<div>
 						<i class="fa-solid fa-location-dot"></i>
-			  			<p>부산에서</p>
+			  			<p>일본에서</p>
 			  		</div>
 			  	</div>
 			</div>

@@ -380,46 +380,46 @@ public class MainController extends HttpServlet {
 		    }else if(command.equals("/setting.do")) {
 		    	nextPage="/member/setting.jsp";
 		    //회원 설정 수정
-			}else if(command.equals("/updateUsers.do")) {
-				  // 현재 세션에서 세션 ID 가져오기
-				  String sessionId = (String) session.getAttribute("sessionId");
-	
-				  String pw = request.getParameter("passwd");
-				  String pw2 = request.getParameter("passwd2");
-				  String tel = request.getParameter("tel");
-				  String email = request.getParameter("email");
-	
-				  Users users = new Users();
-	
-				  // 수정된 사용자 정보 업데이트
-				  users.setPw(pw);
-				  users.setTel(tel);
-				  users.setEmail(email);
-	
-				  uDAO.updateUsers(users, sessionId);
-	
-				  nextPage = "/member/setting.jsp";
-				  
-				}else if(command.equals("/userslist.do")) {
-				//회원 정보를 db에서 가져옴
-				List<Users> usersList = uDAO.getUsersList();
-				//모델 생성
-				request.setAttribute("usersList", usersList);
-				//이동할 페이지
-				nextPage = "/member/userslist.jsp";
-			}// 회원 삭제
-			else if(command.equals("/deleteUser.do")) {
-				    // 현재 세션에서 세션 ID 가져오기
-				    String sessionId = (String) session.getAttribute("sessionId");
-	
-				    // 사용자 삭제 메서드 호출
-				    uDAO.deleteUser(sessionId);
-	
-				    // 세션 로그아웃 처리 등 필요한 작업 수행
-				    session.invalidate();
-	
-				    // 삭제 후 리다이렉트할 페이지 지정 (예: 메인 페이지)
-				    nextPage = "/main.do";
+		    }else if(command.equals("/updateUsers.do")) {
+		           // 현재 세션에서 세션 ID 가져오기
+		           String sessionId = (String) session.getAttribute("sessionId");
+		           String pw = request.getParameter("passwd");
+		           String tel = request.getParameter("tel");
+		           String email = request.getParameter("email");
+		         //객체에 데이터 세팅
+		           Users users = new Users();
+		           users.setPw(pw);
+		           users.setTel(tel);
+		           users.setEmail(email);
+		         //db에 저장함
+		           uDAO.updateUsers(users, sessionId);
+
+		           nextPage = "/mypage.do";
+		           
+	         }else if(command.equals("/userslist.do")) {
+	         //회원 정보를 db에서 가져옴
+	         List<Users> usersList = uDAO.getUsersList();
+	         //모델 생성
+	         request.setAttribute("usersList", usersList);
+	         //이동할 페이지
+	         nextPage = "/member/userslist.jsp";
+		      }// 회원 삭제
+		      else if(command.equals("/deleteUser.do")) {
+		             // 현재 세션에서 세션 ID 가져오기
+	             String sessionId = (String) session.getAttribute("sessionId");
+
+	             // 사용자 삭제 메서드 호출
+	             uDAO.deleteUser(sessionId);
+
+	             // 세션 로그아웃 처리 등 필요한 작업 수행
+	             session.invalidate();
+
+	             // 삭제 후 리다이렉트할 페이지 지정 (예: 메인 페이지)
+	             nextPage = "/main.do";
+	         }
+	         else if(command.equals("/joinform01.do")) {
+	         nextPage = "/member/joinform01.jsp";
+
 			}else if(command.equals("/joinform01.do")) {
 				nextPage = "/member/joinform01.jsp"; 
 			}else if(command.equals("/in_main.do")) {
@@ -1059,6 +1059,12 @@ public class MainController extends HttpServlet {
 			nextPage="/about/fao.jsp";
 		}else if(command.equals("/membership.do")) {
 			nextPage="/about/membership.jsp";
+		}else if(command.equals("/privacyPolicy.do")) {
+			nextPage="/about/privacyPolicy.jsp";
+		}else if(command.equals("/tos.do")) {
+			nextPage="/about/tos.jsp";
+		}else if(command.equals("/ccc.do")) {
+			nextPage="/about/ccc.jsp";
 		}
 		//////////////////////////////////////////////여기부터
 		//동행자 찾기 게시판

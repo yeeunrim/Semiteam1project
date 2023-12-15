@@ -1,3 +1,6 @@
+
+/************* 가은 *************/
+
 /* ==================================================================================================== */
 /*                          header, footer                                                              */
 /* ==================================================================================================== */
@@ -9,10 +12,16 @@ $(document).ready(function() {
         // 하위 메뉴 및 bottomMenu 보이기
         $(this).find('.test').css('display', 'block');
         $('#bottomMenu').css('display', 'block');
+
+        // 배경색 변경
+        $('#mainMenu, #sideMenu, #bottomMenu, #sideMenuIcon').css('background-color', 'rgba(255, 255, 255, 1)');
     }).mouseleave(function() {
         // 마우스가 벗어나면 하위 메뉴 및 bottomMenu 숨기기
         $(this).find('.test').css('display', 'none');
         $('#bottomMenu').css('display', 'none');
+
+        // 배경색을 원래 상태로 복원 (원래 배경색에 맞게 조정 필요)
+        $('#mainMenu, #sideMenu, #bottomMenu, #sideMenuIcon').css('background-color', ''); // 기본값 또는 원래 색상으로 변경
     });
 });
 
@@ -25,11 +34,11 @@ $(window).on('scroll', function() {
     let welcomeHeight = $('#welcome').outerHeight();
     let topMenuHeight = $('#welcome').outerHeight()+$('#topMenu').outerHeight();
 
-    if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+    if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) { /* 현재스크롤 > 0 && 현재 스크롤 > 40*/
         // 아래로 40px 이상 스크롤
-        $('#welcome').css('transform', 'translateY(-' + welcomeHeight + 'px)');
+        $('#welcome').css('transform', 'translateY(-' + welcomeHeight + 'px)'); /* 상단 문구 height만큼 올라가면서 올라가는 모션을 주면서 숨겨짐 */
         $('#topMenu').css('top', '0');
-        $('#bottomMenu').css('top', '61px'); // topMenu 바로 아래에 bottomMenu 위치
+        $('#bottomMenu').css('top', $('#topMenu').outerHeight() + 'px'); // topMenu 바로 아래에 bottomMenu 위치
     } else if (currentScroll < lastScrollTop && currentScroll < scrollThreshold) {
         // 위로 40px 이상 스크롤
         $('#welcome').css('transform', '');
@@ -39,6 +48,7 @@ $(window).on('scroll', function() {
     lastScrollTop = currentScroll; // 스크롤 위치 업데이트
 });
 
+/* 780px이하 모바일 기준 header 메뉴 */
 document.addEventListener("DOMContentLoaded", function() {
     var sideMenuIcon = document.getElementById('sideMenuIcon');
     var mainMenu = document.getElementById('mainMenu');
@@ -51,14 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
             mainMenu.style.display = 'block'; 
             sideMenu.style.display = 'block';
             sideMenuIcon.style.display = 'none';
-            topMenu.style.flexDirection = 'row';
+            topMenu.style.flexDirection = 'row';  /* row-reverse에서 원상복구 */
         } else {
             // 780px 이하일 경우
             sideMenuIcon.style.display = 'flex';
             sideMenu.style.display = 'none';
         }
     }
-
     sideMenuIcon.onclick = function() {
         if (mainMenu.style.display === 'none') {
             mainMenu.style.display = 'block';
@@ -67,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             mainMenu.style.display = 'none';
             sideMenu.style.display = 'block';
-            topMenu.style.flexDirection = 'row-reverse';
+            topMenu.style.flexDirection = 'row-reverse'; /* 'sideMenu -> 메뉴아이콘' 순서로 정렬되도록 반대정렬시켜줌 (원래 순서는 '메뉴아이콘 -> sideMenu') */
         }
     };
 
@@ -253,7 +262,7 @@ $(document).ready(function () {
 });
 
 /* ==================================================================================================== */
-/*                          joinform02                                                                        */
+/*                          joinform02                                                                  */
 /* ==================================================================================================== */
 
 // 도메인 직접 입력 or domain option 선택 및 전체이메일 input #full-email에 값 넣기
@@ -311,7 +320,7 @@ $(document).ready(function() {
 });
 
 
-/* 채희 */
+/************* 채희 *************/
 
 $(document).ready(function(){
     $(".my_container .select a").click(function(){
@@ -337,5 +346,39 @@ function openModal() {
     closeModal(); // 저장 후 모달 창 닫기
   }
   
-  
-
+  /**
+ * 유효성 검사
+ */
+function checkMember(){
+	//alert("test...");
+	//input의 name 속성을 변수에 할당
+	let form = document.setting;  //폼 이름
+	let pw1 = form.passwd.value;
+	let pw2 = form.passwd2.value;
+	let tel = form.tel.value;
+	
+	//정규 표현식
+	//비밀번호
+	let regexPw1 = /[0-9]+/;      //숫자
+	let regexPw2 = /[a-zA-Z]+/;   //영문자
+	let regexPw3 = /[~!@#$%^&*()_+|]+/; //특수문자
+	let regexPw4 = /^[0-9]{2,3}[0-9]{3,4}[0-9]{4}/ //전화번호
+	
+	if(pw1.length < 8 || !regexPw1.test(pw1) ||
+				!regexPw2.test(pw1) || !regexPw3.test(pw1)){
+		alert("비밀번호는 영문자, 숫자, 특수문자 포함 8자 이상 입력 가능");
+		pw1.select();
+		return false;
+	}else if(pw1 != pw2){ //pw1과 pw2 문자열이 일치하지 않으면
+		alert("비밀번호를 동일하게 입력");
+		pw2.select();
+		return false;
+	}else if(!regexPw4.test(tel)){
+		alert("전화번호는 '-'를 제외한 9자리~11자리로 입력");
+		tel.select();
+		return false;
+	}else{
+		form.submit();  //오류가 없으면 폼을 메인 컨트롤러로 전송
+		alert("수정되었습니다.");
+	}
+}

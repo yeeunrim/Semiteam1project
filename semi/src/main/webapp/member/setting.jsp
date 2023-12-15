@@ -15,32 +15,35 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-   <body>
-   <jsp:include page="../header.jsp" />
+  <jsp:include page="../header.jsp" />
 	<jsp:useBean id="userDAO" class="users.UsersDAO" scope="application" />
 
 	<section class="my_container">
 	  <section id="memberlist">
-		<h2>계정 설정</h2>
-			<form action="/updateUsers.do" method="post">
+		<h2>회원 정보 수정</h2>
+			<form action="/updateUsers.do" method="post" name="setting">
 				<fieldset id="fd">
                     <ul>
                         <li>
 			 			<li>
 			                <label for="passwd">비밀번호</label>
-			                <input type="password" id="passwd" name="passwd" required>
+			                <input type="password" id="passwd" name="passwd" required
+			                placeholder="영문자, 숫자, 특수문자 포함 8자 이상 입력">
 			            </li>
 			            <li>
 			                <label for="passwd2">비밀번호 확인</label>
-			                <input type="password" id="passwd2" name="passwd2" required>
+			                <input type="password" id="passwd2" name="passwd2" required
+			                placeholder="비밀번호를 동일하게 입력">
 			            </li>
                         <li>
                             <label for="tel">휴대폰 번호</label>
-                            <input type="text" id="tel" name="tel" required>
+                            <input type="tel" id="tel" name="tel" required
+			                placeholder="전화번호는 '-'를 제외한 9자리~11자리로 입력">
                         </li>
                         <li>
                             <label for="email">이메일</label>
-                            <input type="text" id="email" name="email">
+                            <input type="email" id="email" name="email"
+			                placeholder="@를 포함한 이메일 형식으로 입력해주세요">
                         </li>
   
                         <li class="ch">
@@ -50,9 +53,12 @@
                         </li> 
                         <hr>
                         <div class="button">
-                            <a href="/deleteUser.do">회원 탈퇴</a>
-                            <button type="submit" onclick="saveSetting()">변경사항 저장</button>
-                      	</div>
+                            <a href="/deleteUser.do"
+                             onclick="return confirm('정말로 탈퇴하시겠습니까?')">
+                             회원 탈퇴</a>
+                          <button type="button" onclick="checkMember()">
+                            변경사항 저장</button>
+						</div>
                     </ul>
 				</fieldset>
 			</form>

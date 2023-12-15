@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/domestic.css">
 </head>
 <body>
+	<jsp:include page="../header.jsp" />
 	 <section>
         <div id="main"> 
             <div id="area_img"> <!-- item1 -->

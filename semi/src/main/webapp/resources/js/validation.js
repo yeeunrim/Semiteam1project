@@ -39,6 +39,8 @@ function checkUser(){
 	}
 /*}*/
 
+
+
 /* 아이디 중복 검사 */
 /*function checkId(){
 	//alert("test...");

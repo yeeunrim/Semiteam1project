@@ -65,7 +65,7 @@
                       <a href="#"><div class="city">중국</div></a>
                       <a href="#"><div class="city">마카오</div></a>
                       <a href="#"><div class="city">홍콩</div></a>
-                      <a href="#"><div class="city">일본</div></a>
+                      <a href="http://localhost:8080/travel/japan.jsp"><div class="city">일본</div></a>
                       <a href="#"><div class="city">대만</div></a>
                       <a href="#"><div class="city">몽골</div></a>
                       <a href="#"><div class="city">우즈베키스탄</div></a>
@@ -117,14 +117,14 @@
                     </button>
                     <div id="dropdown-content2" class="dropdown-content">
                       <a href="#"><div class="city2">독일</div></a>
-                      <a href="#"><div class="city2">영국</div></a>
+                      <a href="http://localhost:8080/travel/unitedKingdom.jsp"><div class="city2">영국</div></a>
                       <a href="#"><div class="city2">프랑스</div></a>
                       <a href="#"><div class="city2">이탈리아</div></a>
                       <a href="#"><div class="city2">러시아</div></a>
                       <a href="#"><div class="city2">스페인</div></a>
                       <a href="#"><div class="city2">튀르키예</div></a>
                       <a href="#"><div class="city2">네덜란드</div></a>
-                      <a href="#"><div class="city2">스위스</div></a>
+                      <a href="http://localhost:8080/travel/switzerland.jsp"><div class="city2">스위스</div></a>
                       <a href="#"><div class="city2">폴란드</div></a>
                       <a href="#"><div class="city2">스웨덴</div></a>
                       <a href="#"><div class="city2">벨기에</div></a>
@@ -268,7 +268,7 @@
                         onclick="dropdown6()">arrow_drop_down</span>
                     </button>
                     <div id="dropdown-content6" class="dropdown-content">
-                      <a href="#"><div class="city2">호주</div></a>
+                      <a href="http://localhost:8080/travel/australia.jsp"><div class="city2">호주</div></a>
                       <a href="#"><div class="city2">뉴질랜드</div></a>
                       <a href="#"><div class="city2">멜라네시아</div></a>
                       <a href="#"><div class="city2">미크로네시아</div></a>
@@ -302,22 +302,22 @@
       
       <div id="visitCity_image"> 
         <div class="image_datail">
-          <a href="#"><img src="images/out_main/tower-bridge.png" alt="영국">
+          <a href="http://localhost:8080/travel/unitedKingdom.jsp"><img src="images/out_main/tower-bridge.png" alt="영국">
           <p>영국<br>상세보기</a></p>
         </div>
 
         <div class="image_datail">
-          <a href="#"><img src="images/out_main/swiss-mountain.png" alt="스위스">
+          <a href="http://localhost:8080/travel/switzerland.jsp"><img src="images/out_main/swiss-mountain.png" alt="스위스">
           <p>스위스<br>상세보기</a></p>
         </div>
 
         <div class="image_datail">
-          <a href="#"><img src="images/out_main/osaka-castle.png" alt="일본">
+          <a href="http://localhost:8080/travel/japan.jsp"><img src="images/out_main/osaka-castle.png" alt="일본">
           <p>일본<br>상세보기</a></p>
         </div>
 
         <div class="image_datail">
-          <a href="#"><img src="images/out_main/austraila-opera.png" alt="호주" class="image4">
+          <a href="http://localhost:8080/travel/australia.jsp"><img src="images/out_main/austraila-opera.png" alt="호주" class="image4">
           <p>호주<br>상세보기</a></p>
         </div>
       </div>
@@ -336,10 +336,10 @@
                 <a href="#"><img id="image1" src="images/out_main/buildings.jpg" alt="중국"></a>
               </li>
               <li class="slide_image">
-                <a href="#"><img id="image2" src="images/out_main/mountains.jpg" alt="스위스"></a>
+                <a href="http://localhost:8080/travel/switzerland.jsp"><img id="image2" src="images/out_main/mountains.jpg" alt="스위스"></a>
               </li>
               <li class="slide_image">
-                <a href="#"><img id="image3" src="images/out_main/road.jpg" alt="영국"></a>
+                <a href="http://localhost:8080/travel/unitedKingdom.jsp"><img id="image3" src="images/out_main/road.jpg" alt="영국"></a>
               </li>
               <li class="slide_image">
                 <a href="#"><img id="image4" src="images/out_main/trees.jpg" alt="캐나다"></a>

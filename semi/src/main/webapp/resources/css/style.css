@@ -119,7 +119,7 @@ header ul  ul #a_2{
     background-color: rgba(255, 255, 255, 0.5);
     position: fixed;
     left: 0; 
-    top: 100px; /* 기본위치 : 상단문구 아래*/
+    top: 99px; /* 기본위치 : 상단문구 아래*/
     z-index: 998;
     transition: all 0.1s;
 }
@@ -339,11 +339,20 @@ footer li{
 	width: 100%;
     height: 40px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+#currency_box span{
+	font-weight: bold;
+    font-size: 17px;
 }
 #currency_box p{
 	padding: 10px;
+}
+#currency_box #currency_info{
+	display: flex;
+	flex-grow: 0.8;
+    justify-content: space-evenly;
 }
 
 /* main 스타일 - 문구창 */
@@ -361,6 +370,11 @@ footer li{
 @media screen and (max-width: 1440px) {
 	#main_phrase{
 		margin:20vw auto 28vw auto;
+	}
+}
+@media screen and (max-width: 1100px) {
+	#currency_box span{
+		display: none;
 	}
 }
 @media screen and (max-width: 780px) {
@@ -767,6 +781,12 @@ footer li{
 	color: white;
 }
 
+/* 관리자 로그인 */
+#adminlogin_form .button{
+	margin-top: 20px;
+}
+
+
 /* ==================================================================================================== */
 /*                          about 스타일                                                                  */
 /* ==================================================================================================== */
@@ -922,8 +942,8 @@ footer li{
 }
 
 .my_container .profile img {
-  width: 280px;
-  height: 280px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   margin: 20px;
 }
@@ -1078,14 +1098,15 @@ footer li{
 /* 계정설정 스타일 */
 .my_container ul li{list-style: none;}
 .my_container a{text-decoration: none;}
-.my_container #memberlist {margin: 150px auto 110px auto;}
+.my_container #memberlist {width: 480px; margin: 150px auto 110px auto;}
 .my_container #memberlist h2{margin: 20px;}
 .my_container #join{width: 80%; margin: 20px auto;}
 .my_container #join form{margin: 20px auto;}
 .my_container form ul li{margin: 20px;}
 .my_container form .button{margin-top: 16px;}
+
 .my_container form .button button{
-	font-size: 13px;
+	font-size: 15px;
 	width: 130px;
 	height: 48px;
     background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
@@ -1093,11 +1114,15 @@ footer li{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: block;
 	margin: 20px auto 0 auto;
-	margin-right: 18px;
+	margin-right: 40px;
 	border: none;
 	transition: all 1s;
 }
-.my_container #memberlist2{width: 370px; height: 350px; border: solid 1px #eee;}
+
+ #memberlist #passwd, #passwd2, #tel, #email{
+	width: 270px;
+}
+
 .my_container #fd a{
   font-size: 15px;
   color: #333;
@@ -1106,10 +1131,28 @@ footer li{
   padding: 5px;
   text-decoration:underline;
 }
-.my_container form label{width: 120px; float: left; padding-left: 15px; text-align: left;}
+.my_container form label{
+	width: 120px;
+	 float: left; 
+	 padding-left: 15px; 
+	 text-align: left;
+}
 .my_container form input{padding: 5px;}
 .my_container .ch input{margin: 5px;}
 
+.my_container #memberlist #fd{
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    padding: 17px 0;
+}
+.my_container #memberlist input{
+	border-radius: 3px;
+    border: 1px solid rgb(196, 196, 196);
+}
+.my_container #memberlist label{
+    font-size: 14px;
+    line-height: 28px;
+}
 
 /* 모바일 버전 */
 @media screen and (max-width: 850px) {
@@ -1146,6 +1189,7 @@ footer li{
 		height: 300px;
 	}
 }
+
 
    
 /* jihun */
@@ -1337,10 +1381,6 @@ section.notice {
 
 
 @media screen and (max-width: 780px) {
-  .board {
-    width: 600px;
-    margin: 0 auto;
-  }
 
   .search-container {
     display: flex;
@@ -1373,7 +1413,7 @@ section.membership{
     margin: 120px 1% 20% 1%;
 }
 #membership_container h1{
-	padding-bottom: 1%;
+	padding: 0 0 1% 8%;
 }
 
 .membership-title {
@@ -1419,7 +1459,7 @@ section .question{
   width: 100%;
 }
 #question_container h1{
-  padding-bottom: 1%;
+  padding: 0 0 1% 8%;
 }
 
 .fao-user,.fao-travel,.fao-other{
@@ -1462,16 +1502,91 @@ section .question{
   display: none; 
 }
 
+/* 지훈 - 개인정보 처리방침*/
+section.data{
+  margin-bottom: 10%;
+}
+
+.data-title {
+  margin-right: 18%;
+  margin-top: 150px;
+  font-size: 25px;
+}
 
 
 
+.data-board{
+  margin-left: 30%;
+  margin-top: 80px;
+}
+
+
+.data-board p{
+  text-decoration: none;
+  display: inline-block; /* inline-block으로 설정하여 width, height, padding, margin 속성 적용 가능 */
+  width: 80%; 
+  padding: 10px 0;
+}
+/* 지훈 - 이용약관*/
+use.data{
+  padding: 200px 0;
+  width: 100%;
+}
+
+.use-title {
+  margin-right: 18%;
+  margin-top: 150px;
+  font-size: 25px;
+}
+
+.use-board{
+  margin-left: 30%;
+  margin-top: 80px;
+  margin-bottom: 10%;
+}
+
+
+.use-board p{
+  text-decoration: none;
+  display: inline-block; /* inline-block으로 설정하여 width, height, padding, margin 속성 적용 가능 */
+  width: 80%; 
+  padding: 10px 0;
+}
+
+/* 지훈 - 고객센터 */
+
+section.service{
+  margin-bottom: 10%;
+}
+
+.service-title {
+  margin-right: 18%;
+  margin-top: 150px;
+  font-size: 25px;
+}
+
+.service-member{
+  margin-left: 40%;
+  margin-top: 80px;
+}
+
+.service-member h3{
+   font-size: 30px;
+}
+
+.service-member h2{
+   margin-top: 40px;
+   font-size: 20px;
+}
+
+.service-member p{
+  width: 50%; 
+  color: rgb(114, 110, 110);
+  padding: 10px 0;
+}
 
 
 /*sanghyun*/
-
-
-
-
 
 #bottomlist{height:100px; margin:10px auto; text-align: center;}
 .board1{width: 80%; margin: 0 auto;}

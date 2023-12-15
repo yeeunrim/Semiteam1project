@@ -323,11 +323,11 @@ function checkMember(){
 		pw1.select();
 		return false;
 	}else if(pw1 != pw2){ //pw1과 pw2 문자열이 일치하지 않으면
-		alert("비밀번호를 동일하게 입력해 주세요");
+		alert("비밀번호를 동일하게 입력");
 		pw2.select();
 		return false;
 	}else if(!regexPw4.test(tel)){
-		alert("전화번호는 '-'를 제외한 9자리~11자리로 입력해주세요");
+		alert("전화번호는 '-'를 제외한 9자리~11자리로 입력");
 		tel.select();
 		return false;
 	}else{

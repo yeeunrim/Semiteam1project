@@ -22,7 +22,7 @@
 
 	<section class="my_container">
 	  <section id="memberlist">
-		<h2>계정 설정</h2>
+		<h2>회원 정보 수정</h2>
 			<form action="/updateUsers.do" method="post" name="setting">
 				<fieldset id="fd">
                     <ul>
@@ -30,7 +30,7 @@
 			 			<li>
 			                <label for="passwd">비밀번호</label>
 			                <input type="password" id="passwd" name="passwd" required
-			                placeholder="비밀번호는 영문자, 숫자, 특수문자 포함 8자 이상 입력">
+			                placeholder="영문자, 숫자, 특수문자 포함 8자 이상 입력">
 			            </li>
 			            <li>
 			                <label for="passwd2">비밀번호 확인</label>

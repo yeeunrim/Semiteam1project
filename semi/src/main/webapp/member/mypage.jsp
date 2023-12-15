@@ -97,7 +97,7 @@
       </div>
     </div>
     <div class="more">
-        <a href="">+ MORE</a>
+        <a href="/wishlist.do">+ MORE</a>
     </div>
   </section>
   </div>

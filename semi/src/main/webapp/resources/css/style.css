@@ -865,7 +865,7 @@ footer li{
 /* 계정설정 스타일 */
 .my_container ul li{list-style: none;}
 .my_container a{text-decoration: none;}
-.my_container #memberlist {margin: 150px auto 110px auto;}
+.my_container #memberlist {width: 480px; margin: 150px auto 110px auto;}
 .my_container #memberlist h2{margin: 20px;}
 .my_container #join{width: 80%; margin: 20px auto;}
 .my_container #join form{margin: 20px auto;}
@@ -881,12 +881,15 @@ footer li{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: block;
 	margin: 20px auto 0 auto;
-	margin-right: 18px;
+	margin-right: 40px;
 	border: none;
 	transition: all 1s;
 }
 
-.my_container #memberlist2{width: 370px; height: 350px; border: solid 1px #eee;}
+ #memberlist #passwd, #passwd2, #tel, #email{
+	width: 270px;
+}
+
 .my_container #fd a{
   font-size: 15px;
   color: #333;
@@ -895,7 +898,12 @@ footer li{
   padding: 5px;
   text-decoration:underline;
 }
-.my_container form label{width: 120px; float: left; padding-left: 15px; text-align: left;}
+.my_container form label{
+	width: 120px;
+	 float: left; 
+	 padding-left: 15px; 
+	 text-align: left;
+}
 .my_container form input{padding: 5px;}
 .my_container .ch input{margin: 5px;}
 

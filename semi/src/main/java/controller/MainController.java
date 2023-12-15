@@ -979,18 +979,41 @@ public class MainController extends HttpServlet {
 			nextPage="/notice/updatenoticeform.jsp";
 		}else if(command.equals("/updatenotice.do")) {
 			//게시글 제목, 내용을 파라미터로 받음
-			int nno = Integer.parseInt(request.getParameter("nno"));
-			String ntitle = request.getParameter("ntitle");
-			String ncontent = request.getParameter("ncontent");
+			String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload";
+			int maxSize = 10*1024*1024; //10MB
+			String encType = "utf-8";	//파일 이름 한글 인코딩
+			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+			
+			//5가지 인자
+			MultipartRequest multi = 
+					new MultipartRequest(request, realFolder, maxSize, 
+							encType, policy);
+			
+			//폼 데이터 받기
+			String title = multi.getParameter("title");
+			String content = multi.getParameter("content");
+			int bno = Integer.parseInt(multi.getParameter("nno"));
+			
+			//file 파라미터 추출
+			Enumeration<?> files = multi.getFileNames();
+			String filename = "";
+			while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+				String userFilename = (String) files.nextElement();
+				
+				//실제 저장될 이름
+				filename = multi.getFilesystemName(userFilename);		
+			}
 				
 			//db에 저장
-			Notice n = new Notice();
-			n.setNtitle(ntitle);
-			n.setNcontent(ncontent);
-			n.setNno(nno);
+			Notice b = new Notice();
+			b.setNtitle(title);
+			b.setNcontent(content);
+			b.setNfilename(filename);
+			b.setNno(bno);
 			
-			nDAO.updatenotice(n);
-
+			nDAO.updatenotice(b);
+			
+		
 		}
 			
 	
@@ -1239,18 +1262,41 @@ public class MainController extends HttpServlet {
 					nextPage="/board1/updateboard1form.jsp";
 				}else if(command.equals("/updateboard1.do")) {
 					//게시글 제목, 내용을 파라미터로 받음
-					int bno = Integer.parseInt(request.getParameter("bno1"));
-					String title = request.getParameter("title");
-					String content = request.getParameter("content");
+					String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload";
+					int maxSize = 10*1024*1024; //10MB
+					String encType = "utf-8";	//파일 이름 한글 인코딩
+					DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+					
+					//5가지 인자
+					MultipartRequest multi = 
+							new MultipartRequest(request, realFolder, maxSize, 
+									encType, policy);
+					
+					//폼 데이터 받기
+					String title = multi.getParameter("title");
+					String content = multi.getParameter("content");
+					int bno = Integer.parseInt(multi.getParameter("bno"));
+					
+					//file 파라미터 추출
+					Enumeration<?> files = multi.getFileNames();
+					String filename = "";
+					while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+						String userFilename = (String) files.nextElement();
+						
+						//실제 저장될 이름
+						filename = multi.getFilesystemName(userFilename);		
+					}
 						
 					//db에 저장
 					Board1 b = new Board1();
 					b.setTitle1(title);
 					b.setContent1(content);
+					b.setFilename1(filename);
 					b.setBno1(bno);
 					
 					b1DAO.updateboard1(b);
 					
+				
 				}
 			//댓글 구현
 			if(command.equals("/insertreply1.do")) {
@@ -1523,24 +1569,48 @@ public class MainController extends HttpServlet {
 				Board2 board = b2DAO.getBoard2(bno);
 				
 				//모델 생성해서 뷰로 보내기
-				request.setAttribute("board", board);
+				request.setAttribute("board2", board);
 				
 				
 				nextPage="/board2/updateboard2form.jsp";
 			}else if(command.equals("/updateboard2.do")) {
 				//게시글 제목, 내용을 파라미터로 받음
-				int bno = Integer.parseInt(request.getParameter("bno2"));
-				String title = request.getParameter("title");
-				String content = request.getParameter("content");
+				String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload";
+				int maxSize = 10*1024*1024; //10MB
+				String encType = "utf-8";	//파일 이름 한글 인코딩
+				DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+				
+				//5가지 인자
+				MultipartRequest multi = 
+						new MultipartRequest(request, realFolder, maxSize, 
+								encType, policy);
+				
+				//폼 데이터 받기
+				String title = multi.getParameter("title");
+				String content = multi.getParameter("content");
+				int bno = Integer.parseInt(multi.getParameter("bno"));
+				
+				//file 파라미터 추출
+				Enumeration<?> files = multi.getFileNames();
+				String filename = "";
+				while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+					String userFilename = (String) files.nextElement();
+					
+					//실제 저장될 이름
+					filename = multi.getFilesystemName(userFilename);		
+				}
 					
 				//db에 저장
 				Board2 b = new Board2();
 				b.setTitle2(title);
 				b.setContent2(content);
+				b.setFilename2(filename);
 				b.setBno2(bno);
 				
 				b2DAO.updateboard2(b);
 				
+			
+			
 			}
 			//댓글 구현
 			if(command.equals("/insertreply2.do")) {
@@ -1780,24 +1850,47 @@ public class MainController extends HttpServlet {
 					Board3 board = b3DAO.getBoard3(bno);
 					
 					//모델 생성해서 뷰로 보내기
-					request.setAttribute("board", board);
+					request.setAttribute("board3", board);
 					
 					
 					nextPage="/board3/updateboard3form.jsp";
-				}else if(command.equals("/updateboard2.do")) {
+				}else if(command.equals("/updateboard3.do")) {
 					//게시글 제목, 내용을 파라미터로 받음
-					int bno = Integer.parseInt(request.getParameter("bno3"));
-					String title = request.getParameter("title");
-					String content = request.getParameter("content");
+					String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload";
+					int maxSize = 10*1024*1024; //10MB
+					String encType = "utf-8";	//파일 이름 한글 인코딩
+					DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+					
+					//5가지 인자
+					MultipartRequest multi = 
+							new MultipartRequest(request, realFolder, maxSize, 
+									encType, policy);
+					
+					//폼 데이터 받기
+					String title = multi.getParameter("title");
+					String content = multi.getParameter("content");
+					int bno = Integer.parseInt(multi.getParameter("bno"));
+					
+					//file 파라미터 추출
+					Enumeration<?> files = multi.getFileNames();
+					String filename = "";
+					while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+						String userFilename = (String) files.nextElement();
+						
+						//실제 저장될 이름
+						filename = multi.getFilesystemName(userFilename);		
+					}
 						
 					//db에 저장
 					Board3 b = new Board3();
 					b.setTitle3(title);
 					b.setContent3(content);
+					b.setFilename3(filename);
 					b.setBno3(bno);
 					
 					b3DAO.updateboard3(b);
 					
+				
 				}
 				//댓글 구현
 				if(command.equals("/insertreply3.do")) {
@@ -1891,21 +1984,21 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/write1.do") || command.equals("/updateboard1.do")) { 
 			response.sendRedirect("board1list.do");
 		}else if (command.equals("/insertreply1.do") || command.equals("/deletereply1.do") || command.equals("/updatereply1.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno"));
+			int bno = Integer.parseInt(request.getParameter("bno1"));
 			response.sendRedirect("board1view.do?bno1=" + bno);
 			
 			
 		}else if(command.equals("/write2.do") || command.equals("/updateboard2.do")) { 
 			response.sendRedirect("board2list.do");
 		}else if (command.equals("/insertreply2.do") || command.equals("/deletereply2.do") || command.equals("/updatereply2.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno"));
+			int bno = Integer.parseInt(request.getParameter("bno2"));
 			response.sendRedirect("board2view.do?bno2=" + bno);
 			
 			
 		}else if(command.equals("/write3.do") || command.equals("/updateboard3.do")) { 
 			response.sendRedirect("board3list.do");
 		}else if (command.equals("/insertreply3.do") || command.equals("/deletereply3.do") || command.equals("/updatereply3.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno"));
+			int bno = Integer.parseInt(request.getParameter("bno3"));
 			response.sendRedirect("board3view.do?bno3=" + bno);
 			
 		}else if (command.equals("/editprofile_pic.do") || command.equals("/editprofile.do")){

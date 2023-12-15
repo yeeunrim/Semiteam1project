@@ -6,25 +6,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글쓰기 폼</title>
+<title>공지 사항 - 여정담</title>
 <link rel="stylesheet" href="/resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../resources/js/main.js"></script>
 </head>
 <body>
-	<!-- 로그인한 사용자만 글쓰기 허용됨 -->
-	<c:if test="${empty sessionId }">
-		<script type="text/javascript">
-			alert("로그인이 필요합니다.");
-			location.href = "/loginform.do";
-		</script>
-	</c:if>
 	<jsp:include page="../header.jsp"/>
 		<section id="notice">
 		    <div class="board-title">
 		        <div class="board2">
-		            <h3>여행 후기</h3>
-		            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
+		            <h3>공지 사항</h3>
+		            <p>공지 사항은 신중히 작성해 주세요.</p>
 		        </div>
 		    </div>
 			<form action="/noticewrite.do" method="post" enctype="multipart/form-data">

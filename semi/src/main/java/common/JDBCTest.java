@@ -11,7 +11,7 @@ public class JDBCTest {
 		
 		String driverClass = "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521/xe";
-		String user = "semi";
+		String user = "c##semi";
 		String password = "pwsemi";
 		
 		try {

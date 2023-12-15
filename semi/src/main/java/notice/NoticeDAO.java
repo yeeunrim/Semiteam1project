@@ -52,8 +52,8 @@ public class NoticeDAO {
 		conn = JDBCUtil.getConnection();
 		
 		try {
-			String sql = "INSERT INTO notice(nno, ntitle, ncontent, nfilename) "
-					+ "VALUES (seq_nno.NEXTVAL, ?, ?, ?)";
+			String sql = "INSERT INTO notice(nno, ntitle, ncontent, nfilename, id) "
+					+ "VALUES (seq_nno.NEXTVAL, ?, ?, ?, '관리자')";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, n.getNtitle());
 			pstmt.setString(2, n.getNcontent());

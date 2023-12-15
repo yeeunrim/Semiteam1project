@@ -30,8 +30,8 @@
 	          ${notice.ntitle}
 	        </div>
 	        <div class="upper">
-	          <div class="thumb">
-	          <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
+	          <div class="thumb">		          
+			    <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
 	          </div>
 	          <div class="nickname1">
 	            관리자
@@ -40,16 +40,16 @@
 	            ${notice.ncreateDate}
 	          </div>
 	          <div class="etc">
-	            댓글 : ${nreply_count} 개
+	            
 	          </div>
 	        </div>
 	        <hr>
 	        <div class = "content">
-	        	<div>
-	        		<c:if test="${not empty notice.nfilename}">
-						<img src="../upload/${notice.nfilename }" class="boardviewimage">
-					</c:if>
-				</div>
+	        		<div>
+		        		<c:if test="${not empty notice.nfilename}">
+							<img src="../upload/${notice.nfilename }" class="boardviewimage">
+						</c:if>
+					</div>
 	          		${notice.ncontent}
 	        </div>
 	        <div class = "right">
@@ -68,64 +68,29 @@
 				</c:choose>
 			</div>
 	        <div class = "under">
+	          <div class="likeReply">
+	            <c:if test="${not empty sessionId}">
+					<div id="likeSection">
+
+						
+
+					</div>
+				</c:if>
+	          </div>
 	        </div>
 	        <hr>
 	        <div class="crud">
 	        	<p>
 				<a href="/noticelist.do"><button type="button" class="writebtn">목록</button></a>
-				<%-- <c:if test="${sessionId eq admin }"> --%>
+				
 					<a href="/deletenotice.do?nno=${notice.nno }"
 						onclick="return confirm('정말로 삭제하시겠습니까?')">
 					<button type="button" class="writebtn">삭제</button></a>
 					<a href="/updatenoticeform.do?nno=${notice.nno }"><button type="button" class="writebtn">수정</button></a>
-				<%-- </c:if> --%>
+				
 				</p>
 			</div>
 	        <div class="replyform">
-	        <p class="rtitle">댓글</p>
-	        <c:forEach items="${nreplyList }" var="reply">
-	          <div class = "reply">
-	            <div class = "reThumb"></div>
-	            <div class = "replyer">
-		              ${reply.nreplyer}
-	              	<div class="recrud">
-		            	<c:if test="${sessionId eq reply.nreplyer }">
-						<a href="/deletenreply.do?nno=${notice.nno }&rno=${nreply.nrno }"
-								onclick="return confirm('댓글을 삭제하시겠습니까?')">
-						<button type="button" id=DR><i class="fa-solid fa-trash-can"></i></button></a>
-						<a href="/updatenreplyform.do?nno=${notice.nno }&nrno=${reply.nrno }">
-						<button type="button" id=DR><i class="fa-solid fa-pen"></i></button></a>
-						</c:if>
-	            	</div>
-	            </div>
-	            <div class = "rcontent">
-	              ${reply.nrcontent}
-	            </div>
-	            <div class = "rdate">
-	              <c:choose>
-							<c:when test="${not empty reply.nrupdate }">
-								<fmt:formatDate value="${reply.nrupdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
-							</c:when>
-							<c:otherwise>
-								<fmt:formatDate value="${reply.nrdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
-							</c:otherwise>
-					</c:choose> 
-	            </div>
-	          </div>
-	          </c:forEach>
-	          <div class="replyWrite">
-	            <c:if test="${not empty sessionId}">
-				<form action="/insertnreply.do" method="post" id="replyform">
-					<input type="hidden" name="nno" value="${notice.nno }">
-					<input type="hidden" name="nreplyer" value="${sessionId }">
-					<p>
-						<textarea name="rcontent" class="wrcontent"
-							placeholder="댓글 작성란"></textarea>
-					</p>
-					<button type="submit" class="writebtn">등록</button>
-				</form>	
-				</c:if>
-				</div>	
 	        </div>
 	      </div>
       </div>

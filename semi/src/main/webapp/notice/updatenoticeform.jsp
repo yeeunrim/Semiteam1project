@@ -20,9 +20,9 @@
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
 	        </div>
 	    </div>
-		<form action="/updatenboard.do" method="post">
+		<form action="/updatenotice.do" method="post" enctype="multipart/form-data">
 			<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
-			<input type="hidden" name="bno" value="{notice.nno}">
+			<input type="hidden" name="nno" value="${notice.nno}">
 			<table>
 				<tbody>
 					<tr>
@@ -32,9 +32,6 @@
 					<td><textarea rows="7" cols="100" name="content">${notice.ncontent }</textarea></td>
 				</tr>
 				<tr>
-					<td>${notice.id }</td>
-				</tr>
-					<tr>
 						<td>
 							<button type="submit" class="writebtn">저장</button>
 							<button type="reset" class="writebtn">리셋</button>

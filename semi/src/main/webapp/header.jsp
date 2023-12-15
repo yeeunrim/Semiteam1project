@@ -15,9 +15,9 @@
 					<li><a href="#">여행지</a>
 						<div class="test">
 							<ul>
-								<li><a href="http://localhost:8080/desktop/travel/in_main.jsp">국내</a></li>
-								<li><a href="/out_main.do">해외</a></li>
-								<li><a href="http://localhost:8080/desktop/travel/hotel_traffic.jsp">숙소 / 교통</a></li>
+								<li><a href="http://localhost:8080/travel/in_main.jsp">국내</a></li>
+								<li><a href="http://localhost:8080/travel/out_main.jsp">해외</a></li>
+								<li><a href="http://localhost:8080/travel/hotel_traffic.jsp">숙소 / 교통</a></li>
 							</ul>
 						</div>
 					</li>

@@ -22,25 +22,25 @@
 	    </div>
 		<form action="/updateboard1.do" method="post" enctype="multipart/form-data">
 			<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
-			<input type="hidden" name="bno" value="${board1.bno1}">
+			<input type="hidden" name="bno" value="${board.bno1}">
 			<table class="writeMid">
 				<tbody>
 					<tr>
-					<td><input type="text" name="title" value="${board1.title1 }" id="writeTitle"></td>
+					<td><input type="text" name="title" value="${board.title1 }" id="writeTitle"></td>
 				</tr>
 				<tr>
-					<td><textarea name="content" id="writeContent">${board1.content1 }</textarea></td>
+					<td><textarea name="content" id="writeContent">${board.content1 }</textarea></td>
 				</tr>
 				<tr>
 					<td>
-						<input type="file" name="filename">${board1.filename1 }
+						<input type="file" name="filename">${board.filename1 }
 					</td>
 				</tr>
 					<tr>
 						<td class="writeBot">
 							<button type="submit" class="writebtn">저장</button>
 							<button type="reset" class="writebtn">리셋</button>
-							<a href="/board1view.do?bno1=${board1.bno1 }"><button type="button" class="writebtn">취소</button></a>
+							<a href="/board1view.do?bno1=${board.bno1 }"><button type="button" class="writebtn">취소</button></a>
 						</td>
 					</tr>
 				</tbody>

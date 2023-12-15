@@ -376,10 +376,10 @@ body section{ height: 100%; }
     margin: 15px 10px;
     border-radius: 20px;
 }
-
+/* 첫번째 장소 */
 #curation_content .curationBox .textBox1{
     position: absolute;
-    top: 25vw;
+    top: 24.3vw;
     width: 20vw;
     border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);

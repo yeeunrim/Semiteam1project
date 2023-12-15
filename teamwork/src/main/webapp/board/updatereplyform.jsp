@@ -15,7 +15,7 @@
 	<jsp:include page="../header.jsp"/>
 	<section id = "replyUpdate">
 		<div class="board-title">
-		     <div class="board">
+		     <div class="board2">
 	            <h3>댓글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
 		    </div>
@@ -28,7 +28,7 @@
 				<table>
 					<tbody>
 						<tr>
-							<td><textarea rows="7" cols="100" name="rcontent" class="replycontent">${reply.rcontent }</textarea></td>
+							<td><textarea rows="7" cols="115" name="rcontent" class="replycontent">${reply.rcontent }</textarea></td>
 						</tr>
 						<tr>
 							<td class="writeBot">

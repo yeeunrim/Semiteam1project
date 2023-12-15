@@ -309,6 +309,14 @@ public class MainController extends HttpServlet {
 			//user 정보를 보냄 (소개글 넣기 위해)
 			request.setAttribute("user", usersList);
 			
+			
+			
+			
+			
+			
+			
+			
+			
 			nextPage="/member/mypage.jsp";
 			
 		//프로필 사진 변경
@@ -319,7 +327,7 @@ public class MainController extends HttpServlet {
 			String sessionId = (String) session.getAttribute("sessionId");
 			
 			//프로필 사진 추가
-			String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload\\profile_pic";
+			String realFolder = "C:\\teamworks\\teamwork\\src\\main\\webapp\\upload";
 			int maxSize = 10*1024*1024; //10MB
 			String encType = "utf-8";	//파일 이름 한글 인코딩
 			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
@@ -347,8 +355,8 @@ public class MainController extends HttpServlet {
 			uDAO.updateProfilePic(u, sessionId);
 			
 			// 업데이트된 사용자 정보 다시 로드(리디렉트)
-		    Users updatedUser = uDAO.getUsers(sessionId);
-		    request.setAttribute("user", updatedUser);
+		    //Users updatedUser = uDAO.getUsers(sessionId);
+		    ///equest.setAttribute("user", updatedUser);
 			
 			nextPage="/member/mypage.jsp";
 			//프로필 수정
@@ -651,7 +659,7 @@ public class MainController extends HttpServlet {
 
 			//글 제목에서 요청한 글 번호 받기
 			int bno = Integer.parseInt(request.getParameter("bno"));
-			
+						
 			//글 상세보기 처리
 			Board board = bDAO.getBoard(bno);
 			List<Blike> likeList = lDAO.getLikeList(bno);
@@ -664,7 +672,7 @@ public class MainController extends HttpServlet {
 			request.setAttribute("replyList", replyList);
 			String filename = board.getFilename();
 			request.setAttribute("filename", filename);
-			
+						
 			// 좋아요 개수 가져오기
 			int likeCount = lDAO.getLikeCountByBno(bno);
 
@@ -675,7 +683,19 @@ public class MainController extends HttpServlet {
 			lDAO.updateLikeCount(bno);
 			bDAO.updateReplyCount(bno);
 			
+			String id = (String) session.getAttribute("sessionId");
+			//String id = request.getParameter("id");
+			boolean n = true;
 			
+			//아이디가 중복되면 delete, 아니면 update
+			if (lDAO.likeListContainsUser(likeList, id)) {	
+				n = true;
+			} else {
+			    n = false;
+			}	
+						
+			request.setAttribute("n", n);
+						
 			nextPage="/board/boardview.jsp";
 		}else if(command.equals("/deleteboard.do")) {
 			int bno = Integer.parseInt(request.getParameter("bno"));
@@ -785,21 +805,21 @@ public class MainController extends HttpServlet {
 			int bno = Integer.parseInt(request.getParameter("bno"));
 			String id = request.getParameter("id");
 			List<Blike> likeList = lDAO.getLikeList(bno);
-			boolean n = true;
+			//boolean n = true;
 			
 			//아이디가 중복되면 delete, 아니면 update
 			if (lDAO.likeListContainsUser(likeList, id)) {	
 				lDAO.deleteLike(id, bno);
-				n = false;
+				//n = false;
 			} else {
 				Blike l = new Blike();
 				l.setBno(bno);
 				l.setId(id);
 			    lDAO.like(l);
-			    n = true;
+			    //n = true;
 			}	
 			
-			request.setAttribute("n", n);
+			//request.setAttribute("n", n);
 			
 			
 			lDAO.updateLikeCount(bno);

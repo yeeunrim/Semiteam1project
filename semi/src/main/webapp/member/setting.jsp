@@ -38,11 +38,11 @@
 			            </li>
                         <li>
                             <label for="tel">휴대폰 번호</label>
-                            <input type="text" id="tel" name="tel" required>
+                            <input type="tel" id="tel" name="tel" required>
                         </li>
                         <li>
                             <label for="email">이메일</label>
-                            <input type="text" id="email" name="email">
+                            <input type="email" id="email" name="email">
                         </li>
   
                         <li class="ch">

@@ -871,15 +871,21 @@ footer li{
 .my_container #join form{margin: 20px auto;}
 .my_container form ul li{margin: 20px;}
 .my_container form .button{margin-top: 16px;}
+
 .my_container form .button button{
-    margin: 20px;
-    padding: 5px;
-    float: right;
-    background-color: rgb(88, 88, 255); 
-    color: white;
-    font-size: 15px;
-    border-radius: 5px;
+	font-size: 15px;
+	width: 130px;
+	height: 48px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+	margin: 20px auto 0 auto;
+	margin-right: 18px;
+	border: none;
+	transition: all 1s;
 }
+
 .my_container #memberlist2{width: 370px; height: 350px; border: solid 1px #eee;}
 .my_container #fd a{
   font-size: 15px;

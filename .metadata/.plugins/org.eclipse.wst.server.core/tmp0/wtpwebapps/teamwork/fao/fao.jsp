@@ -43,7 +43,8 @@
                     <input id="check-btn3" type="checkbox" />
                     <label for="check-btn3">국내여행 주의사항</label>
                     <ul class="menubars">
-                        <li>국내에선 무엇을 주의하죠?</li>
+                        <li>여행 중에 비상사태에 대비하여 응급 연락처 및 응급처치 방법을 숙지하고, 필요한 의약품 등을 챙겨가세요.<br>
+                        또한 여행지의 기후와 날씨에 대해 사전에 알아두세요. 필요하다면 해당 지역에 적합한 옷차림과 용품을 가져가세요.</li>
                     </ul>
                 </div>
             </div>

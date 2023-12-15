@@ -74,3 +74,10 @@
 12월 14, 2023 17:20:45.285 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 12월 14, 2023 17:21:39.895 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 12월 14, 2023 17:22:07.865 [7196:11096:1214/172207.865:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 14, 2023 17:41:21.148 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 14, 2023 18:05:02.822 [11120:11720:1214/180502.821:ERROR:device_event_log_impl.cc(192)] [18:05:02.821] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+12월 14, 2023 18:55:14.854 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 14, 2023 19:30:12.962 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 14, 2023 20:46:43.549 [13608:11128:1214/204643.549:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+12월 14, 2023 20:46:54.105 [13608:11128:1214/204654.105:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+12월 14, 2023 20:46:58.78 [13608:13928:1214/204658.078:ERROR:device_event_log_impl.cc(192)] [20:46:58.078] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)

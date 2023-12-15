@@ -1199,7 +1199,7 @@ section.notice {
 }
 
 .board-table .th-num {
-  width: 30px;
+  width: 60px;
 }
 
 .board-table .th-title {
@@ -1214,11 +1214,11 @@ section.notice {
 }
 
 .board-table .th-date {
-  width: 150px;
+  width: 180px;
 }
 
 .board-table .th-hit {
-  width: 100px;
+  width: 120px;
 }
 
 .board-table th,
@@ -1315,7 +1315,33 @@ section.notice {
 
 @media screen and (max-width: 780px) {
   .board {
-    width: 600px;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+
+  #write {
+    padding: 0 20px;
+    font-size: 16px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 20px;
+    margin-left: 30px;
+    cursor: pointer;
+    height: 32px;
+    border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+}
+
+@media screen and (max-width: 1100px) {
+  .board {
+    width: 80%;
     margin: 0 auto;
   }
 
@@ -1430,12 +1456,9 @@ section.question{
 
 
 /*sanghyun*/
+.mainBoard{width: 80%; margin: 0 auto;}
 
-
-
-.mainBoard{width: 1100px; margin: 0 auto;}
-
-.replyUpdateForm, #writeform{width : 800px; margin: 0 auto;}
+.replyUpdateForm, #writeform{width : 80%; margin: 0 auto;}
 
 section#writeform, #replyUpdate{
   padding: 80px 0;
@@ -1446,44 +1469,42 @@ section#writeform, #replyUpdate{
 .boardName{margin: 5px;}
 
 .board1 {
-  width: 930px;
   margin: 0 auto;
 }
 
 .board2{
-	width: 810px;
-	margin: 0 auto;
+   margin: 0 auto;
 }
 
 
 hr{margin: 10px;}
 
-.boardViewForm{width: 860px; padding: 30px; border: 1px solid #cdcdcd; margin: 0 auto;}
+.boardViewForm{width: 80%; padding: 30px; border: 1px solid #cdcdcd; margin: 0 auto;}
 .btitle{
-  width: 800px; height: 34px; margin: 0 auto; margin-bottom: 10px;
+  height: 34px; margin: 0 auto; margin-bottom: 10px;
   font-size: 30px; font-weight: bold;
 }
 .boardInfo{color: #919191;}
 
-.upper{width: 800px; margin: 0 auto;}
+.upper{margin: 0 auto;}
 .thumb{background-color: pink; border-radius: 50%; width:36px; height:36px; float: left; margin-right: 5px; text-align: center}
 .nickname1{font-size: 13px; font-weight: bold;}
 .update{font-size: 12px; color: #979797;}
 .etc{text-align: right; font-size:13px;}
-.content{width: 800px; margin: 20px auto;}
+.content{margin: 20px auto;}
 .right{text-align: right; color:#979797; }
 
 .crud{text-align: center;}
 .crud button{margin: 10px;}
 #DR{margin: 0px 2.5px ;padding: 2px ; border-radius: 50%; float: right;}
 
-.under{width: 800px; margin: 0 auto;}
+.under{margin: 0 auto;}
 .nickname2{font-size: 13px; font-weight: bold; line-height: 3;}
 .likeReply{font-size: 13px; }
 
 
 
-.reply{width: 800px; margin: 20px auto;}
+.reply{margin: 20px auto;}
 .replyer{font-size: 13px;  font-weight: bold; padding-top: 7px;}
 .rcontent{font-size: 13px;}
 .rdate{font-size: 12px; color: #9f9f9f;}
@@ -1491,7 +1512,7 @@ hr{margin: 10px;}
 .rtitle{font-size: 17px; margin-left: 30px;}
 
 #replyform {margin-left: 30px; margin-top: 10px;}
-#replyform textarea{width: 780px; padding: 5px; height: 100px; resize: none; text-align: left;}
+#replyform textarea{padding: 5px; height: 100px; resize: none; text-align: left;}
 
 .replylogin{background-color: #eee; margin: 10px 0; padding: 16px; text-align: center;}
 .replylogin a{color: blue;}
@@ -1499,8 +1520,9 @@ hr{margin: 10px;}
 .replyUpdateForm .replyUpdateForm2{margin: 0 auto;}
 .replycontent{padding: 5px; resize: none;}
 
+#writeform {width: 800px; margin: 0 auto;}
 #writeTitle{padding : 5px; width: 500px; margin-bottom: 10px;}
-#writeContent{padding: 5px; width: 800px; height: 500px; resize: none;}
+#writeContent{padding: 5px; height: 500px; resize: none;}
 
 
 .file{
@@ -1524,22 +1546,25 @@ hr{margin: 10px;}
 
 
 
-.boardviewimage{width: 800px; }
+.boardviewimage{width: 80%}
 
 
 
 /* 반응형 */
 @media screen and (max-width: 780px) {
-	
-  .boardViewForm{width: 550px;}
-  #replyform textarea{width: 450px;}
+   
+  .boardViewForm{width: 60%px;}
+  #replyform textarea{width: 60%;}
   
-  .board1{width: 550px;}
+  .board1{width: 60%;}
   
-  #writeContent{width: 500px;}
-  .boardviewimage{width: 548px; }
+  #writeContent{width: 60%;}
+  .boardviewimage{width: 60%; }
   
-  .board2{width: 500px;}
+  .board2{width: 60%;}
 
 
 }
+
+
+

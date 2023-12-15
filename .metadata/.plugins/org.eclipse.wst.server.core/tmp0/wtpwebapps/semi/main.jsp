@@ -62,27 +62,45 @@
 			<div id="main_pictures">
 				<div>
 					<a href=""><img src="resources/images/busan.png" alt="부산"></a>
-			  		<p>부산에서</p>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+			  			<p>부산에서</p>
+			  		</div>
 			  	</div>
 				<div>
 					<a href="http://localhost:8080/desktop/travel/intravel.jsp"><img src="resources/images/seoul.png" alt="서울"></a>
-			  		<p>서울에서</p>
+			  		<div>
+						<i class="fa-solid fa-location-dot"></i>
+			  			<p>서울에서</p>
+			  		</div>
 			  	</div>
 				<div>
 					<img src="resources/images/jeju.png" alt="제주">
-			  		<p>제주에서</p>
+			  		<div>
+						<i class="fa-solid fa-location-dot"></i>
+			  			<p>제주에서</p>
+			  		</div>
 			  	</div>
 				<div>
 					<img src="resources/images/busan.png" alt="부산">
-			  		<p>스위스에서</p>
+			  		<div>
+						<i class="fa-solid fa-location-dot"></i>
+			  			<p>스위스에서</p>
+			  		</div>
+			  	</div>
+				<div>
+					<img src="resources/images/namsan2.png" alt="부산">
+			  		<div>
+						<i class="fa-solid fa-location-dot"></i>
+			  			<p>부산에서</p>
+			  		</div>
 			  	</div>
 				<div>
 					<img src="resources/images/busan.png" alt="부산">
-			  		<p>부산에서</p>
-			  	</div>
-				<div>
-					<img src="resources/images/busan.png" alt="부산">
-			  		<p>부산에서</p>
+			  		<div>
+						<i class="fa-solid fa-location-dot"></i>
+			  			<p>부산에서</p>
+			  		</div>
 			  	</div>
 			</div>
 			

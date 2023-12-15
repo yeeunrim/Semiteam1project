@@ -379,7 +379,7 @@ footer li{
 	display: flex;
 	overflow-x: hidden;/* 수평 스크롤 숨김 */
 }
-#main_pictures div{
+#main_pictures>div{
 	background-color: rgb(228, 228, 228);
 	filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));
 	flex: 0 0 30.5vw; 
@@ -389,11 +389,20 @@ footer li{
 #main_pictures div img{
 	width: 25vw;
 	height: 26vw;
-	margin: 7% 7%;
+	margin: 7% 7% 5% 7%;
 	filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));
 }
+#main_pictures div div{
+	display: flex;	
+	padding-left: 7%;
+	align-items: center;
+}
+#main_pictures div div i{
+	color: #abababe0;
+	font-size: 1.8vw;
+}
 #main_pictures div p{
-	margin: 0 7%;
+	margin: 0 3%;
 	font-size: 1.5vw;
 }
 /* main 스타일 - 커뮤니티 */

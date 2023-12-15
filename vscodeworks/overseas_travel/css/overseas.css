@@ -1,0 +1,453 @@
+/* overseasViewDetails.html과 연결 */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*==================================================
+                    공통스타일
+================================================== */
+*{margin: 0; padding: 0;
+     font-family: 'NanumSquareRound';} 
+
+/* desktop 기준 - 781px부터 , mobile 기준 781px 미만 */
+/* ------------------------------------------------------------------
+                            header
+--------------------------------------------------------------------*/
+.Yheader p{width: 100%; text-align: center; font-size: 2vw;}
+     
+/* ------------------------------------------------------------------
+                           section
+--------------------------------------------------------------------*/
+/* 기준 넓이 1440px 반응형>100% , 높이 2350px  */
+body section{ height: 100%; } 
+
+/*======================================================
+    body 국내 지역 사진, 이름
+========================================================*/ 
+
+/* 메인 사진 container */
+#main{  
+    width:100%; 
+    position: relative;
+} 
+#main #area_pic{
+    width: 100%; 
+    height: 45vw;
+}
+#main #area_img #area_pic{ width: 100%; } 
+#main #area_text{ 
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 18%;
+    position: absolute;
+    top: 0;
+}
+#main #area_text p:nth-of-type(1){
+    font-size: 7vw; letter-spacing: 2vw; color: white;
+}
+#main #area_text p:nth-of-type(2){
+    font-size: 3vw; letter-spacing: 1vw; color: white;
+}
+
+/*=======================================================
+    body 해외 지역 정보 (글, tip사이트 연결)
+=========================================================*/ 
+
+/* 해외 지역 정보 container */
+#infobox{ 
+    width: 97%; height: 100%; 
+    margin: 0px auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    background-color: #F7F7F7; 
+    border: 1px solid #000;
+    border-radius: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* 해외 지역 정보 - 내용(글) */
+#infobox #infotext{
+    width: 90%;
+    font-size: 2vw;
+    font-weight: bolder;
+    color: #212020;
+    text-align: center;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    border-bottom: 2px dotted #464646;
+}
+/* 해외 지역 기초 정보 (list-style) */
+#lg{ color: #888888;}
+#dg{color: #535356;}
+
+
+/* 해외 도시 정보 - ( Tip! 스위스 여행 기초 정보 > ) 버튼 */
+#infobox #tipbox{ font-size: 1.9vw; }
+#infobox #tipbox p{
+    margin-top: 10px;
+    margin-bottom: 7px;
+    border-radius: 20px;
+    padding: 5px 25px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+#infobox #tipbox p a{
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    cursor: pointer;
+    color: #212020;
+    font-weight: 800;
+}
+#infobox #tipbox a:hover{ color: darkgray; }
+
+/*=========================================================
+    body 해외 날씨, 위치
+=========================================================*/ 
+
+/* 해외 날씨, 위치 container */
+#weather_location{
+    display: inline-flex;
+    width: 100%;
+}
+
+/* 월간 날씨 및 기준 도시*/
+#weather_container{
+    width: 50%;
+    padding: 3vh 1.4vw;
+}
+#weather_container #monthly_weather p{
+    color: black;
+    font-weight: 900;
+    font-size: 3vw;
+    padding-top: 4px;
+    padding-bottom: 17px;
+    text-align: center;
+}
+#weather_container #box_weather{
+    height: 30vw;
+    padding: 0 4.5vw;
+    font-size: 3vw;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F7F7F7;
+}
+
+#weather_container #box_weather #month{ 
+    border-radius: 24px;
+    padding-left: 5vw;
+    position: relative;
+}
+#weather_container #box_weather #month p{
+    font-size: 2.9vw;
+    font-weight: 600;
+}
+#weather_container #box_weather #month p:hover{ color: darkgrey; }
+
+/* month 목록 드롭다운  */
+#dropdown{position: relative; display: inline-block;}
+.dropbtn{
+    z-index: 100;
+    display: block; 
+    border: none; 
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    padding-top: 1.5vh;
+    padding-right: 7vw;
+    padding-bottom: 1vh;
+    cursor: pointer;
+}
+#dropbtn{ width: 38vw; }
+#dropdown_month p{ font-size: 2.6vw; }
+#dropbtn_month p:hover{ color: darkgray; }
+.dropdown-month{
+    display: none;
+    background-color: whitesmoke;
+    min-width: 50px;
+    height: 30vh;
+    overflow: scroll;
+    box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
+}
+.dropdown-month a{ text-decoration: none; }
+.dropdown-month::-webkit-scrollbar{
+    width : 1vw; 
+    height : 0;
+}
+.dropdown-month::-webkit-scrollbar-thumb{
+    border-radius : 2px;
+    background-color :rgb(194, 194, 194)
+}
+.dropdown-month div{
+    display : block;
+    text-decoration : none; 
+    padding : 2vh 4vw;
+    color : rgb(37, 37, 37); 
+    font-size: 2vw;}
+.dropdown-month div:hover{ background-color: rgb(201, 199, 199); }
+.dropdown-month.show{
+    display : block;
+    border-radius: 20px;
+}
+/* 평년 기온, 기준 도시 */
+#weather_container #box_weather #bottom_weather{
+    /* border: 1px solid sandybrown; */
+    background-color: rgba(180, 180, 180, 0.349);
+    border-radius: 20px;
+    padding-left: 2.6vw;
+    padding-right: 2vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    width: 33.2vw;
+    height: 18vh;
+}
+#weather_container #box_weather #bottom_weather p{font-size: 2.5vw; line-height: 9vh;}
+#weather_container #box_weather #bottom_weather #a{color: #2695fd;}
+#weather_container #box_weather #bottom_weather #b{color: #ff6219;}
+
+/* 위치 */
+#location_container {
+    width: 50%;
+    padding: 3vh 1vw;
+    padding-left: 0;
+    padding-right: 1.4vw;
+    position: relative;
+}
+#location_container #location_text p{
+    margin-top: 10px;
+    color: black;
+    font-weight: 900;
+    font-size: 3vw;
+    padding-bottom: 16px;
+    text-align: center;
+}
+#location_container #location_img img{
+    border: 1px solid black; 
+    border-radius: 20px;
+    width: 100%; height: 30vw;
+}
+#location_container #location_img{ position: relative; }
+#location_container #location_img #circleinfo{
+    position: absolute; right: 30px; bottom: 15px;
+    font-size: 3.2vw;
+}
+
+
+/*=============== section  .attraction ====================
+    body 해외 주요 관광지 3곳 attr1, attr2, attr3
+===========================================================*/ 
+
+/* 해외 지역 주요 관광지 (지역 이름 페이지 마다 바꿔주기!!) */
+#city_mainplace{ 
+    width: 97%;
+    padding-left: 1.6vw;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    display: flex;
+    justify-content: space-between;
+}
+#city_mainplace h2{
+    font-size: 3vw;
+    color: #212020;
+}
+
+/* 주요 관광지 오른쪽 검색창 */
+#city_mainplace #searchWord{
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
+    border-radius: 33px;
+    padding: 5px 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    top: 4px;
+}
+#city_mainplace #searchWord #search_input{
+    border: none; /* 테두리 제거 */
+    background-color: transparent; /* 배경색 투명 */
+    outline: none; /* 선택됐을 때, 테두리 없애기 */
+    flex-grow: 1; /* 남은 공간 채우기 */
+    font-size: 2vw;
+    width: 2vw;
+}
+#city_mainplace #searchWord #search_button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+#city_mainplace #searchWord #search_button #glass{
+    position: absolute;
+    right: 2vw;
+    font-size: 2vw;
+}
+
+/* 해외 주요 관광지 */
+#tourist_attraction{ /*관광지 3곳 틀 container */
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.attraction{ /* 각 관광지 틀 */
+    width: 30%;
+    height: 100%;
+    border: 1px solid #1d1d1f;
+    border-top-left-radius: 40px; border-top-right-radius: 40px; 
+    box-shadow: 0 -5px 0 0 #000;
+    display:flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+}
+/* 관광지 이름 */
+.attraction .attr_text p{
+    /* height: auto; */
+    font-size: 2vw;
+    font-weight: 600;
+    position: relative; top: 10px;
+    letter-spacing: 2.5px;
+    text-align: center;
+}
+/* 관광지 이미지  */
+.attraction .attr_imgbox{
+    width: 100%;
+    height: 16vw;
+    margin-top: 20px;
+    border-top: 1px solid #000;
+    overflow: hidden;
+}
+.attraction .attr_imgbox img{
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+}
+.attraction .dot{
+    z-index: 2;
+    text-align: center;
+    font-size: 1.5vw;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.567);
+    border-top-right-radius: 20px;
+    padding: 3px 3px;
+    position: absolute; bottom: 0px;
+}
+.attraction .dot .dot_text{
+    color: #535356;
+}
+
+/*=========================================================
+    body 오늘의 큐레이션 5가지! 
+==============================================================*/
+
+/* 오늘의 큐레이션 타이틀 */
+#todayCuration{ 
+    width: 97%;
+    padding-left: 1.6vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+#todayCuration h2{ font-size: 3vw; }
+
+/* 큐레이션 컨텐츠 4개 묶음 container */
+#curation_content{ 
+    width: 97%;
+    margin-left: 2.5vh;
+    display: inline-flex;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.356));
+}
+
+#curation_content .curationBox{
+    margin: 0 5px;
+    width: 55vw;
+    height: 35vw;
+    border-radius: 30px;
+    border: 3px dotted #636363;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#curation_content .curationBox .img{
+    width: 20vw;
+    margin: 15px 10px;
+    border-radius: 20px;
+}
+
+#curation_content .curationBox .textBox1{
+    position: absolute;
+    top: 24.3vw;
+    width: 20vw;
+    border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);
+}
+#curation_content .curationBox .Ctext1{
+    font-size: 2vw;
+    padding-left: 7px;
+    padding-bottom: 10px;
+    color: white;
+}
+/* 두번째 장소 */
+#curation_content .curationBox .textBox2{
+    position: absolute;
+    top: 26.7vw;
+    width: 20vw;
+    border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);
+}
+#curation_content .curationBox .Ctext2{
+    font-size: 2vw;
+    padding-left: 2px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+/* 세번째 장소 */
+#curation_content .curationBox .textBox3{
+    position: absolute;
+    top: 27vw;
+    width: 20vw;
+    border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%);
+}
+#curation_content .curationBox .Ctext3{
+    font-size: 2vw;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+/* 네번째 장소 */
+#curation_content .curationBox .textBox4{
+    position: absolute;
+    top: 26.7vw;
+    width: 20vw;
+    border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000000 100%);
+}
+#curation_content .curationBox .Ctext4{
+    font-size: 2vw;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+/*-------------------------------------------------------------------
+                        footer
+----------------------------------------------------------------------*/ 
+.Yfooter{width: 100%; text-align: center; font-size: 2vw; margin-top: 4vh;}

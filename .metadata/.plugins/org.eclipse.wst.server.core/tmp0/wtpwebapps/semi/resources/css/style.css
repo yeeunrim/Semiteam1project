@@ -873,17 +873,13 @@ footer li{
     border-bottom: 8px solid transparent;
 }
 #about_container #people span{
-	line-height: 1.5;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: #f4f4f4;
 }
 #about_container #people p{
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     color: rgb(255, 255, 255);
 }
-
-
-
 
 
 /*=========================================================================*/

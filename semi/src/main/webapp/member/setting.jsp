@@ -29,19 +29,23 @@
                         <li>
 			 			<li>
 			                <label for="passwd">비밀번호</label>
-			                <input type="password" id="passwd" name="passwd" required>
+			                <input type="password" id="passwd" name="passwd" required
+			                placeholder="비밀번호는 영문자, 숫자, 특수문자 포함 8자 이상 입력">
 			            </li>
 			            <li>
 			                <label for="passwd2">비밀번호 확인</label>
-			                <input type="password" id="passwd2" name="passwd2" required>
+			                <input type="password" id="passwd2" name="passwd2" required
+			                placeholder="비밀번호를 동일하게 입력">
 			            </li>
                         <li>
                             <label for="tel">휴대폰 번호</label>
-                            <input type="tel" id="tel" name="tel" required>
+                            <input type="tel" id="tel" name="tel" required
+			                placeholder="전화번호는 '-'를 제외한 9자리~11자리로 입력">
                         </li>
                         <li>
                             <label for="email">이메일</label>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" name="email"
+			                placeholder="@를 포함한 이메일 형식으로 입력해주세요">
                         </li>
   
                         <li class="ch">

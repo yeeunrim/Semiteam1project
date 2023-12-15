@@ -327,7 +327,7 @@ function checkMember(){
 		pw2.select();
 		return false;
 	}else if(!regexPw4.test(tel)){
-		alert("전화번호형식는 '-'를 제외한 9자리~11자리로 입력해주세요");
+		alert("전화번호는 '-'를 제외한 9자리~11자리로 입력해주세요");
 		tel.select();
 		return false;
 	}else{

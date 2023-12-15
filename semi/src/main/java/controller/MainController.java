@@ -188,170 +188,170 @@ public class MainController extends HttpServlet {
 			request.setAttribute("rateList", rateList);
 			
 			nextPage="/main.jsp";
-		//찜한 목록
-		}else if(command.equals("/wishlist.do")) {
-
-			String id = (String) session.getAttribute("sessionId");
-			List<Board> boardList = bDAO.getBoardListBlike(id);
-			
-			request.setAttribute("boardList", boardList);	
-			request.setAttribute("id", id);
-			
-			if(boardList.size()>=3) {
-				//게시글 3개를 저장할 배열 생성
-				Board w1 = boardList.get(0);
-				Board w2 = boardList.get(1);
-				Board w3 = boardList.get(2);
+			//찜한 목록
+			}else if(command.equals("/wishlist.do")) {
+	
+				String id = (String) session.getAttribute("sessionId");
+				List<Board> boardList = bDAO.getBoardListBlike(id);
 				
-				request.setAttribute("w1", w1);
-				request.setAttribute("w2", w2);
-				request.setAttribute("w3", w3);
-			}else if(boardList.size() == 2) {
-				Board w1 = boardList.get(0);
-				Board w2 = boardList.get(1);
-
-				request.setAttribute("w1", w1);
-				request.setAttribute("w2", w2);
-			}else if(boardList.size() == 1) {
-				Board w1 = boardList.get(0);
-
-				request.setAttribute("w1", w1);
-			}
-			
-			
-			List<Board1> boardList1 = b1DAO.getBoardListBlike1(id);
-			
-			request.setAttribute("boardList1", boardList1);	
-			
-			if(boardList1.size()>=3) {
-				//게시글 3개를 저장할 배열 생성
-				Board1 w11 = boardList1.get(0);
-				Board1 w21 = boardList1.get(1);
-				Board1 w31 = boardList1.get(2);
+				request.setAttribute("boardList", boardList);	
+				request.setAttribute("id", id);
 				
-				request.setAttribute("w11", w11);
-				request.setAttribute("w21", w21);
-				request.setAttribute("w31", w31);
+				if(boardList.size()>=3) {
+					//게시글 3개를 저장할 배열 생성
+					Board w1 = boardList.get(0);
+					Board w2 = boardList.get(1);
+					Board w3 = boardList.get(2);
+					
+					request.setAttribute("w1", w1);
+					request.setAttribute("w2", w2);
+					request.setAttribute("w3", w3);
+				}else if(boardList.size() == 2) {
+					Board w1 = boardList.get(0);
+					Board w2 = boardList.get(1);
+	
+					request.setAttribute("w1", w1);
+					request.setAttribute("w2", w2);
+				}else if(boardList.size() == 1) {
+					Board w1 = boardList.get(0);
+	
+					request.setAttribute("w1", w1);
+				}
 				
-			}else if(boardList1.size() == 2) {
-				Board1 w11 = boardList1.get(0);
-				Board1 w21 = boardList1.get(1);
-
-				request.setAttribute("w11", w11);
-				request.setAttribute("w21", w21);
 				
-			}else if(boardList1.size() == 1) {
-				Board1 w11 = boardList1.get(0);
-
-				request.setAttribute("w11", w11);
-			}
-			
-			List<Board2> boardList2 = b2DAO.getBoardListBlike2(id);
-			
-			request.setAttribute("boardList2", boardList2);	
-			
-			if(boardList2.size()>=3) {
-				//게시글 3개를 저장할 배열 생성
-				Board2 w12 = boardList2.get(0);
-				Board2 w22 = boardList2.get(1);
-				Board2 w32 = boardList2.get(2);
+				List<Board1> boardList1 = b1DAO.getBoardListBlike1(id);
 				
-				request.setAttribute("w12", w12);
-				request.setAttribute("w22", w22);
-				request.setAttribute("w32", w32);
-			}else if(boardList2.size() == 2) {
-				Board2 w12 = boardList2.get(0);
-				Board2 w22 = boardList2.get(1);
-
-				request.setAttribute("w12", w12);
-				request.setAttribute("w22", w22);
-			}else if(boardList2.size() == 1) {
-				Board2 w12 = boardList2.get(0);
-
-				request.setAttribute("w12", w12);
-			}
-			
-			List<Board3> boardList3 = b3DAO.getBoardListBlike3(id);
-			
-			request.setAttribute("boardList3", boardList3);	
-			
-			if(boardList3.size()>=3) {
-				//게시글 3개를 저장할 배열 생성
-				Board3 w13 = boardList3.get(0);
-				Board3 w23 = boardList3.get(1);
-				Board3 w33 = boardList3.get(2);
+				request.setAttribute("boardList1", boardList1);	
 				
-				request.setAttribute("w13", w13);
-				request.setAttribute("w23", w23);
-				request.setAttribute("w33", w33);
+				if(boardList1.size()>=3) {
+					//게시글 3개를 저장할 배열 생성
+					Board1 w11 = boardList1.get(0);
+					Board1 w21 = boardList1.get(1);
+					Board1 w31 = boardList1.get(2);
+					
+					request.setAttribute("w11", w11);
+					request.setAttribute("w21", w21);
+					request.setAttribute("w31", w31);
+					
+				}else if(boardList1.size() == 2) {
+					Board1 w11 = boardList1.get(0);
+					Board1 w21 = boardList1.get(1);
+	
+					request.setAttribute("w11", w11);
+					request.setAttribute("w21", w21);
+					
+				}else if(boardList1.size() == 1) {
+					Board1 w11 = boardList1.get(0);
+	
+					request.setAttribute("w11", w11);
+				}
 				
-			}else if(boardList3.size() == 2) {
-				Board3 w13 = boardList3.get(0);
-				Board3 w23 = boardList3.get(1);
-
-				request.setAttribute("w13", w13);
-				request.setAttribute("w23", w23);
+				List<Board2> boardList2 = b2DAO.getBoardListBlike2(id);
 				
-			}else if(boardList3.size() == 1) {
-				Board3 w13 = boardList3.get(0);
-
-				request.setAttribute("w13", w13);
-			}
-			
-			
-			nextPage="/member/wishlist.jsp";
-		}else if(command.equals("/mypage.do")) {
-			// 현재 세션에서 세션 ID 가져오기
-			String sessionId = (String) session.getAttribute("sessionId");
-			//세션 ID에 대한 상세정보 가져오기
-			Users usersList = uDAO.getUsers(sessionId);
-			
-			//user 정보를 보냄 (소개글 넣기 위해)
-			request.setAttribute("user", usersList);
-			
-			nextPage="/member/mypage.jsp";
-			
-		//프로필 사진 변경
-		}else if(command.equals("/editprofile_pic.do")) {
-			Users u = new Users();
-			
-			// 현재 세션에서 세션 ID 가져오기
-			String sessionId = (String) session.getAttribute("sessionId");
-			
-			//프로필 사진 추가
-			String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload\\profile_pic";
-			int maxSize = 10*1024*1024; //10MB
-			String encType = "utf-8";	//파일 이름 한글 인코딩
-			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
-			
-			//5가지 인자
-			MultipartRequest multi = 
-					new MultipartRequest(request, realFolder, maxSize, 
-							encType, policy);
-			
-			//file 파라미터 추출
-			Enumeration<?> files = multi.getFileNames();
-			String filename = "";
-			while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
-				String userFilename = (String) files.nextElement();
+				request.setAttribute("boardList2", boardList2);	
 				
-				//실제 저장될 이름
-				filename = multi.getFilesystemName(userFilename);		
-			}
-			//db에 저장
-			u.setImage(filename);
+				if(boardList2.size()>=3) {
+					//게시글 3개를 저장할 배열 생성
+					Board2 w12 = boardList2.get(0);
+					Board2 w22 = boardList2.get(1);
+					Board2 w32 = boardList2.get(2);
+					
+					request.setAttribute("w12", w12);
+					request.setAttribute("w22", w22);
+					request.setAttribute("w32", w32);
+				}else if(boardList2.size() == 2) {
+					Board2 w12 = boardList2.get(0);
+					Board2 w22 = boardList2.get(1);
+	
+					request.setAttribute("w12", w12);
+					request.setAttribute("w22", w22);
+				}else if(boardList2.size() == 1) {
+					Board2 w12 = boardList2.get(0);
+	
+					request.setAttribute("w12", w12);
+				}
+				
+				List<Board3> boardList3 = b3DAO.getBoardListBlike3(id);
+				
+				request.setAttribute("boardList3", boardList3);	
+				
+				if(boardList3.size()>=3) {
+					//게시글 3개를 저장할 배열 생성
+					Board3 w13 = boardList3.get(0);
+					Board3 w23 = boardList3.get(1);
+					Board3 w33 = boardList3.get(2);
+					
+					request.setAttribute("w13", w13);
+					request.setAttribute("w23", w23);
+					request.setAttribute("w33", w33);
+					
+				}else if(boardList3.size() == 2) {
+					Board3 w13 = boardList3.get(0);
+					Board3 w23 = boardList3.get(1);
+	
+					request.setAttribute("w13", w13);
+					request.setAttribute("w23", w23);
+					
+				}else if(boardList3.size() == 1) {
+					Board3 w13 = boardList3.get(0);
+	
+					request.setAttribute("w13", w13);
+				}
+				
+				
+				nextPage="/member/wishlist.jsp";
+			}else if(command.equals("/mypage.do")) {
+				// 현재 세션에서 세션 ID 가져오기
+				String sessionId = (String) session.getAttribute("sessionId");
+				//세션 ID에 대한 상세정보 가져오기
+				Users usersList = uDAO.getUsers(sessionId);
+				
+				//user 정보를 보냄 (소개글 넣기 위해)
+				request.setAttribute("user", usersList);
+				
+				nextPage="/member/mypage.jsp";
 			
-			//파일 이름 확인
-			System.out.println(filename);
-			
-			uDAO.updateProfilePic(u, sessionId);
-			
-			// 업데이트된 사용자 정보 다시 로드(리디렉트)
-		    //Users updatedUser = uDAO.getUsers(sessionId);
-		    ///equest.setAttribute("user", updatedUser);
-			
-			nextPage="/member/mypage.jsp";
-			//프로필 수정
+			//프로필 사진 변경
+			}else if(command.equals("/editprofile_pic.do")) {
+				Users u = new Users();
+				
+				// 현재 세션에서 세션 ID 가져오기
+				String sessionId = (String) session.getAttribute("sessionId");
+				
+				//프로필 사진 추가
+				String realFolder = "C:\\semi\\semi\\src\\main\\webapp\\upload\\profile_pic";
+				int maxSize = 10*1024*1024; //10MB
+				String encType = "utf-8";	//파일 이름 한글 인코딩
+				DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+				
+				//5가지 인자
+				MultipartRequest multi = 
+						new MultipartRequest(request, realFolder, maxSize, 
+								encType, policy);
+				
+				//file 파라미터 추출
+				Enumeration<?> files = multi.getFileNames();
+				String filename = "";
+				while(files.hasMoreElements()) {	//파일 이름이 있는 동안 반복
+					String userFilename = (String) files.nextElement();
+					
+					//실제 저장될 이름
+					filename = multi.getFilesystemName(userFilename);		
+				}
+				//db에 저장
+				u.setImage(filename);
+				
+				//파일 이름 확인
+				System.out.println(filename);
+				
+				uDAO.updateProfilePic(u, sessionId);
+				
+				// 업데이트된 사용자 정보 다시 로드(리디렉트)
+			    //Users updatedUser = uDAO.getUsers(sessionId);
+			    ///equest.setAttribute("user", updatedUser);
+				
+				nextPage="/member/mypage.jsp";
+				//프로필 수정
 			}else if(command.equals("/editprofile.do")) {
 				Users u = new Users();
 				
@@ -377,121 +377,126 @@ public class MainController extends HttpServlet {
 			    //request.setAttribute("user", updatedUser);
 				
 				nextPage="/member/mypage.jsp";
-	    }else if(command.equals("/setting.do")) {
-	    	nextPage="/member/setting.jsp";
-	    //회원 설정 수정
-		}else if(command.equals("/updateUsers.do")) {
-			  // 현재 세션에서 세션 ID 가져오기
-			  String sessionId = (String) session.getAttribute("sessionId");
-
-			  String pw = request.getParameter("passwd");
-			  String pw2 = request.getParameter("passwd2");
-			  String tel = request.getParameter("tel");
-			  String email = request.getParameter("email");
-
-			  Users users = new Users();
-
-			  // 수정된 사용자 정보 업데이트
-			  users.setPw(pw);
-			  users.setTel(tel);
-			  users.setEmail(email);
-
-			  uDAO.updateUsers(users, sessionId);
-
-			  nextPage = "/member/setting.jsp";
-			  
-			}else if(command.equals("/userslist.do")) {
-			//회원 정보를 db에서 가져옴
-			List<Users> usersList = uDAO.getUsersList();
-			//모델 생성
-			request.setAttribute("usersList", usersList);
-			//이동할 페이지
-			nextPage = "/member/userslist.jsp";
-		}// 회원 삭제
-		else if(command.equals("/deleteUser.do")) {
-			    // 현재 세션에서 세션 ID 가져오기
-			    String sessionId = (String) session.getAttribute("sessionId");
-
-			    // 사용자 삭제 메서드 호출
-			    uDAO.deleteUser(sessionId);
-
-			    // 세션 로그아웃 처리 등 필요한 작업 수행
-			    session.invalidate();
-
-			    // 삭제 후 리다이렉트할 페이지 지정 (예: 메인 페이지)
-			    nextPage = "/main.do";
-			}
-			else if(command.equals("/joinform01.do")) {
-			nextPage = "/member/joinform01.jsp"; 
-		}else if(command.equals("/insertusers.do")) {
-			//빈 회원 객체를 생성해서 데이터를 받아서 세팅
-			//폼 데이터 받기
-			String id = request.getParameter("id");
-			String pw = request.getParameter("pw");
-			String tel = request.getParameter("tel");
-			String email = request.getParameter("email") + "@" + request.getParameter("domain-txt");
-			int birth = Integer.parseInt(request.getParameter("birth-year") + request.getParameter("birth-month") + request.getParameter("birth-day"));
-			String gender = request.getParameter("gender");
-			
-			Users u = new Users();
-			//db에 저장
-			u.setId(id);
-			u.setPw(pw);
-			u.setTel(tel);
-			u.setEmail(email);
-			u.setBirth(birth);
-			u.setGender(gender);
-			//db에 저장함
-			uDAO.insertUsers(u);
-			//자동 로그인
-			session.setAttribute("sessionId", u.getId());	//아이디를 가져와서 sessionId(세션이름) 발급
-			nextPage = "/index.jsp";
-		}else if(command.equals("/usersview.do")) {
-			String id = request.getParameter("id");
-			Users users = uDAO.getUsers(id);
-			//모델 생성
-			request.setAttribute("users", users);
-			nextPage = "/member/usersview.jsp";
-		}else if(command.equals("/loginform.do")){	//로그인 폼 페이지 이동
-			nextPage = "/member/loginform.jsp";
-		}else if(command.equals("/login.do")) {	//로그인 처리
-			//아이디와 비밀번호 파라미터 받기
-			String email = request.getParameter("email");
-			String pw = request.getParameter("pw");
-			
-			//빈 객체를 생성해서 아이디와 비번 세팅해줌
-			Users u = new Users();
-			u.setEmail(email);
-			u.setPw(pw);
-			
-			//로그인 인증
-			Users users = uDAO.checkLogin(u);
-			String id = users.getId();
-			if(id != null){
-				session.setAttribute("sessionId", id);//아이디 세션 발급
+		    }else if(command.equals("/setting.do")) {
+		    	nextPage="/member/setting.jsp";
+		    //회원 설정 수정
+			}else if(command.equals("/updateUsers.do")) {
+				  // 현재 세션에서 세션 ID 가져오기
+				  String sessionId = (String) session.getAttribute("sessionId");
+	
+				  String pw = request.getParameter("passwd");
+				  String pw2 = request.getParameter("passwd2");
+				  String tel = request.getParameter("tel");
+				  String email = request.getParameter("email");
+	
+				  Users users = new Users();
+	
+				  // 수정된 사용자 정보 업데이트
+				  users.setPw(pw);
+				  users.setTel(tel);
+				  users.setEmail(email);
+	
+				  uDAO.updateUsers(users, sessionId);
+	
+				  nextPage = "/member/setting.jsp";
+				  
+				}else if(command.equals("/userslist.do")) {
+				//회원 정보를 db에서 가져옴
+				List<Users> usersList = uDAO.getUsersList();
+				//모델 생성
+				request.setAttribute("usersList", usersList);
+				//이동할 페이지
+				nextPage = "/member/userslist.jsp";
+			}// 회원 삭제
+			else if(command.equals("/deleteUser.do")) {
+				    // 현재 세션에서 세션 ID 가져오기
+				    String sessionId = (String) session.getAttribute("sessionId");
+	
+				    // 사용자 삭제 메서드 호출
+				    uDAO.deleteUser(sessionId);
+	
+				    // 세션 로그아웃 처리 등 필요한 작업 수행
+				    session.invalidate();
+	
+				    // 삭제 후 리다이렉트할 페이지 지정 (예: 메인 페이지)
+				    nextPage = "/main.do";
+			}else if(command.equals("/joinform01.do")) {
+				nextPage = "/member/joinform01.jsp"; 
+			}else if(command.equals("/in_main.do")) {
+				nextPage="/desktop/travel/in_main.jsp";
+			}else if(command.equals("/out_main.do")) {
+				nextPage="/desktop/travel/in_main.jsp";
+			}else if(command.equals("/hotel_traffic.do")) {
+				nextPage="/desktop/travel/hotel_traffic.jsp";
+			}else if(command.equals("/insertusers.do")) {
+				//빈 회원 객체를 생성해서 데이터를 받아서 세팅
+				//폼 데이터 받기
+				String id = request.getParameter("id");
+				String pw = request.getParameter("pw");
+				String tel = request.getParameter("tel");
+				String email = request.getParameter("email") + "@" + request.getParameter("domain-txt");
+				int birth = Integer.parseInt(request.getParameter("birth-year") + request.getParameter("birth-month") + request.getParameter("birth-day"));
+				String gender = request.getParameter("gender");
 				
-				//로그인 후 페이지 이동
-				//nextPage = "/index.jsp";			
-				out.println("<script>");
-				out.println("alert('로그인 되었습니다.')");
-				out.println("location.href='../main.do'");
-				out.println("</script>");
-				out.flush();
-				out.close();
-			}else{
-				//에러를 모델로 보내기
-				out.println("<script>");
-				out.println("alert('아이디나 비밀번호를 다시 확인해주세요.')");
-				out.println("location.href='../loginform.do'");
-				out.println("</script>");
-				out.flush();
-				out.close();
-				//String error = "아이디나 비밀번호를 다시 확인해주세요.";
-				//request.setAttribute("error", error);
-				//에러 발생 후 페이지 이동
-				//nextPage="/users/loginform.do";
-			}
-			
+				Users u = new Users();
+				//db에 저장
+				u.setId(id);
+				u.setPw(pw);
+				u.setTel(tel);
+				u.setEmail(email);
+				u.setBirth(birth);
+				u.setGender(gender);
+				//db에 저장함
+				uDAO.insertUsers(u);
+				//자동 로그인
+				session.setAttribute("sessionId", u.getId());	//아이디를 가져와서 sessionId(세션이름) 발급
+				nextPage = "/index.jsp";
+			}else if(command.equals("/usersview.do")) {
+				String id = request.getParameter("id");
+				Users users = uDAO.getUsers(id);
+				//모델 생성
+				request.setAttribute("users", users);
+				nextPage = "/member/usersview.jsp";
+			}else if(command.equals("/loginform.do")){	//로그인 폼 페이지 이동
+				nextPage = "/member/loginform.jsp";
+			}else if(command.equals("/login.do")) {	//로그인 처리
+				//아이디와 비밀번호 파라미터 받기
+				String email = request.getParameter("email");
+				String pw = request.getParameter("pw");
+				
+				//빈 객체를 생성해서 아이디와 비번 세팅해줌
+				Users u = new Users();
+				u.setEmail(email);
+				u.setPw(pw);
+				
+				//로그인 인증
+				Users users = uDAO.checkLogin(u);
+				String id = users.getId();
+				if(id != null){
+					session.setAttribute("sessionId", id);//아이디 세션 발급
+					
+					//로그인 후 페이지 이동
+					//nextPage = "/index.jsp";			
+					out.println("<script>");
+					out.println("alert('로그인 되었습니다.')");
+					out.println("location.href='../main.do'");
+					out.println("</script>");
+					out.flush();
+					out.close();
+				}else{
+					//에러를 모델로 보내기
+					out.println("<script>");
+					out.println("alert('아이디나 비밀번호를 다시 확인해주세요.')");
+					out.println("location.href='../loginform.do'");
+					out.println("</script>");
+					out.flush();
+					out.close();
+					//String error = "아이디나 비밀번호를 다시 확인해주세요.";
+					//request.setAttribute("error", error);
+					//에러 발생 후 페이지 이동
+					//nextPage="/users/loginform.do";
+				}
+				
 		}else if(command.equals("/logout.do")) {
 			session.invalidate();	//모든 세션 삭제
 			//nextPage = "/index.jsp";
@@ -652,9 +657,6 @@ public class MainController extends HttpServlet {
 				filename = multi.getFilesystemName(userFilename);		
 			}
 			
-
-
-			
 			//db에 저장
 			Board b = new Board();
 			b.setTitle(title);
@@ -762,6 +764,10 @@ public class MainController extends HttpServlet {
 			bDAO.updateboard(b);
 			
 		}
+		
+		
+		
+		
 		//댓글 구현
 		if(command.equals("/insertreply.do")) {
 			//댓글 폼 데이터 받기
@@ -1013,7 +1019,7 @@ public class MainController extends HttpServlet {
 			request.setAttribute("nreply", nreply);
 			
 			
-			nextPage="/board/updatenreplyform.jsp";
+			nextPage="/notice/updatenreplyform.jsp";
 		}else if(command.equals("/updatenreply.do")) {
 			int nrno = Integer.parseInt(request.getParameter("nrno"));
 			String nrcontent = request.getParameter("nrcontent");
@@ -1885,21 +1891,21 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/write1.do") || command.equals("/updateboard1.do")) { 
 			response.sendRedirect("board1list.do");
 		}else if (command.equals("/insertreply1.do") || command.equals("/deletereply1.do") || command.equals("/updatereply1.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno1"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			response.sendRedirect("board1view.do?bno1=" + bno);
 			
 			
 		}else if(command.equals("/write2.do") || command.equals("/updateboard2.do")) { 
 			response.sendRedirect("board2list.do");
 		}else if (command.equals("/insertreply2.do") || command.equals("/deletereply2.do") || command.equals("/updatereply2.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno2"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			response.sendRedirect("board2view.do?bno2=" + bno);
 			
 			
 		}else if(command.equals("/write3.do") || command.equals("/updateboard3.do")) { 
 			response.sendRedirect("board3list.do");
 		}else if (command.equals("/insertreply3.do") || command.equals("/deletereply3.do") || command.equals("/updatereply3.do")) {
-			int bno = Integer.parseInt(request.getParameter("bno3"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			response.sendRedirect("board3view.do?bno3=" + bno);
 			
 		}else if (command.equals("/editprofile_pic.do") || command.equals("/editprofile.do")){

@@ -13,37 +13,34 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>
-	<section id="writeform">
-	    <div class="board-title">
-	        <div class="board2">
-	            <h3>게시글 수정</h3>
+	<section id = "notice">
+		<div class="board-title">
+		     <div class="board2">
+	            <h3>댓글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
-	        </div>
-	    </div>
-		<form action="/updateboard3.do" method="post">
-			<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
-			<input type="hidden" name="bno" value="${board3.bno3}">
-			<table>
-				<tbody>
-					<tr>
-					<td><input type="text" name="title" value="${board3.title3 }" id="writeTitle"></td>
-				</tr>
-				<tr>
-					<td><textarea rows="7" cols="100" name="content">${board3.content3 }</textarea></td>
-				</tr>
-				<tr>
-					<td>${board3.id }</td>
-				</tr>
-					<tr>
-						<td>
-							<button type="submit" class="writebtn">저장</button>
-							<button type="reset" class="writebtn">리셋</button>
-							<a href="/board3view.do?bno3=${board3.bno3 }"><button type="button" class="writebtn">취소</button></a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
+		    </div>
+		</div>
+		<div class="replyUpdateForm">
+		    <form action="/updatereply3.do?bno3=${reply3.bno3 }&rno3=${reply3.rno3 }" method="post" class="replyUpdateForm2">
+				<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
+				<input type="hidden" name="rno" value="${reply3.rno3}">
+				<input type="hidden" name="bno" value="${reply3.bno3 }">
+				<table>
+					<tbody>
+						<tr>
+							<td><textarea name="rcontent" class="replycontent">${reply3.rcontent3 }</textarea></td>
+						</tr>
+						<tr>
+							<td class="writeBot">
+								<button type="submit" class="writebtn">저장</button>
+								<button type="reset" class="writebtn">리셋</button>
+								<a href="/board3view.do?bno3=${reply3.bno3 }"><button type="button" class="writebtn">취소</button></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>s
 	</section>
 	<jsp:include page="../footer.jsp"/>
 </body>

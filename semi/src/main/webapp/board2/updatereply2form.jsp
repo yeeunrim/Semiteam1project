@@ -13,9 +13,9 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp"/>
-	<section id = "replyUpdate">
+	<section id = "notice">
 		<div class="board-title">
-		     <div class="board">
+		     <div class="board2">
 	            <h3>댓글 수정</h3>
 	            <p>인터넷은 우리가 만들어가는 소중한 공간입니다.</p>
 		    </div>
@@ -23,12 +23,12 @@
 		<div class="replyUpdateForm">
 		    <form action="/updatereply2.do?bno2=${reply2.bno2 }&rno2=${reply2.rno2 }" method="post" class="replyUpdateForm2">
 				<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
-				<input type="hidden" name="rno" value="${reply2.rno2 }">
+				<input type="hidden" name="rno" value="${reply2.rno2}">
 				<input type="hidden" name="bno" value="${reply2.bno2 }">
 				<table>
 					<tbody>
 						<tr>
-							<td><textarea rows="7" cols="100" name="rcontent" class="replycontent">${reply2.rcontent2 }</textarea></td>
+							<td><textarea name="rcontent" class="replycontent">${reply2.rcontent2 }</textarea></td>
 						</tr>
 						<tr>
 							<td class="writeBot">

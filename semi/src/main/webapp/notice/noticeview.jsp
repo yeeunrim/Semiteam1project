@@ -68,16 +68,6 @@
 				</c:choose>
 			</div>
 	        <div class = "under">
-	          <%-- <div class="likeReply">
-	            <c:if test="${not empty sessionId}">
-					<div id="likeSection">
-						<div id="likeCount">
-						<a href="/nlike.do?bnno=${notice.nno }&id=${sessionId}"><i class="fa-regular fa-heart" style="color: #ff0000; font-size: 20px;"></i></a>
-						좋아요: ${like_count }개
-						</div>
-					</div>
-				</c:if>
-	          </div> --%>
 	        </div>
 	        <hr>
 	        <div class="crud">
@@ -129,7 +119,7 @@
 					<input type="hidden" name="nno" value="${notice.nno }">
 					<input type="hidden" name="nreplyer" value="${sessionId }">
 					<p>
-						<textarea rows="4" cols="50" name="rcontent"
+						<textarea name="rcontent" class="wrcontent"
 							placeholder="댓글 작성란"></textarea>
 					</p>
 					<button type="submit" class="writebtn">등록</button>
@@ -141,6 +131,5 @@
       </div>
 	</section>
 	<jsp:include page="../footer.jsp"/>
-	
 </body>
 </html>

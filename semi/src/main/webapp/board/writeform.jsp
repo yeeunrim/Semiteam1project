@@ -20,7 +20,7 @@
 		</script>
 	</c:if>
 	<jsp:include page="../header.jsp"/>
-		<section id="writeform">
+		<section id="notice">
 		    <div class="board-title">
 		        <div class="board2">
 		            <h3>여행 후기</h3>
@@ -28,26 +28,15 @@
 		        </div>
 		    </div>
 			<form action="/write.do" method="post" enctype="multipart/form-data">
-				<table>
+				<table class="writeMid">
 					<tbody>
 						<tr>
-							<td class="writeTop">
-								<input type="text" name="title" id="writeTitle"
-									placeholder="글제목" required>
-							</td>
+							<td><input type="text" name="title" id="writeTitle" placeholder="글제목"></td>
 						</tr>
 						<tr>
-							<td class="writeMid">
-								<textarea rows="7" cols="100" name="content" id="writeContent"
-									placeholder="글내용"></textarea>
-							</td>
+							<td><textarea name="content" id="writeContent" placeholder="글내용"></textarea></td>
 						</tr>
 						<tr>
-							<!-- <td>
-								<p><label for="file-input" class="file-label">
-								<i class="fa-regular fa-folder-open"></i>첨부파일 선택</label>
-    							<input type="file" id="file-input" class="file-input" name="filename"/></p>
-							</td> -->
 							<td>
 								<input type="file" name="filename">
 							</td>

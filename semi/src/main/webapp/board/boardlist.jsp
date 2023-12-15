@@ -121,56 +121,59 @@
               </table>
           </div>
       </div>
-     </section>
-     <!-- 페이지 처리 영역 -->
+      
+      <!-- 페이지 처리 영역 -->
      	<section id="bottomlist">
-				<div class = "pagination">
-					<a href="/boardlist.do?pageNum=1"><i class="fa-solid fa-forward fa-rotate-180"></i></a>
-					<c:choose>
-					<c:when test="${startPage > 1 }">
-					<a href="/boardlist.do?pageNum=${startPage-1}"><i class="fa-solid fa-play fa-rotate-180"></i></a>
-					</c:when>
-					<c:otherwise>
-					<a href=""><i class="fa-solid fa-play fa-rotate-180"></i></a>
-					</c:otherwise>
-					</c:choose>
-					<!-- 페이지 리스트 -->
-					<c:forEach var = "i" begin = "1" end = "${endPage}">
-						<c:if test="${page == i}">
-							<a href="/boardlist.do?pageNum=${i}"><b>${i}</b></a>
-						</c:if>
-						<c:if test="${page != i}">
-							<a href="/boardlist.do?pageNum=${i}">${i}</a>
-						</c:if>
-					</c:forEach>
-					<!-- 다음페이지 -->
-					<c:choose>
-					<c:when test="${endPage > startPage }">
-					<a href="/boardlist.do?pageNum=${startPage+1}"><i class="fa-solid fa-play"></i></a>
-					</c:when>
-					<c:otherwise>
-					<a href=""><i class="fa-solid fa-play"></i></a>
-					</c:otherwise>
-					</c:choose>
-					<a href="/boardlist.do?pageNum=${endPage}"><i class="fa-solid fa-forward"></i></a>	
-				</div>
-	<!-- 검색 -->
-	<div class="search-container">
-		<form action="" method="get">
-	    <div class="input-wrapper">
-	        <select name="field" id="search-select">
-	            <option value="title" ${(field eq "title") ? "selected" : "" }>제목</option>
-				<option value="content" ${(field eq "content") ? "selected" : "" }>내용</option>
-				<option value="id" ${(field eq "id") ? "selected" : "" }>작성자</option>
-	        </select>
-	        <input type="text" id="search-input" placeholder="검색어를 입력하세요." name="kw" value="${kw }" size="30%">
-	     <button type="submit" id="search-button">검색</button>
-	    </div>
-	    </form>
-	    <a href="writeform.do"><input type="button" value="글쓰기" id="write"></a>
-	</div>
+			<div class = "pagination">
+				<a href="/boardlist.do?pageNum=1"><i class="fa-solid fa-forward fa-rotate-180"></i></a>
+				<c:choose>
+				<c:when test="${startPage > 1 }">
+				<a href="/boardlist.do?pageNum=${startPage-1}"><i class="fa-solid fa-play fa-rotate-180"></i></a>
+				</c:when>
+				<c:otherwise>
+				<a href=""><i class="fa-solid fa-play fa-rotate-180"></i></a>
+				</c:otherwise>
+				</c:choose>
+				<!-- 페이지 리스트 -->
+				<c:forEach var = "i" begin = "1" end = "${endPage}">
+					<c:if test="${page == i}">
+						<a href="/boardlist.do?pageNum=${i}"><b>${i}</b></a>
+					</c:if>
+					<c:if test="${page != i}">
+						<a href="/boardlist.do?pageNum=${i}">${i}</a>
+					</c:if>
+				</c:forEach>
+				<!-- 다음페이지 -->
+				<c:choose>
+				<c:when test="${endPage > startPage }">
+				<a href="/boardlist.do?pageNum=${startPage+1}"><i class="fa-solid fa-play"></i></a>
+				</c:when>
+				<c:otherwise>
+				<a href=""><i class="fa-solid fa-play"></i></a>
+				</c:otherwise>
+				</c:choose>
+				<a href="/boardlist.do?pageNum=${endPage}"><i class="fa-solid fa-forward"></i></a>	
+			</div>
+			<!-- 검색 -->
+			<div class="search-container">
+				<form action="" method="get">
+			    <div class="input-wrapper">
+			        <select name="field" id="search-select">
+			            <option value="title" ${(field eq "title") ? "selected" : "" }>제목</option>
+						<option value="content" ${(field eq "content") ? "selected" : "" }>내용</option>
+						<option value="id" ${(field eq "id") ? "selected" : "" }>작성자</option>
+			        </select>
+			        <input type="text" id="search-input" placeholder="검색어를 입력하세요." name="kw" value="${kw }" size="30%">
+			     <button type="submit" id="search-button">검색</button>
+			    </div>
+			    </form>
+			    <a href="writeform.do"><input type="button" value="글쓰기" id="write"></a>
+			</div>
 	</section>
-
+      
+      
+     </section>
+     
   
 
   <jsp:include page="../footer.jsp"/>

@@ -416,12 +416,10 @@ public class MainController extends HttpServlet {
 
 	             // 삭제 후 리다이렉트할 페이지 지정 (예: 메인 페이지)
 	             nextPage = "/main.do";
-	         }
-	         else if(command.equals("/joinform01.do")) {
-	         nextPage = "/member/joinform01.jsp";
-
-			}else if(command.equals("/joinform01.do")) {
-				nextPage = "/member/joinform01.jsp"; 
+		    }else if(command.equals("/joinform01.do")) {
+	        	 nextPage = "/member/joinform01.jsp";
+			}else if(command.equals("/joinform02.do")) {
+	        	 nextPage = "/member/joinform02.jsp";
 			}else if(command.equals("/in_main.do")) {
 				nextPage="/desktop/travel/in_main.jsp";
 			}else if(command.equals("/out_main.do")) {
@@ -706,7 +704,7 @@ public class MainController extends HttpServlet {
 			}	
 						
 			request.setAttribute("n", n);
-						
+			
 			nextPage="/board/boardview.jsp";
 		}else if(command.equals("/deleteboard.do")) {
 			int bno = Integer.parseInt(request.getParameter("bno"));

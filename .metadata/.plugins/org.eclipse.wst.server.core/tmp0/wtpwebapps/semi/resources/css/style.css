@@ -94,7 +94,7 @@ header #sideMenu #sideMenu_2 a{
 /* header 스타일 - 하위 카테고리 */
 header #mainMenu ul ul{
 	flex-direction: column;
-	position: absolute;
+	position: absolute !important;
 }
 header #mainMenu .test{
 	display: none;
@@ -420,6 +420,17 @@ footer li{
 	margin: 0 3%;
 	font-size: 1.5vw;
 }
+
+@media screen and (max-width: 780px) {
+    #main_pictures > div {
+        flex: 0 0 46.5vw;
+    }
+    #main_pictures div img{
+		width: 40vw;
+		margin: 7% 7% 2% 7%;
+	}
+}
+
 /* main 스타일 - 커뮤니티 */
 #main_community{
 	width: 98%;
@@ -648,6 +659,14 @@ footer li{
 	border-radius: 3px;
 	border: 1px solid rgb(196, 196, 196);
 }
+#joinform02 li .message{
+    margin-left: 140px;
+    display: none;
+}
+#joinform02 li .message p{
+	color: #F84A71;
+	font-size: 12px;
+}
 #joinform02 #email, #domain-txt{
 	width: 75px !important;
 	font-size: 12px;
@@ -710,6 +729,7 @@ footer li{
 	color: white;
 }
 
+
 /* ==================================================================================================== */
 /*                          loginform 스타일                                                              */
 /* ==================================================================================================== */
@@ -718,7 +738,7 @@ footer li{
 	height: 325px;
 	border-radius: 5px;
 	border: 1px solid #E0E0E0;
-	margin: 200px auto 150px auto;
+	margin: 230px auto 150px auto;
 	padding: 0 30px;
 }
 
@@ -1189,6 +1209,8 @@ footer li{
 
    
 /* jihun */
+
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -1302,10 +1324,11 @@ section.notice {
   height: 1px;
 }
 
-
-
-
-
+@media screen and (min-width: 1440px) {
+	.board{
+		width: 1100px;
+	}
+}
 
 
 
@@ -1316,10 +1339,14 @@ section.notice {
   margin-top: 2%;
   justify-content: center;
 }
+.search-container form{
+    width: 45%;
+}
 
 .input-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid #e4d7d7;
   border-radius: 20px;
   overflow: hidden;
@@ -1329,6 +1356,7 @@ section.notice {
 }
 
 #search-input {
+  width: 50%;
   padding: 0px;
   font-size: 16px;
   border: none;
@@ -1362,7 +1390,7 @@ section.notice {
   padding: 0 20px;
   font-size: 16px;
   border-radius: 20px;
-  margin-left: 100px;
+  margin-left: 35%;
   cursor: pointer;
   height: 32px;
   border: none;
@@ -1370,19 +1398,22 @@ section.notice {
   background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
 }
 
-
-
-
-
-
-
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
 
   .search-container {
     display: flex;
     padding: 0;
-    margin: 0;
+    margin-top: 2%;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+  }
+  
+  .search-container form{
+	width:360px
+  }
+  #search-input{
+	width: 180px;
   }
 
   #write {
@@ -1390,15 +1421,26 @@ section.notice {
     font-size: 16px;
     background: linear-gradient(to bottom, rgb(210, 210, 210), rgb(253, 253, 253) );
     border-radius: 20px;
-    margin-left: 30px;
+    margin-left: 0px;
+    margin-top: 12px;
     cursor: pointer;
     height: 32px;
     border: none;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
+	}
+	
+	
 }
 
-
+@media screen and (min-width: 1440px) {
+	.search-container form{
+		width:665px
+	}
+	#search-input{
+	    width: 330px;
+	}
+	
+}
 
 /* 지훈 - 멤버쉽*/
 section.membership{
@@ -1584,7 +1626,7 @@ section.service{
 
 /*sanghyun*/
 
-#bottomlist{height:100px; margin:10px auto; text-align: center;}
+#bottomlist{margin: 10px auto 60px auto; text-align: center;}
 .board1{width: 80%; margin: 0 auto;}
 .board2{width: 60%; margin: 0px auto; margin-top: 130px;}
 
@@ -1595,7 +1637,12 @@ section.service{
 }
 .boardInfo{color: #919191;}
 
-.thumb{background-color: pink; border-radius: 50%; width:36px; height:36px; float: left; margin-right: 5px; text-align: center}
+.thumb{background-color: pink; border-radius: 50%; width:36px; height:36px; float: left; margin-right: 5px; text-align: center; overflow: hidden;}
+.thumb img{
+	object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 .nickname1{font-size: 13px; font-weight: bold;}
 .update{font-size: 12px; color: #979797;}
 .etc{text-align: right; font-size:13px;}

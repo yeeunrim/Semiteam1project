@@ -14,7 +14,7 @@
 	<jsp:include page="../header.jsp" />
 	<section id="joinform01">
 	
-		<form id="joinform01_box" action="http://localhost:8080/member/joinform02.jsp" method="post">
+		<form id="joinform01_box" action="/joinform02.do" method="post" name="loginform">
 			<h2>약관 동의</h2>
 			<div class="joinform01_checkbox">
 				<input type="checkbox" id="all_agree"/>
@@ -22,7 +22,7 @@
 			</div>
 			<div><!-- 이용약관 -->
 				<div class="joinform01_checkbox">
-					<input type="checkbox"/>
+					<input type="checkbox" id="termsAgree"/>
 					<p>이용약관 동의</p>
 					<span class="essential">(필수)</span>
 				</div>
@@ -181,7 +181,7 @@
 				</div>
 			<div><!-- 개인정보 수집 -->
 				<div class="joinform01_checkbox">
-					<input type="checkbox"/>
+					<input type="checkbox" id="privacyAgree"/>
 					<p>개인정보 수집 및 이용 동의</p>
 					<span class="essential">(필수)</span>
 				</div>
@@ -250,12 +250,12 @@
 					<p>(선택)</p>
 				</div>
 				<div class="joinform01_checkbox">
-					<input type="checkbox"/>
+					<input type="checkbox" id="ageAbove14"/>
 					<p>만 14세 이상입니다.</p>
 					<span class="essential">(필수)</span>
 				</div>
 				
-				<button type="submit" onclick="checkTerms()">가입하기</button>
+				<button type="button" onclick="checkTerms()">가입하기</button>
 			</div>
 			
 			</div>

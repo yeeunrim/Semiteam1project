@@ -30,8 +30,15 @@
 	          ${board.title}
 	        </div>
 	        <div class="upper">
-	          <div class="thumb">		          
-			    <i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
+	          <div class="thumb">	
+		          <%-- <c:choose>
+	          		<c:when test="${empty .image}"> --%>
+	          		<i class="fa-regular fa-user" style="color: #ffffff; font-size : 30px;"></i>
+	          		<%-- </c:when>
+	          		<c:otherwise>
+	            	<img src="../upload/profile_pic/.image" alt="프로필사진">
+	            	</c:otherwise>
+	              </c:choose>	 --%>          
 	          </div>
 	          <div class="nickname1">
 	            ${board.id}

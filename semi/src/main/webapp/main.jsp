@@ -90,7 +90,7 @@
 			  		</div>
 			  	</div>
 				<div>
-					<a href="http://localhost:8080/travel/switzerland.png">
+					<a href="http://localhost:8080/travel/switzerland.jsp">
 					<img src="resources/images/switzerland.png" alt="스위스"></a>
 			  		<div>
 						<i class="fa-solid fa-location-dot"></i>
@@ -98,7 +98,7 @@
 			  		</div>
 			  	</div>
 				<div>
-					<a href="http://localhost:8080/travel/australia.png">
+					<a href="http://localhost:8080/travel/australia.jsp">
 					<img src="resources/images/australia.png" alt="호주"></a>
 			  		<div>
 						<i class="fa-solid fa-location-dot"></i>

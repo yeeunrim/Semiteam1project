@@ -261,6 +261,20 @@ $(document).ready(function () {
     });
 });
 
+/* joinform01 회원 가입 체크박스 필수부분 */
+function checkTerms() {
+	let form = document.loginform;
+    var termsAgree = document.querySelector('#termsAgree').checked;
+    var privacyAgree = document.querySelector('#privacyAgree').checked;
+    var ageAbove14 = document.querySelector('#ageAbove14').checked;
+    
+    if (!termsAgree || !privacyAgree || !ageAbove14) {
+        alert('모든 필수 항목을 체크해야 합니다.');
+        return false; // 폼 제출 방지
+    }
+   form.submit(); // 모든 체크박스가 체크되었다면 폼 제출 허용
+}	
+
 /* ==================================================================================================== */
 /*                          joinform02                                                                  */
 /* ==================================================================================================== */
@@ -319,6 +333,126 @@ $(document).ready(function() {
     }
 });
 
+/* 회원가입 */
+function checkUser() {
+   let id = document.getElementById('id').value;
+   let pw1 = document.getElementById('pw').value;
+   let pw2 = document.getElementById('pw2').value;
+   let email = document.getElementById('email').value;
+   let email2 = document.getElementById('domain-txt').value;
+   let birth1 = document.getElementById('birth-year').value;
+   let birth2 = document.getElementById('birth-month').value;
+   let birth3 = document.getElementById('birth-day').value;
+   let tel = document.getElementById('tel').value;
+   
+   // 모든 값 입력된 상태인지 확인
+   if(id.length == 0 || pw1.length == 0 || pw2.length == 0 ||
+   			email.length == 0 || email2.length == 0 || birth1 === "null" || birth1 === "" ||
+   			birth2 === "null" || birth2 === "" || birth3 === "null" || birth3 === "" || tel.length == 0){
+		alert('모든 필드를 입력해야 합니다.');
+		return false;	
+	// 오류 메세지 뜨지 않은 상태인지 확인
+    } else if ($('.message').filter(function() {
+        return $(this).css('display') == 'block';
+    }).length > 0) {
+        alert('모든 필드를 올바르게 입력해야 합니다.');
+        return false;  
+   }
+    document.users.submit();
+}
+	
+	
+/* 닉네임 유효성 검사 (input 값 입력하면 자동 실행) */
+function validateId() {
+	/*alert('test');*/
+    let id = document.getElementById('id').value;
+    let regexId = /^[0-9a-zA-Z가-힣ㄱ-ㅎ]+$/;
+    
+    if(id.length !== 0){
+		// ID 길이 검사
+	    if (id.length < 4 || id.length > 15) {
+	        $('#message_id3').css('display', 'block');
+	        $('#message_id2').css('display', 'none');
+	    } else if (!regexId.test(id)) {
+	        // ID 문자 유형 검사
+	        $('#message_id2').css('display', 'block');
+	        $('#message_id3').css('display', 'none');
+	    } else {
+	        // 조건을 만족하면 오류 메시지 숨기기
+	        $('#message_id2').css('display', 'none');
+	        $('#message_id3').css('display', 'none');
+	    }
+	    //값이 없으면 메세지 숨기기
+	}else{
+		$('#message_id2').css('display', 'none');
+	    $('#message_id3').css('display', 'none');
+	}
+}
+
+/* 비밀번호 유효성 검사 (input 값 입력하면 자동 실행) */
+function validatePw() {
+	/* alert('test');*/ 
+    let pw1 = document.getElementById('pw').value;
+    let regexPw1 = /[0-9]+/;      //숫자
+	let regexPw2 = /[a-zA-Z]+/;   //영문자
+	let regexPw3 = /[~!@#$%^&*()_+|]+/; //특수문자
+    
+    if(pw1.length !== 0){
+		// ID 길이 검사
+	    if(pw1.length < 8 || pw1.length > 15 || !regexPw1.test(pw1) ||
+				!regexPw2.test(pw1) || !regexPw3.test(pw1)){
+			$('#message_pw1').css('display', 'block');
+			return false;
+	    } else {
+	        // 조건을 만족하면 오류 메시지 숨기기
+	        $('#message_pw1').css('display', 'none');
+	    }
+	    //값이 없으면 메세지 숨기기
+	}else{
+		$('#message_pw1').css('display', 'none');
+	}
+}
+
+/* 비밀번호 확인 (input 값 입력하면 자동 실행) */
+function checkPw() {
+	 /*alert('test');*/
+	let pw1 = document.getElementById('pw').value;
+	let pw2 = document.getElementById('pw2').value;
+    
+    if(pw2.length !== 0){
+		// ID 길이 검사
+	    if(pw1 != pw2){
+			$('#message_pw2').css('display', 'block');
+	    } else {
+	        // 조건을 만족하면 오류 메시지 숨기기
+	        $('#message_pw2').css('display', 'none');
+	    }
+	    //값이 없으면 메세지 숨기기
+	}else{
+		$('#message_pw2').css('display', 'none');
+	}
+}
+
+/* 전화번호 유효성 검사 (input 값 입력하면 자동 실행) */
+function validateTel() {
+	/* alert('test'); */
+	let tel = document.getElementById('tel').value;
+	
+	let regexTel = /^[0-9]+$/; //숫자
+    
+    if(tel.length !== 0){
+		// ID 길이 검사
+	    if(!regexTel.test(tel)){
+			$('#message_tel').css('display', 'block');
+	    } else {
+	        // 조건을 만족하면 오류 메시지 숨기기
+	        $('#message_tel').css('display', 'none');
+	    }
+	    //값이 없으면 메세지 숨기기
+	}else{
+		$('#message_tel').css('display', 'none');
+	}
+}
 
 /************* 채희 *************/
 
@@ -346,6 +480,7 @@ function openModal() {
     closeModal(); // 저장 후 모달 창 닫기
   }
   
+
   /**
  * 유효성 검사
  */

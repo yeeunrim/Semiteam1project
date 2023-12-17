@@ -145,7 +145,7 @@ public class UsersDAO {
 		}
 		return result;
 	}
-	//프로필 편집(닉네임, 소개글, 프로필사진)
+	//프로필 편집(닉네임, 소개글)
 	public void editProfile(Users u, String sessionId) {
 		conn = JDBCUtil.getConnection();
 		

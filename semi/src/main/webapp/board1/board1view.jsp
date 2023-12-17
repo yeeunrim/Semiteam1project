@@ -50,7 +50,7 @@
 							<img src="../upload/${board1.filename1 }" class="boardviewimage">
 						</c:if>
 					</div>
-	          		${board.content}
+	          		${board1.content1}
 	        </div>
 	        <div class = "right">
 				<c:choose>

@@ -6,11 +6,13 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <link rel="stylesheet" href="../resources/css/style.css">
+<link rel="stylesheet" href="resources/css/style.css">
 <script src="https://kit.fontawesome.com/630c352365.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../resources/js/main.js"></script>
 </head>
 <body>
+	
 	<jsp:include page="../header.jsp" />
 	<section id="loginform">
 		

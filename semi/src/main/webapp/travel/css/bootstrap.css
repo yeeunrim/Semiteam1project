@@ -147,10 +147,10 @@ h6, .h6 {
   font-size: 1rem;
 }
 
-p {
+/*p {
   margin-top: 0;
   margin-bottom: 1rem;
-}
+}*/
 
 abbr[title],
 abbr[data-bs-original-title] {
@@ -167,17 +167,17 @@ address {
   line-height: inherit;
 }
 
-ol,
+/*ol,
 ul {
   padding-left: 2rem;
-}
+}*/
 
-ol,
+/*ol,
 ul,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
-}
+}*/
 
 ol ol,
 ul ul,

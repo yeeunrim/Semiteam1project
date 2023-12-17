@@ -1,6 +1,8 @@
-/**
- * 회원 가입 폼 유효성 검사
- */
+
+
+
+/* joinform02 회원 가입 폼 유효성 검사 */
+
 function checkUser(){
 	alert("test...");
 	//input의 name 속성을 변수에 할당
@@ -40,8 +42,7 @@ function checkUser(){
 /*}*/
 
 
-
-/* 아이디 중복 검사 */
+/* loginform 아이디 중복 검사*/
 /*function checkId(){
 	//alert("test...");
 	//input의 선택자(id)의 값을 사용

@@ -81,8 +81,6 @@
    			</c:choose>
 		</div>
 		
-		
-		
 		<div id="bottomMenu">
 			
 		</div>

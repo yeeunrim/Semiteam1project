@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="update"/>
+		<item key="selection" value="#about_container #people span"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="update"/>
-			<item value="noticewrite.do"/>
-			<item value="gyeongbokgung-palace"/>
-			<item value=".search-container"/>
-			<item value="#bottomlist"/>
-			<item value="board"/>
-			<item value="jihun"/>
-			<item value="joinform"/>
-			<item value="in_main"/>
-			<item value="/in_main.do"/>
-			<item value="45"/>
-			<item value="/insertreply1.do"/>
-			<item value="board1"/>
-			<item value="bno"/>
-			<item value="teamwork"/>
+			<item value="#about_container #people span"/>
+			<item value="#about_container #people p"/>
+			<item value="#bottomMenu"/>
+			<item value=".test"/>
+			<item value="bottomMenu"/>
+			<item value="cha"/>
+			<item value="deleteUser"/>
+			<item value="setting.do"/>
+			<item value="#question_container h1"/>
+			<item value="#membership_container h1"/>
+			<item value=".use-board"/>
+			<item value="about.do"/>
+			<item value="section.data"/>
+			<item value="jihu"/>
+			<item value="제주"/>
 		</list>
 		<list key="replacehistory">
 			<item value="joinform"/>
@@ -30,10 +30,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="841"/>
-		<item key="DIALOG_Y_ORIGIN" value="427"/>
-		<item key="DIALOG_WIDTH" value="369"/>
-		<item key="DIALOG_HEIGHT" value="454"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		<item key="DIALOG_X_ORIGIN" value="992"/>
+		<item key="DIALOG_Y_ORIGIN" value="273"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕"/>
 	</section>
 </section>

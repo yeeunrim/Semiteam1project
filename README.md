@@ -15,26 +15,33 @@
 * 2023년 12월 1일 ~ 2023년 12월 15일 (2weeks)
 
 #### :computer: Environment 
-
+* OS
+  <br>Windows 10
+* Language
+  <br>JAVA 11 | HTML5 | CSS | JavaScript ES5 | Oracle XE123
+* Tool
+  <br>SQL Developer 23.1.0 | VS Code 1.83.1 | Eclipse 2023-09 | Figma
+* Etc
+  <br>Jquery 3.7.1 | BootStrap 5 | Github | Tomcat v9.0 | JDBC11
+  taglibs 1.2.5 | cos-22 | jsoup 1.71.1
 
 
 # :clap: Use Case Diagram 및 ERD / DB Table
 
 ### :speech_balloon: ERD
-![xerd](https://github.com/yeeunrim/Semiteam1project/assets/144193323/04a888f4-b6fe-44df-9437-2c3d9dff5497)
+![image](https://github.com/yeeunrim/Semiteam1project/assets/144193323/ceb870f0-a1be-4538-ba42-c1b497ba9c0a)
+
 
 ### :speech_balloon:  Use Case Diagram
-![usecase](https://github.com/yeeunrim/Semiteam1project/assets/144193323/3289462b-823f-4392-a95a-825949e7179f)
-
-<!--
-### :speech_balloon: Flow Chart & IA
-![unnamed (2)](https://user-images.githubusercontent.com/99001224/215046000-69e2487a-51fd-458c-8a8b-aa7414d80947.png)
-![unnamed (3)](https://user-images.githubusercontent.com/99001224/215046247-a07c7725-610e-4c01-be8f-bf6e3de22e9a.png)
+![image](https://github.com/yeeunrim/Semiteam1project/assets/144193323/a9ec9724-cb20-450d-9422-55aabaa09a63)
 
 
-### :zap: Test : 백엔드(기능) 위주의 테스트 케이스 작성, 최대 3차 QA 진행
+### :speech_balloon: Flow Chart
+![image](https://github.com/yeeunrim/Semiteam1project/assets/144193323/aac81fad-9487-4195-a281-a37e440f44c2)
 
 
-![unnamed (7)](https://user-images.githubusercontent.com/99001224/215046866-d3e9a30e-f690-4e07-96f6-026a27572d50.png)
-![123PNG](https://user-images.githubusercontent.com/99001224/215047019-663d470a-0163-48c1-addd-cabab88cf58c.PNG) 
--->
+### :zap: Test : 백엔드 & 프론트엔드 기능 정리
+![image](https://github.com/yeeunrim/Semiteam1project/assets/144193323/6fae53c5-f70c-4171-a193-968d46c5328a)
+![image](https://github.com/yeeunrim/Semiteam1project/assets/144193323/ec198c44-b26f-4339-b651-2e6530aa96f9)
+
+

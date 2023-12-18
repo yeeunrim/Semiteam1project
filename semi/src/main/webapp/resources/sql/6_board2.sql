@@ -34,7 +34,12 @@ INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '러시
 INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '그리스 역사 탐방 여행 계획', '그리스의 역사적인 명소들을 탐방하는 여행을 계획 중입니다. 아테네와 산토리니를 방문할 예정이에요.', 'Odyssey53');
 INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '이집트 문명 탐방 여행 계획', '이집트의 고대 문명을 탐방하는 여행을 계획 중입니다. 피라미드와 스핑크스가 기대되네요.', 'GlobeTrotter67');
 INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '칠레 파타고니아 트레킹 계획', '칠레의 파타고니아 지역을 트레킹하며 대자연을 체험할 계획입니다. 토레스 델 파이네 국립공원 방문이 목표입니다.', 'Jetsetter71');
-
+INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '태국에서 한달', '맛있는거 먹기', 'chaeh');
+INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '호주에서 로드트립', '30일동안 호주동부, 남부 돌고 올 예정입니다', 'gaeun2');
+INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '일본에서 일주일', '일식 맛집 찾기', 'sanghyun');
+INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '삿포로/도쿄 5박6일 여행', 'DAY1 - 인천국제공항 출발', 'yeeeuney');
+INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '유럽여행', '축구관람하세요~', 'jihun');
+INSERT INTO board2(bno2, title2, content2, id) VALUES (seq_bno2.NEXTVAL, '제주도 뷰 맛집 추천!', '제주도 서쪽, 애월에 커피도 간식도 맛있지만 뷰까지 맛집인 카페 추천드려요~', 'nagyung');
 COMMIT;
 
 SELECT * FROM board2;
@@ -72,5 +77,7 @@ CREATE TABLE blike2(
 DROP TABLE blike2;
 
 CREATE SEQUENCE seq_likeno2 NOCACHE;
+
+DELETE FROM board2;
 
 commit;

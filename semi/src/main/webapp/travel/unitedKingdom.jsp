@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>호주 여행 상세 페이지</title>
+<title>영국 여행 상세 페이지</title>
 <link rel="stylesheet" href="../resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
@@ -222,11 +222,11 @@
             <a href="https://post.naver.com/viewer/postView.nhn?memberNo=41466008&volumeNo=36714727" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox2">
-                    <img class="img" src="images/UnitedKingdom/manchester.png" alt="manchester">
+                    <img class="img" src="images/UnitedKingdom/jihun_towerbridge.png" alt="manchester">
                 </div>
                 <div class="textBox2">
                     <div class="Ctext2">
-                        <p>다양성의 도시,<br>맨체스터 탐미</p>
+                        <p>&nbsp;런던 자유여행,<br>&nbsp;포토스팟 추천!</p>
                     </div>
                     
                 </div>
@@ -259,7 +259,7 @@
         </div>
     </section>
     
-    <script src="js/busan.js"></script>
+    <script src="js/unitedKingdom.js"></script>
     <script src="../resources/js/main.js"></script>
     
     <!-- footer 부분 -->

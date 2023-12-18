@@ -137,7 +137,7 @@
 	          <div class="replyWrite">
 	            <c:if test="${not empty sessionId}">
 				<form action="/insertreply1.do" method="post" id="replyform">
-					<input type="hidden" name="bno" value="${board1.bno1 }">
+					<input type="hidden" name="bno1" value="${board1.bno1 }">
 					<input type="hidden" name="replyer" value="${sessionId }">
 					<p>
 						<textarea name="rcontent" class="wrcontent"

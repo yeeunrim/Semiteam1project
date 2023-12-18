@@ -8,7 +8,6 @@ CREATE TABLE reply (
     rupdate     TIMESTAMP,                          -- 수정일
     FOREIGN KEY (bno) REFERENCES board(bno) ON DELETE CASCADE
 );
-DROP TABLE reply;
 
 CREATE SEQUENCE seq_rno NOCACHE;
 
@@ -22,3 +21,5 @@ INSERT INTO reply(rno, bno, rcontent, replyer)
 VALUES (seq_rno.NEXTVAL, 1, '두번째 댓글입니다.', 'show3239');
 
 COMMIT;
+
+DELETE FROM reply;

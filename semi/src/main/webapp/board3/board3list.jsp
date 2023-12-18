@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A - 여정담</title>
+    <title>정보 공유 - 여정담</title>
     <link rel="stylesheet" href="../resources/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://kit.fontawesome.com/69798321c6.js"></script>
@@ -19,7 +19,7 @@
 	<section class="notice">
     <div class="board-title">
         <div class="board">
-            <h3>Q&A</h3>
+            <h3>정보 공유</h3>
             <p>게시판에 맞는 정보를 공유해주세요.</p>
         </div>
     </div>

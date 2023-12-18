@@ -14,7 +14,7 @@
 	<!-- header -->
 	<jsp:include page="../header.jsp" />
 	
-	<section>
+	 <section>
         <div id="main"> 
             <div id="area_img"> 
                 <img src="images/Jeju/jeju1.png" alt="jejuIsland" id="area_pic">
@@ -182,40 +182,40 @@
         <!-- 큐레이션 게시물 4개 -->
         <div id="curation_content">
             
-            <a href="https://blog.naver.com/korea_diary/223291373012" target="_blank"
+            <a href="https://blog.naver.com/bonnyco/223292949376?&isInf=true&infParams=eyJzY2lkIjoxMTExNjEyNjgyMzY0MTYsInNraWQiOjI1MzU2MDQ1MjkwODczNiwiY2lkIjo2NDA5MDM0Mzk3OTY3NjgsInF1ZXJ5IjoiJUVDJUEwJTlDJUVDJUEzJUJDJUVDJTgzJTg4JUVCJUIzJTg0JUVDJTk4JUE0JUVCJUE2JTg0In0=" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox1"> 
-                    <img class="img" src="images/Jeju/snowy.png" alt="snowy">
+                    <img class="img" src="images/Jeju/yeeun_jeju.png" alt="yeeun_jeju">
                 </div>
 
                 <div class="textBox1"> 
                     <div class="Ctext1">
                         <p><br></p>
-                        <p>새하얀 눈으로 덮힌<br>제주도 설경 명소 4곳</p>
+                        <p>억새를 보고싶다면?<br>제주도 새별오름으로!</p>
                     </div>
                 </div>
             </a>
 
-            <a href="https://blog.naver.com/happyjejudo/223291617090" target="_blank"
+            <a href="https://blog.naver.com/zltm31/223254419029?&isInf=true&infParams=eyJzY2lkIjoxMTExNjEyNjgyMzY0MTYsInNraWQiOjI1MzU2MDQ3MzI4MjIwOSwiY2lkIjo2MjUzNTY1ODIwOTQ1MjgsInF1ZXJ5IjoiJUVDJUEwJTlDJUVDJUEzJUJDJUVEJTk1JUE4JUVCJThEJTk1JUVEJTk1JUI0JUVDJTg4JTk4JUVDJTlBJTk1JUVDJTlFJUE1In0=" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox2">
-                    <img class="img" src="images/Jeju/Geomun_Oreum.png" alt="Geomun_Oreum">
+                    <img class="img" src="images/Jeju/nagyung_jeju.png" alt="hamduckbeach">
                 </div>
                 <div class="textBox2">
                     <div class="Ctext2">
-                        <p>수많은 제주의 오름 중,<br>단연 으뜸! 거문오름</p>
+                        <p><small>푸른바다 함덕해수욕장</small><br>당일치기로 굳!</p>
                     </div>
                 </div>
             </a>
             
-            <a href="https://blog.naver.com/jtowelcome/223291153143" 
+            <a href="https://m.blog.naver.com/1ove_honesty/223006283347" 
                 target="_blank"  class="curationBox"> 
                 <div class="imgBox3">
-                    <img class="img" src="images/Jeju/Seopjikoji.png" alt="Seopjikoji">
+                    <img class="img" src="images/Jeju/yeeun_jeju2.png" alt="yeeun_jeju2">
                 </div>
                 <div class="textBox3">
                     <div class="Ctext3">
-                        <p>&nbsp;제주 동쪽 명소, <br> &nbsp;섭지코지</p>
+                        <p><small>&nbsp;제주 비행기샷 사진명소</small><br> &nbsp;이착륙 스팟</p>
                     </div>
                 </div>
             </a>
@@ -234,6 +234,7 @@
         
         </div>
     </section>
+
     
     <script src="js/jeju.js"></script>
     <script src="../resources/js/main.js"></script>

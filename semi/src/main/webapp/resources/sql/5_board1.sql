@@ -35,7 +35,12 @@ INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '함께
 INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '맛집 탐방 동행자 구합니다', '함께 다양한 맛집을 탐방할 수 있는 동행자를 찾고 있어요. 먹는 걸 좋아하시는 분들 환영합니다!', 'Odyssey53');
 INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '테마파크 동행자 구해요', '주말에 테마파크를 방문할 계획인데, 함께할 동행자를 찾습니다. 재미있게 놀 수 있는 분을 기다립니다!', 'GlobeTrotter67');
 INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '함께 할 트레킹 동료를 찾습니다', '자연을 좋아하는 분과 함께 트레킹을 하고 싶습니다. 건강하게 즐길 수 있는 동료를 찾고 있어요.', 'Backpacker42');
-
+INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '선량한 20대 동행자 구합니다', '9박10일중 계획에 따라 2~3일정도 동행하실분 댓글주세요', 'chaeh');
+INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '스키 타러 가실 분 구해요', '겨울지나기 전에 스키장 한번 가줘야지요? 댓글 남겨주세용', 'gaeun2');
+INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '같이 시드니 배낭여행 하실 분', '혼자는 걱정되서 같이 가실 분 구해요', 'sanghyun');
+INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '토트넘 vs 맨유 경기 같이 직관하러 가실 분', '시간 맞으시는 분, 댓글 남겨주세요 !', 'yeeeuney');
+INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '오늘 저녁밥 먹을 사람!', '오늘 12/18 런던에서 저녁밥 먹을사람 댓글!', 'jihun');
+INSERT INTO board1(bno1, title1, content1, id) VALUES (seq_bno1.NEXTVAL, '호핑투어 같이하실 20대분들!', '해양스포츠 및 액티비티 활동이 들어있는 호핑투어 같이가요!타임은 3시나 5시 둘 중 하나로 정할거에요. 원하시는 시간 댓글 남겨주세~~', 'nagyung');
 COMMIT;
 
 SELECT * FROM board1;
@@ -78,3 +83,5 @@ DROP TABLE blike1;
 CREATE SEQUENCE seq_likeno1 NOCACHE;
 
 commit;
+
+DELETE FROM blike1;

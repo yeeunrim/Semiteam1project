@@ -193,13 +193,13 @@ public class UsersDAO {
 		conn = JDBCUtil.getConnection();
 		try {
 			//sql 처리
-			String sql = "UPDATE users SET pw = ?, tel = ?, email = ? "
-					+ "WHERE id = '" + sessionId + "'";
+			String sql = "UPDATE users SET pw = ?, tel = ?, email = ? WHERE id = ?";
 			pstmt = conn.prepareStatement(sql);
 			//폼에 입력된 데이터를 가져와서 db에 저장
 			pstmt.setString(1, users.getPw());
 			pstmt.setString(2, users.getTel());
 			pstmt.setString(3, users.getEmail());
+			pstmt.setString(4, sessionId);
 			
 			//sql 실행
 			pstmt.executeUpdate();

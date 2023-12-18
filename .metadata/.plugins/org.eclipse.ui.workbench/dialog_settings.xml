@@ -15,4 +15,6 @@
 			<item value="org.eclipse.jst.ws.consumption.ui.wsimport.category"/>
 		</list>
 	</section>
+	<section name="org.eclipse.ui.preferences.keysPreferencePage">
+	</section>
 </section>

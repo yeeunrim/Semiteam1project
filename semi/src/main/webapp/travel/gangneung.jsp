@@ -14,7 +14,7 @@
 	<!-- header -->
 	<jsp:include page="../header.jsp" />
 	
-	<section>
+	 <section>
         <div id="main"> 
             <div id="area_img"> 
                 <img src="images/Gangneung/Gangneung1.png" alt="Gangneung" id="area_pic">
@@ -187,7 +187,7 @@
             <a href="https://blog.naver.com/pinegn/223289405542" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox1"> 
-                    <img class="img" src="images/Gangneung/gangmun.png" alt="gangmun">
+                    <img class="img" src="images/Gangneung/gaeun_gangneung.png" alt="gangmun beach_in gaeun">
                 </div>
 
                 <div class="textBox1"> 
@@ -198,14 +198,14 @@
                 </div>
             </a>
 
-            <a href="https://blog.naver.com/pinegn/223254621596" target="_blank"
+            <a href="https://blog.naver.com/bodoru/223259147451" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox2">
-                    <img class="img" src="images/Gangneung/nuddle.png" alt="nuddle">
+                    <img class="img" src="images/Gangneung/yeeun_gangneung.png" alt="sheep...and.. yeeun...">
                 </div>
                 <div class="textBox2">
                     <div class="Ctext2">
-                        <p>강릉 장칼국수옹심이<br>최초 개발한 식당!</p>
+                        <p><small>강릉 대관령 귀여운 양들과</small><br>야외체험 - 양떼목장</p>
                     </div>
                 </div>
             </a>
@@ -222,20 +222,21 @@
                 </div>
             </a>
             
-            <a href="https://blog.naver.com/pinegn/223228713235" target="_blank"
+            <a href="https://blog.naver.com/happyrain012/223271320575?&isInf=true&infParams=eyJzY2lkIjoxMTExNjEyNjgyMzY0MTYsInNraWQiOjI1MzU2MDM5ODE3Mzk1MiwiY2lkIjo2MzIwNjA4MDk2MjMyMzIsInF1ZXJ5IjoiJUVBJUIwJTk1JUVCJUE2JTg5JUVBJUIyJUJEJUVEJThGJUFDJUVCJThDJTgwIn0=" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox4">
-                    <img class="img" src="images/Gangneung/namhangjin_beach.png" alt="namhangjin_beach">
+                    <img class="img" src="images/Gangneung/nagyung_gangneung.png" alt="gyeongpo_beach..">
                 </div>
                 <div class="textBox4">
                     <div class="Ctext4">
-                         <p><small>조용한 바다에서 느끼는</small><br>낭만, 남항진 해변</p> 
+                         <p><small>경포대 해수욕장,</small><br>강릉 일출 명소</p> 
                     </div>
                 </div>
             </a>
         
         </div>
     </section>
+
 	
 	<script src="js/gangneung.js"></script>
     <script src="../resources/js/main.js"></script>

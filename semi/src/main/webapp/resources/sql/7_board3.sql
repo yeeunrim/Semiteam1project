@@ -36,7 +36,12 @@ INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '여행
 INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '여행 사진 잘 찍는 비결이 궁금합니다', '여행 중 멋진 사진을 남기고 싶어요. 사진 찍는 좋은 팁이 있을까요?', 'Nomad48');
 INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '여행지에서 로컬 문화를 경험하는 방법은?', '여행지에서 진정한 로컬 문화를 경험하고 싶어요. 어떻게 해야 할까요?', 'Explorer19');
 INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '여행지에서 Wi-Fi 연결은 어떻게 하나요?', '해외여행 중 인터넷을 사용하려면 어떤 방법이 좋을까요?', 'Traveler81');
-
+INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '뉴질랜드 치안', '자동차 도난이 많다던데 지정된 구역만 사용하면 괜찮을까요?', 'chaeh');
+INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '크리스마스에 갈만한 곳', '크리스마스 분위기 뿜뿜한 곳 추천해주세요~', 'gaeun2');
+INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '해외여행 준비물', '특별히 챙겨야할 물건이 있을까요?', 'sanghyun');
+INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '유럽 치안', '프랑스 치안이 안좋다고 하던데 정말 안좋나요? 필요한 준비물 같은 거 있을까요?', 'yeeeuney');
+INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '스위스 스카이다이빙', '스카이다이빙 하다가 죽은 사람도 있던데 괜찮겠죠?', 'jihun');
+INSERT INTO board3(bno3, title3, content3, id) VALUES (seq_bno3.NEXTVAL, '호주 워킹홀리데이 비자', '호주로 워킹홀리데이 떠나고 싶은데 비자 발급해보신분! 도와주세용', 'nagyung');
 COMMIT;
 
 
@@ -77,3 +82,5 @@ DROP TABLE blike3;
 CREATE SEQUENCE seq_likeno3 NOCACHE;
 
 commit;
+
+DELETE FROM board3;

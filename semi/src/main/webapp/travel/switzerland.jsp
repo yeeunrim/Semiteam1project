@@ -247,7 +247,7 @@
             <a href="https://blog.naver.com/traveler_may/223278236957?isInf=true" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox4">
-                    <img class="img" src="images/Switzerland/Jungfrau.png" alt="Jungfrau">
+                    <img class="img" src="images/Switzerland/yeeun_Jungfrau.png" alt="yeeun in Jungfrau">
                 </div>
                 <div class="textBox4">
                     <div class="Ctext4">
@@ -259,7 +259,7 @@
         </div>
     </section>
     
-    <script src="js/busan.js"></script>
+    <script src="js/switzerland.js"></script>
     <script src="../resources/js/main.js"></script>
     
     <!-- footer 부분 -->

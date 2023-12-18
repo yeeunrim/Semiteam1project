@@ -138,13 +138,14 @@ public class Board1DAO {
 			conn = JDBCUtil.getConnection();
 			//sql 처리 : 수정일 처리는 현재 날짜와 시간을 입력함
 			String sql = "UPDATE board1 SET title1 = ?"
-					+ ", content1 = ?, modifydate1= ? WHERE bno1 = ?";
+					+ ", content1 = ?, filename1 = ?, modifydate1= ? WHERE bno1 = ?";
 			pstmt = conn.prepareStatement(sql);
 			//폼에 입력된 데이터를 가져와서 db에 저장
 			pstmt.setString(1, b.getTitle1());
 			pstmt.setString(2, b.getContent1());
-			pstmt.setTimestamp(3, now);
-			pstmt.setInt(4, b.getBno1());
+			pstmt.setString(3, b.getFilename1());
+			pstmt.setTimestamp(4, now);
+			pstmt.setInt(5, b.getBno1());
 
 			//sql 실행
 			pstmt.executeUpdate();

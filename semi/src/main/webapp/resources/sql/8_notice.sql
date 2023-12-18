@@ -52,3 +52,6 @@ DROP TABLE nlike;
 
 CREATE SEQUENCE seq_nlikeno NOCACHE;
 
+
+DELETE FROM notice;
+

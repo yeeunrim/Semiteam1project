@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>호주 여행 상세 페이지</title>
+<title>일본 여행 상세 페이지</title>
 <link rel="stylesheet" href="../resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
 	<!-- header -->
 	<jsp:include page="../header.jsp" />
 	
-	 <section>
+	  <section>
         <div id="main"> 
             <div id="area_img"> 
                 <img src="images/Japan/japan1_.png" alt="japang bg" id="area_pic">
@@ -206,42 +206,42 @@
         <!-- 큐레이션 게시물 4개 -->
         <div id="curation_content">
             
-            <a href="https://blog.naver.com/hksh012/223292233855?&isInf=true" target="_blank"
+            <a href="https://blog.naver.com/selly_1003/223292135900" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox1"> 
-                    <img class="img" src="images/Japan/chocolate.png" alt="chocolate">
+                    <img class="img" src="images/Japan/gaeun_japan.png" alt="gaeun_japan">
                 </div>
 
                 <div class="textBox1"> 
                     <div class="Ctext1">
                         <p><br></p>
-                        <p><small>메이지 멜티키스 초콜릿<br>일본 디저트 쇼핑리스트!</small></p>
+                        <p><small>일본 전통의상 체험,</small><br>기모노 대여 후기</small></p>
                     </div>
                     
                 </div>
             </a>
 
-            <a href="https://blog.naver.com/olimpia2/223289920930?&isInf=true" target="_blank"
+            <a href="https://m.blog.naver.com/bada3347/223077113804" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox2">
-                    <img class="img" src="images/Japan/seven.png" alt="seven">
+                    <img class="img" src="images/Japan/yeeun_japan2.jpg" alt="yeeun_japan2">
                 </div>
                 <div class="textBox2">
                     <div class="Ctext2">
-                        <p>일본 편의점 간식 추천!<br>&nbsp;in 세븐일레븐</p>
+                        <p>&nbsp;오사카 여행,<br><small>&nbsp;난바 야사카 신사 가는법</small></p>
                     </div>
                     
                 </div>
             </a>
             
-            <a href="https://blog.naver.com/okinawa-seouloffice/223172950696" 
+            <a href="https://blog.naver.com/feat_sr/223282389118" 
                 target="_blank"  class="curationBox"> 
                 <div class="imgBox3">
-                    <img class="img" src="images/Japan/okinawa.png" alt="okinawa-seouloffice">
+                    <img class="img" src="images/Japan/gaeun_japan2.png" alt="gaeun_japan2">
                 </div>
                 <div class="textBox3">
                     <div class="Ctext3">
-                        <p><small>감성을 자극하는 특별한</small><br>오키나와 문화체험</p>
+                        <p><small>도톤보리 낮과밤,</small><br>글리코상 포토존</p>
                     </div>
                 </div>
             </a>
@@ -253,7 +253,7 @@
                 </div>
                 <div class="textBox4">
                     <div class="Ctext4">
-                         <p>다카야마에서 출발하는<br>히라유 일본 온천여행</p> 
+                         <p><small>다카야마에서 출발하는</small><br>히라유 일본 온천여행</p> 
                     </div>
                 </div>
             </a>
@@ -261,7 +261,7 @@
         </div>
     </section>
     
-    <script src="js/busan.js"></script>
+    <script src="js/japan.js"></script>
     <script src="../resources/js/main.js"></script>
     
     <!-- footer 부분 -->

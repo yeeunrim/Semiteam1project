@@ -37,12 +37,12 @@
 			            </li>
                         <li>
                             <label for="tel">휴대폰 번호</label>
-                            <input type="tel" id="tel" name="tel" required
+                            <input type="tel" id="tel" name="tel" value="${user.tel}" required
 			                placeholder="전화번호는 '-'를 제외한 9자리~11자리로 입력">
                         </li>
                         <li>
                             <label for="email">이메일</label>
-                            <input type="email" id="email" name="email"
+                            <input type="email" id="email" name="email" value="${user.email}" required 
 			                placeholder="@를 포함한 이메일 형식으로 입력해주세요">
                         </li>
   

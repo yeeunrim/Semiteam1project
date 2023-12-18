@@ -139,13 +139,14 @@ public class Board3DAO {
 			conn = JDBCUtil.getConnection();
 			//sql 처리 : 수정일 처리는 현재 날짜와 시간을 입력함
 			String sql = "UPDATE board3 SET title3 = ?"
-					+ ", content3 = ?, modifydate3= ? WHERE bno3 = ?";
+					+ ", content3 = ?, filename3 = ?, modifydate3= ? WHERE bno3 = ?";
 			pstmt = conn.prepareStatement(sql);
 			//폼에 입력된 데이터를 가져와서 db에 저장
 			pstmt.setString(1, b.getTitle3());
 			pstmt.setString(2, b.getContent3());
-			pstmt.setTimestamp(3, now);
-			pstmt.setInt(4, b.getBno3());
+			pstmt.setString(3, b.getFilename3());
+			pstmt.setTimestamp(4, now);
+			pstmt.setInt(5, b.getBno3());
 
 			//sql 실행
 			pstmt.executeUpdate();

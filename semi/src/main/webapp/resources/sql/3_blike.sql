@@ -8,8 +8,10 @@ CREATE TABLE blike(
     FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE   
 );
 
+CREATE SEQUENCE seq_likeno NOCACHE;
+
 INSERT INTO blike(likeno, bno, id)
-VALUES (seq_likeno.NEXTVAL, 1, 'show3239');
+VALUES (seq_likeno.NEXTVAL, 2, 'show3239');
 
 SELECT * FROM blike;
 
@@ -23,3 +25,5 @@ TRUNCATE TABLE blike;
 DELETE FROM blike WHERE id = 'show3239' and bno = 1; 
 
 COMMIT;
+
+DELETE FROM blike;

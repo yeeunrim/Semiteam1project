@@ -22,7 +22,7 @@
 	    </div>
 		<form action="/updateboard2.do" method="post" enctype="multipart/form-data">
 			<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
-			<input type="hidden" name="bno" value="${board2.bno2}">
+			<input type="hidden" name="bno2" value="${board2.bno2}">
 			<table class="writeMid">
 				<tbody>
 					<tr>

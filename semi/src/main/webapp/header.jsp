@@ -25,7 +25,7 @@
 						<div class="test">
 							<ul>
 								<li><a href="/boardlist.do">여행 후기</a>
-								<a href="/board3list.do" id="a_1">Q&A</a></li>
+								<a href="/board3list.do" id="a_1">정보 공유</a></li>
 								<li><a href="/board1list.do">동행자 찾기</a>
 								<a href="/noticelist.do" id="a_2">공지사항</a></li>
 								<li><a href="/board2list.do">나의 계획</a></li>

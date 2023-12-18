@@ -23,8 +23,8 @@
 		<div class="replyUpdateForm">
 		    <form action="/updatereply1.do?bno1=${reply1.bno1 }&rno1=${reply1.rno1 }" method="post" class="replyUpdateForm2">
 				<!-- 'hidden'은 ui를 만들지 않고 데이터 숨겨서 보낼때 사용 -->
-				<input type="hidden" name="rno" value="${reply1.rno1}">
-				<input type="hidden" name="bno" value="${reply1.bno1 }">
+				<input type="hidden" name="rno1" value="${reply1.rno1}">
+				<input type="hidden" name="bno1" value="${reply1.bno1 }">
 				<table>
 					<tbody>
 						<tr>

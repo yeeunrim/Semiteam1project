@@ -14,7 +14,7 @@
 	<!-- header -->
 	<jsp:include page="../header.jsp" />
 	
-	  <section>
+	<section>
         <div id="main"> 
             <div id="area_img"> <!-- item1 -->
                 <img src="images/Australia/australia1.png" id="area_pic">
@@ -208,16 +208,16 @@
         <!-- 큐레이션 게시물 4개 -->
         <div id="curation_content">
             
-            <a href="https://blog.naver.com/the_trip/223115303360" target="_blank"
+            <a href="https://blog.naver.com/apple0978/223281273328" target="_blank"
                 class="curationBox"> 
                 <div class="imgBox1"> 
-                    <img class="img" src="images/Australia/wine.png" alt="wine">
+                    <img class="img" src="images/Australia/sanghyeon_australia.png" alt="sanghyeon_australia">
                 </div>
 
                 <div class="textBox1"> 
                     <div class="Ctext1">
                         <p><br></p>
-                        <p>&nbsp;술이 술술 들어가는<br> &nbsp;브리즈번 술 모음집</p>
+                        <p>&nbsp;시드니 시티투어,<br> &nbsp;하버 브릿지 걷기</p>
                     </div>
                     
                 </div>
@@ -236,14 +236,14 @@
                 </div>
             </a>
             
-            <a href="https://blog.naver.com/cvovz/223273976287?&isInf=true" 
+            <a href="https://post.naver.com/viewer/postView.naver?volumeNo=36679324&memberNo=1974376&vType=VERTICAL" 
                 target="_blank"  class="curationBox"> 
                 <div class="imgBox3">
-                    <img class="img" src="images/Australia/coffee.png" alt="coffee">
+                    <img class="img" src="images/Australia/gaeun_australia.png" alt="gaeun_australia">
                 </div>
                 <div class="textBox3">
                     <div class="Ctext3">
-                        <p><small>호주 카페 커피 주문방법과</small><br>꿀팁까지!</p>
+                        <p><small>끝없이 달리고 싶은,</small><br>그레이트 오션 로드!</p>
                     </div>
                 </div>
             </a>
@@ -255,8 +255,8 @@
                 </div>
                 <div class="textBox4">
                     <div class="Ctext4">
-                         <p><small>호주 시드니 ETA 관광 비자</small>
-                        <br> 발급 5분 컷 작성 방법!</p> 
+                         <p><small>호주 시드니 ETA관광 비자
+                        <br> 발급 5분 컷 작성 방법!</small></p> 
                     </div>
                 </div>
             </a>
@@ -264,7 +264,7 @@
         </div>
     </section>
     
-    <script src="js/busan.js"></script>
+    <script src="js/australia.js"></script>
     <script src="../resources/js/main.js"></script>
     
     <!-- footer 부분 -->

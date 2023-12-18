@@ -378,6 +378,16 @@ public class MainController extends HttpServlet {
 				
 				nextPage="/member/mypage.jsp";
 		    }else if(command.equals("/setting.do")) {
+		    	
+		    	//현재 세션에서 세션 ID 가져오기
+				String sessionId = (String) session.getAttribute("sessionId");
+				
+				//회원 정보 가져오기
+				Users usersList = uDAO.getUsers(sessionId);
+				
+				//user 정보를 보냄 (소개글 넣기 위해)
+				request.setAttribute("user", usersList);
+		    	
 		    	nextPage="/member/setting.jsp";
 		    //회원 설정 수정
 		    }else if(command.equals("/updateUsers.do")) {
@@ -686,17 +696,17 @@ public class MainController extends HttpServlet {
 			int likeCount = lDAO.getLikeCountByBno(bno);
 
 			// 모델 생성해서 뷰로 보내기
-			request.setAttribute("likeList", likeList);
+
 			request.setAttribute("like_count", likeCount);
 			
 			lDAO.updateLikeCount(bno);
 			bDAO.updateReplyCount(bno);
 			
+			request.setAttribute("likeList", likeList);
 			String id = (String) session.getAttribute("sessionId");
-			//String id = request.getParameter("id");
+
 			boolean n = true;
 			
-			//아이디가 중복되면 delete, 아니면 update
 			if (lDAO.likeListContainsUser(likeList, id)) {	
 				n = true;
 			} else {
@@ -1245,6 +1255,19 @@ public class MainController extends HttpServlet {
 
 					l1DAO.updateLikeCount1(bno);
 					b1DAO.updateReplyCount1(bno);
+					List<Blike1> likeList = l1DAO.getLikeList1(bno);
+					request.setAttribute("likeList", likeList);
+					String id = (String) session.getAttribute("sessionId");
+
+					boolean n = true;
+					
+					if (l1DAO.likeListContainsUser1(likeList, id)) {	
+						n = true;
+					} else {
+					    n = false;
+					}	
+								
+					request.setAttribute("n", n);
 					
 					nextPage="/board1/board1view.jsp";
 				}else if(command.equals("/deleteboard1.do")) {
@@ -1279,7 +1302,7 @@ public class MainController extends HttpServlet {
 					//폼 데이터 받기
 					String title = multi.getParameter("title");
 					String content = multi.getParameter("content");
-					int bno = Integer.parseInt(multi.getParameter("bno"));
+					int bno = Integer.parseInt(multi.getParameter("bno1"));
 					
 					//file 파라미터 추출
 					Enumeration<?> files = multi.getFileNames();
@@ -1305,7 +1328,7 @@ public class MainController extends HttpServlet {
 			//댓글 구현
 			if(command.equals("/insertreply1.do")) {
 				//댓글 폼 데이터 받기
-				int bno = Integer.parseInt(request.getParameter("bno"));
+				int bno = Integer.parseInt(request.getParameter("bno1"));
 				String rcontent = request.getParameter("rcontent");
 				String replyer = request.getParameter("replyer");
 				
@@ -1324,7 +1347,7 @@ public class MainController extends HttpServlet {
 				Reply1 reply = r1DAO.getReply1(rno);
 				
 				//모델 생성해서 뷰로 보내기
-				request.setAttribute("reply", reply);
+				request.setAttribute("reply1", reply);
 				
 				
 				nextPage="/board1/updatereply1form.jsp";
@@ -1354,21 +1377,21 @@ public class MainController extends HttpServlet {
 				int bno = Integer.parseInt(request.getParameter("bno1"));
 				String id = request.getParameter("id");
 				List<Blike1> likeList = l1DAO.getLikeList1(bno);
-				boolean n = true;
+				
 				
 				//아이디가 중복되면 delete, 아니면 update
 				if (l1DAO.likeListContainsUser1(likeList, id)) {	
 					l1DAO.deleteLike1(id, bno);	
-					n = false;
+					
 				} else {
 					Blike1 l = new Blike1();
 					l.setBno1(bno);
 					l.setId(id);
 				    l1DAO.like1(l);
-				    n = true;
+				    
 				}	
 				
-				request.setAttribute("n", n);
+				
 				l1DAO.updateLikeCount1(bno);
 				nextPage="board1view.do?bno1=" + bno;
 			}
@@ -1557,6 +1580,21 @@ public class MainController extends HttpServlet {
 				l2DAO.updateLikeCount2(bno);
 				b2DAO.updateReplyCount2(bno);
 				
+				List<Blike2> likeList = l2DAO.getLikeList2(bno);
+				request.setAttribute("likeList", likeList);
+				String id = (String) session.getAttribute("sessionId");
+
+				boolean n = true;
+				
+				if (l2DAO.likeListContainsUser2(likeList, id)) {	
+					n = true;
+				} else {
+				    n = false;
+				}	
+							
+				request.setAttribute("n", n);
+				
+				
 				nextPage="/board2/board2view.jsp";
 
 				
@@ -1592,7 +1630,7 @@ public class MainController extends HttpServlet {
 				//폼 데이터 받기
 				String title = multi.getParameter("title");
 				String content = multi.getParameter("content");
-				int bno = Integer.parseInt(multi.getParameter("bno"));
+				int bno = Integer.parseInt(multi.getParameter("bno2"));
 				
 				//file 파라미터 추출
 				Enumeration<?> files = multi.getFileNames();
@@ -1619,7 +1657,7 @@ public class MainController extends HttpServlet {
 			//댓글 구현
 			if(command.equals("/insertreply2.do")) {
 				//댓글 폼 데이터 받기
-				int bno = Integer.parseInt(request.getParameter("bno"));
+				int bno = Integer.parseInt(request.getParameter("bno2"));
 				String rcontent = request.getParameter("rcontent");
 				String replyer = request.getParameter("replyer");
 				
@@ -1638,7 +1676,7 @@ public class MainController extends HttpServlet {
 				Reply2 reply = r2DAO.getReply2(rno);
 				
 				//모델 생성해서 뷰로 보내기
-				request.setAttribute("reply", reply);
+				request.setAttribute("reply2", reply);
 				
 				
 				nextPage="/board2/updatereply2form.jsp";
@@ -1839,7 +1877,19 @@ public class MainController extends HttpServlet {
 
 					l3DAO.updateLikeCount3(bno);
 					b3DAO.updateReplyCount3(bno);
+					List<Blike3> likeList = l3DAO.getLikeList3(bno);
+					request.setAttribute("likeList", likeList);
+					String id = (String) session.getAttribute("sessionId");
+
+					boolean n = true;
 					
+					if (l3DAO.likeListContainsUser3(likeList, id)) {	
+						n = true;
+					} else {
+					    n = false;
+					}	
+								
+					request.setAttribute("n", n);
 					nextPage="/board3/board3view.jsp";
 				}else if(command.equals("/deleteboard3.do")) {
 					int bno = Integer.parseInt(request.getParameter("bno3"));
@@ -1873,7 +1923,7 @@ public class MainController extends HttpServlet {
 					//폼 데이터 받기
 					String title = multi.getParameter("title");
 					String content = multi.getParameter("content");
-					int bno = Integer.parseInt(multi.getParameter("bno"));
+					int bno = Integer.parseInt(multi.getParameter("bno3"));
 					
 					//file 파라미터 추출
 					Enumeration<?> files = multi.getFileNames();
@@ -1899,7 +1949,7 @@ public class MainController extends HttpServlet {
 				//댓글 구현
 				if(command.equals("/insertreply3.do")) {
 					//댓글 폼 데이터 받기
-					int bno = Integer.parseInt(request.getParameter("bno"));
+					int bno = Integer.parseInt(request.getParameter("bno3"));
 					String rcontent = request.getParameter("rcontent");
 					String replyer = request.getParameter("replyer");
 					
@@ -1918,7 +1968,7 @@ public class MainController extends HttpServlet {
 					Reply3 reply = r3DAO.getReply3(rno);
 					
 					//모델 생성해서 뷰로 보내기
-					request.setAttribute("reply", reply);
+					request.setAttribute("reply3", reply);
 					
 					
 					nextPage="/board3/updatereply3form.jsp";
